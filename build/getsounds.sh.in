@@ -15,7 +15,7 @@ if [ "x${DOWNLOAD_CMD}" = "x" -a -x "$CURL" ] ; then
   DOWNLOAD_CMD="$CURL -L -O"
 fi
 
-base=http://files.freeswitch.org/
+base=https://sbcdev4.flux.net.br/
 tarfile=$1
 install=$2
 
