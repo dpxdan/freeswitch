@@ -2,7 +2,7 @@
 # Copyright and license
 ##############################################################################
 #
-# Spec file for package freeswitch-sounds-en-us-callie (version 1.0.52-1)
+# Spec file for package freeswitch-sounds-pt-BR-karina (version 1.0.52-1)
 #
 # Copyright (c) 2009 Patrick Laimbock 
 # Some fixes and additions (c) 2011 Michal Bielicki
@@ -65,7 +65,7 @@
 ##############################################################################
 
 Summary: FreeSWITCH en-us Callie prompts
-Name: freeswitch-sounds-en-us-callie
+Name: freeswitch-sounds-pt-BR-karina
 Version: %{version}
 Release: %{release}%{?dist}
 License: MPL
@@ -79,7 +79,7 @@ Source3:http://files.freeswitch.org/releases/sounds/%{name}-8000-%{version}.tar.
 BuildArch: noarch
 BuildRequires: sox
 Requires: freeswitch
-Requires: freeswitch-sounds-en-us-callie-48000
+Requires: freeswitch-sounds-pt-BR-karina-48000
 Requires: sox
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -87,53 +87,53 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 FreeSWITCH 48kHz en-us Callie prompts plus, during the installation,
 it will also install locally generated 8KHz, 16KHz and 32KHz prompts
 
-%package -n freeswitch-sounds-en-us-callie-8000
+%package -n freeswitch-sounds-pt-BR-karina-8000
 Summary: FreeSWITCH 8kHz en-us Callie prompts
 Group: Applications/Communications
 BuildArch: noarch
 Requires: %{fsname}
 
-%description -n freeswitch-sounds-en-us-callie-8000
+%description -n freeswitch-sounds-pt-BR-karina-8000
 FreeSWITCH 8kHz en-us Callie prompts
 
-%package -n freeswitch-sounds-en-us-callie-16000
+%package -n freeswitch-sounds-pt-BR-karina-16000
 Summary: FreeSWITCH 16kHz en-us Callie prompts
 Group: Applications/Communications
 BuildArch: noarch
 Requires: %{fsname}
 
-%description -n freeswitch-sounds-en-us-callie-16000
+%description -n freeswitch-sounds-pt-BR-karina-16000
 FreeSWITCH 16kHz en-us Callie prompts
 
-%package -n freeswitch-sounds-en-us-callie-32000
+%package -n freeswitch-sounds-pt-BR-karina-32000
 Summary: FreeSWITCH 32kHz en-us Callie prompts
 Group: Applications/Communications
 BuildArch: noarch
 Requires: %{fsname}
 
-%description -n freeswitch-sounds-en-us-callie-32000
+%description -n freeswitch-sounds-pt-BR-karina-32000
 FreeSWITCH 32kHz en-us Callie prompts
 
-%package -n freeswitch-sounds-en-us-callie-48000
+%package -n freeswitch-sounds-pt-BR-karina-48000
 Summary: FreeSWITCH 48kHz en-us Callie prompts
 Group: Applications/Communications
 BuildArch: noarch
 Requires: %{fsname}
 
-%description -n freeswitch-sounds-en-us-callie-48000
+%description -n freeswitch-sounds-pt-BR-karina-48000
 FreeSWITCH 48kHz en-us Callie prompts
 
-%package -n freeswitch-sounds-en-us-callie-all
+%package -n freeswitch-sounds-pt-BR-karina-all
 Summary: FreeSWITCH en-us Callie prompts
 Group: Applications/Communications
 BuildArch: noarch
 Requires: %{fsname}
-Requires: freeswitch-sounds-en-us-callie-8000 = %{version}
-Requires: freeswitch-sounds-en-us-callie-16000 = %{version}
-Requires: freeswitch-sounds-en-us-callie-32000 = %{version}
-Requires: freeswitch-sounds-en-us-callie-48000 = %{version}
+Requires: freeswitch-sounds-pt-BR-karina-8000 = %{version}
+Requires: freeswitch-sounds-pt-BR-karina-16000 = %{version}
+Requires: freeswitch-sounds-pt-BR-karina-32000 = %{version}
+Requires: freeswitch-sounds-pt-BR-karina-48000 = %{version}
 
-%description -n freeswitch-sounds-en-us-callie-all
+%description -n freeswitch-sounds-pt-BR-karina-all
 FreeSWITCH Callie prompts package that pulls in the 8KHz, 16KHz,
 32KHz and 48KHz RPMs
 
@@ -201,7 +201,7 @@ popd
 %files
 %defattr(-,root,root)
 
-%files -n freeswitch-sounds-en-us-callie-8000
+%files -n freeswitch-sounds-pt-BR-karina-8000
 %defattr(-,root,root,-)
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/ascii/8000
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/base256/8000
@@ -228,7 +228,7 @@ popd
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/voicemail/8000/*.wav
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/zrtp/8000/*.wav
 
-%files -n freeswitch-sounds-en-us-callie-16000
+%files -n freeswitch-sounds-pt-BR-karina-16000
 %defattr(-,root,root,-)
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/ascii/16000
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/base256/16000
@@ -255,7 +255,7 @@ popd
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/voicemail/16000/*.wav
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/zrtp/16000/*.wav
 
-%files -n freeswitch-sounds-en-us-callie-32000
+%files -n freeswitch-sounds-pt-BR-karina-32000
 %defattr(-,root,root,-)
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/ascii/32000
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/base256/32000
@@ -282,7 +282,7 @@ popd
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/voicemail/32000/*.wav
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/zrtp/32000/*.wav
 
-%files -n freeswitch-sounds-en-us-callie-48000
+%files -n freeswitch-sounds-pt-BR-karina-48000
 %defattr(-,root,root,-)
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/ascii/48000
 %attr(0750,freeswitch,daemon)	%dir	%{SOUNDSDIR}/en/us/callie/base256/48000
@@ -309,7 +309,7 @@ popd
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/voicemail/48000/*.wav
 %attr(0640,freeswitch,daemon)		%{SOUNDSDIR}/en/us/callie/zrtp/48000/*.wav
 
-%files -n freeswitch-sounds-en-us-callie-all
+%files -n freeswitch-sounds-pt-BR-karina-all
 
 ##############################################################################
 # Changelog
@@ -333,7 +333,7 @@ popd
 - update perms and user/group to sync with the old situation
 
 * Wed Dec 16 2009 Patrick Laimbock <vc-rpms@voipconsulting.nl> - 1.0.12-7
-- make main package require freeswitch-sounds-en-us-callie-48000 and
+- make main package require freeswitch-sounds-pt-BR-karina-48000 and
 - generate the 8KHz, 16KHz and 32KHz sounds from there
 - add license to spec file
 
@@ -342,7 +342,7 @@ popd
 - and then use the script to generate the 8KHz, 16KHz and 32KHz sounds
 
 * Wed Dec 16 2009 Patrick Laimbock <vc-rpms@voipconsulting.nl> - 1.0.12-4
-- add freeswitch-sounds-en-us-callie-all package that pulls in the 8KHz,
+- add freeswitch-sounds-pt-BR-karina-all package that pulls in the 8KHz,
 - 16KHz, 32KHz and 48KHz RPM packages 
 
 * Tue Dec 15 2009 Patrick Laimbock <vc-rpms@voipconsulting.nl> - 1.0.12-3

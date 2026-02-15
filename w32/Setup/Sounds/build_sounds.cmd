@@ -17,7 +17,7 @@ for /F "tokens=*" %%A in (%cd%\..\..\..\build\sounds_upgradecode.txt) do (
 
 
 REM CALL :Build music
-REM CALL :Build en-us-callie
+REM CALL :Build pt-BR-karina
 
 :: force execution to quit at the end of the "main" logic
 EXIT /B %ERRORLEVEL%

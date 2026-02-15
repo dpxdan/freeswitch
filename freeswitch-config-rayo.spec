@@ -95,7 +95,7 @@ Requires: freeswitch-format-shell-stream
 Requires: freeswitch-format-ssml
 Requires: freeswitch-sounds-music-8000
 Requires: freeswitch-lang-en
-Requires: freeswitch-sounds-en-us-callie-8000
+Requires: freeswitch-sounds-pt-BR-karina-8000
 BuildRequires: bash
 BuildArch: noarch
 BuildRoot:    %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)

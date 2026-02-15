@@ -5,7 +5,7 @@
     <Import Project="../../downloadpackage.task" Condition=" '$(downloadpackagetask_Imported)' == '' " />
   </ImportGroup>
   <PropertyGroup>
-    <SoundPrimaryName Condition=" '$(SoundPrimaryName)' == '' ">en-us-callie</SoundPrimaryName>
+    <SoundPrimaryName Condition=" '$(SoundPrimaryName)' == '' ">pt-BR-karina</SoundPrimaryName>
     <SoundQuality Condition=" '$(SoundQuality)' == '' ">8000</SoundQuality>
   </PropertyGroup>
   <PropertyGroup>

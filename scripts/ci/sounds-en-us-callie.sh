@@ -26,7 +26,7 @@ fi
 cd $basedir/../freeswitch-sounds/sounds/trunk
 ./dist.pl en/us/callie
 
-mv freeswitch-sounds-en-us-callie-*.tar.gz $basedir/rpmbuild/SOURCES
+mv freeswitch-sounds-pt-BR-karina-*.tar.gz $basedir/rpmbuild/SOURCES
 
 cd $basedir
 
@@ -35,7 +35,7 @@ rpmbuild --define "VERSION_NUMBER $ver" \
   --define "_topdir %(pwd)/rpmbuild" \
   --define "_rpmdir %{_topdir}" \
   --define "_srcrpmdir %{_topdir}" \
-  -ba freeswitch-sounds-en-us-callie.spec
+  -ba freeswitch-sounds-pt-BR-karina.spec
 
 mkdir $src_repo/RPMS
 mv $src_repo/rpmbuild/*/*.rpm $src_repo/RPMS/.

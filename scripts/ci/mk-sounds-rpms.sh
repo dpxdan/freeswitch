@@ -1,7 +1,7 @@
 #!/bin/sh
 ##### -*- mode:shell-script; indent-tabs-mode:nil; sh-basic-offset:2 -*-
 
-declare -a specfiles=('freeswitch-sounds-en-ca-june.spec' 'freeswitch-sounds-en-us-allison.spec' 'freeswitch-sounds-fr-ca-june.spec' 'freeswitch-sounds-music.spec' 'freeswitch-sounds-pt-BR-karina.spec' 'freeswitch-sounds-ru-RU-elena.spec' 'freeswitch-sounds-en-us-callie.spec' 'freeswitch-sounds-sv-se-jakob.spec')
+declare -a specfiles=('freeswitch-sounds-en-ca-june.spec' 'freeswitch-sounds-en-us-allison.spec' 'freeswitch-sounds-fr-ca-june.spec' 'freeswitch-sounds-music.spec' 'freeswitch-sounds-pt-BR-karina.spec' 'freeswitch-sounds-ru-RU-elena.spec' 'freeswitch-sounds-pt-BR-karina.spec' 'freeswitch-sounds-sv-se-jakob.spec')
 
 sdir="."
 [ -n "${0%/*}" ] && sdir="${0%/*}"

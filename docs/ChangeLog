@@ -166,7 +166,7 @@ freeswitch (1.0.7)
 	build: Enable mod_curl in windows build
 	build: apply fix for MODSOFIA-71 to windows build
 	build: Add more excludes to .gitignore (for Windows) (r:b6628d26/FSBUILD-269)
-	build: Bump version of en-us-callie sounds to 1.0.13 (r:ca0a69a3)
+	build: Bump version of pt-BR-karina sounds to 1.0.13 (r:ca0a69a3)
 	build: change build to use mod_spandsp instead of mod_fax and mod_voipcodecs (r:988147a7)
 	build: add mod_spandsp to windows build (r:4fa8be62)
 	build: merge -j option for bootstrap (r:abb7d2e5/FSBUILD-237)

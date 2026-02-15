@@ -47,7 +47,7 @@
     <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup>
-    <SoundPrimaryName>en-us-callie</SoundPrimaryName>
+    <SoundPrimaryName>pt-BR-karina</SoundPrimaryName>
     <SoundQuality>16000</SoundQuality>
     <ExpectRelative>en\us\callie\voicemail\$(SoundQuality)</ExpectRelative>
   </PropertyGroup>

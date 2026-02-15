@@ -13,7 +13,7 @@ Used environment variables
 --------------------------
 
 1) ```SOUND_RATES``` - rates of sound files that must be downloaded and installed. Available values ```8000```, ```16000```, ```32000```, ```48000```. May defined multiply values using semicolon as delimiter. Example ```SOUND_RATES=8000:16000```;
-2) ```SOUND_TYPES``` - types of sound files that must be downloaded and installed. Available values music, ```en-us-callie```, ```en-us-allison```, ```ru-RU-elena```, ```en-ca-june```, ```fr-ca-june```, ```pt-BR-karina```, ```sv-se-jakob```, ```zh-cn-sinmei```, ```zh-hk-sinmei```. Example ```SOUND_TYPES=music:en-us-callie```;
+2) ```SOUND_TYPES``` - types of sound files that must be downloaded and installed. Available values music, ```pt-BR-karina```, ```en-us-allison```, ```ru-RU-elena```, ```en-ca-june```, ```fr-ca-june```, ```pt-BR-karina```, ```sv-se-jakob```, ```zh-cn-sinmei```, ```zh-hk-sinmei```. Example ```SOUND_TYPES=music:pt-BR-karina```;
 3) ```EPMD``` - start epmd daemon, useful when you use mod_erlang and mod_kazoo FreeSwitch modules. Available values ```true```, ```false```.
 
 Usage container
@@ -28,7 +28,7 @@ docker volume create --name freeswitch-sounds
 ```sh
 docker run --net=host --name freeswitch \
            -e SOUND_RATES=8000:16000 \
-           -e SOUND_TYPES=music:en-us-callie \
+           -e SOUND_TYPES=music:pt-BR-karina \
            -v freeswitch-sounds:/usr/share/freeswitch/sounds \
            -v /etc/freeswitch/:/etc/freeswitch \
            safarov/freeswitch
@@ -52,7 +52,7 @@ TimeoutStartSec=0
 ExecStart=/bin/sh -c 'docker rm -f freeswitch; \
           docker run -t --net=host --name freeswitch \
                  -e SOUND_RATES=8000:16000 \
-                 -e SOUND_TYPES=music:en-us-callie \
+                 -e SOUND_TYPES=music:pt-BR-karina \
                  -v freeswitch-sounds:/usr/share/freeswitch/sounds \
                  -v /etc/kazoo/freeswitch/:/etc/freeswitch \
                  freeswitch'
