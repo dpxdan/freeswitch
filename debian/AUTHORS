@@ -6,12 +6,12 @@ For copyright claims over this packaging and other software, see
 debian/copyright.
 
 Current maintainer: Travis Cross <tc@traviscross.com>
-Bug reports: https://freeswitch.org/jira (assign to maintainer)
+Bug reports: https://fluxpbx.org/jira (assign to maintainer)
 Security related bug reports: [email to maintainer]
 
 # Acknowledgments
 
-Thanks-to: Anthony Minessale <anthm@freeswitch.org>
+Thanks-to: Anthony Minessale <anthm@fluxpbx.org>
 Thanks-to: Michael Jerris <mike@jerris.com>
 # for creating a project worth packaging and for periodic tweaks
 

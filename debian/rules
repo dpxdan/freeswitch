@@ -102,14 +102,14 @@ override_dh_auto_install:
 	dh_auto_install -- -C libs/esl pymod-install
 	dh_auto_install -- -C libs/esl py3mod-install
 	dh_auto_install -- -C libs/esl perlmod-install
-	rm -f debian/tmp/usr/share/freeswitch/grammar/model/communicator/COPYING
+	rm -f debian/tmp/usr/share/fluxpbx/grammar/model/communicator/COPYING
 
 override_dh_installinit:
-	if [ `cat debian/freeswitch-init.provided_by` = freeswitch-systemd ]; then \
-	dh_systemd_enable -pfreeswitch-systemd --name=freeswitch; \
-	dh_systemd_start  -pfreeswitch-systemd --name=freeswitch; \
+	if [ `cat debian/fluxpbx-init.provided_by` = fluxpbx-systemd ]; then \
+	dh_systemd_enable -pfluxpbx-systemd --name=fluxpbx; \
+	dh_systemd_start  -pfluxpbx-systemd --name=fluxpbx; \
 	else \
-	dh_installinit -pfreeswitch-sysvinit --name=freeswitch; \
+	dh_installinit -pfluxpbx-sysvinit --name=fluxpbx; \
 	fi
 
 debian-bootstrap: debian/.stamp-bootstrap

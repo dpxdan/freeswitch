@@ -1,4 +1,4 @@
-<!--тестовые файлы Вы звуковые файлы можно взять тут svn co http://svn.freeswitch.ru/bbv/mod_say_ru/ru/  -->
+<!--тестовые файлы Вы звуковые файлы можно взять тут svn co http://svn.fluxpbx.ru/bbv/mod_say_ru/ru/  -->
 <include>
   <language name="ru" sound-prefix="$${sounds_dir}/ru/RU/elena" tts-engine="cepstral" tts-voice="elena">
     <phrases>

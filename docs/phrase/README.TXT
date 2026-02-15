@@ -16,9 +16,9 @@ more-then-one-translation - displayed if exist two or more for given wav file.
 How can you contribute?
 
 You can contribute via patches posted to the mailing list or at 
-https://freeswitch.org/jira, if possible please record the sound files
+https://fluxpbx.org/jira, if possible please record the sound files
 for testing.  We also need voicemail_xx.xml macros updated for each language.
 
 Thanks,
 Brian West
-FreeSWITCH.org
+FluxPBX.org

@@ -13,11 +13,11 @@ INCLUDEPATH = ../src/include \
     ../libs/apr/include \
     ../libs/libteletone/src
 LIBS = -L../.libs \
-    -lfreeswitch \
+    -lfluxpbx \
     -lm
 !win32:!macx { 
-    # This is here to comply with the default freeswitch installation
-    QMAKE_LFLAGS += -Wl,-rpath,/usr/local/freeswitch/lib
+    # This is here to comply with the default fluxpbx installation
+    QMAKE_LFLAGS += -Wl,-rpath,/usr/local/fluxpbx/lib
     LIBS += -lcrypt \
         -lrt
 }
@@ -62,4 +62,4 @@ FORMS += mainwindow.ui \
     debugtools/consolewindow.ui \
     debugtools/statedebugdialog.ui
 RESOURCES += resources.qrc
-OTHER_FILES += conf/freeswitch.xml
+OTHER_FILES += conf/fluxpbx.xml

@@ -187,7 +187,7 @@
     <ProjectReference Include="..\..\..\..\libs\win32\sofia\libsofia_sip_ua_static.2017.vcxproj">
       <Project>{70a49bc2-7500-41d0-b75d-edcc5be987a0}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2017.vcxproj">
+    <ProjectReference Include="..\..\..\..\w32\Library\FluxPbxCore.2017.vcxproj">
       <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

@@ -63,12 +63,12 @@ namespace ManagedEslTest
     /// <param name="stateInfo">Object state info</param>
     static void InboundMode(Object stateInfo)
     {
-      //Initializes a new instance of ESLconnection, and connects to the host $host on the port $port, and supplies $password to freeswitch
+      //Initializes a new instance of ESLconnection, and connects to the host $host on the port $port, and supplies $password to fluxpbx
       ESLconnection eslConnection = new ESLconnection("127.0.0.1", "8021", "ClueCon");
 
       if (eslConnection.Connected() != ESL_SUCCESS)
       {
-        Console.WriteLine("Error connecting to FreeSwitch");
+        Console.WriteLine("Error connecting to FluxPbx");
         return;
       }
 
@@ -116,7 +116,7 @@ namespace ManagedEslTest
         {
           Socket sckClient = tcpListener.AcceptSocket();
 
-          //Initializes a new instance of ESLconnection, and connects to the host $host on the port $port, and supplies $password to freeswitch
+          //Initializes a new instance of ESLconnection, and connects to the host $host on the port $port, and supplies $password to fluxpbx
           ESLconnection eslConnection = new ESLconnection(sckClient.Handle.ToInt32());
 
           Console.WriteLine("Execute(\"answer\")");
@@ -162,7 +162,7 @@ namespace ManagedEslTest
 
            Socket sckClient = tcpListened.EndAcceptSocket(asyncCallback);
 
-           //Initializes a new instance of ESLconnection, and connects to the host $host on the port $port, and supplies $password to freeswitch
+           //Initializes a new instance of ESLconnection, and connects to the host $host on the port $port, and supplies $password to fluxpbx
            ESLconnection eslConnection = new ESLconnection(sckClient.Handle.ToInt32());
 
            ESLevent eslEvent = eslConnection.GetInfo();

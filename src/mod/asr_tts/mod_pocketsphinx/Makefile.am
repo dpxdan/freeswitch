@@ -17,7 +17,7 @@ SPHINXMODEL=communicator_semi_6000_20080321
 mod_LTLIBRARIES = mod_pocketsphinx.la
 mod_pocketsphinx_la_SOURCES  = mod_pocketsphinx.c
 mod_pocketsphinx_la_CFLAGS   = $(AM_CFLAGS) -I$(SPHINXBASE_DIR)/include -I$(POCKETSPHINX_DIR)/include
-mod_pocketsphinx_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(POCKETSPHINX_LA) $(SPHINXBASE_LA) $(SPHINXBASE_LA2)
+mod_pocketsphinx_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(POCKETSPHINX_LA) $(SPHINXBASE_LA) $(SPHINXBASE_LA2)
 mod_pocketsphinx_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 BUILT_SOURCES=$(POCKETSPHINX_LA) $(SPHINXBASE_LA) $(SPHINXBASE_LA2)

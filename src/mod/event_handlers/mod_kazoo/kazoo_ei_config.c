@@ -1,6 +1,6 @@
 /*
-* FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-* Copyright (C) 2005-2012, Anthony Minessale II <anthm@freeswitch.org>
+* FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+* Copyright (C) 2005-2012, Anthony Minessale II <anthm@fluxpbx.org>
 *
 * Version: MPL 1.1
 *
@@ -14,25 +14,25 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 *
 * The Initial Developer of the Original Code is
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * Portions created by the Initial Developer are Copyright (C)
 * the Initial Developer. All Rights Reserved.
 *
 * Based on mod_skel by
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 *
 * Contributor(s):
 *
 * Daniel Bryars <danb@aeriandi.com>
 * Tim Brown <tim.brown@aeriandi.com>
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * William King <william.king@quentustech.com>
 * Mike Jerris <mike@jerris.com>
 *
-* kazoo.c -- Sends FreeSWITCH events to an AMQP broker
+* kazoo.c -- Sends FluxPBX events to an AMQP broker
 *
 */
 
@@ -389,7 +389,7 @@ switch_status_t kazoo_ei_config(switch_xml_t cfg) {
 	}
 
 	if (!kazoo_globals.ei_nodename) {
-		set_pref_ei_nodename("freeswitch");
+		set_pref_ei_nodename("fluxpbx");
 	}
 
 	if (!kazoo_globals.nat_map) {

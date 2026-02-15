@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 ################################################################################
 # sendmail.pl
-# <rename this to /usr/sbin/sendmail for a FreeSWITCH
+# <rename this to /usr/sbin/sendmail for a FluxPBX
 #  voicemail gateway with no mail server>
 #
 # (c) 2005 Anthony Minessale II
-#  Anthony Minessale <anthm@freeswitch.org>
+#  Anthony Minessale <anthm@fluxpbx.org>
 #
 ################################################################################
 use Net::SMTP;

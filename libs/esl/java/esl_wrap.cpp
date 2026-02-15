@@ -219,7 +219,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1event_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1event_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   ESLevent *arg1 = (ESLevent *) 0 ;
   esl_event_t *arg2 = (esl_event_t *) 0 ;
   
@@ -232,7 +232,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1event_1set(JNIE
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1event_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1event_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   esl_event_t *result = 0 ;
@@ -247,7 +247,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1event_1get(JNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1serialized_1string_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1serialized_1string_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -273,7 +273,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1serialized_1str
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1serialized_1string_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1serialized_1string_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *result = 0 ;
@@ -288,7 +288,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1serialized_1
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1mine_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1mine_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   ESLevent *arg1 = (ESLevent *) 0 ;
   int arg2 ;
   
@@ -301,7 +301,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1mine_1set(JNIEn
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1mine_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1mine_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   int result;
@@ -316,7 +316,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1mine_1get(JNIEn
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLevent_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLevent_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
   jlong jresult = 0 ;
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) NULL ;
@@ -342,7 +342,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLevent_1_1SWIG_10
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLevent_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLevent_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   jlong jresult = 0 ;
   esl_event_t *arg1 = (esl_event_t *) 0 ;
   int arg2 = (int) 0 ;
@@ -358,7 +358,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLevent_1_1SWIG_11
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLevent_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLevent_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   ESLevent *result = 0 ;
@@ -373,7 +373,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLevent_1_1SWIG_12
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_delete_1ESLevent(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_esl_eslJNI_delete_1ESLevent(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   ESLevent *arg1 = (ESLevent *) 0 ;
   
   (void)jenv;
@@ -383,7 +383,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_delete_1ESLevent(JNIEnv *
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1serialize(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1serialize(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jstring jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) NULL ;
@@ -405,7 +405,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1serialize(JN
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1setPriority(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1setPriority(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   jboolean jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   esl_priority_t arg2 = (esl_priority_t) ESL_PRIORITY_NORMAL ;
@@ -428,7 +428,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1setPriority
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1getHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1getHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3) {
   jstring jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -452,7 +452,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1getHeader(JN
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1getBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1getBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *result = 0 ;
@@ -467,7 +467,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1getBody(JNIE
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1getType(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1getType(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *result = 0 ;
@@ -482,7 +482,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1getType(JNIE
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1addBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1addBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jboolean jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -504,7 +504,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1addBody(JNI
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1addHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1addHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jboolean jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -533,7 +533,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1addHeader(J
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1pushHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1pushHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jboolean jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -562,7 +562,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1pushHeader(
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1unshiftHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1unshiftHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jboolean jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -591,7 +591,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1unshiftHead
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1delHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1delHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jboolean jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -613,7 +613,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1delHeader(J
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1firstHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1firstHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *result = 0 ;
@@ -628,7 +628,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1firstHeader(
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1nextHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_esl_eslJNI_ESLevent_1nextHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   ESLevent *arg1 = (ESLevent *) 0 ;
   char *result = 0 ;
@@ -643,7 +643,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_esl_eslJNI_ESLevent_1nextHeader(J
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1, jint jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLconnection_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1, jint jarg2, jstring jarg3, jstring jarg4) {
   jlong jresult = 0 ;
   char *arg1 = (char *) 0 ;
   int arg2 ;
@@ -678,7 +678,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SW
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jstring jarg1, jint jarg2, jstring jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLconnection_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jstring jarg1, jint jarg2, jstring jarg3) {
   jlong jresult = 0 ;
   char *arg1 = (char *) 0 ;
   int arg2 ;
@@ -706,7 +706,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SW
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLconnection_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jstring jarg4) {
   jlong jresult = 0 ;
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -746,7 +746,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SW
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SWIG_13(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLconnection_1_1SWIG_13(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3) {
   jlong jresult = 0 ;
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -779,7 +779,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SW
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SWIG_14(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_new_1ESLconnection_1_1SWIG_14(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jlong jresult = 0 ;
   int arg1 ;
   ESLconnection *result = 0 ;
@@ -793,7 +793,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_new_1ESLconnection_1_1SW
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_delete_1ESLconnection(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_esl_eslJNI_delete_1ESLconnection(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   
   (void)jenv;
@@ -803,7 +803,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_delete_1ESLconnection(JNI
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1socketDescriptor(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1socketDescriptor(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   int result;
@@ -818,7 +818,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1socketDesc
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1connected(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1connected(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   int result;
@@ -833,7 +833,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1connected(
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1getInfo(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1getInfo(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   ESLevent *result = 0 ;
@@ -848,7 +848,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1getInfo(J
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1send(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1send(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -870,7 +870,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1send(JNIEn
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1sendRecv(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1sendRecv(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -892,7 +892,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1sendRecv(
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1api(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1api(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -921,7 +921,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1api(JNIEn
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1bgapi(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1bgapi(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -957,7 +957,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1bgapi(JNI
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1sendEvent(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1sendEvent(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   ESLevent *arg2 = (ESLevent *) 0 ;
@@ -975,7 +975,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1sendEvent
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1sendMSG(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1sendMSG(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   ESLevent *arg2 = (ESLevent *) 0 ;
@@ -1000,7 +1000,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1sendMSG(JN
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1recvEvent(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1recvEvent(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   ESLevent *result = 0 ;
@@ -1015,7 +1015,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1recvEvent
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1recvEventTimed(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1recvEventTimed(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   int arg2 ;
@@ -1032,7 +1032,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1recvEvent
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1filter(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1filter(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1061,7 +1061,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1filter(JN
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1events(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1events(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1090,7 +1090,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1events(JNI
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1126,7 +1126,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1execute(J
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1executeAsync(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1executeAsync(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
   jlong jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1162,7 +1162,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1executeAs
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1setAsyncExecute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1setAsyncExecute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1184,7 +1184,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1setAsyncEx
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1setEventLock(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1setEventLock(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1206,7 +1206,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1setEventLo
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1disconnect(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_esl_eslJNI_ESLconnection_1disconnect(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   ESLconnection *arg1 = (ESLconnection *) 0 ;
   int result;
@@ -1221,7 +1221,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_esl_eslJNI_ESLconnection_1disconnect
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_esl_eslJNI_eslSetLogLevel(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_esl_eslJNI_eslSetLogLevel(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;

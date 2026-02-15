@@ -16,7 +16,7 @@ mod_kazoo_la_SOURCES  += kazoo_cdr.c
 mod_kazoo_la_SOURCES  += kz_node.c
 
 mod_kazoo_la_CFLAGS   = $(AM_CFLAGS) @ERLANG_CFLAGS@ -D_REENTRANT -DERLANG_VERSION=@ERLANG_VERSION@ -DERLANG_MAJOR=@ERLANG_MAJOR@ -DERLANG_MINOR=@ERLANG_MINOR@
-mod_kazoo_la_LIBADD   = $(KAZOO_DEFS) $(switch_builddir)/libfreeswitch.la
+mod_kazoo_la_LIBADD   = $(KAZOO_DEFS) $(switch_builddir)/libfluxpbx.la
 mod_kazoo_la_LDFLAGS  = -avoid-version -module -no-undefined -shared @ERLANG_LDFLAGS@
 
 BUILT_SOURCES = $(KAZOO_DEFS)

@@ -20,14 +20,14 @@ print $q->header(-type => "text/xml");
 
 my $writer = new XML::Writer(OUTPUT => STDOUT, DATA_MODE => 1);
 
-$writer->startTag('document', type => 'xml/freeswitch-httapi');
+$writer->startTag('document', type => 'xml/fluxpbx-httapi');
 
 $writer->startTag('work');
 $writer->emptyTag('pause', milliseconds => "1500");
 $writer->startTag('playback', 
 		  name => digits, 
-		  file => "http://sidious.freeswitch.org/sounds/exten.wav",
-		  'error-file' => "http://sidious.freeswitch.org/sounds/invalid.wav",
+		  file => "http://sidious.fluxpbx.org/sounds/exten.wav",
+		  'error-file' => "http://sidious.fluxpbx.org/sounds/invalid.wav",
 		  'input-timeout' => "5000",
 		  action => "dial:default:XML");
 

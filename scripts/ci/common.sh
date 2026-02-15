@@ -103,7 +103,7 @@ set_fs_ver () {
     -e "s|\(AC_SUBST(SWITCH_VERSION_MAJOR, \[\).*\(\])\)|\1$major\2|" \
     -e "s|\(AC_SUBST(SWITCH_VERSION_MINOR, \[\).*\(\])\)|\1$minor\2|" \
     -e "s|\(AC_SUBST(SWITCH_VERSION_MICRO, \[\).*\(\])\)|\1$micro\2|" \
-    -e "s|\(AC_INIT(\[freeswitch\], \[\).*\(\], bugs@freeswitch.org)\)|\1$ver\2|" \
+    -e "s|\(AC_INIT(\[fluxpbx\], \[\).*\(\], bugs@fluxpbx.org)\)|\1$ver\2|" \
     configure.ac > configure.ac.$$
     mv configure.ac.$$ configure.ac
   if [ -n "$rev" ]; then
@@ -124,12 +124,12 @@ set_fs_ver () {
   fi
 
   sed -e "s|\(%define nonparsedversion \).*|\1$rpm_version|"  \
-       freeswitch.spec > freeswitch.spec.$$
-  mv freeswitch.spec.$$ freeswitch.spec
+       fluxpbx.spec > fluxpbx.spec.$$
+  mv fluxpbx.spec.$$ fluxpbx.spec
 
   sed -e "s|\(%define nonparsedversion \).*|\1$rpm_version|"  \
-       freeswitch-config-rayo.spec > freeswitch-config-rayo.spec.$$
-  mv freeswitch-config-rayo.spec.$$ freeswitch-config-rayo.spec
+       fluxpbx-config-rayo.spec > fluxpbx-config-rayo.spec.$$
+  mv fluxpbx-config-rayo.spec.$$ fluxpbx-config-rayo.spec
 
 #%define version 1.5.16
 
@@ -139,12 +139,12 @@ set_fs_release () {
   local release="$1"
   if [ -n "$release" ]; then
     sed -e "s|\(%define release \).*|\1$release|"  \
-         freeswitch.spec > freeswitch.spec.$$
-    mv freeswitch.spec.$$ freeswitch.spec
+         fluxpbx.spec > fluxpbx.spec.$$
+    mv fluxpbx.spec.$$ fluxpbx.spec
 
     sed -e "s|\(%define release \).*|\1$release|"  \
-         freeswitch-config-rayo.spec > freeswitch-config-rayo.spec.$$
-    mv freeswitch-config-rayo.spec.$$ freeswitch-config-rayo.spec
+         fluxpbx-config-rayo.spec > fluxpbx-config-rayo.spec.$$
+    mv fluxpbx-config-rayo.spec.$$ fluxpbx-config-rayo.spec
   fi
 }
 
@@ -159,7 +159,7 @@ gnuize () {
 
 check_pwd () {
   if [ ! -d .git ]; then
-    echo "error: must be run from within the top level of a FreeSWITCH git tree." 1>&2
+    echo "error: must be run from within the top level of a FluxPBX git tree." 1>&2
     exit 1;
   fi
 }

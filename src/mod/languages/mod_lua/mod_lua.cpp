@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  *
  * mod_lua.c -- Lua
  *
@@ -47,7 +47,7 @@ static struct {
 	char *xml_handler;
 } globals;
 
-int luaopen_freeswitch(lua_State * L);
+int luaopen_fluxpbx(lua_State * L);
 int lua_thread(const char *text);
 
 static int panic(lua_State * L)
@@ -120,10 +120,10 @@ static lua_State *lua_init(void)
 	lua_State *L = luaL_newstate();
 
 	if (L) {
-		const char *buff = "os.exit = function() freeswitch.consoleLog(\"err\", \"Surely you jest! exiting is a bad plan....\\n\") end";
+		const char *buff = "os.exit = function() fluxpbx.consoleLog(\"err\", \"Surely you jest! exiting is a bad plan....\\n\") end";
 		lua_gc(L, LUA_GCSTOP, 0);
 		luaL_openlibs(L);
-		luaopen_freeswitch(L);
+		luaopen_fluxpbx(L);
 		lua_gc(L, LUA_GCRESTART, 0);
 		lua_atpanic(L, panic);
 		luaL_loadbuffer(L, buff, strlen(buff), "line") || docall(L, 0, 0, 0, 1);

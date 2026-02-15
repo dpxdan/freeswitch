@@ -1,6 +1,6 @@
 #!/bin/sh
 ##### -*- mode:shell-script; indent-tabs-mode:nil; sh-basic-offset:2 -*-
-##### bootstrap FreeSWITCH and FreeSWITCH libraries
+##### bootstrap FluxPBX and FluxPBX libraries
 
 . $(dirname $0)/scripts/ci/build-requirements.sh
 

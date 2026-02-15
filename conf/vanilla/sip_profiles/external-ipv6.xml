@@ -1,5 +1,5 @@
 <profile name="external-ipv6">
-  <!-- http://wiki.freeswitch.org/wiki/Sofia_Configuration_Files -->
+  <!-- http://wiki.fluxpbx.org/wiki/Sofia_Configuration_Files -->
   <!-- This profile is only for outbound registrations to providers -->
   <gateways>
     <X-PRE-PROCESS cmd="include" data="external-ipv6/*.xml"/>
@@ -18,7 +18,7 @@
 
   <settings>
     <param name="debug" value="0"/>
-    <!-- If you want FreeSWITCH to shutdown if this profile fails to load, uncomment the next line. -->
+    <!-- If you want FluxPBX to shutdown if this profile fails to load, uncomment the next line. -->
     <!-- <param name="shutdown-on-fail" value="true"/> -->
     <param name="sip-trace" value="no"/>
     <param name="sip-capture" value="no"/>

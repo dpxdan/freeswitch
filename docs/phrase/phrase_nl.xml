@@ -289,8 +289,8 @@
       <prompt phrase="Dat was een verkeerde invoer" filename="ivr-that_was_an_invalid_entry.wav"/>
       <prompt phrase="Dit is een gesprek van" filename="ivr-this_is_a_call_from.wav"/>
       <prompt phrase="Deze IVR stelt u instaat om een aantal functies te testen..." filename="ivr-this_ivr_will_let_you_test_features.wav"/>
-      <prompt phrase="Om de FreeSWITCH conferentie te bellen" filename="ivr-to_call_the_freeswitch_conference.wav"/>
-      <prompt phrase="Om een FreeSWITCH echo test uit te voeren" filename="ivr-to_do_a_freeswitch_echo_test.wav"/>
+      <prompt phrase="Om de FluxPBX conferentie te bellen" filename="ivr-to_call_the_fluxpbx_conference.wav"/>
+      <prompt phrase="Om een FluxPBX echo test uit te voeren" filename="ivr-to_do_a_fluxpbx_echo_test.wav"/>
       <prompt phrase="Om een Free World Dial Up echo test uit te voeren" filename="ivr-to_do_a_fwd_echo_test.wav"/>
       <prompt phrase="Om een een voorbeeld IVR submenu te hoeren" filename="ivr-to_hear_sample_submenu.wav"/>
       <prompt phrase="Om schreeuwende apen te horen" filename="ivr-to_hear_screaming_monkeys.wav"/>
@@ -298,7 +298,7 @@
       <prompt phrase="Om deze keuzes nog een keer te horen" filename="ivr-to_repeat_these_options.wav"/>
       <prompt phrase="Om terug te keren naar het vorige menu" filename="ivr-to_return_to_previous_menu.wav"/>
       <prompt phrase="Om met een mederwerker te spreken" filename="ivr-to_speak_with_an_operator.wav"/>
-      <prompt phrase="Welkom bij FreeSWITCH, de toekomst in telefonie" filename="ivr-welcome_to_freeswitch.wav"/>
+      <prompt phrase="Welkom bij FluxPBX, de toekomst in telefonie" filename="ivr-welcome_to_fluxpbx.wav"/>
       <prompt phrase="U kunt op elk moment dit menu verlaten door op te hangen" filename="ivr-you_may_exit_by_hanging_up.wav"/>
       <prompt phrase="of" filename ="ivr-or.wav"/>
       <prompt phrase="niet" filename ="ivr-not.wav"/>

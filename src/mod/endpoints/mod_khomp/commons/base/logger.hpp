@@ -52,7 +52,7 @@
 #include <refcounter.hpp>
 #include <flagger.hpp>
 
-#if defined(COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_FREESWITCH)
+#if defined(COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_FLUXPBX)
 extern "C"
 {
     #include <time.h>
@@ -418,7 +418,7 @@ struct Logger
 
                     if (opt._flags[Option::DATETIME])
                     {
-#if defined(COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_CALLWEAVER) || defined(COMMONS_LIBRARY_USING_FREESWITCH)
+#if defined(COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_CALLWEAVER) || defined(COMMONS_LIBRARY_USING_FLUXPBX)
                         time_t      tv;
                         struct tm   lt;
 
@@ -433,7 +433,7 @@ struct Logger
 
                     if (opt._flags[Option::DATETIMEMS])
                     {
-#if defined(COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_CALLWEAVER) || defined(COMMONS_LIBRARY_USING_FREESWITCH)
+#if defined(COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_CALLWEAVER) || defined(COMMONS_LIBRARY_USING_FLUXPBX)
                         time_t      tv;
                         struct tm   lt;
 
@@ -450,7 +450,7 @@ struct Logger
 
                     if (opt._flags[Option::THREADID])
                     {
-#if defined (COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_CALLWEAVER) || defined(COMMONS_LIBRARY_USING_FREESWITCH)
+#if defined (COMMONS_LIBRARY_USING_ASTERISK) || defined(COMMONS_LIBRARY_USING_CALLWEAVER) || defined(COMMONS_LIBRARY_USING_FLUXPBX)
                         out_msg += STG(FMT("%08x ") % ((unsigned long)pthread_self()));
 #endif
                     }

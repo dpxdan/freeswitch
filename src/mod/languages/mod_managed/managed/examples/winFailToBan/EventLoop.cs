@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
-using FreeSWITCH.Native;
+using FluxPBX.Native;
 using winFailToBan.Internal;
-using FreeSWITCH;
+using FluxPBX;
 
 namespace winFailToBan
 {

@@ -181,7 +181,7 @@
       <Project>{df018947-0fff-4eb3-bdee-441dc81da7a4}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2017.vcxproj">
+    <ProjectReference Include="..\..\..\..\w32\Library\FluxPbxCore.2017.vcxproj">
       <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

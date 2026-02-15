@@ -1,0 +1,4 @@
+/usr/include
+/usr/lib/libfluxpbx.so
+/usr/lib/*.a
+/usr/lib/pkgconfig

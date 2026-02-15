@@ -153,7 +153,7 @@
     <ProjectReference Include="..\..\..\..\libs\win32\opus\opus.silk_float.2017.vcxproj">
       <Project>{9c4961d2-5ddb-40c7-9be8-ca918dc4e782}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2017.vcxproj">
+    <ProjectReference Include="..\..\..\..\w32\Library\FluxPbxCore.2017.vcxproj">
       <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

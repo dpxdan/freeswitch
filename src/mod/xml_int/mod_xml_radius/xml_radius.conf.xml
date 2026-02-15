@@ -15,7 +15,7 @@
       <param name="radius_timeout" value="10"/>
       <param name="radius_retries" value="2"/>
       <param name="radius_deadtime" value="0"/>
-      <param name="dictionary" value="/usr/local/src/freeswitch/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
+      <param name="dictionary" value="/usr/local/src/fluxpbx/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
       <param name="seqfile" value="/var/run/radius.seq"/>
     </connection>
     <fields>
@@ -44,7 +44,7 @@
       <param name="radius_timeout" value="10"/>
       <param name="radius_retries" value="2"/>
       <param name="radius_deadtime" value="0"/>
-      <param name="dictionary" value="/usr/local/src/freeswitch/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
+      <param name="dictionary" value="/usr/local/src/fluxpbx/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
       <param name="seqfile" value="/var/run/radius.seq"/>
     </connection>
     <fields>
@@ -70,7 +70,7 @@
       <param name="radius_timeout" value="10"/>
       <param name="radius_retries" value="2"/>
       <param name="radius_deadtime" value="0"/>
-      <param name="dictionary" value="/usr/local/src/freeswitch/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
+      <param name="dictionary" value="/usr/local/src/fluxpbx/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
       <param name="seqfile" value="/var/run/radius.seq"/>
     </connection>
     <fields>
@@ -102,7 +102,7 @@
       <param name="radius_timeout" value="10"/>
       <param name="radius_retries" value="0"/>
       <param name="radius_deadtime" value="0"/>
-      <param name="dictionary" value="/usr/local/src/freeswitch/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
+      <param name="dictionary" value="/usr/local/src/fluxpbx/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
       <param name="seqfile" value="/var/run/radius.seq"/>
     </connection>
     <fields>
@@ -134,7 +134,7 @@
       <param name="radius_timeout" value="10"/>
       <param name="radius_retries" value="0"/>
       <param name="radius_deadtime" value="0"/>
-      <param name="dictionary" value="/usr/local/src/freeswitch/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
+      <param name="dictionary" value="/usr/local/src/fluxpbx/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary"/>
       <param name="seqfile" value="/var/run/radius.seq"/>
     </connection>
     <fields>

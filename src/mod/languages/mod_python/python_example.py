@@ -1,5 +1,5 @@
 import os
-from freeswitch import *
+from fluxpbx import *
 
 # HANGUP HOOK
 #
@@ -69,8 +69,8 @@ def xml_fetch(params):
 
 	xml = '''
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="freeswitch/xml">
-  <section name="dialplan" description="RE Dial Plan For FreeSWITCH">
+<document type="fluxpbx/xml">
+  <section name="dialplan" description="RE Dial Plan For FluxPBX">
     <context name="default">
       <extension name="generated">
         <condition>

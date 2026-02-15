@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Joao Mesquita <jmesquita@freeswitch.org>
+ * Joao Mesquita <jmesquita@fluxpbx.org>
  *
  */
 
@@ -69,10 +69,10 @@ void FSHost::createFolders()
         conf_dir.mkpath(".fscomm/sounds");
         QFile::copy(":/sounds/test.wav", QString("%1/.fscomm/sounds/test.wav").arg(QDir::homePath()));
     }
-    if(!QFile::exists(QString("%1/.fscomm/conf/freeswitch.xml").arg(conf_dir.absolutePath()))) {
+    if(!QFile::exists(QString("%1/.fscomm/conf/fluxpbx.xml").arg(conf_dir.absolutePath()))) {
         conf_dir.mkdir(".fscomm/conf");
-        QFile rootXML(":/confs/freeswitch.xml");
-        QString dest = QString("%1/.fscomm/conf/freeswitch.xml").arg(conf_dir.absolutePath());
+        QFile rootXML(":/confs/fluxpbx.xml");
+        QString dest = QString("%1/.fscomm/conf/fluxpbx.xml").arg(conf_dir.absolutePath());
         rootXML.copy(dest);
     }
 
@@ -135,7 +135,7 @@ void FSHost::run(void)
     qDebug() << "Initializing core...";
     /* Initialize the core and load modules, that will startup FS completely */
     if (switch_core_init(flags, console, &err) != SWITCH_STATUS_SUCCESS) {
-        fprintf(stderr, "Failed to initialize FreeSWITCH's core: %s\n", err);
+        fprintf(stderr, "Failed to initialize FluxPBX's core: %s\n", err);
         emit coreLoadingError(err);
     }
 
@@ -147,7 +147,7 @@ void FSHost::run(void)
 
     emit loadingModules("Loading modules...", Qt::AlignRight|Qt::AlignBottom, Qt::blue);
     if (switch_core_init_and_modload(flags, console, &err) != SWITCH_STATUS_SUCCESS) {
-        fprintf(stderr, "Failed to initialize FreeSWITCH's core: %s\n", err);
+        fprintf(stderr, "Failed to initialize FluxPBX's core: %s\n", err);
         emit coreLoadingError(err);
     }
 
@@ -545,7 +545,7 @@ QSharedPointer<Account> FSHost::getAccountByName(QString accStr)
 QSharedPointer<Account> FSHost::getCurrentDefaultAccount()
 {
     ISettings *settings = new ISettings();
-    //settings->beginGroup("FreeSWITCH/conf/globals");
+    //settings->beginGroup("FluxPBX/conf/globals");
     //QString accString = settings->value("default_gateway").toString();
     //settings->endGroup();
     delete (settings);

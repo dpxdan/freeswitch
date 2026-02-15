@@ -1,5 +1,5 @@
 #
-# FreeSWITCH Dev .bashrc
+# FluxPBX Dev .bashrc
 #
 export UNAME=`uname -s`
 
@@ -8,41 +8,41 @@ if [ "`id -u`" = "0" ]; then
 	if [ -d /usr/lib/ccache ]; then
 	    export PATH="/usr/lib/ccache:$PATH"
 	fi
-	export PATH="$PATH:/opt/bin:/usr/local/bin:/usr/local/sbin:/usr/local/freeswitch/bin"
-	if [ -d /usr/src/freeswitch.git/support-d/utils ]; then
-	    export PATH="/usr/src/freeswitch.git/support-d/utils:$PATH"
+	export PATH="$PATH:/opt/bin:/usr/local/bin:/usr/local/sbin:/usr/local/fluxpbx/bin"
+	if [ -d /usr/src/fluxpbx.git/support-d/utils ]; then
+	    export PATH="/usr/src/fluxpbx.git/support-d/utils:$PATH"
 	fi
-	export PCVAR=`find /usr -name freeswitch.pc | grep -v build/freeswitch.pc | sed -e ':a' -e 'N' -e 's/\n/:/g'`
+	export PCVAR=`find /usr -name fluxpbx.pc | grep -v build/fluxpbx.pc | sed -e ':a' -e 'N' -e 's/\n/:/g'`
 	if [ -n "$PCVAR" ]; then
 	    export PCDIR=${PCVAR%/*}
 	    export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PCDIR:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
-	    export localstatedir=`pkg-config freeswitch --variable=localstatedir`
-	    export sysconfdir=`pkg-config freeswitch --variable=sysconfdir`
-	    export logfiledir=`pkg-config freeswitch --variable=logfiledir`
-	    export grammardir=`pkg-config freeswitch --variable=grammardir`
-	    export runtimedir=`pkg-config freeswitch --variable=runtimedir`
-	    export libexecdir=`pkg-config freeswitch --variable=libexecdir`
-	    export exec_prefix=`pkg-config freeswitch --variable=exec_prefix`
-	    export modulesdir=`pkg-config freeswitch --variable=modulesdir`
-	    export bindir=`pkg-config freeswitch --variable=bindir`
-	    export dbdir=`pkg-config freeswitch --variable=dbdir`
-	    export recordingsdir=`pkg-config freeswitch --variable=recordingsdir`
-	    export prefix=`pkg-config freeswitch --variable=prefix`
-	    export libdir=`pkg-config freeswitch --variable=libdir`
-	    export scriptdir=`pkg-config freeswitch --variable=scriptdir`
-	    export includedir=`pkg-config freeswitch --variable=includedir`
-	    export htdocsdir=`pkg-config freeswitch --variable=htdocsdir`
-	    export soundsdir=`pkg-config freeswitch --variable=soundsdir`
+	    export localstatedir=`pkg-config fluxpbx --variable=localstatedir`
+	    export sysconfdir=`pkg-config fluxpbx --variable=sysconfdir`
+	    export logfiledir=`pkg-config fluxpbx --variable=logfiledir`
+	    export grammardir=`pkg-config fluxpbx --variable=grammardir`
+	    export runtimedir=`pkg-config fluxpbx --variable=runtimedir`
+	    export libexecdir=`pkg-config fluxpbx --variable=libexecdir`
+	    export exec_prefix=`pkg-config fluxpbx --variable=exec_prefix`
+	    export modulesdir=`pkg-config fluxpbx --variable=modulesdir`
+	    export bindir=`pkg-config fluxpbx --variable=bindir`
+	    export dbdir=`pkg-config fluxpbx --variable=dbdir`
+	    export recordingsdir=`pkg-config fluxpbx --variable=recordingsdir`
+	    export prefix=`pkg-config fluxpbx --variable=prefix`
+	    export libdir=`pkg-config fluxpbx --variable=libdir`
+	    export scriptdir=`pkg-config fluxpbx --variable=scriptdir`
+	    export includedir=`pkg-config fluxpbx --variable=includedir`
+	    export htdocsdir=`pkg-config fluxpbx --variable=htdocsdir`
+	    export soundsdir=`pkg-config fluxpbx --variable=soundsdir`
 	else
 	    export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 	fi
     fi
     if [ "${UNAME}" = "SunOS" ]; then
-	export PATH="$PATH:/opt/64/bin:/opt/bin:/usr/local/bin:/usr/local/sbin:/usr/local/freeswitch/bin"
+	export PATH="$PATH:/opt/64/bin:/opt/bin:/usr/local/bin:/usr/local/sbin:/usr/local/fluxpbx/bin"
 	export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/64/lib/pkgconfig:/usr/lib/amd64/pkgconfig:/opt/lib/pkgconfig:/usr/lib/pkgconfig
     fi
     if [ "${UNAME}" = "OpenBSD" ]; then
-	export PATH="$PATH:/usr/local/freeswitch/bin"
+	export PATH="$PATH:/usr/local/fluxpbx/bin"
 	export AUTOCONF_VERSION=2.69
 	export AUTOMAKE_VERSION=1.13
 	export LIBTOOL=/usr/local/bin/libtoolize
@@ -50,16 +50,16 @@ if [ "`id -u`" = "0" ]; then
 	export PKG_PATH=http://openbsd.mirrors.pair.com/`uname -r`/packages/`machine -a`/
     fi
     if [ "${UNAME}" = "NetBSD" ]; then
-	export PATH="$PATH:/usr/local/freeswitch/bin"
+	export PATH="$PATH:/usr/local/fluxpbx/bin"
 	export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig:/usr/pkg/lib/pkgconfig
 	export PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/`uname -m`/`uname -r`/All/
     fi
     if [ "${UNAME}" = "FreeBSD" ]; then
-	export PATH="$PATH:/usr/local/freeswitch/bin"
+	export PATH="$PATH:/usr/local/fluxpbx/bin"
 	export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig:/usr/pkg/lib/pkgconfig
     fi
     if [ "${UNAME}" = "DragonFly" ]; then
-	export PATH="$PATH:/usr/local/freeswitch/bin"
+	export PATH="$PATH:/usr/local/fluxpbx/bin"
 	export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig:/usr/pkg/lib/pkgconfig
     fi
 fi
@@ -92,9 +92,9 @@ export LESSCHARSET="latin1"
 export LESS="-R"
 export CHARSET="ISO-8859-1"
 export PS1='\n\[\033[01;31m\]\u@\h\[\033[01;36m\] [\d \@] \[\033[01;33m\] \w\n\[\033[00m\]<\#>:'
-if [ -f /usr/src/freeswitch.git/support-d/git-prompt.sh ]; then
-    . /usr/src/freeswitch.git/support-d/git-prompt.sh
-    . /usr/src/freeswitch.git/support-d/git-completion.bash
+if [ -f /usr/src/fluxpbx.git/support-d/git-prompt.sh ]; then
+    . /usr/src/fluxpbx.git/support-d/git-prompt.sh
+    . /usr/src/fluxpbx.git/support-d/git-completion.bash
     export PS1='\n\[\033[01;31m\]\u@\h\[\033[01;36m\] [\d \@] \[\033[01;33m\] \w$(__git_ps1)\n\[\033[00m\]<\#>:'
 fi
 export PS2="\[\033[1m\]> \[\033[0m\]"
@@ -115,29 +115,29 @@ alias eamcs='emacs'
 alias emcas='emacs'
 alias meacs='emacs'
 alias mecas='emacs'
-alias bgit='git commit --author "Brian West <brian@freeswitch.org>"'
+alias bgit='git commit --author "Brian West <brian@fluxpbx.org>"'
 alias mgit='git commit --author "Mike Jerris <mike@jerris.com>"'
-alias tgit='git commit --author "Anthony Minessale <anthm@freeswitch.org>"'
+alias tgit='git commit --author "Anthony Minessale <anthm@fluxpbx.org>"'
 alias dp='emacs $sysconfdir/dialplan/default.xml'
-alias go='$bindir/freeswitch -nonat'
-alias fstop='top -p `cat $runtimedir/freeswitch.pid`'
-alias fsgcore='gcore `cat $runtimedir/freeswitch.pid` && top -H -n1 -b > core.`cat $runtimedir/freeswitch.pid`.txt'
-alias fsgdb='gdb $bindir/freeswitch `cat $runtimedir/freeswitch.pid`'
-alias fscore='gdb $bindir/freeswitch `ls -rt core.* | tail -n1`'
+alias go='$bindir/fluxpbx -nonat'
+alias fstop='top -p `cat $runtimedir/fluxpbx.pid`'
+alias fsgcore='gcore `cat $runtimedir/fluxpbx.pid` && top -H -n1 -b > core.`cat $runtimedir/fluxpbx.pid`.txt'
+alias fsgdb='gdb $bindir/fluxpbx `cat $runtimedir/fluxpbx.pid`'
+alias fscore='gdb $bindir/fluxpbx `ls -rt core.* | tail -n1`'
 alias emacs='emacs -nw'
 
 if [ "${UNAME}" = "Linux" ]; then
-    alias govg='valgrind --tool=memcheck --log-file=vg.log --leak-check=full --leak-resolution=high --show-reachable=yes .libs/freeswitch -vg'
+    alias govg='valgrind --tool=memcheck --log-file=vg.log --leak-check=full --leak-resolution=high --show-reachable=yes .libs/fluxpbx -vg'
     alias jitteron='tc qdisc add dev eth0 root handle 1: netem delay 40ms 20ms ; tc qdisc add dev eth0 parent 1:1 pfifo limit 1000'
     alias jitteroff='tc qdisc del dev eth0 root netem'
 fi
 
-# Auto Update the .bashrc if hostname contains freeswitch.org
-if [[ $(hostname) =~ "freeswitch.org" ]]; then
-    if [ -f /usr/src/freeswitch.git/support-d/.bashrc ]; then  
-	/usr/bin/diff --brief <(sort /usr/src/freeswitch.git/support-d/.bashrc) <(sort ~/.bashrc) >/dev/null
+# Auto Update the .bashrc if hostname contains fluxpbx.org
+if [[ $(hostname) =~ "fluxpbx.org" ]]; then
+    if [ -f /usr/src/fluxpbx.git/support-d/.bashrc ]; then  
+	/usr/bin/diff --brief <(sort /usr/src/fluxpbx.git/support-d/.bashrc) <(sort ~/.bashrc) >/dev/null
 	if [ $? -eq 1 ]; then
-	    /bin/cp -f /usr/src/freeswitch.git/support-d/.bashrc ~/
+	    /bin/cp -f /usr/src/fluxpbx.git/support-d/.bashrc ~/
 	    echo ".bashrc updated."
 	    source ~/.bashrc
 	fi

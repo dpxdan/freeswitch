@@ -3,7 +3,7 @@
 # analyze-debug-alloc.pl
 # generate allocation report by processing log files
 
-# Note that this script is only useful when run against freeswitch log files
+# Note that this script is only useful when run against fluxpbx log files
 # produced when server is running with DEBUG_ALLOC and DEBUG_ALLOC2 set.
 # It's purely for diagnosing memory leaks.
 
@@ -12,8 +12,8 @@ use JSON;
 
 my $debug = 0;
 
-my @logs = sort glob("freeswitch.log.*");
-push( @logs, "freeswitch.log" );
+my @logs = sort glob("fluxpbx.log.*");
+push( @logs, "fluxpbx.log" );
 
 my %pools = ();
 

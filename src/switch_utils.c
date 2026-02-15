@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Juan Jose Comellas <juanjo@comellas.org>
  * Seven Du <dujinfang@gmail.com>
  * Windy Wang <xiaofengcanyuexp@163.com>
@@ -1231,7 +1231,7 @@ SWITCH_DECLARE(switch_bool_t) switch_simple_email(const char *to,
 
 			switch_snprintf(buf, B64BUFFLEN,
 							"\n\n--%s\nContent-Type: %s; name=\"%s\"\n"
-							"Content-ID: <ATTACHED@freeswitch.org>\n"
+							"Content-ID: <ATTACHED@fluxpbx.org>\n"
 							"Content-Transfer-Encoding: base64\n"
 							"Content-Description: Sound attachment.\n"
 							"Content-Disposition: attachment; filename=\"%s\"\n\n", bound, mime_type, stipped_file, stipped_file);
@@ -1292,7 +1292,7 @@ SWITCH_DECLARE(switch_bool_t) switch_simple_email(const char *to,
 	}
 
 	if (zstr(from)) {
-		from = "freeswitch";
+		from = "fluxpbx";
 	}
 
 	{

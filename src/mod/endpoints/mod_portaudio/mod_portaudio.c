@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,18 +14,18 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Moises Silva <moises.silva@gmail.com> (Multiple endpoints work sponsored by Comrex Corporation)
- * Raymond Chandler <intralanman@freeswitch.org>
+ * Raymond Chandler <intralanman@fluxpbx.org>
  *
  *
  * mod_portaudio.c -- PortAudio Endpoint Module

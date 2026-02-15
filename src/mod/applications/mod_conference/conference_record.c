@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,24 +14,24 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Neal Horman <neal at wanlink dot com>
  * Bret McDanel <trixter at 0xdecafbad dot com>
- * Dale Thatcher <freeswitch at dalethatcher dot com>
+ * Dale Thatcher <fluxpbx at dalethatcher dot com>
  * Chris Danielson <chris at maxpowersoft dot com>
  * Rupa Schomaker <rupa@rupa.com>
  * David Weekly <david@weekly.org>
  * Joao Mesquita <jmesquita@gmail.com>
- * Raymond Chandler <intralanman@freeswitch.org>
+ * Raymond Chandler <intralanman@fluxpbx.org>
  * Seven Du <dujinfang@gmail.com>
  * Emmanuel Schmidbauer <e.schmidbauer@gmail.com>
  * William King <william.king@quentustech.com>
@@ -313,7 +313,7 @@ void *SWITCH_THREAD_FUNC conference_record_thread_run(switch_thread_t *thread, v
 	}
 
 	switch_core_file_set_string(&member->rec->fh, SWITCH_AUDIO_COL_STR_ARTIST, 
-			!zstr(conference->recording_metadata)?conference->recording_metadata:"FreeSWITCH mod_conference Software Conference Module");
+			!zstr(conference->recording_metadata)?conference->recording_metadata:"FluxPBX mod_conference Software Conference Module");
 
 	if (test_eflag(conference, EFLAG_RECORD) &&
 		switch_event_create_subclass(&event, SWITCH_EVENT_CUSTOM, CONF_EVENT_MAINT) == SWITCH_STATUS_SUCCESS) {

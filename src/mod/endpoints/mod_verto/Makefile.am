@@ -6,7 +6,7 @@ mod_LTLIBRARIES       = mod_verto.la
 mod_verto_la_SOURCES  = mod_verto.c mcast/mcast.c
 mod_verto_la_CFLAGS   = -D__EXTENSIONS__ -D_GNU_SOURCE $(AM_CFLAGS) $(KS_CFLAGS)
 mod_verto_la_CPPFLAGS = -I. -I$(switch_srcdir)/src/mod/endpoints/mod_verto/mcast
-mod_verto_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(KS_LIBS)
+mod_verto_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(KS_LIBS)
 mod_verto_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 if HAVE_PERL

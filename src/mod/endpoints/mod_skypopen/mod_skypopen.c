@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2011, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2011, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -3241,7 +3241,7 @@ int next_port(void)
 }
 
 #ifndef WIN32
-// CLOUDTREE (THomas Hazel) - is there a capable freeswitch list?
+// CLOUDTREE (THomas Hazel) - is there a capable fluxpbx list?
 struct SkypopenHandles *skypopen_list_add(struct SkypopenList *list, struct SkypopenHandles *handle)
 {
 	switch_mutex_lock(globals.list_mutex);
@@ -3273,7 +3273,7 @@ struct SkypopenHandles *skypopen_list_add(struct SkypopenList *list, struct Skyp
 	return handle;
 }
 
-// CLOUDTREE (THomas Hazel) - is there a capable freeswitch list?
+// CLOUDTREE (THomas Hazel) - is there a capable fluxpbx list?
 struct SkypopenHandles *skypopen_list_remove_by_value(struct SkypopenList *list, Display * display)
 {
 	struct SkypopenHandles *iter;
@@ -3318,7 +3318,7 @@ struct SkypopenHandles *skypopen_list_remove_by_value(struct SkypopenList *list,
 	return handle;
 }
 
-// CLOUDTREE (THomas Hazel) - is there a capable freeswitch list?
+// CLOUDTREE (THomas Hazel) - is there a capable fluxpbx list?
 struct SkypopenHandles *skypopen_list_remove_by_reference(struct SkypopenList *list, struct SkypopenHandles *handle)
 {
 	private_t *tech_pvt = NULL;
@@ -3359,7 +3359,7 @@ struct SkypopenHandles *skypopen_list_remove_by_reference(struct SkypopenList *l
 	return handle;
 }
 
-// CLOUDTREE (THomas Hazel) - is there a capable freeswitch list?
+// CLOUDTREE (THomas Hazel) - is there a capable fluxpbx list?
 #ifdef XIO_ERROR_BY_UCONTEXT
 struct SkypopenHandles *skypopen_list_find(struct SkypopenList *list, struct SkypopenHandles *find)
 {
@@ -3384,7 +3384,7 @@ struct SkypopenHandles *skypopen_list_find(struct SkypopenList *list, struct Sky
 }
 #endif
 
-// CLOUDTREE (THomas Hazel) - is there a capable freeswitch list?
+// CLOUDTREE (THomas Hazel) - is there a capable fluxpbx list?
 int skypopen_list_size(struct SkypopenList *list)
 {
 	return list->entries;

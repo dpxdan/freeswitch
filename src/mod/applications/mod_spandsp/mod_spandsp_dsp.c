@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2016, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2016, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH mod_spandsp.
+ * The Original Code is FluxPBX mod_spandsp.
  *
  * The Initial Developer of the Original Code is
  * Massimo Cetra <devel@navynet.it>
@@ -24,8 +24,8 @@
  *
  * Contributor(s):
  *
- * Brian West <brian@freeswitch.org>
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Brian West <brian@fluxpbx.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Steve Underwood <steveu@coppice.org>
  * Antonio Gallo <agx@linux.it>
  * Christopher M. Rienzo <chris@rienzo.com>
@@ -968,7 +968,7 @@ switch_status_t callprogress_detector_stop(switch_core_session_t *session)
 }
 
 /**
- * Called when FreeSWITCH loads the module
+ * Called when FluxPBX loads the module
  */
 switch_status_t mod_spandsp_dsp_load(switch_loadable_module_interface_t **module_interface, switch_memory_pool_t *pool)
 {
@@ -977,7 +977,7 @@ switch_status_t mod_spandsp_dsp_load(switch_loadable_module_interface_t **module
 }
 
 /**
- * Called when FreeSWITCH stops the module
+ * Called when FluxPBX stops the module
  */
 void mod_spandsp_dsp_shutdown(void)
 {

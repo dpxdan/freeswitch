@@ -30,14 +30,14 @@ if($action eq 'log') {
 	    print $q->header();
 	    if(check_call($uuid)) {
 		my $pages = pages_sent($uuid);
-		print $q->start_html(-title=> 'FreeSWITCH Fax Results',
+		print $q->start_html(-title=> 'FluxPBX Fax Results',
 				     -head =>meta({-http_equiv => 'Refresh',
 						   -content => "10;fax.cgi?uuid=$uuid&action=log"})),
 		font({-color=>'black', -face=>'Arial', -size=>'4'}),
 		"$pages pages(s) sent , Waiting on fax to complete.  Please Wait! Page will reload again in 10 seconds.",br,br,
 		end_html;
 	    } else {
-		print $q->start_html(-title=> 'FreeSWITCH Fax Failed'),
+		print $q->start_html(-title=> 'FluxPBX Fax Failed'),
 		font({-color=>'black', -face=>'Arial', -size=>'4'}),
 		"Fax call appears to have failed.",br,br,
 		end_html;
@@ -68,9 +68,9 @@ if($action eq 'log') {
 	    $refresh = 60;
 	} 
 	
-	my $e   = $c->sendRecv("api bgapi originate {fax_ident='FreeSWITCH Test Fax',fax_header='FreeSWITCH Test Fax',api_hangup_hook='system /bin/grep $uuid  /usr/local/freeswitch/log/freeswitch.log > /tmp/$uuid.log',origination_uuid=$uuid,fax_disable_v17=$v17,fax_use_ecm=$ecm,origination_caller_id_number=$cid_num,fax_verbose=true,fax_enable_t38=$t38,ignore_early_media=true,fax_enable_t38_request=$t38,t38_passthru=false,absolute_codec_string=PCMU}sofia/gateway/$gateway/$fax &txfax($file)");
+	my $e   = $c->sendRecv("api bgapi originate {fax_ident='FluxPBX Test Fax',fax_header='FluxPBX Test Fax',api_hangup_hook='system /bin/grep $uuid  /usr/local/fluxpbx/log/fluxpbx.log > /tmp/$uuid.log',origination_uuid=$uuid,fax_disable_v17=$v17,fax_use_ecm=$ecm,origination_caller_id_number=$cid_num,fax_verbose=true,fax_enable_t38=$t38,ignore_early_media=true,fax_enable_t38_request=$t38,t38_passthru=false,absolute_codec_string=PCMU}sofia/gateway/$gateway/$fax &txfax($file)");
 	my $res = $e->getBody();
-	print $q->start_html(-title=> 'FreeSWITCH Fax Results',
+	print $q->start_html(-title=> 'FluxPBX Fax Results',
 			     -head =>meta({
 				 -http_equiv => 'Refresh', 
 				 -content => "$refresh;fax.cgi?uuid=$uuid&action=log"})),br
@@ -92,7 +92,7 @@ if($action eq 'log') {
 
     print $q->header;
 
-    print $q->start_html(-title=> 'FreeSWITCH Test Fax'), start_form,
+    print $q->start_html(-title=> 'FluxPBX Test Fax'), start_form,
     img( {-src => "data:image/png;base64," . <DATA>  }),br,br,font({-color=>'black', -face=>'Arial', -size=>'4'}),
     "Call will be coming from $cid_num",br,br,
     "Customer Fax Number: ", textfield('fax'),br,
@@ -123,7 +123,7 @@ sub pages_sent {
     return $res;
 }
 
-# Query FreeSWITCH for gateway list to populate the test rig.
+# Query FluxPBX for gateway list to populate the test rig.
 sub load_gateways {
     my $e     = $c->api('sofia xmlstatus gateways');
     my $gwxml = $e->getBody();

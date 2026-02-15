@@ -46,7 +46,7 @@ my $scgi = SCGI->new($socket, blocking => 1);
 
 
 my $xml = qq#
-<document type="freeswitch/xml">
+<document type="fluxpbx/xml">
   <section name="dialplan">
    <context name="default">
      <extension name="foo">

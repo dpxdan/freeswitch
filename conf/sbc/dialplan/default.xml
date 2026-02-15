@@ -9,7 +9,7 @@
     will build the domains acl using this value.
 -->
 
-<!-- http://wiki.freeswitch.org/wiki/Dialplan_XML -->
+<!-- http://wiki.fluxpbx.org/wiki/Dialplan_XML -->
 <include>
   <context name="default">
 
@@ -287,10 +287,10 @@
       </condition>
     </extension>
     
-    <!-- dial the freeswitch conference via SIP-->
-    <extension name="freeswitch_public_conf_via_sip">
+    <!-- dial the fluxpbx conference via SIP-->
+    <extension name="fluxpbx_public_conf_via_sip">
       <condition field="destination_number" expression="^9(888|1616)$">
-	<action application="bridge" data="sofia/${use_profile}/$1@conference.freeswitch.org"/>
+	<action application="bridge" data="sofia/${use_profile}/$1@conference.fluxpbx.org"/>
       </condition>
     </extension>
 
@@ -307,7 +307,7 @@
 
 	<!--Add as many of these as you need, These are the people you are going to call-->
 	<action application="conference_set_auto_outcall" data="sofia/gateway/$${default_provider}/19184238080"/>
-	<action application="conference_set_auto_outcall" data="sofia/default/888@conference.freeswitch.org"/>
+	<action application="conference_set_auto_outcall" data="sofia/default/888@conference.fluxpbx.org"/>
 
 	<action application="conference" data="cool@default"/>
       </condition>
@@ -325,7 +325,7 @@
     <!-- Create a conference on the fly and pull someone in at the same time. --> 
     <extension name="dyanmic conference">
       <condition field="destination_number" expression="^5001$">
-	<action application="conference" data="bridge:mydynaconf:sofia/${use_profile}/1234@conference.freeswitch.org"/>
+	<action application="conference" data="bridge:mydynaconf:sofia/${use_profile}/1234@conference.fluxpbx.org"/>
       </condition>
     </extension>
 

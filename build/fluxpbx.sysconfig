@@ -1,0 +1,8 @@
+## Type:                string
+## Default:             ""
+## Config:              ""
+## ServiceRestart:      fluxpbx
+#
+# if not empty: parameters for fluxpbx
+#
+FLUXPBX_PARAMS=""

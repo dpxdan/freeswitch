@@ -49,8 +49,8 @@ Rules:
    License: MPL-1.1 or BSD-like
   -
    Glob: src/include/switch_cpp.h
-   Matches: Author[:]\sYossi\sNeiman\s<freeswitch@cartissolutions.com>,\s\(C\)\s2007////\sCopyright[:]
-   Copyright: 2007 Yossi Neiman <freeswitch@cartissolutions.com>
+   Matches: Author[:]\sYossi\sNeiman\s<fluxpbx@cartissolutions.com>,\s\(C\)\s2007////\sCopyright[:]
+   Copyright: 2007 Yossi Neiman <fluxpbx@cartissolutions.com>
   -
    Glob: libs/win32/sqlite/*.[ch]
    Matches: The\sauthor\sdisclaims\scopyright\sto\sthis\ssource\scode.

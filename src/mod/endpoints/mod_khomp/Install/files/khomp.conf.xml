@@ -21,7 +21,7 @@ Name of the dialplan module in use.
 
 <!--
 Enable/disable generalized echo cancellation in the channel, for calls
-passing inside FreeSWITCH (disabled for bridged calls).
+passing inside FluxPBX (disabled for bridged calls).
 (default = yes)
 
 <param name="echo-canceller" value="yes"/>
@@ -37,7 +37,7 @@ can make line noise really loud.
 
 <!--
 Enable/disable sending DTMFs out-band as a way to pass detected DTMFs to
-FreeSWITCH. Needed if FreeSWITCH generates digits for us in bridge application
+FluxPBX. Needed if FluxPBX generates digits for us in bridge application
 or is being used for IVR ("URA", in pt_BR).
 (default = yes)
 
@@ -78,8 +78,8 @@ Enable/disable pulse detection (reported as DTMF digits).
 
 <!--
 Enable correct standard following for R2/MFC protocol. Disabled by default,
-as using FreeSWITCH behind a PBX may timeout all outgoing calls without this.
-However, you can set this to "yes" if FreeSWITCH is directly connected to a
+as using FluxPBX behind a PBX may timeout all outgoing calls without this.
+However, you can set this to "yes" if FluxPBX is directly connected to a
 CO (central office) or to a fast signaling PBX, and have a correct
 behaviour for condition obtaining/reporting.
 (default = no)

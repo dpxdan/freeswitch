@@ -6,7 +6,7 @@ if HAVE_FLITE
 mod_LTLIBRARIES = mod_flite.la
 mod_flite_la_SOURCES  = mod_flite.c
 mod_flite_la_CFLAGS   = $(AM_CFLAGS) $(FLITE_CFLAGS)
-mod_flite_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(FLITE_LIBS)
+mod_flite_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(FLITE_LIBS)
 mod_flite_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 else

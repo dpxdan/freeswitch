@@ -8,12 +8,12 @@
 ;AppId={{ED55656F-D567-4B3D-A0B9-617CAB13D519}
 AppName=FsGui
 AppVerName=FsGui svn 16045
-AppPublisherURL=http://wiki.freeswitch.org/wiki/Fsgui
-AppSupportURL=http://wiki.freeswitch.org/wiki/Fsgui
-AppUpdatesURL=http://wiki.freeswitch.org/wiki/Fsgui
-DefaultDirName=C:\FreeSWITCH
-DefaultGroupName=FreeSWITCH
-SetupIconFile=freeswitch.ico
+AppPublisherURL=http://wiki.fluxpbx.org/wiki/Fsgui
+AppSupportURL=http://wiki.fluxpbx.org/wiki/Fsgui
+AppUpdatesURL=http://wiki.fluxpbx.org/wiki/Fsgui
+DefaultDirName=C:\FluxPBX
+DefaultGroupName=FluxPBX
+SetupIconFile=fluxpbx.ico
 OutputBaseFilename=fsgui
 Compression=lzma
 SolidCompression=yes
@@ -27,14 +27,14 @@ Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:Ad
 
 [Files]
 
-Source: freeswitch.ico; DestDir: {app}
-Source: G:\freeswitch_dev\contrib\jmesquita\fsgui\bin\fsgui.exe; DestDir: {app}; Flags: ignoreversion
-Source: G:\freeswitch_dev\contrib\jmesquita\fsgui\bin\*; DestDir: {app}; Flags: ignoreversion recursesubdirs createallsubdirs onlyifdoesntexist
+Source: fluxpbx.ico; DestDir: {app}
+Source: G:\fluxpbx_dev\contrib\jmesquita\fsgui\bin\fsgui.exe; DestDir: {app}; Flags: ignoreversion
+Source: G:\fluxpbx_dev\contrib\jmesquita\fsgui\bin\*; DestDir: {app}; Flags: ignoreversion recursesubdirs createallsubdirs onlyifdoesntexist
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: {group}\FsGui; Filename: {app}\fsgui.exe; IconFilename: {app}\freeswitch.ico; IconIndex: 0; WorkingDir: {app}\plugins
-Name: {commondesktop}\FsGui; Filename: {app}\fsgui.exe; Tasks: desktopicon; IconFilename: {app}\freeswitch.ico; IconIndex: 0; WorkingDir: {app}\plugins
+Name: {group}\FsGui; Filename: {app}\fsgui.exe; IconFilename: {app}\fluxpbx.ico; IconIndex: 0; WorkingDir: {app}\plugins
+Name: {commondesktop}\FsGui; Filename: {app}\fsgui.exe; Tasks: desktopicon; IconFilename: {app}\fluxpbx.ico; IconIndex: 0; WorkingDir: {app}\plugins
 
 [Run]
 Filename: {app}\fsgui.exe; Description: {cm:LaunchProgram,FsGui}; Flags: nowait postinstall skipifsilent

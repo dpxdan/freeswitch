@@ -158,7 +158,7 @@
     <ProjectReference Include="..\..\..\..\libs\win32\libcbt\libcbt.2017.vcxproj">
       <Project>{77bc1dd2-c9a1-44d7-bffa-1320370cacb9}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2017.vcxproj">
+    <ProjectReference Include="..\..\..\..\w32\Library\FluxPbxCore.2017.vcxproj">
       <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

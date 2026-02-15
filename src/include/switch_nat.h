@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,17 +14,17 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
- * Brian K. West <brian@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
+ * Brian K. West <brian@fluxpbx.org>
  *
  *
  * switch_nat.h NAT Traversal via NAT-PMP or uPNP
@@ -35,8 +35,8 @@
   \ingroup core1
   \{
 */
-#ifndef FREESWITCH_NAT_H
-#define FREESWITCH_NAT_H
+#ifndef FLUXPBX_NAT_H
+#define FLUXPBX_NAT_H
 
 SWITCH_BEGIN_EXTERN_C typedef enum {
 	SWITCH_NAT_TYPE_NONE,

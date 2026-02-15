@@ -27,7 +27,7 @@ fi
 mod_dir="../src/mod"
 conf_dir="../conf"
 lang_dir="../conf/vanilla/lang"
-fs_description="FreeSWITCH is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media."
+fs_description="FluxPBX is a scalable open source cross-platform telephony platform designed to route and interconnect popular communication protocols using audio, video, text or any other form of media."
 mod_build_depends="." mod_depends="." mod_recommends="." mod_suggests="."
 supported_debian_distros="wheezy jessie stretch buster bullseye bookworm sid"
 supported_ubuntu_distros="trusty utopic xenial"
@@ -101,31 +101,31 @@ avoid_mods_xenial=(
   loggers/mod_raven
 )
 manual_pkgs=(
-freeswitch-all
-freeswitch
-libfreeswitch1
-freeswitch-meta-bare
-freeswitch-meta-default
-freeswitch-meta-vanilla
-freeswitch-meta-sorbet
-freeswitch-meta-all
-freeswitch-meta-codecs
-freeswitch-meta-conf
-freeswitch-meta-lang
-freeswitch-meta-mod-say
-freeswitch-all-dbg
-freeswitch-dbg
-libfreeswitch1-dbg
-libfreeswitch-dev
-freeswitch-doc
-freeswitch-lang
-freeswitch-timezones
+fluxpbx-all
+fluxpbx
+libfluxpbx1
+fluxpbx-meta-bare
+fluxpbx-meta-default
+fluxpbx-meta-vanilla
+fluxpbx-meta-sorbet
+fluxpbx-meta-all
+fluxpbx-meta-codecs
+fluxpbx-meta-conf
+fluxpbx-meta-lang
+fluxpbx-meta-mod-say
+fluxpbx-all-dbg
+fluxpbx-dbg
+libfluxpbx1-dbg
+libfluxpbx-dev
+fluxpbx-doc
+fluxpbx-lang
+fluxpbx-timezones
 )
 
 if [ ${use_sysvinit} = "true" ]; then
-    manual_pkgs=( "${manual_pkgs[@]}" "freeswitch-sysvinit" )
+    manual_pkgs=( "${manual_pkgs[@]}" "fluxpbx-sysvinit" )
 else
-    manual_pkgs=( "${manual_pkgs[@]}" "freeswitch-systemd" )
+    manual_pkgs=( "${manual_pkgs[@]}" "fluxpbx-systemd" )
 fi
 
 err () {
@@ -280,13 +280,13 @@ map_pkgs () {
   for x in "${manual_pkgs[@]}"; do
     $fsx $x
   done
-  map_pkgs_confs () { $fsx "freeswitch-conf-${conf//_/-}"; }
+  map_pkgs_confs () { $fsx "fluxpbx-conf-${conf//_/-}"; }
   map_confs map_pkgs_confs
-  map_pkgs_langs () { $fsx "freeswitch-lang-${lang//_/-}"; }
+  map_pkgs_langs () { $fsx "fluxpbx-lang-${lang//_/-}"; }
   map_langs map_pkgs_langs
   map_pkgs_mods () {
-    $fsx "freeswitch-${module//_/-}"
-    $fsx "freeswitch-${module//_/-}-dbg"; }
+    $fsx "fluxpbx-${module//_/-}"
+    $fsx "fluxpbx-${module//_/-}-dbg"; }
   map_modules map_pkgs_mods
 }
 
@@ -305,7 +305,7 @@ print_source_control () {
       debhelper_dep=${debhelper_dep}", dh-systemd | debhelper (>= 8.0.0)"
   fi
   cat <<EOF
-Source: freeswitch
+Source: fluxpbx
 Section: comm
 Priority: optional
 Maintainer: SignalWire, Inc <support@signalwire.com>
@@ -337,51 +337,51 @@ Build-Depends:
  libcurl4-openssl-dev | libcurl4-gnutls-dev | libcurl-dev,
  bison, zlib1g-dev, libsofia-sip-ua-dev (>= 1.13.17),
  libspandsp3-dev,
-# used to format the private freeswitch apt-repo key properly
+# used to format the private fluxpbx apt-repo key properly
  gnupg,
 # module build-depends
  $(debian_wrap "${mod_build_depends}")
 Standards-Version: 3.9.3
-Homepage: https://freeswitch.org/
-Vcs-Git: https://github.com/signalwire/freeswitch.git
-Vcs-Browser: https://github.com/signalwire/freeswitch
+Homepage: https://fluxpbx.org/
+Vcs-Git: https://github.com/signalwire/fluxpbx.git
+Vcs-Browser: https://github.com/signalwire/fluxpbx
 
 EOF
 }
 
 print_core_control () {
 cat <<EOF
-Package: freeswitch-all
+Package: fluxpbx-all
 Architecture: amd64 armhf
-Depends: freeswitch-meta-all (= \${binary:Version}), freeswitch-meta-all-dbg (= \${binary:Version})
-Conflicts: freeswitch-all (<= 1.6.7)
+Depends: fluxpbx-meta-all (= \${binary:Version}), fluxpbx-meta-all-dbg (= \${binary:Version})
+Conflicts: fluxpbx-all (<= 1.6.7)
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
- This is a package which depends on all packaged FreeSWITCH modules.
+ This is a package which depends on all packaged FluxPBX modules.
 
-Package: freeswitch
+Package: fluxpbx
 Architecture: amd64 armhf
 Depends: \${shlibs:Depends}, \${perl:Depends}, \${misc:Depends},
- libfreeswitch1 (= \${binary:Version})
+ libfluxpbx1 (= \${binary:Version})
 Recommends:
-Suggests: freeswitch-dbg
-Conflicts: freeswitch-all (<= 1.6.7)
+Suggests: fluxpbx-dbg
+Conflicts: fluxpbx-all (<= 1.6.7)
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
- This package contains the FreeSWITCH core.
+ This package contains the FluxPBX core.
 
-Package: libfreeswitch1
+Package: libfluxpbx1
 Architecture: amd64 armhf
 Depends: \${shlibs:Depends}, \${misc:Depends}, libsofia-sip-ua0 (>= 1.13.17)
 Recommends:
-Suggests: libfreeswitch1-dbg
-Conflicts: freeswitch-all (<= 1.6.7)
+Suggests: libfluxpbx1-dbg
+Conflicts: fluxpbx-all (<= 1.6.7)
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
- This package contains the FreeSWITCH core library.
+ This package contains the FluxPBX core library.
 
 Package: python-esl
 Section: python
@@ -390,7 +390,7 @@ Depends: \${shlibs:Depends}, \${misc:Depends}, \${python:Depends}
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
- This package contains the Python binding for FreeSWITCH Event Socket Library (ESL).
+ This package contains the Python binding for FluxPBX Event Socket Library (ESL).
 
 Package: libesl-perl
 Section: perl
@@ -399,621 +399,621 @@ Depends: \${shlibs:Depends}, \${misc:Depends}, \${perl:Depends}
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
- This package contains the Perl binding for FreeSWITCH Event Socket Library (ESL).
+ This package contains the Perl binding for FluxPBX Event Socket Library (ESL).
 
-Package: freeswitch-meta-bare
+Package: fluxpbx-meta-bare
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version})
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version})
 Recommends:
- freeswitch-doc (= \${binary:Version}),
- freeswitch-mod-commands (= \${binary:Version}),
- freeswitch-init,
- freeswitch-lang (= \${binary:Version}),
- freeswitch-timezones (= \${binary:Version}),
- freeswitch-music,
- freeswitch-sounds
+ fluxpbx-doc (= \${binary:Version}),
+ fluxpbx-mod-commands (= \${binary:Version}),
+ fluxpbx-init,
+ fluxpbx-lang (= \${binary:Version}),
+ fluxpbx-timezones (= \${binary:Version}),
+ fluxpbx-music,
+ fluxpbx-sounds
 Suggests:
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on the packages needed for a very
- bare FreeSWITCH install.
+ bare FluxPBX install.
 
-Package: freeswitch-meta-default
+Package: fluxpbx-meta-default
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version}),
- freeswitch-mod-commands (= \${binary:Version}),
- freeswitch-mod-conference (= \${binary:Version}),
- freeswitch-mod-db (= \${binary:Version}),
- freeswitch-mod-dptools (= \${binary:Version}),
- freeswitch-mod-fifo (= \${binary:Version}),
- freeswitch-mod-hash (= \${binary:Version}),
- freeswitch-mod-pgsql (= \${binary:Version}),
- freeswitch-mod-spandsp (= \${binary:Version}),
- freeswitch-mod-voicemail (= \${binary:Version}),
- freeswitch-mod-dialplan-xml (= \${binary:Version}),
- freeswitch-mod-loopback (= \${binary:Version}),
- freeswitch-mod-sofia (= \${binary:Version}),
- freeswitch-mod-local-stream (= \${binary:Version}),
- freeswitch-mod-native-file (= \${binary:Version}),
- freeswitch-mod-sndfile (= \${binary:Version}),
- freeswitch-mod-tone-stream (= \${binary:Version}),
- freeswitch-mod-lua (= \${binary:Version}),
- freeswitch-mod-console (= \${binary:Version}),
- freeswitch-mod-say-en (= \${binary:Version})
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version}),
+ fluxpbx-mod-commands (= \${binary:Version}),
+ fluxpbx-mod-conference (= \${binary:Version}),
+ fluxpbx-mod-db (= \${binary:Version}),
+ fluxpbx-mod-dptools (= \${binary:Version}),
+ fluxpbx-mod-fifo (= \${binary:Version}),
+ fluxpbx-mod-hash (= \${binary:Version}),
+ fluxpbx-mod-pgsql (= \${binary:Version}),
+ fluxpbx-mod-spandsp (= \${binary:Version}),
+ fluxpbx-mod-voicemail (= \${binary:Version}),
+ fluxpbx-mod-dialplan-xml (= \${binary:Version}),
+ fluxpbx-mod-loopback (= \${binary:Version}),
+ fluxpbx-mod-sofia (= \${binary:Version}),
+ fluxpbx-mod-local-stream (= \${binary:Version}),
+ fluxpbx-mod-native-file (= \${binary:Version}),
+ fluxpbx-mod-sndfile (= \${binary:Version}),
+ fluxpbx-mod-tone-stream (= \${binary:Version}),
+ fluxpbx-mod-lua (= \${binary:Version}),
+ fluxpbx-mod-console (= \${binary:Version}),
+ fluxpbx-mod-say-en (= \${binary:Version})
 Recommends:
- freeswitch-init,
- freeswitch-lang (= \${binary:Version}),
- freeswitch-timezones (= \${binary:Version}),
- freeswitch-meta-codecs (= \${binary:Version}),
- freeswitch-music,
- freeswitch-sounds
+ fluxpbx-init,
+ fluxpbx-lang (= \${binary:Version}),
+ fluxpbx-timezones (= \${binary:Version}),
+ fluxpbx-meta-codecs (= \${binary:Version}),
+ fluxpbx-music,
+ fluxpbx-sounds
 Suggests:
- freeswitch-mod-cidlookup (= \${binary:Version}),
- freeswitch-mod-curl (= \${binary:Version}),
- freeswitch-mod-directory (= \${binary:Version}),
- freeswitch-mod-enum (= \${binary:Version}),
- freeswitch-mod-spy (= \${binary:Version}),
- freeswitch-mod-valet-parking (= \${binary:Version})
+ fluxpbx-mod-cidlookup (= \${binary:Version}),
+ fluxpbx-mod-curl (= \${binary:Version}),
+ fluxpbx-mod-directory (= \${binary:Version}),
+ fluxpbx-mod-enum (= \${binary:Version}),
+ fluxpbx-mod-spy (= \${binary:Version}),
+ fluxpbx-mod-valet-parking (= \${binary:Version})
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on the packages needed for a
- reasonably basic FreeSWITCH install.
+ reasonably basic FluxPBX install.
 
-Package: freeswitch-meta-vanilla
+Package: fluxpbx-meta-vanilla
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version}),
- freeswitch-init,
- freeswitch-mod-console (= \${binary:Version}),
- freeswitch-mod-logfile (= \${binary:Version}),
- freeswitch-mod-enum (= \${binary:Version}),
- freeswitch-mod-cdr-csv (= \${binary:Version}),
- freeswitch-mod-event-socket (= \${binary:Version}),
- freeswitch-mod-sofia (= \${binary:Version}),
- freeswitch-mod-loopback (= \${binary:Version}),
- freeswitch-mod-commands (= \${binary:Version}),
- freeswitch-mod-conference (= \${binary:Version}),
- freeswitch-mod-db (= \${binary:Version}),
- freeswitch-mod-dptools (= \${binary:Version}),
- freeswitch-mod-expr (= \${binary:Version}),
- freeswitch-mod-fifo (= \${binary:Version}),
- freeswitch-mod-hash (= \${binary:Version}),
- freeswitch-mod-pgsql (= \${binary:Version}),
- freeswitch-mod-voicemail (= \${binary:Version}),
- freeswitch-mod-esf (= \${binary:Version}),
- freeswitch-mod-fsv (= \${binary:Version}),
- freeswitch-mod-valet-parking (= \${binary:Version}),
- freeswitch-mod-httapi (= \${binary:Version}),
- freeswitch-mod-dialplan-xml (= \${binary:Version}),
- freeswitch-mod-dialplan-asterisk (= \${binary:Version}),
- freeswitch-mod-spandsp (= \${binary:Version}),
- freeswitch-mod-g723-1 (= \${binary:Version}),
- freeswitch-mod-g729 (= \${binary:Version}),
- freeswitch-mod-amr (= \${binary:Version}),
- freeswitch-mod-h26x (= \${binary:Version}),
- freeswitch-mod-sndfile (= \${binary:Version}),
- freeswitch-mod-native-file (= \${binary:Version}),
- freeswitch-mod-local-stream (= \${binary:Version}),
- freeswitch-mod-tone-stream (= \${binary:Version}),
- freeswitch-mod-lua (= \${binary:Version}),
- freeswitch-mod-say-en (= \${binary:Version}),
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version}),
+ fluxpbx-init,
+ fluxpbx-mod-console (= \${binary:Version}),
+ fluxpbx-mod-logfile (= \${binary:Version}),
+ fluxpbx-mod-enum (= \${binary:Version}),
+ fluxpbx-mod-cdr-csv (= \${binary:Version}),
+ fluxpbx-mod-event-socket (= \${binary:Version}),
+ fluxpbx-mod-sofia (= \${binary:Version}),
+ fluxpbx-mod-loopback (= \${binary:Version}),
+ fluxpbx-mod-commands (= \${binary:Version}),
+ fluxpbx-mod-conference (= \${binary:Version}),
+ fluxpbx-mod-db (= \${binary:Version}),
+ fluxpbx-mod-dptools (= \${binary:Version}),
+ fluxpbx-mod-expr (= \${binary:Version}),
+ fluxpbx-mod-fifo (= \${binary:Version}),
+ fluxpbx-mod-hash (= \${binary:Version}),
+ fluxpbx-mod-pgsql (= \${binary:Version}),
+ fluxpbx-mod-voicemail (= \${binary:Version}),
+ fluxpbx-mod-esf (= \${binary:Version}),
+ fluxpbx-mod-fsv (= \${binary:Version}),
+ fluxpbx-mod-valet-parking (= \${binary:Version}),
+ fluxpbx-mod-httapi (= \${binary:Version}),
+ fluxpbx-mod-dialplan-xml (= \${binary:Version}),
+ fluxpbx-mod-dialplan-asterisk (= \${binary:Version}),
+ fluxpbx-mod-spandsp (= \${binary:Version}),
+ fluxpbx-mod-g723-1 (= \${binary:Version}),
+ fluxpbx-mod-g729 (= \${binary:Version}),
+ fluxpbx-mod-amr (= \${binary:Version}),
+ fluxpbx-mod-h26x (= \${binary:Version}),
+ fluxpbx-mod-sndfile (= \${binary:Version}),
+ fluxpbx-mod-native-file (= \${binary:Version}),
+ fluxpbx-mod-local-stream (= \${binary:Version}),
+ fluxpbx-mod-tone-stream (= \${binary:Version}),
+ fluxpbx-mod-lua (= \${binary:Version}),
+ fluxpbx-mod-say-en (= \${binary:Version}),
 Recommends:
- freeswitch-lang (= \${binary:Version}),
- freeswitch-timezones (= \${binary:Version}),
- freeswitch-music,
- freeswitch-sounds,
- freeswitch-conf-vanilla (= \${binary:Version}),
+ fluxpbx-lang (= \${binary:Version}),
+ fluxpbx-timezones (= \${binary:Version}),
+ fluxpbx-music,
+ fluxpbx-sounds,
+ fluxpbx-conf-vanilla (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on the packages needed for
- running the FreeSWITCH vanilla example configuration.
+ running the FluxPBX vanilla example configuration.
 
-Package: freeswitch-meta-sorbet
+Package: fluxpbx-meta-sorbet
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version}),
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version}),
 Recommends:
- freeswitch-init,
- freeswitch-lang (= \${binary:Version}),
- freeswitch-timezones (= \${binary:Version}),
- freeswitch-meta-codecs (= \${binary:Version}),
- freeswitch-music,
- freeswitch-sounds,
- freeswitch-mod-abstraction (= \${binary:Version}),
- freeswitch-mod-avmd (= \${binary:Version}),
- freeswitch-mod-blacklist (= \${binary:Version}),
- freeswitch-mod-callcenter (= \${binary:Version}),
- freeswitch-mod-cidlookup (= \${binary:Version}),
- freeswitch-mod-commands (= \${binary:Version}),
- freeswitch-mod-conference (= \${binary:Version}),
- freeswitch-mod-curl (= \${binary:Version}),
- freeswitch-mod-db (= \${binary:Version}),
- freeswitch-mod-directory (= \${binary:Version}),
- freeswitch-mod-distributor (= \${binary:Version}),
- freeswitch-mod-dptools (= \${binary:Version}),
- freeswitch-mod-easyroute (= \${binary:Version}),
- freeswitch-mod-enum (= \${binary:Version}),
- freeswitch-mod-esf (= \${binary:Version}),
- freeswitch-mod-esl (= \${binary:Version}),
- freeswitch-mod-expr (= \${binary:Version}),
- freeswitch-mod-fifo (= \${binary:Version}),
- freeswitch-mod-fsk (= \${binary:Version}),
- freeswitch-mod-fsv (= \${binary:Version}),
- freeswitch-mod-hash (= \${binary:Version}),
- freeswitch-mod-httapi (= \${binary:Version}),
- freeswitch-mod-http-cache (= \${binary:Version}),
- freeswitch-mod-lcr (= \${binary:Version}),
- freeswitch-mod-nibblebill (= \${binary:Version}),
- freeswitch-mod-oreka (= \${binary:Version}),
- freeswitch-mod-pgsql (= \${binary:Version}),
- freeswitch-mod-redis (= \${binary:Version}),
- freeswitch-mod-rss (= \${binary:Version}),
- freeswitch-mod-sms (= \${binary:Version}),
- freeswitch-mod-snapshot (= \${binary:Version}),
- freeswitch-mod-snom (= \${binary:Version}),
- freeswitch-mod-sonar (= \${binary:Version}),
- freeswitch-mod-soundtouch (= \${binary:Version}),
- freeswitch-mod-spandsp (= \${binary:Version}),
- freeswitch-mod-spy (= \${binary:Version}),
- freeswitch-mod-stress (= \${binary:Version}),
- freeswitch-mod-valet-parking (= \${binary:Version}),
- freeswitch-mod-vmd (= \${binary:Version}),
- freeswitch-mod-voicemail (= \${binary:Version}),
- freeswitch-mod-voicemail-ivr (= \${binary:Version}),
- freeswitch-mod-flite (= \${binary:Version}),
- freeswitch-mod-pocketsphinx (= \${binary:Version}),
- freeswitch-mod-tts-commandline (= \${binary:Version}),
- freeswitch-mod-dialplan-xml (= \${binary:Version}),
- freeswitch-mod-loopback (= \${binary:Version}),
- freeswitch-mod-rtmp (= \${binary:Version}),
- freeswitch-mod-skinny (= \${binary:Version}),
- freeswitch-mod-sofia (= \${binary:Version}),
- freeswitch-mod-cdr-csv (= \${binary:Version}),
- freeswitch-mod-cdr-sqlite (= \${binary:Version}),
- freeswitch-mod-event-socket (= \${binary:Version}),
- freeswitch-mod-json-cdr (= \${binary:Version}),
- freeswitch-mod-local-stream (= \${binary:Version}),
- freeswitch-mod-native-file (= \${binary:Version}),
- freeswitch-mod-shell-stream (= \${binary:Version}),
- freeswitch-mod-sndfile (= \${binary:Version}),
- freeswitch-mod-tone-stream (= \${binary:Version}),
- freeswitch-mod-lua (= \${binary:Version}),
- freeswitch-mod-console (= \${binary:Version}),
- freeswitch-mod-logfile (= \${binary:Version}),
- freeswitch-mod-syslog (= \${binary:Version}),
- freeswitch-mod-say-en (= \${binary:Version}),
- freeswitch-mod-posix-timer (= \${binary:Version}),
- freeswitch-mod-timerfd (= \${binary:Version}),
- freeswitch-mod-xml-cdr (= \${binary:Version}),
- freeswitch-mod-xml-curl (= \${binary:Version}),
+ fluxpbx-init,
+ fluxpbx-lang (= \${binary:Version}),
+ fluxpbx-timezones (= \${binary:Version}),
+ fluxpbx-meta-codecs (= \${binary:Version}),
+ fluxpbx-music,
+ fluxpbx-sounds,
+ fluxpbx-mod-abstraction (= \${binary:Version}),
+ fluxpbx-mod-avmd (= \${binary:Version}),
+ fluxpbx-mod-blacklist (= \${binary:Version}),
+ fluxpbx-mod-callcenter (= \${binary:Version}),
+ fluxpbx-mod-cidlookup (= \${binary:Version}),
+ fluxpbx-mod-commands (= \${binary:Version}),
+ fluxpbx-mod-conference (= \${binary:Version}),
+ fluxpbx-mod-curl (= \${binary:Version}),
+ fluxpbx-mod-db (= \${binary:Version}),
+ fluxpbx-mod-directory (= \${binary:Version}),
+ fluxpbx-mod-distributor (= \${binary:Version}),
+ fluxpbx-mod-dptools (= \${binary:Version}),
+ fluxpbx-mod-easyroute (= \${binary:Version}),
+ fluxpbx-mod-enum (= \${binary:Version}),
+ fluxpbx-mod-esf (= \${binary:Version}),
+ fluxpbx-mod-esl (= \${binary:Version}),
+ fluxpbx-mod-expr (= \${binary:Version}),
+ fluxpbx-mod-fifo (= \${binary:Version}),
+ fluxpbx-mod-fsk (= \${binary:Version}),
+ fluxpbx-mod-fsv (= \${binary:Version}),
+ fluxpbx-mod-hash (= \${binary:Version}),
+ fluxpbx-mod-httapi (= \${binary:Version}),
+ fluxpbx-mod-http-cache (= \${binary:Version}),
+ fluxpbx-mod-lcr (= \${binary:Version}),
+ fluxpbx-mod-nibblebill (= \${binary:Version}),
+ fluxpbx-mod-oreka (= \${binary:Version}),
+ fluxpbx-mod-pgsql (= \${binary:Version}),
+ fluxpbx-mod-redis (= \${binary:Version}),
+ fluxpbx-mod-rss (= \${binary:Version}),
+ fluxpbx-mod-sms (= \${binary:Version}),
+ fluxpbx-mod-snapshot (= \${binary:Version}),
+ fluxpbx-mod-snom (= \${binary:Version}),
+ fluxpbx-mod-sonar (= \${binary:Version}),
+ fluxpbx-mod-soundtouch (= \${binary:Version}),
+ fluxpbx-mod-spandsp (= \${binary:Version}),
+ fluxpbx-mod-spy (= \${binary:Version}),
+ fluxpbx-mod-stress (= \${binary:Version}),
+ fluxpbx-mod-valet-parking (= \${binary:Version}),
+ fluxpbx-mod-vmd (= \${binary:Version}),
+ fluxpbx-mod-voicemail (= \${binary:Version}),
+ fluxpbx-mod-voicemail-ivr (= \${binary:Version}),
+ fluxpbx-mod-flite (= \${binary:Version}),
+ fluxpbx-mod-pocketsphinx (= \${binary:Version}),
+ fluxpbx-mod-tts-commandline (= \${binary:Version}),
+ fluxpbx-mod-dialplan-xml (= \${binary:Version}),
+ fluxpbx-mod-loopback (= \${binary:Version}),
+ fluxpbx-mod-rtmp (= \${binary:Version}),
+ fluxpbx-mod-skinny (= \${binary:Version}),
+ fluxpbx-mod-sofia (= \${binary:Version}),
+ fluxpbx-mod-cdr-csv (= \${binary:Version}),
+ fluxpbx-mod-cdr-sqlite (= \${binary:Version}),
+ fluxpbx-mod-event-socket (= \${binary:Version}),
+ fluxpbx-mod-json-cdr (= \${binary:Version}),
+ fluxpbx-mod-local-stream (= \${binary:Version}),
+ fluxpbx-mod-native-file (= \${binary:Version}),
+ fluxpbx-mod-shell-stream (= \${binary:Version}),
+ fluxpbx-mod-sndfile (= \${binary:Version}),
+ fluxpbx-mod-tone-stream (= \${binary:Version}),
+ fluxpbx-mod-lua (= \${binary:Version}),
+ fluxpbx-mod-console (= \${binary:Version}),
+ fluxpbx-mod-logfile (= \${binary:Version}),
+ fluxpbx-mod-syslog (= \${binary:Version}),
+ fluxpbx-mod-say-en (= \${binary:Version}),
+ fluxpbx-mod-posix-timer (= \${binary:Version}),
+ fluxpbx-mod-timerfd (= \${binary:Version}),
+ fluxpbx-mod-xml-cdr (= \${binary:Version}),
+ fluxpbx-mod-xml-curl (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
- This is a metapackage which recommends most packaged FreeSWITCH
+ This is a metapackage which recommends most packaged FluxPBX
  modules except a few which aren't recommended.
 
-Package: freeswitch-meta-all
+Package: fluxpbx-meta-all
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version}),
- freeswitch-init,
- freeswitch-lang (= \${binary:Version}),
- freeswitch-timezones (= \${binary:Version}),
- freeswitch-meta-codecs (= \${binary:Version}),
- freeswitch-meta-conf (= \${binary:Version}),
- freeswitch-meta-lang (= \${binary:Version}),
- freeswitch-meta-mod-say (= \${binary:Version}),
- freeswitch-music,
- freeswitch-sounds,
- freeswitch-mod-abstraction (= \${binary:Version}),
- freeswitch-mod-avmd (= \${binary:Version}),
- freeswitch-mod-av (= \${binary:Version}),
- freeswitch-mod-blacklist (= \${binary:Version}),
- freeswitch-mod-callcenter (= \${binary:Version}),
- freeswitch-mod-cidlookup (= \${binary:Version}),
- freeswitch-mod-commands (= \${binary:Version}),
- freeswitch-mod-conference (= \${binary:Version}),
- freeswitch-mod-curl (= \${binary:Version}),
- freeswitch-mod-db (= \${binary:Version}),
- freeswitch-mod-directory (= \${binary:Version}),
- freeswitch-mod-distributor (= \${binary:Version}),
- freeswitch-mod-dptools (= \${binary:Version}),
- freeswitch-mod-easyroute (= \${binary:Version}),
- freeswitch-mod-enum (= \${binary:Version}),
- freeswitch-mod-esf (= \${binary:Version}),
- freeswitch-mod-esl (= \${binary:Version}),
- freeswitch-mod-expr (= \${binary:Version}),
- freeswitch-mod-fifo (= \${binary:Version}),
- freeswitch-mod-fsk (= \${binary:Version}),
- freeswitch-mod-fsv (= \${binary:Version}),
- freeswitch-mod-hash (= \${binary:Version}),
- freeswitch-mod-httapi (= \${binary:Version}),
- freeswitch-mod-http-cache (= \${binary:Version}),
- freeswitch-mod-lcr (= \${binary:Version}),
- freeswitch-mod-memcache (= \${binary:Version}),
- freeswitch-mod-nibblebill (= \${binary:Version}),
- freeswitch-mod-oreka (= \${binary:Version}),
- freeswitch-mod-mariadb (= \${binary:Version}),
- freeswitch-mod-pgsql (= \${binary:Version}),
- freeswitch-mod-png (= \${binary:Version}),
- freeswitch-mod-redis (= \${binary:Version}),
- freeswitch-mod-rss (= \${binary:Version}),
- freeswitch-mod-signalwire (= \${binary:Version}),
- freeswitch-mod-shout (= \${binary:Version}),
- freeswitch-mod-sms (= \${binary:Version}),
- freeswitch-mod-snapshot (= \${binary:Version}),
- freeswitch-mod-snom (= \${binary:Version}),
- freeswitch-mod-sonar (= \${binary:Version}),
- freeswitch-mod-soundtouch (= \${binary:Version}),
- freeswitch-mod-spandsp (= \${binary:Version}),
- freeswitch-mod-spy (= \${binary:Version}),
- freeswitch-mod-stress (= \${binary:Version}),
- freeswitch-mod-translate (= \${binary:Version}),
- freeswitch-mod-valet-parking (= \${binary:Version}),
- freeswitch-mod-video-filter (= \${binary:Version}),
- freeswitch-mod-voicemail (= \${binary:Version}),
- freeswitch-mod-voicemail-ivr (= \${binary:Version}),
- freeswitch-mod-flite (= \${binary:Version}),
- freeswitch-mod-pocketsphinx (= \${binary:Version}),
- freeswitch-mod-tts-commandline (= \${binary:Version}),
- freeswitch-mod-dialplan-asterisk (= \${binary:Version}),
- freeswitch-mod-dialplan-directory (= \${binary:Version}),
- freeswitch-mod-dialplan-xml (= \${binary:Version}),
- freeswitch-mod-loopback (= \${binary:Version}),
- freeswitch-mod-portaudio (= \${binary:Version}),
- freeswitch-mod-rtc (= \${binary:Version}),
- freeswitch-mod-rtmp (= \${binary:Version}),
- freeswitch-mod-skinny (= \${binary:Version}),
- freeswitch-mod-sofia (= \${binary:Version}),
- freeswitch-mod-verto (= \${binary:Version}),
- freeswitch-mod-cdr-csv (= \${binary:Version}),
- freeswitch-mod-cdr-mongodb (= \${binary:Version}),
- freeswitch-mod-cdr-sqlite (= \${binary:Version}),
- freeswitch-mod-erlang-event (= \${binary:Version}),
- freeswitch-mod-event-multicast (= \${binary:Version}),
- freeswitch-mod-event-socket (= \${binary:Version}),
- freeswitch-mod-json-cdr (= \${binary:Version}),
- freeswitch-mod-kazoo (= \${binary:Version}),
- freeswitch-mod-snmp (= \${binary:Version}),
- freeswitch-mod-local-stream (= \${binary:Version}),
- freeswitch-mod-native-file (= \${binary:Version}),
- freeswitch-mod-portaudio-stream (= \${binary:Version}),
- freeswitch-mod-shell-stream (= \${binary:Version}),
- freeswitch-mod-sndfile (= \${binary:Version}),
- freeswitch-mod-tone-stream (= \${binary:Version}),
- freeswitch-mod-java (= \${binary:Version}),
- freeswitch-mod-lua (= \${binary:Version}),
- freeswitch-mod-perl (= \${binary:Version}),
- freeswitch-mod-python3 (= \${binary:Version}),
- freeswitch-mod-yaml (= \${binary:Version}),
- freeswitch-mod-console (= \${binary:Version}),
- freeswitch-mod-logfile (= \${binary:Version}),
- freeswitch-mod-syslog (= \${binary:Version}),
- freeswitch-mod-posix-timer (= \${binary:Version}),
- freeswitch-mod-timerfd (= \${binary:Version}),
- freeswitch-mod-xml-cdr (= \${binary:Version}),
- freeswitch-mod-xml-curl (= \${binary:Version}),
- freeswitch-mod-xml-rpc (= \${binary:Version}),
- freeswitch-mod-xml-scgi (= \${binary:Version}),
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version}),
+ fluxpbx-init,
+ fluxpbx-lang (= \${binary:Version}),
+ fluxpbx-timezones (= \${binary:Version}),
+ fluxpbx-meta-codecs (= \${binary:Version}),
+ fluxpbx-meta-conf (= \${binary:Version}),
+ fluxpbx-meta-lang (= \${binary:Version}),
+ fluxpbx-meta-mod-say (= \${binary:Version}),
+ fluxpbx-music,
+ fluxpbx-sounds,
+ fluxpbx-mod-abstraction (= \${binary:Version}),
+ fluxpbx-mod-avmd (= \${binary:Version}),
+ fluxpbx-mod-av (= \${binary:Version}),
+ fluxpbx-mod-blacklist (= \${binary:Version}),
+ fluxpbx-mod-callcenter (= \${binary:Version}),
+ fluxpbx-mod-cidlookup (= \${binary:Version}),
+ fluxpbx-mod-commands (= \${binary:Version}),
+ fluxpbx-mod-conference (= \${binary:Version}),
+ fluxpbx-mod-curl (= \${binary:Version}),
+ fluxpbx-mod-db (= \${binary:Version}),
+ fluxpbx-mod-directory (= \${binary:Version}),
+ fluxpbx-mod-distributor (= \${binary:Version}),
+ fluxpbx-mod-dptools (= \${binary:Version}),
+ fluxpbx-mod-easyroute (= \${binary:Version}),
+ fluxpbx-mod-enum (= \${binary:Version}),
+ fluxpbx-mod-esf (= \${binary:Version}),
+ fluxpbx-mod-esl (= \${binary:Version}),
+ fluxpbx-mod-expr (= \${binary:Version}),
+ fluxpbx-mod-fifo (= \${binary:Version}),
+ fluxpbx-mod-fsk (= \${binary:Version}),
+ fluxpbx-mod-fsv (= \${binary:Version}),
+ fluxpbx-mod-hash (= \${binary:Version}),
+ fluxpbx-mod-httapi (= \${binary:Version}),
+ fluxpbx-mod-http-cache (= \${binary:Version}),
+ fluxpbx-mod-lcr (= \${binary:Version}),
+ fluxpbx-mod-memcache (= \${binary:Version}),
+ fluxpbx-mod-nibblebill (= \${binary:Version}),
+ fluxpbx-mod-oreka (= \${binary:Version}),
+ fluxpbx-mod-mariadb (= \${binary:Version}),
+ fluxpbx-mod-pgsql (= \${binary:Version}),
+ fluxpbx-mod-png (= \${binary:Version}),
+ fluxpbx-mod-redis (= \${binary:Version}),
+ fluxpbx-mod-rss (= \${binary:Version}),
+ fluxpbx-mod-signalwire (= \${binary:Version}),
+ fluxpbx-mod-shout (= \${binary:Version}),
+ fluxpbx-mod-sms (= \${binary:Version}),
+ fluxpbx-mod-snapshot (= \${binary:Version}),
+ fluxpbx-mod-snom (= \${binary:Version}),
+ fluxpbx-mod-sonar (= \${binary:Version}),
+ fluxpbx-mod-soundtouch (= \${binary:Version}),
+ fluxpbx-mod-spandsp (= \${binary:Version}),
+ fluxpbx-mod-spy (= \${binary:Version}),
+ fluxpbx-mod-stress (= \${binary:Version}),
+ fluxpbx-mod-translate (= \${binary:Version}),
+ fluxpbx-mod-valet-parking (= \${binary:Version}),
+ fluxpbx-mod-video-filter (= \${binary:Version}),
+ fluxpbx-mod-voicemail (= \${binary:Version}),
+ fluxpbx-mod-voicemail-ivr (= \${binary:Version}),
+ fluxpbx-mod-flite (= \${binary:Version}),
+ fluxpbx-mod-pocketsphinx (= \${binary:Version}),
+ fluxpbx-mod-tts-commandline (= \${binary:Version}),
+ fluxpbx-mod-dialplan-asterisk (= \${binary:Version}),
+ fluxpbx-mod-dialplan-directory (= \${binary:Version}),
+ fluxpbx-mod-dialplan-xml (= \${binary:Version}),
+ fluxpbx-mod-loopback (= \${binary:Version}),
+ fluxpbx-mod-portaudio (= \${binary:Version}),
+ fluxpbx-mod-rtc (= \${binary:Version}),
+ fluxpbx-mod-rtmp (= \${binary:Version}),
+ fluxpbx-mod-skinny (= \${binary:Version}),
+ fluxpbx-mod-sofia (= \${binary:Version}),
+ fluxpbx-mod-verto (= \${binary:Version}),
+ fluxpbx-mod-cdr-csv (= \${binary:Version}),
+ fluxpbx-mod-cdr-mongodb (= \${binary:Version}),
+ fluxpbx-mod-cdr-sqlite (= \${binary:Version}),
+ fluxpbx-mod-erlang-event (= \${binary:Version}),
+ fluxpbx-mod-event-multicast (= \${binary:Version}),
+ fluxpbx-mod-event-socket (= \${binary:Version}),
+ fluxpbx-mod-json-cdr (= \${binary:Version}),
+ fluxpbx-mod-kazoo (= \${binary:Version}),
+ fluxpbx-mod-snmp (= \${binary:Version}),
+ fluxpbx-mod-local-stream (= \${binary:Version}),
+ fluxpbx-mod-native-file (= \${binary:Version}),
+ fluxpbx-mod-portaudio-stream (= \${binary:Version}),
+ fluxpbx-mod-shell-stream (= \${binary:Version}),
+ fluxpbx-mod-sndfile (= \${binary:Version}),
+ fluxpbx-mod-tone-stream (= \${binary:Version}),
+ fluxpbx-mod-java (= \${binary:Version}),
+ fluxpbx-mod-lua (= \${binary:Version}),
+ fluxpbx-mod-perl (= \${binary:Version}),
+ fluxpbx-mod-python3 (= \${binary:Version}),
+ fluxpbx-mod-yaml (= \${binary:Version}),
+ fluxpbx-mod-console (= \${binary:Version}),
+ fluxpbx-mod-logfile (= \${binary:Version}),
+ fluxpbx-mod-syslog (= \${binary:Version}),
+ fluxpbx-mod-posix-timer (= \${binary:Version}),
+ fluxpbx-mod-timerfd (= \${binary:Version}),
+ fluxpbx-mod-xml-cdr (= \${binary:Version}),
+ fluxpbx-mod-xml-curl (= \${binary:Version}),
+ fluxpbx-mod-xml-rpc (= \${binary:Version}),
+ fluxpbx-mod-xml-scgi (= \${binary:Version}),
 Recommends:
 Suggests:
- freeswitch-mod-vmd (= \${binary:Version}),
- freeswitch-mod-vlc (= \${binary:Version}),
+ fluxpbx-mod-vmd (= \${binary:Version}),
+ fluxpbx-mod-vlc (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which recommends or suggests all packaged
- FreeSWITCH modules.
+ FluxPBX modules.
 
-Package: freeswitch-meta-codecs
+Package: fluxpbx-meta-codecs
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version}),
- freeswitch-mod-amr (= \${binary:Version}),
- freeswitch-mod-amrwb (= \${binary:Version}),
- freeswitch-mod-b64 (= \${binary:Version}),
- freeswitch-mod-bv (= \${binary:Version}),
- freeswitch-mod-codec2 (= \${binary:Version}),
- freeswitch-mod-dahdi-codec (= \${binary:Version}),
- freeswitch-mod-g723-1 (= \${binary:Version}),
- freeswitch-mod-g729 (= \${binary:Version}),
- freeswitch-mod-h26x (= \${binary:Version}),
- freeswitch-mod-isac (= \${binary:Version}),
- freeswitch-mod-mp4v (= \${binary:Version}),
- freeswitch-mod-opus (= \${binary:Version}),
- freeswitch-mod-silk (= \${binary:Version}),
- freeswitch-mod-spandsp (= \${binary:Version}),
- freeswitch-mod-theora (= \${binary:Version}),
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version}),
+ fluxpbx-mod-amr (= \${binary:Version}),
+ fluxpbx-mod-amrwb (= \${binary:Version}),
+ fluxpbx-mod-b64 (= \${binary:Version}),
+ fluxpbx-mod-bv (= \${binary:Version}),
+ fluxpbx-mod-codec2 (= \${binary:Version}),
+ fluxpbx-mod-dahdi-codec (= \${binary:Version}),
+ fluxpbx-mod-g723-1 (= \${binary:Version}),
+ fluxpbx-mod-g729 (= \${binary:Version}),
+ fluxpbx-mod-h26x (= \${binary:Version}),
+ fluxpbx-mod-isac (= \${binary:Version}),
+ fluxpbx-mod-mp4v (= \${binary:Version}),
+ fluxpbx-mod-opus (= \${binary:Version}),
+ fluxpbx-mod-silk (= \${binary:Version}),
+ fluxpbx-mod-spandsp (= \${binary:Version}),
+ fluxpbx-mod-theora (= \${binary:Version}),
 Suggests:
- freeswitch-mod-ilbc (= \${binary:Version}),
- freeswitch-mod-siren (= \${binary:Version})
+ fluxpbx-mod-ilbc (= \${binary:Version}),
+ fluxpbx-mod-siren (= \${binary:Version})
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on the packages needed to install
- most FreeSWITCH codecs.
+ most FluxPBX codecs.
 
-Package: freeswitch-meta-codecs-dbg
+Package: fluxpbx-meta-codecs-dbg
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version}),
- freeswitch-mod-amr-dbg (= \${binary:Version}),
- freeswitch-mod-amrwb-dbg (= \${binary:Version}),
- freeswitch-mod-b64-dbg (= \${binary:Version}),
- freeswitch-mod-bv-dbg (= \${binary:Version}),
- freeswitch-mod-codec2-dbg (= \${binary:Version}),
- freeswitch-mod-dahdi-codec-dbg (= \${binary:Version}),
- freeswitch-mod-g723-1-dbg (= \${binary:Version}),
- freeswitch-mod-g729-dbg (= \${binary:Version}),
- freeswitch-mod-h26x-dbg (= \${binary:Version}),
- freeswitch-mod-isac-dbg (= \${binary:Version}),
- freeswitch-mod-mp4v-dbg (= \${binary:Version}),
- freeswitch-mod-opus-dbg (= \${binary:Version}),
- freeswitch-mod-silk-dbg (= \${binary:Version}),
- freeswitch-mod-spandsp-dbg (= \${binary:Version}),
- freeswitch-mod-theora-dbg (= \${binary:Version}),
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version}),
+ fluxpbx-mod-amr-dbg (= \${binary:Version}),
+ fluxpbx-mod-amrwb-dbg (= \${binary:Version}),
+ fluxpbx-mod-b64-dbg (= \${binary:Version}),
+ fluxpbx-mod-bv-dbg (= \${binary:Version}),
+ fluxpbx-mod-codec2-dbg (= \${binary:Version}),
+ fluxpbx-mod-dahdi-codec-dbg (= \${binary:Version}),
+ fluxpbx-mod-g723-1-dbg (= \${binary:Version}),
+ fluxpbx-mod-g729-dbg (= \${binary:Version}),
+ fluxpbx-mod-h26x-dbg (= \${binary:Version}),
+ fluxpbx-mod-isac-dbg (= \${binary:Version}),
+ fluxpbx-mod-mp4v-dbg (= \${binary:Version}),
+ fluxpbx-mod-opus-dbg (= \${binary:Version}),
+ fluxpbx-mod-silk-dbg (= \${binary:Version}),
+ fluxpbx-mod-spandsp-dbg (= \${binary:Version}),
+ fluxpbx-mod-theora-dbg (= \${binary:Version}),
 Suggests:
- freeswitch-mod-ilbc-dbg (= \${binary:Version}),
- freeswitch-mod-siren-dbg (= \${binary:Version})
+ fluxpbx-mod-ilbc-dbg (= \${binary:Version}),
+ fluxpbx-mod-siren-dbg (= \${binary:Version})
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on the packages needed to install
- most FreeSWITCH codecs.
+ most FluxPBX codecs.
 
-Package: freeswitch-meta-conf
+Package: fluxpbx-meta-conf
 Architecture: amd64 armhf
 Depends: \${misc:Depends},
- freeswitch-conf-curl (= \${binary:Version}),
- freeswitch-conf-insideout (= \${binary:Version}),
- freeswitch-conf-sbc (= \${binary:Version}),
- freeswitch-conf-softphone (= \${binary:Version}),
- freeswitch-conf-vanilla (= \${binary:Version}),
+ fluxpbx-conf-curl (= \${binary:Version}),
+ fluxpbx-conf-insideout (= \${binary:Version}),
+ fluxpbx-conf-sbc (= \${binary:Version}),
+ fluxpbx-conf-softphone (= \${binary:Version}),
+ fluxpbx-conf-vanilla (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on the available configuration
- examples for FreeSWITCH.
+ examples for FluxPBX.
 
-Package: freeswitch-meta-lang
+Package: fluxpbx-meta-lang
 Architecture: amd64 armhf
 Depends: \${misc:Depends},
- freeswitch-lang-de (= \${binary:Version}),
- freeswitch-lang-en (= \${binary:Version}),
- freeswitch-lang-es (= \${binary:Version}),
- freeswitch-lang-fr (= \${binary:Version}),
- freeswitch-lang-he (= \${binary:Version}),
- freeswitch-lang-pt (= \${binary:Version}),
- freeswitch-lang-ru (= \${binary:Version}),
+ fluxpbx-lang-de (= \${binary:Version}),
+ fluxpbx-lang-en (= \${binary:Version}),
+ fluxpbx-lang-es (= \${binary:Version}),
+ fluxpbx-lang-fr (= \${binary:Version}),
+ fluxpbx-lang-he (= \${binary:Version}),
+ fluxpbx-lang-pt (= \${binary:Version}),
+ fluxpbx-lang-ru (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on all language files for
- FreeSWITCH.
+ FluxPBX.
 
-Package: freeswitch-meta-mod-say
+Package: fluxpbx-meta-mod-say
 Architecture: amd64 armhf
 Depends: \${misc:Depends},
- freeswitch-mod-say-de (= \${binary:Version}),
- freeswitch-mod-say-en (= \${binary:Version}),
- freeswitch-mod-say-es (= \${binary:Version}),
- freeswitch-mod-say-fa (= \${binary:Version}),
- freeswitch-mod-say-fr (= \${binary:Version}),
- freeswitch-mod-say-he (= \${binary:Version}),
- freeswitch-mod-say-hr (= \${binary:Version}),
- freeswitch-mod-say-hu (= \${binary:Version}),
- freeswitch-mod-say-it (= \${binary:Version}),
- freeswitch-mod-say-ja (= \${binary:Version}),
- freeswitch-mod-say-nl (= \${binary:Version}),
- freeswitch-mod-say-pl (= \${binary:Version}),
- freeswitch-mod-say-pt (= \${binary:Version}),
- freeswitch-mod-say-ru (= \${binary:Version}),
- freeswitch-mod-say-th (= \${binary:Version}),
- freeswitch-mod-say-zh (= \${binary:Version}),
+ fluxpbx-mod-say-de (= \${binary:Version}),
+ fluxpbx-mod-say-en (= \${binary:Version}),
+ fluxpbx-mod-say-es (= \${binary:Version}),
+ fluxpbx-mod-say-fa (= \${binary:Version}),
+ fluxpbx-mod-say-fr (= \${binary:Version}),
+ fluxpbx-mod-say-he (= \${binary:Version}),
+ fluxpbx-mod-say-hr (= \${binary:Version}),
+ fluxpbx-mod-say-hu (= \${binary:Version}),
+ fluxpbx-mod-say-it (= \${binary:Version}),
+ fluxpbx-mod-say-ja (= \${binary:Version}),
+ fluxpbx-mod-say-nl (= \${binary:Version}),
+ fluxpbx-mod-say-pl (= \${binary:Version}),
+ fluxpbx-mod-say-pt (= \${binary:Version}),
+ fluxpbx-mod-say-ru (= \${binary:Version}),
+ fluxpbx-mod-say-th (= \${binary:Version}),
+ fluxpbx-mod-say-zh (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on all mod_say languages for
- FreeSWITCH.
+ FluxPBX.
 
-Package: freeswitch-meta-mod-say-dbg
+Package: fluxpbx-meta-mod-say-dbg
 Architecture: amd64 armhf
 Depends: \${misc:Depends},
- freeswitch-mod-say-de-dbg (= \${binary:Version}),
- freeswitch-mod-say-en-dbg (= \${binary:Version}),
- freeswitch-mod-say-es-dbg (= \${binary:Version}),
- freeswitch-mod-say-fa-dbg (= \${binary:Version}),
- freeswitch-mod-say-fr-dbg (= \${binary:Version}),
- freeswitch-mod-say-he-dbg (= \${binary:Version}),
- freeswitch-mod-say-hr-dbg (= \${binary:Version}),
- freeswitch-mod-say-hu-dbg (= \${binary:Version}),
- freeswitch-mod-say-it-dbg (= \${binary:Version}),
- freeswitch-mod-say-ja-dbg (= \${binary:Version}),
- freeswitch-mod-say-nl-dbg (= \${binary:Version}),
- freeswitch-mod-say-pl-dbg (= \${binary:Version}),
- freeswitch-mod-say-pt-dbg (= \${binary:Version}),
- freeswitch-mod-say-ru-dbg (= \${binary:Version}),
- freeswitch-mod-say-th-dbg (= \${binary:Version}),
- freeswitch-mod-say-zh-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-de-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-en-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-es-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-fa-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-fr-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-he-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-hr-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-hu-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-it-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-ja-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-nl-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-pl-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-pt-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-ru-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-th-dbg (= \${binary:Version}),
+ fluxpbx-mod-say-zh-dbg (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on all mod_say languages for
- FreeSWITCH.
+ FluxPBX.
 
-Package: freeswitch-meta-all-dbg
+Package: fluxpbx-meta-all-dbg
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version}),
- freeswitch-meta-codecs-dbg (= \${binary:Version}),
- freeswitch-meta-mod-say (= \${binary:Version}),
- freeswitch-mod-abstraction-dbg (= \${binary:Version}),
- freeswitch-mod-avmd-dbg (= \${binary:Version}),
- freeswitch-mod-av-dbg (= \${binary:Version}),
- freeswitch-mod-blacklist-dbg (= \${binary:Version}),
- freeswitch-mod-callcenter-dbg (= \${binary:Version}),
- freeswitch-mod-cidlookup-dbg (= \${binary:Version}),
- freeswitch-mod-commands-dbg (= \${binary:Version}),
- freeswitch-mod-conference-dbg (= \${binary:Version}),
- freeswitch-mod-curl-dbg (= \${binary:Version}),
- freeswitch-mod-db-dbg (= \${binary:Version}),
- freeswitch-mod-directory-dbg (= \${binary:Version}),
- freeswitch-mod-distributor-dbg (= \${binary:Version}),
- freeswitch-mod-dptools-dbg (= \${binary:Version}),
- freeswitch-mod-easyroute-dbg (= \${binary:Version}),
- freeswitch-mod-enum-dbg (= \${binary:Version}),
- freeswitch-mod-esf-dbg (= \${binary:Version}),
- freeswitch-mod-esl-dbg (= \${binary:Version}),
- freeswitch-mod-expr-dbg (= \${binary:Version}),
- freeswitch-mod-fifo-dbg (= \${binary:Version}),
- freeswitch-mod-fsk-dbg (= \${binary:Version}),
- freeswitch-mod-fsv-dbg (= \${binary:Version}),
- freeswitch-mod-hash-dbg (= \${binary:Version}),
- freeswitch-mod-httapi-dbg (= \${binary:Version}),
- freeswitch-mod-http-cache-dbg (= \${binary:Version}),
- freeswitch-mod-lcr-dbg (= \${binary:Version}),
- freeswitch-mod-memcache-dbg (= \${binary:Version}),
- freeswitch-mod-nibblebill-dbg (= \${binary:Version}),
- freeswitch-mod-oreka-dbg (= \${binary:Version}),
- freeswitch-mod-mariadb-dbg (= \${binary:Version}),
- freeswitch-mod-pgsql-dbg (= \${binary:Version}),
- freeswitch-mod-png-dbg (= \${binary:Version}),
- freeswitch-mod-redis-dbg (= \${binary:Version}),
- freeswitch-mod-rss-dbg (= \${binary:Version}),
- freeswitch-mod-sms-dbg (= \${binary:Version}),
- freeswitch-mod-snapshot-dbg (= \${binary:Version}),
- freeswitch-mod-snom-dbg (= \${binary:Version}),
- freeswitch-mod-sonar-dbg (= \${binary:Version}),
- freeswitch-mod-soundtouch-dbg (= \${binary:Version}),
- freeswitch-mod-spandsp-dbg (= \${binary:Version}),
- freeswitch-mod-spy-dbg (= \${binary:Version}),
- freeswitch-mod-stress-dbg (= \${binary:Version}),
- freeswitch-mod-translate-dbg (= \${binary:Version}),
- freeswitch-mod-valet-parking-dbg (= \${binary:Version}),
- freeswitch-mod-video-filter-dbg (= \${binary:Version}),
- freeswitch-mod-voicemail-dbg (= \${binary:Version}),
- freeswitch-mod-voicemail-ivr-dbg (= \${binary:Version}),
- freeswitch-mod-flite-dbg (= \${binary:Version}),
- freeswitch-mod-pocketsphinx-dbg (= \${binary:Version}),
- freeswitch-mod-tts-commandline-dbg (= \${binary:Version}),
- freeswitch-mod-dialplan-asterisk-dbg (= \${binary:Version}),
- freeswitch-mod-dialplan-directory-dbg (= \${binary:Version}),
- freeswitch-mod-dialplan-xml-dbg (= \${binary:Version}),
- freeswitch-mod-loopback-dbg (= \${binary:Version}),
- freeswitch-mod-portaudio-dbg (= \${binary:Version}),
- freeswitch-mod-rtc-dbg (= \${binary:Version}),
- freeswitch-mod-rtmp-dbg (= \${binary:Version}),
- freeswitch-mod-skinny-dbg (= \${binary:Version}),
- freeswitch-mod-sofia-dbg (= \${binary:Version}),
- freeswitch-mod-verto-dbg (= \${binary:Version}),
- freeswitch-mod-cdr-csv-dbg (= \${binary:Version}),
- freeswitch-mod-cdr-mongodb-dbg (= \${binary:Version}),
- freeswitch-mod-cdr-sqlite-dbg (= \${binary:Version}),
- freeswitch-mod-erlang-event-dbg (= \${binary:Version}),
- freeswitch-mod-event-multicast-dbg (= \${binary:Version}),
- freeswitch-mod-event-socket-dbg (= \${binary:Version}),
- freeswitch-mod-json-cdr-dbg (= \${binary:Version}),
- freeswitch-mod-kazoo-dbg (= \${binary:Version}),
- freeswitch-mod-snmp-dbg (= \${binary:Version}),
- freeswitch-mod-local-stream-dbg (= \${binary:Version}),
- freeswitch-mod-native-file-dbg (= \${binary:Version}),
- freeswitch-mod-portaudio-stream-dbg (= \${binary:Version}),
- freeswitch-mod-shell-stream-dbg (= \${binary:Version}),
- freeswitch-mod-sndfile-dbg (= \${binary:Version}),
- freeswitch-mod-tone-stream-dbg (= \${binary:Version}),
- freeswitch-mod-java-dbg (= \${binary:Version}),
- freeswitch-mod-lua-dbg (= \${binary:Version}),
- freeswitch-mod-perl-dbg (= \${binary:Version}),
- freeswitch-mod-python3-dbg (= \${binary:Version}),
- freeswitch-mod-yaml-dbg (= \${binary:Version}),
- freeswitch-mod-console-dbg (= \${binary:Version}),
- freeswitch-mod-logfile-dbg (= \${binary:Version}),
- freeswitch-mod-syslog-dbg (= \${binary:Version}),
- freeswitch-mod-posix-timer-dbg (= \${binary:Version}),
- freeswitch-mod-timerfd-dbg (= \${binary:Version}),
- freeswitch-mod-xml-cdr-dbg (= \${binary:Version}),
- freeswitch-mod-xml-curl-dbg (= \${binary:Version}),
- freeswitch-mod-xml-rpc-dbg (= \${binary:Version}),
- freeswitch-mod-xml-scgi-dbg (= \${binary:Version}),
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version}),
+ fluxpbx-meta-codecs-dbg (= \${binary:Version}),
+ fluxpbx-meta-mod-say (= \${binary:Version}),
+ fluxpbx-mod-abstraction-dbg (= \${binary:Version}),
+ fluxpbx-mod-avmd-dbg (= \${binary:Version}),
+ fluxpbx-mod-av-dbg (= \${binary:Version}),
+ fluxpbx-mod-blacklist-dbg (= \${binary:Version}),
+ fluxpbx-mod-callcenter-dbg (= \${binary:Version}),
+ fluxpbx-mod-cidlookup-dbg (= \${binary:Version}),
+ fluxpbx-mod-commands-dbg (= \${binary:Version}),
+ fluxpbx-mod-conference-dbg (= \${binary:Version}),
+ fluxpbx-mod-curl-dbg (= \${binary:Version}),
+ fluxpbx-mod-db-dbg (= \${binary:Version}),
+ fluxpbx-mod-directory-dbg (= \${binary:Version}),
+ fluxpbx-mod-distributor-dbg (= \${binary:Version}),
+ fluxpbx-mod-dptools-dbg (= \${binary:Version}),
+ fluxpbx-mod-easyroute-dbg (= \${binary:Version}),
+ fluxpbx-mod-enum-dbg (= \${binary:Version}),
+ fluxpbx-mod-esf-dbg (= \${binary:Version}),
+ fluxpbx-mod-esl-dbg (= \${binary:Version}),
+ fluxpbx-mod-expr-dbg (= \${binary:Version}),
+ fluxpbx-mod-fifo-dbg (= \${binary:Version}),
+ fluxpbx-mod-fsk-dbg (= \${binary:Version}),
+ fluxpbx-mod-fsv-dbg (= \${binary:Version}),
+ fluxpbx-mod-hash-dbg (= \${binary:Version}),
+ fluxpbx-mod-httapi-dbg (= \${binary:Version}),
+ fluxpbx-mod-http-cache-dbg (= \${binary:Version}),
+ fluxpbx-mod-lcr-dbg (= \${binary:Version}),
+ fluxpbx-mod-memcache-dbg (= \${binary:Version}),
+ fluxpbx-mod-nibblebill-dbg (= \${binary:Version}),
+ fluxpbx-mod-oreka-dbg (= \${binary:Version}),
+ fluxpbx-mod-mariadb-dbg (= \${binary:Version}),
+ fluxpbx-mod-pgsql-dbg (= \${binary:Version}),
+ fluxpbx-mod-png-dbg (= \${binary:Version}),
+ fluxpbx-mod-redis-dbg (= \${binary:Version}),
+ fluxpbx-mod-rss-dbg (= \${binary:Version}),
+ fluxpbx-mod-sms-dbg (= \${binary:Version}),
+ fluxpbx-mod-snapshot-dbg (= \${binary:Version}),
+ fluxpbx-mod-snom-dbg (= \${binary:Version}),
+ fluxpbx-mod-sonar-dbg (= \${binary:Version}),
+ fluxpbx-mod-soundtouch-dbg (= \${binary:Version}),
+ fluxpbx-mod-spandsp-dbg (= \${binary:Version}),
+ fluxpbx-mod-spy-dbg (= \${binary:Version}),
+ fluxpbx-mod-stress-dbg (= \${binary:Version}),
+ fluxpbx-mod-translate-dbg (= \${binary:Version}),
+ fluxpbx-mod-valet-parking-dbg (= \${binary:Version}),
+ fluxpbx-mod-video-filter-dbg (= \${binary:Version}),
+ fluxpbx-mod-voicemail-dbg (= \${binary:Version}),
+ fluxpbx-mod-voicemail-ivr-dbg (= \${binary:Version}),
+ fluxpbx-mod-flite-dbg (= \${binary:Version}),
+ fluxpbx-mod-pocketsphinx-dbg (= \${binary:Version}),
+ fluxpbx-mod-tts-commandline-dbg (= \${binary:Version}),
+ fluxpbx-mod-dialplan-asterisk-dbg (= \${binary:Version}),
+ fluxpbx-mod-dialplan-directory-dbg (= \${binary:Version}),
+ fluxpbx-mod-dialplan-xml-dbg (= \${binary:Version}),
+ fluxpbx-mod-loopback-dbg (= \${binary:Version}),
+ fluxpbx-mod-portaudio-dbg (= \${binary:Version}),
+ fluxpbx-mod-rtc-dbg (= \${binary:Version}),
+ fluxpbx-mod-rtmp-dbg (= \${binary:Version}),
+ fluxpbx-mod-skinny-dbg (= \${binary:Version}),
+ fluxpbx-mod-sofia-dbg (= \${binary:Version}),
+ fluxpbx-mod-verto-dbg (= \${binary:Version}),
+ fluxpbx-mod-cdr-csv-dbg (= \${binary:Version}),
+ fluxpbx-mod-cdr-mongodb-dbg (= \${binary:Version}),
+ fluxpbx-mod-cdr-sqlite-dbg (= \${binary:Version}),
+ fluxpbx-mod-erlang-event-dbg (= \${binary:Version}),
+ fluxpbx-mod-event-multicast-dbg (= \${binary:Version}),
+ fluxpbx-mod-event-socket-dbg (= \${binary:Version}),
+ fluxpbx-mod-json-cdr-dbg (= \${binary:Version}),
+ fluxpbx-mod-kazoo-dbg (= \${binary:Version}),
+ fluxpbx-mod-snmp-dbg (= \${binary:Version}),
+ fluxpbx-mod-local-stream-dbg (= \${binary:Version}),
+ fluxpbx-mod-native-file-dbg (= \${binary:Version}),
+ fluxpbx-mod-portaudio-stream-dbg (= \${binary:Version}),
+ fluxpbx-mod-shell-stream-dbg (= \${binary:Version}),
+ fluxpbx-mod-sndfile-dbg (= \${binary:Version}),
+ fluxpbx-mod-tone-stream-dbg (= \${binary:Version}),
+ fluxpbx-mod-java-dbg (= \${binary:Version}),
+ fluxpbx-mod-lua-dbg (= \${binary:Version}),
+ fluxpbx-mod-perl-dbg (= \${binary:Version}),
+ fluxpbx-mod-python3-dbg (= \${binary:Version}),
+ fluxpbx-mod-yaml-dbg (= \${binary:Version}),
+ fluxpbx-mod-console-dbg (= \${binary:Version}),
+ fluxpbx-mod-logfile-dbg (= \${binary:Version}),
+ fluxpbx-mod-syslog-dbg (= \${binary:Version}),
+ fluxpbx-mod-posix-timer-dbg (= \${binary:Version}),
+ fluxpbx-mod-timerfd-dbg (= \${binary:Version}),
+ fluxpbx-mod-xml-cdr-dbg (= \${binary:Version}),
+ fluxpbx-mod-xml-curl-dbg (= \${binary:Version}),
+ fluxpbx-mod-xml-rpc-dbg (= \${binary:Version}),
+ fluxpbx-mod-xml-scgi-dbg (= \${binary:Version}),
 Recommends:
 Suggests:
- freeswitch-mod-vmd-dbg (= \${binary:Version}),
- freeswitch-mod-vlc-dbg (= \${binary:Version}),
+ fluxpbx-mod-vmd-dbg (= \${binary:Version}),
+ fluxpbx-mod-vlc-dbg (= \${binary:Version}),
 Description: Cross-Platform Scalable Multi-Protocol Soft Switch
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which recommends or suggests all packaged
- FreeSWITCH modules.
+ FluxPBX modules.
 
-Package: freeswitch-all-dbg
+Package: fluxpbx-all-dbg
 Section: debug
 Priority: optional
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch-meta-all (= \${binary:Version}), freeswitch-meta-all-dbg (= \${binary:Version})
-Description: debugging symbols for FreeSWITCH
+Depends: \${misc:Depends}, fluxpbx-meta-all (= \${binary:Version}), fluxpbx-meta-all-dbg (= \${binary:Version})
+Description: debugging symbols for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- This package contains debugging symbols for FreeSWITCH.
+ This package contains debugging symbols for FluxPBX.
 
-Package: freeswitch-dbg
+Package: fluxpbx-dbg
 Section: debug
 Priority: optional
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch (= \${binary:Version})
-Description: debugging symbols for FreeSWITCH
+Depends: \${misc:Depends}, fluxpbx (= \${binary:Version})
+Description: debugging symbols for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- This package contains debugging symbols for FreeSWITCH.
+ This package contains debugging symbols for FluxPBX.
 
-Package: libfreeswitch1-dbg
+Package: libfluxpbx1-dbg
 Section: debug
 Priority: optional
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, libfreeswitch1 (= \${binary:Version})
-Description: debugging symbols for FreeSWITCH
+Depends: \${misc:Depends}, libfluxpbx1 (= \${binary:Version})
+Description: debugging symbols for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- This package contains debugging symbols for libfreeswitch1.
+ This package contains debugging symbols for libfluxpbx1.
 
-Package: libfreeswitch-dev
+Package: libfluxpbx-dev
 Section: libdevel
 Architecture: amd64 armhf
-Depends: \${misc:Depends}, freeswitch
-Description: development libraries and header files for FreeSWITCH
+Depends: \${misc:Depends}, fluxpbx
+Description: development libraries and header files for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- This package contains include files for FreeSWITCH.
+ This package contains include files for FluxPBX.
 
-Package: freeswitch-doc
+Package: fluxpbx-doc
 Section: doc
 Architecture: amd64 armhf
 Depends: \${misc:Depends}
-Description: documentation for FreeSWITCH
+Description: documentation for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- This package contains Doxygen-produced documentation for FreeSWITCH.
+ This package contains Doxygen-produced documentation for FluxPBX.
  It may be an empty package at the moment.
 
 ## misc
 
 ## languages
 
-Package: freeswitch-lang
+Package: fluxpbx-lang
 Architecture: amd64 armhf
 Depends: \${misc:Depends},
- freeswitch-lang-en (= \${binary:Version})
-Description: Language files for FreeSWITCH
+ fluxpbx-lang-en (= \${binary:Version})
+Description: Language files for FluxPBX
  $(debian_wrap "${fs_description}")
  .
  This is a metapackage which depends on the default language packages
- for FreeSWITCH.
+ for FluxPBX.
 
 ## timezones
 
-Package: freeswitch-timezones
+Package: fluxpbx-timezones
 Architecture: amd64 armhf
 Depends: \${misc:Depends}
-Description: Timezone files for FreeSWITCH
+Description: Timezone files for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- $(debian_wrap "This package includes the timezone files for FreeSWITCH.")
+ $(debian_wrap "This package includes the timezone files for FluxPBX.")
 
 ## startup
 
@@ -1021,28 +1021,28 @@ EOF
 
 if [ ${use_sysvinit} = "true" ]; then
     cat <<EOF
-Package: freeswitch-sysvinit
+Package: fluxpbx-sysvinit
 Architecture: amd64 armhf
 Depends: \${misc:Depends}, lsb-base (>= 3.0-6), sysvinit | sysvinit-utils
-Conflicts: freeswitch-init
-Provides: freeswitch-init
-Description: FreeSWITCH SysV init script
+Conflicts: fluxpbx-init
+Provides: fluxpbx-init
+Description: FluxPBX SysV init script
  $(debian_wrap "${fs_description}")
  .
- This package contains the SysV init script for FreeSWITCH.
+ This package contains the SysV init script for FluxPBX.
 
 EOF
 else
     cat <<EOF
-Package: freeswitch-systemd
+Package: fluxpbx-systemd
 Architecture: amd64 armhf
 Depends: \${misc:Depends}, systemd
-Conflicts: freeswitch-init, freeswitch-all (<= 1.6.7)
-Provides: freeswitch-init
-Description: FreeSWITCH systemd configuration
+Conflicts: fluxpbx-init, fluxpbx-all (<= 1.6.7)
+Provides: fluxpbx-init
+Description: FluxPBX systemd configuration
  $(debian_wrap "${fs_description}")
  .
- This package contains the systemd configuration for FreeSWITCH.
+ This package contains the systemd configuration for FluxPBX.
 
 EOF
 fi
@@ -1051,30 +1051,30 @@ fi
 print_mod_control () {
   local m_section="${section:-comm}"
   cat <<EOF
-Package: freeswitch-${module_name//_/-}
+Package: fluxpbx-${module_name//_/-}
 Section: ${m_section}
 Architecture: amd64 armhf
-$(debian_wrap "Depends: \${shlibs:Depends}, \${misc:Depends}, libfreeswitch1 (= \${binary:Version}), ${depends}")
+$(debian_wrap "Depends: \${shlibs:Depends}, \${misc:Depends}, libfluxpbx1 (= \${binary:Version}), ${depends}")
 $(debian_wrap "Recommends: ${recommends}")
-$(debian_wrap "Suggests: freeswitch-${module_name//_/-}-dbg, ${suggests}")
-Conflicts: freeswitch-all (<= 1.6.7)
-Description: ${description} for FreeSWITCH
+$(debian_wrap "Suggests: fluxpbx-${module_name//_/-}-dbg, ${suggests}")
+Conflicts: fluxpbx-all (<= 1.6.7)
+Description: ${description} for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- $(debian_wrap "This package contains ${module_name} for FreeSWITCH.")
+ $(debian_wrap "This package contains ${module_name} for FluxPBX.")
  .
  $(debian_wrap "${long_description}")
 
-Package: freeswitch-${module_name//_/-}-dbg
+Package: fluxpbx-${module_name//_/-}-dbg
 Section: debug
 Priority: optional
 Architecture: amd64 armhf
 Depends: \${misc:Depends},
- freeswitch-${module_name//_/-} (= \${binary:Version})
-Description: ${description} for FreeSWITCH (debug)
+ fluxpbx-${module_name//_/-} (= \${binary:Version})
+Description: ${description} for FluxPBX (debug)
  $(debian_wrap "${fs_description}")
  .
- $(debian_wrap "This package contains debugging symbols for ${module_name} for FreeSWITCH.")
+ $(debian_wrap "This package contains debugging symbols for ${module_name} for FluxPBX.")
  .
  $(debian_wrap "${long_description}")
 
@@ -1083,7 +1083,7 @@ EOF
 
 print_mod_install () {
   cat <<EOF
-/usr/lib/freeswitch/mod/${1}.so
+/usr/lib/fluxpbx/mod/${1}.so
 EOF
 }
 
@@ -1101,7 +1101,7 @@ EOF
 print_gpl_openssl_override () {
   local p="$1"
   cat <<EOF
-# We're definitely not doing this.  Nothing in FreeSWITCH has a more
+# We're definitely not doing this.  Nothing in FluxPBX has a more
 # restrictive license than LGPL or MPL.
 ${p}: possible-gpl-code-linked-with-openssl
 
@@ -1132,21 +1132,21 @@ print_conf_overrides () {
 
 print_conf_control () {
   cat <<EOF
-Package: freeswitch-conf-${conf//_/-}
+Package: fluxpbx-conf-${conf//_/-}
 Architecture: amd64 armhf
 Depends: \${misc:Depends}
-Conflicts: freeswitch-all (<= 1.6.7)
-Description: FreeSWITCH ${conf} configuration
+Conflicts: fluxpbx-all (<= 1.6.7)
+Description: FluxPBX ${conf} configuration
  $(debian_wrap "${fs_description}")
  .
- $(debian_wrap "This package contains the ${conf} configuration for FreeSWITCH.")
+ $(debian_wrap "This package contains the ${conf} configuration for FluxPBX.")
 
 EOF
 }
 
 print_conf_install () {
   cat <<EOF
-conf/${conf} /usr/share/freeswitch/conf
+conf/${conf} /usr/share/fluxpbx/conf
 EOF
 }
 
@@ -1166,22 +1166,22 @@ print_lang_control () {
     ru) lang_name="Russian" ;;
   esac
   cat <<EOF
-Package: freeswitch-lang-${lang//_/-}
+Package: fluxpbx-lang-${lang//_/-}
 Architecture: amd64 armhf
 Depends: \${misc:Depends}
-Recommends: freeswitch-sounds-${lang}
-Conflicts: freeswitch-all (<= 1.6.7)
-Description: ${lang_name} language files for FreeSWITCH
+Recommends: fluxpbx-sounds-${lang}
+Conflicts: fluxpbx-all (<= 1.6.7)
+Description: ${lang_name} language files for FluxPBX
  $(debian_wrap "${fs_description}")
  .
- $(debian_wrap "This package includes the ${lang_name} language files for FreeSWITCH.")
+ $(debian_wrap "This package includes the ${lang_name} language files for FluxPBX.")
 
 EOF
 }
 
 print_lang_install () {
   cat <<EOF
-conf/vanilla/lang/${lang} /usr/share/freeswitch/lang
+conf/vanilla/lang/${lang} /usr/share/fluxpbx/lang
 EOF
 }
 
@@ -1198,14 +1198,14 @@ gencontrol_per_cat () {
 }
 
 geninstall_per_mod () {
-  local f=freeswitch-${module_name//_/-}.install
+  local f=fluxpbx-${module_name//_/-}.install
   (print_edit_warning; print_mod_install "$module_name") > $f
   test -f $f.tmpl && cat $f.tmpl >> $f
 }
 
 genoverrides_per_mod () {
-  local f=freeswitch-${module_name//_/-}.lintian-overrides
-  (print_edit_warning; print_mod_overrides freeswitch-${module_name//_/-}) > $f
+  local f=fluxpbx-${module_name//_/-}.lintian-overrides
+  (print_edit_warning; print_mod_overrides fluxpbx-${module_name//_/-}) > $f
   test -f $f.tmpl && cat $f.tmpl >> $f
 }
 
@@ -1218,7 +1218,7 @@ genmodulesconf () {
 
 genconf () {
   print_conf_control >> control
-  local p=freeswitch-conf-${conf//_/-}
+  local p=fluxpbx-conf-${conf//_/-}
   local f=$p.install
   (print_edit_warning; print_conf_install) > $f
   test -f $f.tmpl && cat $f.tmpl >> $f
@@ -1229,7 +1229,7 @@ genconf () {
 
 genlang () {
   print_lang_control >> control
-  local p=freeswitch-lang-${lang//_/-}
+  local p=fluxpbx-lang-${lang//_/-}
   local f=$p.install
   (print_edit_warning; print_lang_install) > $f
   test -f $f.tmpl && cat $f.tmpl >> $f
@@ -1259,7 +1259,7 @@ accumulate_mod_deps () {
   if [ -n "$(eval echo \$depends_$codename)" ]; then
     x="$(eval echo \$depends_$codename)"
   else x="${depends}"; fi
-  x="$(echo "$x" | sed 's/, \?/\n/g' | grep -v '^freeswitch' | tr '\n' ',' | sed -e 's/,$//' -e 's/,/, /g')"
+  x="$(echo "$x" | sed 's/, \?/\n/g' | grep -v '^fluxpbx' | tr '\n' ',' | sed -e 's/,$//' -e 's/,/, /g')"
   if [ -n "$x" ]; then
     if [ ! "$mod_depends" = "." ]; then
       mod_depends="${mod_depends}, ${x}"
@@ -1268,7 +1268,7 @@ accumulate_mod_deps () {
   if [ -n "$(eval echo \$recommends_$codename)" ]; then
     x="$(eval echo \$recommends_$codename)"
   else x="${recommends}"; fi
-  x="$(echo "$x" | sed 's/, \?/\n/g' | grep -v '^freeswitch' | tr '\n' ',' | sed -e 's/,$//' -e 's/,/, /g')"
+  x="$(echo "$x" | sed 's/, \?/\n/g' | grep -v '^fluxpbx' | tr '\n' ',' | sed -e 's/,$//' -e 's/,/, /g')"
   if [ -n "$x" ]; then
     if [ ! "$mod_recommends" = "." ]; then
       mod_recommends="${mod_recommends}, ${x}"
@@ -1277,7 +1277,7 @@ accumulate_mod_deps () {
   if [ -n "$(eval echo \$suggests_$codename)" ]; then
     x="$(eval echo \$suggests_$codename)"
   else x="${suggests}"; fi
-  x="$(echo "$x" | sed 's/, \?/\n/g' | grep -v '^freeswitch' | tr '\n' ',' | sed -e 's/,$//' -e 's/,/, /g')"
+  x="$(echo "$x" | sed 's/, \?/\n/g' | grep -v '^fluxpbx' | tr '\n' ',' | sed -e 's/,$//' -e 's/,/, /g')"
   if [ -n "$x" ]; then
     if [ ! "$mod_suggests" = "." ]; then
       mod_suggests="${mod_suggests}, ${x}"
@@ -1483,9 +1483,9 @@ map_modules "mod_filter" \
 geninstall_perl
 
 if [ ${use_sysvinit} = "true" ]; then
-  echo -n freeswitch-sysvinit >freeswitch-init.provided_by
+  echo -n fluxpbx-sysvinit >fluxpbx-init.provided_by
 else
-  echo -n freeswitch-systemd >freeswitch-init.provided_by
+  echo -n fluxpbx-systemd >fluxpbx-init.provided_by
 fi
 
 
@@ -1501,7 +1501,7 @@ grep -e '^Package:' control | while xread l; do
     print_itp_override "$m" >> $f
   fi
 done
-for p in freeswitch libfreeswitch1; do
+for p in fluxpbx libfluxpbx1; do
   f=$p.lintian-overrides
   [ -s $f ] || print_edit_warning >> $f
   print_gpl_openssl_override "$p" >> $f

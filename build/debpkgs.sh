@@ -23,7 +23,7 @@ then
     exit 1
 fi
 
-echo "./build/debpkgs.sh script is building FreeSWITCH Debian packages"
+echo "./build/debpkgs.sh script is building FluxPBX Debian packages"
 
 VERSION=`cat ./build/next-release.txt`
 echo "This Version: $VERSION"
@@ -31,7 +31,7 @@ echo "This Version: $VERSION"
 HASH=`git log -n 1 --oneline |cut -d ' ' -f 1`
 echo "Commit hash $HASH"
 
-# Use the FreeSWITCH release repo for dependency testing
+# Use the FluxPBX release repo for dependency testing
 # The release codename here does not matter, since the util.sh script
 # will adapt to the release being built
 if [ ! -r "$T" ]
@@ -39,7 +39,7 @@ then
     echo "deb http://files.freeswitch.org/repo/deb/debian/ jessie main" >> "$T"
 fi
 
-# Use the FreeSWITCH release repo key
+# Use the FluxPBX release repo key
 if [ ! -r "$K" ]
 then
     cat << EOF > "$K"
@@ -74,5 +74,5 @@ fi
 
 ./debian/util.sh build-all -a "$a" -c "$c" -T $T -K $K -f ./build/modules.conf.most -j -bn -z9 -v$VERSION-$n~$HASH
 
-if [ $(ls -al ../freeswitch-mod* | wc -l) -lt 10 ]; then false; else true; fi
+if [ $(ls -al ../fluxpbx-mod* | wc -l) -lt 10 ]; then false; else true; fi
 

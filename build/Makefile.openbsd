@@ -1,37 +1,37 @@
 #
-# FreeSWITCH auto-build Makefile (OpenBSD 5.x)
+# FluxPBX auto-build Makefile (OpenBSD 5.x)
 # http://www.freeswitch.org
 # put this file anywhere and type make to
-# create a fully-built freeswitch.git from scratch
+# create a fully-built fluxpbx.git from scratch
 # in that same directory.
 #
 #
 
 PKG=rsync-3.1.0 git automake-1.14.1 autoconf-2.69p1 libtool gmake bzip2 jpeg wget pcre speex libldns
-PREFIX=/usr/local/freeswitch
+PREFIX=/usr/local/fluxpbx
 DOWNLOAD=http://files.freeswitch.org/downloads/libs
 OPENSSL=1.0.1j
 LIBEDIT=20140618-3.1
 CURL=7.35.0
 
-freeswitch: has-git deps freeswitch.git/Makefile
-	cd freeswitch.git && AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.14 LIBTOOL=/usr/local/bin/libtoolize gmake
+fluxpbx: has-git deps fluxpbx.git/Makefile
+	cd fluxpbx.git && AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.14 LIBTOOL=/usr/local/bin/libtoolize gmake
 
-freeswitch.git/Makefile: freeswitch.git/configure
-	cd freeswitch.git && PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig ./configure LDFLAGS='-L$(PREFIX)/lib -Wl,-rpath=$(PREFIX)/lib' CFLAGS='-I$(PREFIX)/include' --prefix=$(PREFIX)
+fluxpbx.git/Makefile: fluxpbx.git/configure
+	cd fluxpbx.git && PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig ./configure LDFLAGS='-L$(PREFIX)/lib -Wl,-rpath=$(PREFIX)/lib' CFLAGS='-I$(PREFIX)/include' --prefix=$(PREFIX)
 
-freeswitch.git/configure: freeswitch.git/bootstrap.sh
-	cd freeswitch.git && AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.14 LIBTOOL=/usr/local/bin/libtoolize sh bootstrap.sh
+fluxpbx.git/configure: fluxpbx.git/bootstrap.sh
+	cd fluxpbx.git && AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.14 LIBTOOL=/usr/local/bin/libtoolize sh bootstrap.sh
 
-freeswitch.git/bootstrap.sh: has-git
-	test -d freeswitch.git || git clone https://github.com/signalwire/freeswitch.git freeswitch.git
+fluxpbx.git/bootstrap.sh: has-git
+	test -d fluxpbx.git || git clone https://github.com/signalwire/fluxpbx.git fluxpbx.git
 
 install:
-	cd freeswitch.git && AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.14 LIBTOOL=/usr/local/bin/libtoolize gmake install cd-sounds-install cd-moh-install
+	cd fluxpbx.git && AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.14 LIBTOOL=/usr/local/bin/libtoolize gmake install cd-sounds-install cd-moh-install
 
 clean:
 	@rm -rf openssl* ldns* jpeg* pcre* perl* pkg-config* speex* sqlite* libedit* curl* *~
-	(cd freeswitch.git && git clean -fdx && git reset --hard HEAD && git pull)
+	(cd fluxpbx.git && git clean -fdx && git reset --hard HEAD && git pull)
 
 has-git:
 	@git --version || PKG_PATH=http://openbsd.mirrors.pair.com/`uname -r`/packages/`machine -a`/ pkg_add -r git

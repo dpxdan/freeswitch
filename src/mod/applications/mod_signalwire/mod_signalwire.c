@@ -362,7 +362,7 @@ static ks_status_t mod_signalwire_adoption_post(void)
 
 	switch_snprintf(url, sizeof(url), "%s/%s", globals.adoption_service, globals.adoption_token);
 
-	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG10, "Checking %s for SignalWire adoption of this FreeSWITCH\n", url);
+	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG10, "Checking %s for SignalWire adoption of this FluxPBX\n", url);
 
 	curl = switch_curl_easy_init();
 
@@ -423,7 +423,7 @@ static ks_status_t mod_signalwire_adoption_post(void)
 
 	ks_json_delete(&json);
 
-	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_INFO, "SignalWire adoption of this FreeSWITCH completed\n");
+	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_INFO, "SignalWire adoption of this FluxPBX completed\n");
 
 	// write out the data to save it for reloading in the future
 	{
@@ -713,7 +713,7 @@ static switch_status_t load_config(void)
 	globals.ssl_verify = 1;
 	switch_set_string(globals.blade_bootstrap, "edge.<space>.signalwire.com/api/relay/wss");
 	switch_set_string(globals.adoption_service, "https://adopt.signalwire.com/adoption");
-	switch_set_string(globals.stun_server, "stun.freeswitch.org");
+	switch_set_string(globals.stun_server, "stun.fluxpbx.org");
 	globals.stun_port = SWITCH_STUN_DEFAULT_PORT;
 	
 	if (!(xml = switch_xml_open_cfg(cf, &cfg, NULL))) {
@@ -1205,11 +1205,11 @@ static void mod_signalwire_state_configure(void)
 	snprintf(external_endpoint, sizeof(external_endpoint), "%s:%u", external_ip, external_port);
 
 #if SIGNALWIRE_CLIENT_C_VERSION_MAJOR >= 2
-	if (!swclt_sess_provisioning_configure(globals.signalwire_session, "freeswitch", local_endpoint, external_endpoint, globals.relay_connector_id, &reply)) {
+	if (!swclt_sess_provisioning_configure(globals.signalwire_session, "fluxpbx", local_endpoint, external_endpoint, globals.relay_connector_id, &reply)) {
 		if (reply->type == SWCLT_CMD_TYPE_RESULT) {
 			ks_json_t *result;
 #else
-	if (!swclt_sess_provisioning_configure(globals.signalwire_session, "freeswitch", local_endpoint, external_endpoint, globals.relay_connector_id, &cmd)) {
+	if (!swclt_sess_provisioning_configure(globals.signalwire_session, "fluxpbx", local_endpoint, external_endpoint, globals.relay_connector_id, &cmd)) {
 		SWCLT_CMD_TYPE cmd_type;
 		swclt_cmd_type(cmd, &cmd_type);
 		if (cmd_type == SWCLT_CMD_TYPE_RESULT) {

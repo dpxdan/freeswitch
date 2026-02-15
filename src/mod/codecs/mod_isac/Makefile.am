@@ -13,5 +13,5 @@ mod_isac_la_SOURCES += pitch_lag_tables.c randomization_functions.c refl_coef_to
 mod_isac_la_SOURCES += resample.c resample_fractional.c spectrum_ar_model_tables.c splitting_filter.c spl_sqrt.c spl_sqrt_floor.c spl_version.c
 mod_isac_la_SOURCES += sqrt_of_one_minus_x_squared.c transform.c vector_scaling_operations.c webrtc_fft_t_1024_8.c webrtc_fft_t_rad.c
 mod_isac_la_CFLAGS   = $(AM_CFLAGS) -w -I.
-mod_isac_la_LIBADD   = $(switch_builddir)/libfreeswitch.la
+mod_isac_la_LIBADD   = $(switch_builddir)/libfluxpbx.la
 mod_isac_la_LDFLAGS  = -avoid-version -module -no-undefined -shared

@@ -1,6 +1,6 @@
 /*
-* FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-* Copyright (C) 2005-2015, Anthony Minessale II <anthm@freeswitch.org>
+* FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+* Copyright (C) 2005-2015, Anthony Minessale II <anthm@fluxpbx.org>
 *
 * Version: MPL 1.1
 *
@@ -14,10 +14,10 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 *
 * The Initial Developer of the Original Code is
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * Portions created by the Initial Developer are Copyright (C)
 * the Initial Developer. All Rights Reserved.
 *
@@ -54,7 +54,7 @@ switch_status_t mod_smpp_gateway_create(mod_smpp_gateway_t **gw, char *name, cha
 	gateway->debug = debug;
 	gateway->system_id = system_id ? switch_core_strdup(gateway->pool, system_id) : "username";
 	gateway->password = password ? switch_core_strdup(gateway->pool, password) : "password";
-	gateway->system_type = system_type ? switch_core_strdup(gateway->pool, system_type) : "freeswitch_smpp";
+	gateway->system_type = system_type ? switch_core_strdup(gateway->pool, system_type) : "fluxpbx_smpp";
 	gateway->profile = profile ? switch_core_strdup(gateway->pool, profile) : "default";
 
 	if ( switch_sockaddr_info_get(&(gateway->socketaddr), gateway->host, SWITCH_INET,

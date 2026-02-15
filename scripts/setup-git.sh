@@ -1,9 +1,9 @@
 #!/bin/bash
 ##### -*- mode:shell-script; indent-tabs-mode:nil; sh-basic-offset:2 -*-
-##### setup git properly for FreeSWITCH
+##### setup git properly for FluxPBX
 
 if [ ! -d .git ]; then
-  echo "error: must be run from within the top level of a FreeSWITCH git tree." 1>&2
+  echo "error: must be run from within the top level of a FluxPBX git tree." 1>&2
   exit 1;
 fi
 

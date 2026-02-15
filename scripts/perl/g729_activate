@@ -25,8 +25,8 @@ my $activator = run ( ['/usr/bin/validator'],
 
 if($output =~ m/Success/) {
   if(-f "licences.zip") {
-    run( [ $UNZIP, '-o', "-d", "/etc/freeswitch", 'licences.zip'], \$in, \$out, \$err );
-    run( [ '/usr/bin/pkill', '-HUP', 'freeswitch_licence_server'], \$in, \$out, \$err );
+    run( [ $UNZIP, '-o', "-d", "/etc/fluxpbx", 'licences.zip'], \$in, \$out, \$err );
+    run( [ '/usr/bin/pkill', '-HUP', 'fluxpbx_licence_server'], \$in, \$out, \$err );
     my $c = new ESL::ESLconnection("localhost", "8021", "ClueCon");
     my $e = $c->sendRecv('api g729_count');
     my $count = $e->getBody();

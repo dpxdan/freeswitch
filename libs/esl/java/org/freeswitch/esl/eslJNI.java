@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.freeswitch.esl;
+package org.fluxpbx.esl;
 
 public class eslJNI {
   public final static native void ESLevent_event_set(long jarg1, ESLevent jarg1_, long jarg2);

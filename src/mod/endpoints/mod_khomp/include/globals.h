@@ -73,7 +73,7 @@ struct Globals
     
     typedef SimpleNonBlockLock<25,100> Mutex;
     
-    /* FreeSWITCH variables for packets and buffer */
+    /* FluxPBX variables for packets and buffer */
     // in ms
     static const unsigned int switch_packet_duration  = 30;
     static const unsigned int boards_packet_duration  = 24;
@@ -102,7 +102,7 @@ struct Globals
 
     static const Regex::Expression           regex_allocation;
 
-    /* FreeSWITCH Articular Ligaments */ 
+    /* FluxPBX Articular Ligaments */ 
     static switch_endpoint_interface_t     * khomp_endpoint_interface;
     static switch_endpoint_interface_t     * khomp_sms_endpoint_interface;
     static switch_endpoint_interface_t     * khomp_pr_endpoint_interface;

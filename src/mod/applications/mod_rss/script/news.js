@@ -8,5 +8,5 @@ if (session.ready()) {
    fetchURLFile("http://rss.news.yahoo.com/rss/business","rss/yahoobus.rss");
    fetchURLFile("http://rss.news.yahoo.com/rss/entertainment","rss/yahooent.rss");
    fetchURLFile("http://rss.slashdot.org/Slashdot/slashdot","rss/slashdot.rss");
-   fetchURLFile("http://www.freeswitch.org/xml.php","rss/freeswitch.rss");
+   fetchURLFile("http://www.freeswitch.org/xml.php","rss/fluxpbx.rss");
 }

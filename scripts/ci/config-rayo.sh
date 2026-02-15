@@ -10,9 +10,9 @@ check_input_ver_build $@
 eval $(parse_version "$1")
 
 if [ -n "$rev" ]; then
-  dst_name="freeswitch-$cmajor.$cminor.$cmicro.$rev"
+  dst_name="fluxpbx-$cmajor.$cminor.$cmicro.$rev"
 else
-  dst_name="freeswitch-$cmajor.$cminor.$cmicro"
+  dst_name="fluxpbx-$cmajor.$cminor.$cmicro"
 fi
 dst_parent="/tmp/"
 dst_dir="/tmp/$dst_name"
@@ -33,10 +33,10 @@ cd ../../
 rpmbuild --define "_topdir %(pwd)/rpmbuild" \
   --define "_rpmdir %{_topdir}" \
   --define "_srcrpmdir %{_topdir}" \
-  -ba rpmbuild/SPECS/freeswitch-config-rayo.spec
+  -ba rpmbuild/SPECS/fluxpbx-config-rayo.spec
 
 mkdir -p $src_repo/RPMS
-mv $src_repo/rpmbuild/*/freeswitch-config-rayo*.rpm $src_repo/RPMS/.
+mv $src_repo/rpmbuild/*/fluxpbx-config-rayo*.rpm $src_repo/RPMS/.
 
 cat 1>&2 <<EOF
 ----------------------------------------------------------------------

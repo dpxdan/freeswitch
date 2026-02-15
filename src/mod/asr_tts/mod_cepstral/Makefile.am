@@ -4,7 +4,7 @@ MODNAME=mod_cepstral
 mod_LTLIBRARIES = mod_cepstral.la
 mod_cepstral_la_SOURCES  = mod_cepstral.c
 mod_cepstral_la_CFLAGS   = $(AM_CFLAGS) -w
-mod_cepstral_la_LIBADD   = $(switch_builddir)/libfreeswitch.la
+mod_cepstral_la_LIBADD   = $(switch_builddir)/libfluxpbx.la
 mod_cepstral_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 if ISMAC

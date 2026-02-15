@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FreeSWITCH;
-using FreeSWITCH.Native;
+using FluxPBX;
+using FluxPBX.Native;
 
 namespace winFailToBan
 {

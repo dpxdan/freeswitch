@@ -20,7 +20,7 @@
 gbp.conf debian-ignore
 /clients/flex* dfsg-nonfree
 /debian* debian-ignore
-/freeswitch.xcodeproj debian-ignore
+/fluxpbx.xcodeproj debian-ignore
 /libs/ilbc* dfsg-nonfree
 /libs/libg722_1* dfsg-nonfree
 /libs/win32* windows debian-ignore

@@ -1,11 +1,11 @@
 HT-TAPI Hyper-Text Telephony API and http file format plugin
 
-This module provides an HTTP based Telephony API using a standard FreeSWITCH application interface as well as a cached http file format interface.
+This module provides an HTTP based Telephony API using a standard FluxPBX application interface as well as a cached http file format interface.
 
 The file format plugin can be used like this:
 <action application="playback" data="http://some.com/sounds/foo.wav"/>
 
-This syntax is valid anywhere a filename parameter is requested in FreeSWITCH.
+This syntax is valid anywhere a filename parameter is requested in FluxPBX.
 
 
 The application is called like this:
@@ -16,7 +16,7 @@ The target url is expected to be a CGI returning text/xml using the documentatio
 
 The format is roughly as described below (We could use a DTD maybe).
 
-<document type="xml/freeswitch-httapi">
+<document type="xml/fluxpbx-httapi">
   <params>
    <someparam>someval</someparam>
   </params>
@@ -42,7 +42,7 @@ If the session exits the httapi app without hanging up it can do other tasks and
 
 EXAMPLE:
 
-<document type="xml/freeswitch-httapi">
+<document type="xml/fluxpbx-httapi">
 <params></params>
 <work>
 <playback name="exten" file="http://my.com/sounds/exten.wav" error-file="http://my.com/sounds/invalid.wav" input-timeout="5000">
@@ -171,7 +171,7 @@ gender              : gender (fs param)
 
 
 <execute application data action>*DATA*</execute>
-		    : Execute a FreeSWITCH app.
+		    : Execute a FluxPBX app.
 ATTRS:
 application         : The app to run
 action		    : Change url to submit to.

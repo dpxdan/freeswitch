@@ -9,7 +9,7 @@
   <!-- info    - informational message  -->
   <!-- debug   - debug-level message -->
   <settings>
-    <param name="ident" value="freeswitch"/>
+    <param name="ident" value="fluxpbx"/>
     <param name="loglevel" value="warning"/>
   </settings>
 </configuration>

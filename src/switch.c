@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Michael Jerris <mike@jerris.com>
  * Pawel Pierscionek <pawel@voiceworks.pl>
  * Bret McDanel <trixter AT 0xdecafbad.com>
@@ -52,8 +52,8 @@
 #include "private/switch_apr_pvt.h"
 #include "private/switch_core_pvt.h"
 
-/* pid filename: Stores the process id of the freeswitch process */
-#define PIDFILE "freeswitch.pid"
+/* pid filename: Stores the process id of the fluxpbx process */
+#define PIDFILE "fluxpbx.pid"
 static char *pfile = PIDFILE;
 static int system_ready = 0;
 
@@ -64,7 +64,7 @@ static int system_ready = 0;
 
 #ifdef WIN32
 /* If we are a windows service, what should we be called */
-#define SERVICENAME_DEFAULT "FreeSWITCH"
+#define SERVICENAME_DEFAULT "FluxPBX"
 #define SERVICENAME_MAXLEN 256
 static char service_name[SERVICENAME_MAXLEN];
 static switch_core_flag_t service_flags = SCF_NONE;
@@ -79,14 +79,14 @@ static HANDLE shutdown_event;
 #endif
 #endif
 
-/* signal handler for when freeswitch is running in background mode.
- * signal triggers the shutdown of freeswitch
+/* signal handler for when fluxpbx is running in background mode.
+ * signal triggers the shutdown of fluxpbx
 # */
 static void handle_SIGILL(int sig)
 {
 	int32_t arg = 0;
 	if (sig) {}
-	/* send shutdown signal to the freeswitch core */
+	/* send shutdown signal to the fluxpbx core */
 	switch_core_session_ctl(SCSC_SHUTDOWN, &arg);
 	return;
 }
@@ -95,13 +95,13 @@ static void handle_SIGTERM(int sig)
 {
 	int32_t arg = 0;
 	if (sig) {}
-	/* send shutdown signal to the freeswitch core */
+	/* send shutdown signal to the fluxpbx core */
 	switch_core_session_ctl(SCSC_SHUTDOWN_ELEGANT, &arg);
 	return;
 }
 
-/* kill a freeswitch process running in background mode */
-static int freeswitch_kill_background(void)
+/* kill a fluxpbx process running in background mode */
+static int fluxpbx_kill_background(void)
 {
 	FILE *f;					/* FILE handle to open the pid file */
 	char path[PATH_MAX] = "";		/* full path of the PID file */
@@ -128,11 +128,11 @@ static int freeswitch_kill_background(void)
 	/* if we have a valid pid */
 	if (pid > 0) {
 
-		/* kill the freeswitch running at the pid we found */
+		/* kill the fluxpbx running at the pid we found */
 		fprintf(stderr, "Killing: %d\n", (int) pid);
 #ifdef WIN32
-		/* for windows we need the event to signal for shutting down a background FreeSWITCH */
-		snprintf(path, sizeof(path), "Global\\Freeswitch.%d", pid);
+		/* for windows we need the event to signal for shutting down a background FluxPBX */
+		snprintf(path, sizeof(path), "Global\\Fluxpbx.%d", pid);
 
 		/* open the event so we can signal it */
 		shutdown_event = OpenEvent(EVENT_MODIFY_STATE, FALSE, path);
@@ -171,7 +171,7 @@ void WINAPI ServiceCtrlHandler(DWORD control)
 	switch (control) {
 	case SERVICE_CONTROL_SHUTDOWN:
 	case SERVICE_CONTROL_STOP:
-		/* Shutdown freeswitch */
+		/* Shutdown fluxpbx */
 		switch_core_destroy();
 		/* set service status values */
 		status.dwCurrentState = SERVICE_STOPPED;
@@ -192,7 +192,7 @@ void WINAPI ServiceCtrlHandler(DWORD control)
 void WINAPI service_main(DWORD numArgs, char **args)
 {
 	switch_core_flag_t flags = SCF_USE_SQL | SCF_USE_AUTO_NAT | SCF_USE_NAT_MAPPING | SCF_CALIBRATE_CLOCK | SCF_USE_CLOCK_RT;
-	const char *err = NULL;		/* error value for return from freeswitch initialization */
+	const char *err = NULL;		/* error value for return from fluxpbx initialization */
 
 	/* Override flags if they have been set earlier */
 	if (service_flags != SCF_NONE)
@@ -212,12 +212,12 @@ void WINAPI service_main(DWORD numArgs, char **args)
 
 	switch_core_set_globals();
 
-	/* attempt to initialize freeswitch and load modules */
+	/* attempt to initialize fluxpbx and load modules */
 	if (switch_core_init_and_modload(flags, SWITCH_FALSE, &err) != SWITCH_STATUS_SUCCESS) {
-		/* freeswitch did not start successfully */
+		/* fluxpbx did not start successfully */
 		status.dwCurrentState = SERVICE_STOPPED;
 	} else {
-		/* freeswitch started */
+		/* fluxpbx started */
 		status.dwCurrentState = SERVICE_RUNNING;
 	}
 
@@ -295,7 +295,7 @@ static void daemonize(int *fds)
 
 			close(fds[1]);
 
-			if ((o = getenv("FREESWITCH_BG_TIMEOUT"))) {
+			if ((o = getenv("FLUXPBX_BG_TIMEOUT"))) {
 				int tmp = atoi(o);
 				if (tmp > 0) {
 					sanity = tmp;
@@ -306,7 +306,7 @@ static void daemonize(int *fds)
 				system_ready = check_fd(fds[0], 2000);
 
 				if (system_ready == 0) {
-					printf("FreeSWITCH[%d] Waiting for background process pid:%d to be ready.....\n", (int)getpid(), (int) pid);
+					printf("FluxPBX[%d] Waiting for background process pid:%d to be ready.....\n", (int)getpid(), (int) pid);
 				}
 
 			} while (--sanity && system_ready == 0);
@@ -317,12 +317,12 @@ static void daemonize(int *fds)
 
 
 			if (system_ready < 0) {
-				printf("FreeSWITCH[%d] Error starting system! pid:%d\n", (int)getpid(), (int) pid);
+				printf("FluxPBX[%d] Error starting system! pid:%d\n", (int)getpid(), (int) pid);
 				kill(pid, 9);
 				exit(EXIT_FAILURE);
 			}
 
-			printf("FreeSWITCH[%d] System Ready pid:%d\n", (int) getpid(), (int) pid);
+			printf("FluxPBX[%d] System Ready pid:%d\n", (int) getpid(), (int) pid);
 		}
 
 		exit(EXIT_SUCCESS);
@@ -417,12 +417,12 @@ static void reincarnate_protect(char **argv) {
 #endif
 
 static const char usage[] =
-	"Usage: freeswitch [OPTIONS]\n\n"
-	"These are the optional arguments you can pass to freeswitch:\n"
+	"Usage: fluxpbx [OPTIONS]\n\n"
+	"These are the optional arguments you can pass to fluxpbx:\n"
 #ifdef WIN32
-	"\t-service [name]        -- start freeswitch as a service, cannot be used if loaded as a console app\n"
-	"\t-install [name]        -- install freeswitch as a service, with optional service name\n"
-	"\t-uninstall             -- remove freeswitch as a service\n"
+	"\t-service [name]        -- start fluxpbx as a service, cannot be used if loaded as a console app\n"
+	"\t-install [name]        -- install fluxpbx as a service, with optional service name\n"
+	"\t-uninstall             -- remove fluxpbx as a service\n"
 	"\t-monotonic-clock       -- use monotonic clock as timer source\n"
 #else
 	"\t-nf                    -- no forking\n"
@@ -449,7 +449,7 @@ static const char usage[] =
 	"\t-nonatmap              -- disable auto nat port mapping\n"
 	"\t-nocal                 -- disable clock calibration\n"
 	"\t-nort                  -- disable clock clock_realtime\n"
-	"\t-stop                  -- stop freeswitch\n"
+	"\t-stop                  -- stop fluxpbx\n"
 	"\t-nc                    -- do not output to a console and background\n"
 #ifndef WIN32
 	"\t-ncwait                -- do not output to a console and background but wait until the system is ready before exiting (implies -nc)\n"
@@ -457,8 +457,8 @@ static const char usage[] =
 	"\t-c                     -- output to a console and stay in the foreground\n"
 	"\n\tOptions to control locations of files:\n"
 	"\t-base [basedir]         -- alternate prefix directory\n"
-	"\t-cfgname [filename]     -- alternate filename for FreeSWITCH main configuration file\n"
-	"\t-conf [confdir]         -- alternate directory for FreeSWITCH configuration files\n"
+	"\t-cfgname [filename]     -- alternate filename for FluxPBX main configuration file\n"
+	"\t-conf [confdir]         -- alternate directory for FluxPBX configuration files\n"
 	"\t-log [logdir]           -- alternate directory for logfiles\n"
 	"\t-run [rundir]           -- alternate directory for runtime files\n"
 	"\t-db [dbdir]             -- alternate directory for the internal database\n"
@@ -492,7 +492,7 @@ int main(int argc, char *argv[])
 	char pid_buffer[32] = "";	/* pid string */
 	char old_pid_buffer[32] = { 0 };	/* pid string */
 	switch_size_t pid_len, old_pid_len;
-	const char *err = NULL;		/* error value for return from freeswitch initialization */
+	const char *err = NULL;		/* error value for return from fluxpbx initialization */
 #ifndef WIN32
 	switch_bool_t nf = SWITCH_FALSE;				/* TRUE if we are running in nofork mode */
 	switch_bool_t do_wait = SWITCH_FALSE;
@@ -534,7 +534,7 @@ int main(int argc, char *argv[])
 		local_argv[x] = argv[x];
 	}
 
-	if ((opts = getenv("FREESWITCH_OPTS"))) {
+	if ((opts = getenv("FLUXPBX_OPTS"))) {
 		strncpy(opts_str, opts, sizeof(opts_str) - 1);
 		i = switch_separate_string(opts_str, ' ', arg_argv, (sizeof(arg_argv) / sizeof(arg_argv[0])));
 		for (x = 0; x < i; x++) {
@@ -542,7 +542,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	if (local_argv[0] && strstr(local_argv[0], "freeswitchd")) {
+	if (local_argv[0] && strstr(local_argv[0], "fluxpbxd")) {
 		nc = SWITCH_TRUE;
 	}
 
@@ -575,7 +575,7 @@ int main(int argc, char *argv[])
 			SC_HANDLE hService;
 			SC_HANDLE hSCManager;
 			SERVICE_DESCRIPTION desc;
-			desc.lpDescription = "The FreeSWITCH service.";
+			desc.lpDescription = "The FluxPBX service.";
 
 			x++;
 			if (!switch_strlen_zero(local_argv[x])) {
@@ -598,14 +598,14 @@ int main(int argc, char *argv[])
 			hService = CreateService(hSCManager, service_name, service_name, GENERIC_READ | GENERIC_EXECUTE | SERVICE_CHANGE_CONFIG, SERVICE_WIN32_OWN_PROCESS, SERVICE_AUTO_START, SERVICE_ERROR_IGNORE,
 						 servicePath, NULL, NULL, NULL, NULL, /* Service start name */ NULL);
 			if (!hService) {
-				fprintf(stderr, "Error creating freeswitch service (%u).\n", GetLastError());
+				fprintf(stderr, "Error creating fluxpbx service (%u).\n", GetLastError());
 				CloseServiceHandle(hSCManager);
 				exit(EXIT_FAILURE);
 			}
 
 			/* Set desc, and don't care if it succeeds */
 			if (!ChangeServiceConfig2(hService, SERVICE_CONFIG_DESCRIPTION, &desc)) {
-				fprintf(stderr, "FreeSWITCH installed, but could not set the service description (%u).\n", GetLastError());
+				fprintf(stderr, "FluxPBX installed, but could not set the service description (%u).\n", GetLastError());
 			}
 
 			CloseServiceHandle(hService);
@@ -712,7 +712,7 @@ int main(int argc, char *argv[])
 		}
 #endif
 		else if (!strcmp(local_argv[x], "-version")) {
-			fprintf(stdout, "FreeSWITCH version: %s (%s)\n", switch_version_full(), switch_version_revision_human());
+			fprintf(stdout, "FluxPBX version: %s (%s)\n", switch_version_full(), switch_version_revision_human());
 			exit(EXIT_SUCCESS);
 		}
 
@@ -1037,7 +1037,7 @@ int main(int argc, char *argv[])
 	}
 
 	if (do_kill) {
-		return freeswitch_kill_background();
+		return fluxpbx_kill_background();
 	}
 
 	if (fspr_initialize() != SWITCH_STATUS_SUCCESS) {
@@ -1152,8 +1152,8 @@ int main(int argc, char *argv[])
 
 		if (StartServiceCtrlDispatcher(dispatchTable) == 0) {
 			/* Not loaded as a service */
-			fprintf(stderr, "Error Freeswitch loaded as a console app with -service option\n");
-			fprintf(stderr, "To install the service load freeswitch with -install\n");
+			fprintf(stderr, "Error Fluxpbx loaded as a console app with -service option\n");
+			fprintf(stderr, "To install the service load fluxpbx with -install\n");
 		}
 		exit(EXIT_SUCCESS);
 	}

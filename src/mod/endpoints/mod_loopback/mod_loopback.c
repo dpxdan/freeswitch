@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2018, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2018, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Emmanuel Schmidbauer <e.schmidbauer@gmail.com>
  * Seven Du <dujinfang@gmail.com>
  *
@@ -1353,7 +1353,7 @@ static void set_mparams(null_private_t *tech_pvt)
 	mparams->jb_msec = "60";
 	mparams->rtcp_audio_interval_msec = "5000";
 	mparams->rtcp_video_interval_msec = "5000";
-	mparams->sdp_username = "FreeSWITCH";
+	mparams->sdp_username = "FluxPBX";
 	mparams->cng_pt = 13;
 	mparams->rtp_timeout_sec = 300;
 	mparams->rtp_hold_timeout_sec = 3600;

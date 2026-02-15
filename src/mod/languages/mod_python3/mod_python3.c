@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -52,7 +52,7 @@
 
 PyThreadState *mainThreadState = NULL;
 
-PyMODINIT_FUNC PyInit__freeswitch(void);
+PyMODINIT_FUNC PyInit__fluxpbx(void);
 int py_thread(const char *text);
 static void set_max_recursion_depth(void);
 static switch_api_interface_t python_run_interface;
@@ -80,7 +80,7 @@ static switch_mutex_t *THREAD_POOL_LOCK = NULL;
 
 
 /**
-* This function is similiar to PyErr_Print. It uses the freeswitch print/log mechanism instead of the python sys.stderr
+* This function is similiar to PyErr_Print. It uses the fluxpbx print/log mechanism instead of the python sys.stderr
 */
 static void print_python_error(const char * script)
 {
@@ -289,7 +289,7 @@ static void eval_some_python(const char *funcname, char *args, switch_core_sessi
 		goto done_swap_out;
 	}
 
-	PyRun_SimpleString("import freeswitch");
+	PyRun_SimpleString("import fluxpbx");
 
 	if (session) {
 		sp = mod_python_conjure_session(module, session);
@@ -446,7 +446,7 @@ static switch_status_t do_config(void)
 
 
 /**
- * As freeswitch runs with a smaller than normal stack size (240K instead of the usual value .. 1 or 2 MB),
+ * As fluxpbx runs with a smaller than normal stack size (240K instead of the usual value .. 1 or 2 MB),
  * we must decrease the default python recursion limit accordingly.  Otherwise, python can easily blow
  * up the stack and the whole switch crashes.  See modlang-134
  */
@@ -465,7 +465,7 @@ static void set_max_recursion_depth(void)
 		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "Set python recursion limit to %d\n", newMaxRecursionDepth);
 	} else {
 		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Failed to set recursion limit to %d\n", newMaxRecursionDepth);
-		print_python_error("_freeswitch");
+		print_python_error("_fluxpbx");
 		PyErr_Clear();
 		PyRun_SimpleString("python_makes_sense");
 		PyGC_Collect();
@@ -589,7 +589,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_python3_load)
 	if (!Py_IsInitialized()) {
 
 		/* Add a built-in module, before Py_Initialize */
-		if (PyImport_AppendInittab("_freeswitch", PyInit__freeswitch) == -1) {
+		if (PyImport_AppendInittab("_fluxpbx", PyInit__fluxpbx) == -1) {
 		    fprintf(stderr, "Error: could not extend in-built modules table\n");
 		}
 
@@ -659,7 +659,7 @@ SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_python3_shutdown)
 
 	/* Give threads a few seconds to terminate.
 	   Not using switch_thread_join() since if threads refuse to die
-	   then freeswitch will hang */
+	   then fluxpbx will hang */
 	for (i = 0; i < 10 && thread_pool_head; i++) {
 		switch_yield(1000000);
 	}
@@ -671,7 +671,7 @@ SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_python3_shutdown)
 			switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Script [%s] didn't exit in time\n", pt->args);
 			pt = nextpt;
 		}
-		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Forcing python shutdown. This might cause freeswitch to crash!\n");
+		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Forcing python shutdown. This might cause fluxpbx to crash!\n");
 	}
 
 

@@ -13,7 +13,7 @@ The State Machine Compiler is needed for the freepy connection library to functi
 PYTHONPATH
 ==========
 
-- Add /path/to/freeswitch/scripts/socket to your PYTHONPATH
+- Add /path/to/fluxpbx/scripts/socket to your PYTHONPATH
 
 TESTING
 =======

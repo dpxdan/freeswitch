@@ -7,9 +7,9 @@ export KEY_SIZE=${KEY_SIZE}
 
 TMPFILE="/tmp/fs-ca-$$-$(date +%Y%m%d%H%M%S)"
 
-COMMON_NAME="FreeSWITCH CA"
-ALT_NAME="DNS:test.freeswitch.org"
-ORG_NAME="FreeSWITCH"
+COMMON_NAME="FluxPBX CA"
+ALT_NAME="DNS:test.fluxpbx.org"
+ORG_NAME="FluxPBX"
 OUTFILE="agent.pem"
 
 umask 037

@@ -27,7 +27,7 @@ ivr_def = {
 
 -- top is an object of class IVRMenu
 -- pass in all 16 args to the constructor to define a new IVRMenu object
-top = freeswitch.IVRMenu(
+top = fluxpbx.IVRMenu(
    ivr_def["main"],
    ivr_def["name"],
    ivr_def["greet_long"],
@@ -52,7 +52,7 @@ top = freeswitch.IVRMenu(
 top:bindAction("menu-exec-app", "transfer 9996 XML default", "2");
 top:bindAction("menu-exec-app", "transfer 9999 XML default", "3");
 top:bindAction("menu-exec-app", "transfer 9991 XML default", "4");
-top:bindAction("menu-exec-app", "bridge sofia/${domain}/888@conference.freeswitch.org", "1");
+top:bindAction("menu-exec-app", "bridge sofia/${domain}/888@conference.fluxpbx.org", "1");
 top:bindAction("menu-exec-app", "transfer 1234*256 enum", "5");
 top:bindAction("menu-sub", "demo_ivr_submenu","6");
 top:bindAction("menu-exec-app", "transfer $1 XML features", "/^(10[01][0-9])$/");
@@ -80,7 +80,7 @@ ivr_sub_def = {
 
 -- sub_menu is an object of class IVRMenu
 -- pass in all 16 args to the constructor to define a new IVRMenu object
-sub_menu = freeswitch.IVRMenu(
+sub_menu = fluxpbx.IVRMenu(
    ivr_sub_def["main"],
    ivr_sub_def["name"],
    ivr_sub_def["greet_long"],

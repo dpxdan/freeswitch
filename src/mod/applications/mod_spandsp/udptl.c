@@ -1,6 +1,6 @@
 //#define UDPTL_DEBUG
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2009, Steve Underwood <steveu@coppice.org>
  *
  * Version: MPL 1.1

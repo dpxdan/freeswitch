@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2021, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2021, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,20 +14,20 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
- * Ken Rice <krice at freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
+ * Ken Rice <krice at fluxpbx.org>
  * Paul D. Tinsley <pdt at jackhammer.org>
  * Bret McDanel <trixter AT 0xdecafbad.com>
- * Raymond Chandler <intralanman@freeswitch.org>
+ * Raymond Chandler <intralanman@fluxpbx.org>
  * Emmanuel Schmidbauer <eschmidbauer@gmail.com>
  * Kathleen King <kathleen.king@quentustech.com>
  *
@@ -263,7 +263,7 @@ char *generate_pai_str(private_object_t *tech_pvt)
 	if (!zstr(callee_name) && strcmp(callee_name, "_undef_") && !zstr(callee_number)) {
 		check_decode(callee_name, tech_pvt->session);
 
-		if (switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote)) {
+		if (switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote)) {
 			pai = switch_core_session_sprintf(tech_pvt->session, "%s: \"%s\" <%s>%s\n"
 											  "X-FS-Display-Name: %s\nX-FS-Display-Number: %s\n",
 											  header, callee_name, callee_number,
@@ -831,8 +831,8 @@ static switch_status_t sofia_answer_channel(switch_core_session_t *session)
 								SOATAG_AUDIO_AUX("cn telephone-event"), NUTAG_INCLUDE_EXTRA_SDP(1),
 								TAG_IF(!zstr(extra_headers), SIPTAG_HEADER_STR(extra_headers)),
 								TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
-								TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-									   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)), TAG_END());
+								TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+									   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)), TAG_END());
 				} else {
 					nua_respond(tech_pvt->nh, SIP_200_OK,
 								NUTAG_MEDIA_ENABLE(0),
@@ -842,8 +842,8 @@ static switch_status_t sofia_answer_channel(switch_core_session_t *session)
 								SIPTAG_CONTENT_TYPE_STR("application/sdp"),
 								SIPTAG_PAYLOAD_STR(tech_pvt->mparams.local_sdp_str),
 								TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
-								TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-									   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)), TAG_END());
+								TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+									   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)), TAG_END());
 				}
 
 
@@ -989,8 +989,8 @@ static switch_status_t sofia_answer_channel(switch_core_session_t *session)
 						TAG_IF(sofia_test_pflag(tech_pvt->profile, PFLAG_DISABLE_100REL), NUTAG_INCLUDE_EXTRA_SDP(1)),
 						SOATAG_RTP_SELECT(1),
 						TAG_IF(!zstr(extra_headers), SIPTAG_HEADER_STR(extra_headers)),
-						TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-							   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)), TAG_END());
+						TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+							   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)), TAG_END());
 		} else {
 			nua_respond(tech_pvt->nh, SIP_200_OK,
 						NUTAG_AUTOANSWER(0),
@@ -1007,8 +1007,8 @@ static switch_status_t sofia_answer_channel(switch_core_session_t *session)
 						SIPTAG_CONTENT_TYPE_STR("application/sdp"),
 						SIPTAG_PAYLOAD_STR(tech_pvt->mparams.local_sdp_str),
 						TAG_IF(!zstr(extra_headers), SIPTAG_HEADER_STR(extra_headers)),
-						TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-							   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)), TAG_END());
+						TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+							   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)), TAG_END());
 		}
 		switch_safe_free(extra_headers);
 		sofia_set_flag_locked(tech_pvt, TFLAG_ANS);
@@ -1856,7 +1856,7 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 				break;
 			}
 
-			if (switch_stristr("send_message", tech_pvt->x_freeswitch_support_remote)) {
+			if (switch_stristr("send_message", tech_pvt->x_fluxpbx_support_remote)) {
 				ok = 1;
 			}
 
@@ -1889,11 +1889,11 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 		break;
 	case SWITCH_MESSAGE_INDICATE_INFO:
 		{
-			char ct[256] = "freeswitch/data";
+			char ct[256] = "fluxpbx/data";
 			int ok = 0;
 			const char *session_id_header = sofia_glue_session_id_header(session, tech_pvt->profile);
 
-			if (switch_stristr("send_info", tech_pvt->x_freeswitch_support_remote)) {
+			if (switch_stristr("send_info", tech_pvt->x_fluxpbx_support_remote)) {
 				ok = 1;
 			}
 
@@ -2014,7 +2014,7 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 					if (zstr(tech_pvt->last_sent_callee_id_name) || strcmp(tech_pvt->last_sent_callee_id_name, name) ||
 						zstr(tech_pvt->last_sent_callee_id_number) || strcmp(tech_pvt->last_sent_callee_id_number, number)) {
 
-						if (switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote)) {
+						if (switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote)) {
 							snprintf(message, sizeof(message), "X-FS-Display-Name: %s\nX-FS-Display-Number: %s\n", name, number);
 
 							if (switch_channel_test_flag(tech_pvt->channel, CF_LAZY_ATTENDED_TRANSFER)) {
@@ -2408,7 +2408,7 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 						} else {
 							if (msg->numeric_arg && !(switch_channel_test_flag(channel, CF_ANSWERED) && code == 488)) {
 								if (code > 399) {
-									switch_call_cause_t cause = sofia_glue_sip_cause_to_freeswitch(code);
+									switch_call_cause_t cause = sofia_glue_sip_cause_to_fluxpbx(code);
 									if (code == 401 || cause == 407) cause = SWITCH_CAUSE_USER_CHALLENGE;
 
 									tech_pvt->respond_code = code;
@@ -2445,8 +2445,8 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 						TAG_IF(cid, SIPTAG_HEADER_STR(cid)),
 						TAG_IF(call_info, SIPTAG_CALL_INFO_STR(call_info)),
 						TAG_IF(!zstr(extra_header), SIPTAG_HEADER_STR(extra_header)),
-						TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-							   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)),
+						TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+							   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)),
 						TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 						TAG_END());
 		}
@@ -2487,8 +2487,8 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 								TAG_IF(cid, SIPTAG_HEADER_STR(cid)),
 								TAG_IF(call_info, SIPTAG_CALL_INFO_STR(call_info)),
 								TAG_IF(!zstr(extra_header), SIPTAG_HEADER_STR(extra_header)),
-								TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-									   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)),
+								TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+									   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)),
 								TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 								TAG_END());
 					break;
@@ -2501,8 +2501,8 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 								TAG_IF(cid, SIPTAG_HEADER_STR(cid)),
 								TAG_IF(call_info, SIPTAG_CALL_INFO_STR(call_info)),
 								TAG_IF(!zstr(extra_header), SIPTAG_HEADER_STR(extra_header)),
-								TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-									   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)),
+								TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+									   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)),
 								TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 								TAG_END());
 
@@ -2648,8 +2648,8 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 									SOATAG_USER_SDP_STR(tech_pvt->mparams.local_sdp_str), SOATAG_AUDIO_AUX("cn telephone-event"),
 									TAG_IF(call_info, SIPTAG_CALL_INFO_STR(call_info)),
 									TAG_IF(!zstr(extra_header), SIPTAG_HEADER_STR(extra_header)),
-									TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-										   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)),
+									TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+										   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)),
 									TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 									TAG_END());
 					} else {
@@ -2664,8 +2664,8 @@ static switch_status_t sofia_receive_message(switch_core_session_t *session, swi
 									SIPTAG_PAYLOAD_STR(tech_pvt->mparams.local_sdp_str),
 									TAG_IF(call_info, SIPTAG_CALL_INFO_STR(call_info)),
 									TAG_IF(!zstr(extra_header), SIPTAG_HEADER_STR(extra_header)),
-									TAG_IF(switch_stristr("update_display", tech_pvt->x_freeswitch_support_remote),
-										   SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)),
+									TAG_IF(switch_stristr("update_display", tech_pvt->x_fluxpbx_support_remote),
+										   SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)),
 									TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 									TAG_END());
 					}
@@ -5556,7 +5556,7 @@ void general_event_handler(switch_event_t *event)
 
 				if (csta_event) {
 					if (!strcmp(csta_event, "init")) {
-						char *boundary_string = "UniqueFreeSWITCHBoundary";
+						char *boundary_string = "UniqueFluxPBXBoundary";
 						switch_stream_handle_t dnd_stream = { 0 };
 
 						switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "Sending multipart with DND and CFWD\n");

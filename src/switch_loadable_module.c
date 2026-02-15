@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Seven Du <dujinfang@gmail.com>
  * Andrey Volk <andywolk@gmail.com>
  *
@@ -681,7 +681,7 @@ static switch_status_t switch_loadable_module_process(char *key, switch_loadable
 									  "Failed to load management interface %s. OID %s already exists\n", key, ptr->relative_oid);
 				} else {
 					switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE,
-									  "Adding Management interface '%s' OID[%s.%s]\n", key, FREESWITCH_OID_PREFIX, ptr->relative_oid);
+									  "Adding Management interface '%s' OID[%s.%s]\n", key, FLUXPBX_OID_PREFIX, ptr->relative_oid);
 					switch_core_hash_insert(loadable_modules.management_hash, ptr->relative_oid, (const void *) ptr);
 					if (switch_event_create(&event, SWITCH_EVENT_MODULE_LOAD) == SWITCH_STATUS_SUCCESS) {
 						switch_event_add_header_string(event, SWITCH_STACK_BOTTOM, "type", "management");
@@ -1588,7 +1588,7 @@ static switch_status_t switch_loadable_module_unprocess(switch_loadable_module_t
 		for (ptr = old_module->module_interface->management_interface; ptr; ptr = ptr->next) {
 			if (ptr->relative_oid) {
 				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE,
-								  "Deleting Management interface '%s' OID[%s.%s]\n", old_module->key, FREESWITCH_OID_PREFIX, ptr->relative_oid);
+								  "Deleting Management interface '%s' OID[%s.%s]\n", old_module->key, FLUXPBX_OID_PREFIX, ptr->relative_oid);
 				switch_core_hash_delete(loadable_modules.management_hash, ptr->relative_oid);
 				if (switch_event_create(&event, SWITCH_EVENT_MODULE_UNLOAD) == SWITCH_STATUS_SUCCESS) {
 					switch_event_add_header_string(event, SWITCH_STACK_BOTTOM, "type", "management");
@@ -1657,10 +1657,10 @@ static switch_status_t switch_loadable_module_load_file(char *path, char *filena
 	struct_name = switch_core_sprintf(pool, "%s_module_interface", filename);
 
 #ifdef WIN32
-	dso = switch_dso_open("FreeSwitch.dll", load_global, &derr);
+	dso = switch_dso_open("FluxPbx.dll", load_global, &derr);
 #elif defined (MACOSX) || defined(DARWIN)
 	{
-		char *lib_path = switch_mprintf("%s/libfreeswitch.dylib", SWITCH_GLOBAL_dirs.lib_dir);
+		char *lib_path = switch_mprintf("%s/libfluxpbx.dylib", SWITCH_GLOBAL_dirs.lib_dir);
 		dso = switch_dso_open(lib_path, load_global, &derr);
 		switch_safe_free(lib_path);
 	}

@@ -1,4 +1,4 @@
-package org.freeswitch;
+package org.fluxpbx;
 
 public interface DTMFCallback
 {

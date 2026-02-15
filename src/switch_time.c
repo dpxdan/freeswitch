@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Massimo Cetra <devel@navynet.it> - Timezone functionality
  *
  *
@@ -1627,7 +1627,7 @@ SWITCH_MODULE_SHUTDOWN_FUNCTION(softtimer_shutdown)
  *    This file was originally written for NetBSD and is in the public domain,
  *    so clarified as of 1996-06-05 by Arthur David Olson (arthur_david_olson@nih.gov).
  *
- *    Iw was modified by Massimo Cetra in order to be used with Callweaver and Freeswitch.
+ *    Iw was modified by Massimo Cetra in order to be used with Callweaver and Fluxpbx.
  */
 
 //#define TESTING_IT 1

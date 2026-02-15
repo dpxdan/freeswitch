@@ -3063,16 +3063,16 @@ static swig_module_info swig_module = {swig_types, 28, 0, 0, 0, 0};
 #endif
 
 /*-----------------------------------------------
-              @(target):= _freeswitch.so
+              @(target):= _fluxpbx.so
   ------------------------------------------------*/
 #if PY_VERSION_HEX >= 0x03000000
-#  define SWIG_init    PyInit__freeswitch
+#  define SWIG_init    PyInit__fluxpbx
 
 #else
-#  define SWIG_init    init_freeswitch
+#  define SWIG_init    init_fluxpbx
 
 #endif
-#define SWIG_name    "_freeswitch"
+#define SWIG_name    "_fluxpbx"
 
 #define SWIGVERSION 0x030012 
 #define SWIG_VERSION SWIGVERSION
@@ -3156,7 +3156,7 @@ namespace swig {
 
 
 #include "switch_cpp.h"
-#include "freeswitch_python.h"
+#include "fluxpbx_python.h"
 
 
 SWIGINTERN swig_type_info*

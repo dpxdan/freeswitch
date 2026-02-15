@@ -372,8 +372,8 @@
 			<prompt phrase="输入错误" filename="ivr-that_was_an_invalid_entry.wav"/>
 			<prompt phrase="有一个电话来自" filename="ivr-this_is_a_call_from.wav"/>
 			<prompt phrase="您可以通过本 IVR　测试一些功能..." filename="ivr-this_ivr_will_let_you_test_features.wav"/>
-			<prompt phrase="呼叫FreeSWITCH会议" filename="ivr-to_call_the_freeswitch_conference.wav"/>
-			<prompt phrase="进行回音测试" filename="ivr-to_do_a_freeswitch_echo_test.wav"/>
+			<prompt phrase="呼叫FluxPBX会议" filename="ivr-to_call_the_fluxpbx_conference.wav"/>
+			<prompt phrase="进行回音测试" filename="ivr-to_do_a_fluxpbx_echo_test.wav"/>
 			<prompt phrase="进行延迟回音测试" filename="ivr-to_do_a_fwd_echo_test.wav"/>
 			<prompt phrase="收听下级测试菜单" filename="ivr-to_hear_sample_submenu.wav"/>
 			<prompt phrase="收听疯狂的猴子" filename="ivr-to_hear_screaming_monkeys.wav"/>
@@ -381,7 +381,7 @@
 			<prompt phrase="重听" filename="ivr-to_repeat_these_options.wav"/>
 			<prompt phrase="返回上一级菜单" filename="ivr-to_return_to_previous_menu.wav"/>
 			<prompt phrase="转接线员" filename="ivr-to_speak_with_an_operator.wav"/>
-			<prompt phrase="欢迎来到FreeSWITCH，电话系统的未来" filename="ivr-welcome_to_freeswitch.wav"/>
+			<prompt phrase="欢迎来到FluxPBX，电话系统的未来" filename="ivr-welcome_to_fluxpbx.wav"/>
 			<prompt phrase="您可以随时挂机" filename="ivr-you_may_exit_by_hanging_up.wav"/>
 			<prompt phrase="或" filename ="ivr-or.wav"/>
 			<prompt phrase="否" filename ="ivr-not.wav"/>

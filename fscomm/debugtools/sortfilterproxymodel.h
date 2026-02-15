@@ -32,7 +32,7 @@
  *
  * Contributor(s):
  *
- * Joao Mesquita <jmesquita (at) freeswitch.org>
+ * Joao Mesquita <jmesquita (at) fluxpbx.org>
  *
  */
 #ifndef SORTFILTERPROXYMODEL_H

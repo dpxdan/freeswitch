@@ -1,6 +1,6 @@
 <configuration name="nibblebill.conf" description="Nibble Billing">
   <settings>
-    <!-- See http://wiki.freeswitch.org/wiki/Mod_nibblebill for help with these options -->
+    <!-- See http://wiki.fluxpbx.org/wiki/Mod_nibblebill for help with these options -->
 
     <!-- Information for connecting to your database. Use the format "database:username:password" -->
     <param name="odbc-dsn" value="bandwidth.com:user:password"/>

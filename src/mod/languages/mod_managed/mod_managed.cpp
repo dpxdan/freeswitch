@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@packetrino.com>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@packetrino.com>
@@ -28,7 +28,7 @@
  * Jeff Lenk <jlenk@frontiernet.net>
  * Artur Kraev <ravenox@gmail.com>
  *
- * mod_mono.cpp -- FreeSWITCH mod_mono main class
+ * mod_mono.cpp -- FluxPBX mod_mono main class
  *
  * Most of mod_mono is implmented in the mod_mono_managed Loader class.
  * The native code just handles getting the Mono runtime up and down
@@ -36,7 +36,7 @@
  */
 
 #include <switch.h>
-#include "freeswitch_managed.h"
+#include "fluxpbx_managed.h"
 
 #ifdef _MANAGED
 #include <mscoree.h>
@@ -58,13 +58,13 @@ SWITCH_STANDARD_APP(managed_app_function);	/* Run */
 SWITCH_STANDARD_API(managedreload_api_function);	/* Reload */
 SWITCH_STANDARD_API(managedlist_api_function); /* List modules */
 
-#define MOD_MANAGED_ASM_NAME "FreeSWITCH.Managed"
+#define MOD_MANAGED_ASM_NAME "FluxPBX.Managed"
 #define MOD_MANAGED_ASM_V1 1
 #define MOD_MANAGED_ASM_V2 0
 #define MOD_MANAGED_ASM_V3 2
 #define MOD_MANAGED_ASM_V4 0
 #define MOD_MANAGED_DLL MOD_MANAGED_ASM_NAME ".dll"
-#define MOD_MANAGED_IMAGE_NAME "FreeSWITCH"
+#define MOD_MANAGED_IMAGE_NAME "FluxPBX"
 #define MOD_MANAGED_CLASS_NAME "Loader"
 
 mod_managed_globals managed_globals = { 0 };
@@ -285,7 +285,7 @@ switch_status_t loadRuntime()
 	wchar_t modpath[256];
 	mbstowcs(modpath, filename, 255);
 	try {
-		FreeSwitchManaged::mod_dotnet_managed = Assembly::LoadFrom(gcnew String(modpath));
+		FluxPbxManaged::mod_dotnet_managed = Assembly::LoadFrom(gcnew String(modpath));
 	} catch (Exception^ ex) {
 		IntPtr msg = Marshal::StringToHGlobalAnsi(ex->ToString());
 		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Assembly::LoadFrom failed: %s\n", static_cast<const char*>(msg.ToPointer()));
@@ -298,7 +298,7 @@ switch_status_t loadRuntime()
 switch_status_t findLoader()
 {
 	try {
-		FreeSwitchManaged::loadMethod = FreeSwitchManaged::mod_dotnet_managed->GetType(MOD_MANAGED_IMAGE_NAME "." MOD_MANAGED_CLASS_NAME)->GetMethod("Load");
+		FluxPbxManaged::loadMethod = FluxPbxManaged::mod_dotnet_managed->GetType(MOD_MANAGED_IMAGE_NAME "." MOD_MANAGED_CLASS_NAME)->GetMethod("Load");
 	} catch(Exception^ ex) {
 		IntPtr msg = Marshal::StringToHGlobalAnsi(ex->ToString());
 		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Could not load " MOD_MANAGED_IMAGE_NAME "." MOD_MANAGED_CLASS_NAME " class: %s\n", static_cast<const char*>(msg.ToPointer()));
@@ -328,7 +328,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_managed_load)
 	}
 #ifdef _MANAGED
 	try {
-		Object ^objResult = FreeSwitchManaged::loadMethod->Invoke(nullptr, nullptr);
+		Object ^objResult = FluxPbxManaged::loadMethod->Invoke(nullptr, nullptr);
 		success = *reinterpret_cast<bool^>(objResult);
 		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "Load completed successfully.\n");
 	}

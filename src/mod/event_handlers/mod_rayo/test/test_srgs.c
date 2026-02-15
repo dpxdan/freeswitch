@@ -620,7 +620,7 @@ static const char *voice_srgs1 =
 
 static const char *voice_jsgf =
 	"#JSGF V1.0;\n"
-	"grammar org.freeswitch.srgs_to_jsgf;\n"
+	"grammar org.fluxpbx.srgs_to_jsgf;\n"
 	"public <command> = [ <polite> ] don't crash;\n"
 	"<polite> = ( ( please ) | ( kindly ) | ( oh mighty computer ) );\n";
 

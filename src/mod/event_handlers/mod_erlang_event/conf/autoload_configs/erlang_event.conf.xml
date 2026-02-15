@@ -5,9 +5,9 @@
     <!-- Specify the first part of the node name
          (the host part after the @ will be autodetected)
          OR pass a complete nodename to avoid autodetection
-         eg. freeswitch@example or freeswitch@example.com.
+         eg. fluxpbx@example or fluxpbx@example.com.
          If you pass a complete node name, the 'shortname' parameter has no effect. -->
-    <param name="nodename" value="freeswitch"/>
+    <param name="nodename" value="fluxpbx"/>
     <!-- Specify this OR 'cookie-file' or $HOME/.erlang.cookie will be read -->
     <param name="cookie" value="ClueCon"/>
     <!-- Read a cookie from an arbitary erlang cookie file instead -->

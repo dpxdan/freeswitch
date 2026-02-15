@@ -1,4 +1,4 @@
-This is a sample build system for a stand alone FreeSWITCH module.
+This is a sample build system for a stand alone FluxPBX module.
 
 To build and install:
 ./bootstrap.sh

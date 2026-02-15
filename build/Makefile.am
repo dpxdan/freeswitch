@@ -1,8 +1,8 @@
 MK=`echo $(MAKE) | $(AWK) '{printf "%5s\n", $$0}' `
 
 all:
-	@echo " +---------- FreeSWITCH Build Complete ----------+"
-	@echo " + FreeSWITCH has been successfully built.       +"
+	@echo " +---------- FluxPBX Build Complete ----------+"
+	@echo " + FluxPBX has been successfully built.       +"
 	@echo " + Install by running:                           +"
 	@echo " +                                               +"
 	@echo " +               $(MK) install                   +"
@@ -14,8 +14,8 @@ all:
 	@cat $(switch_srcdir)/cluecon2.tmpl
 
 install:
-	@echo " +---------- FreeSWITCH install Complete ----------+"
-	@echo " + FreeSWITCH has been successfully installed.     +"
+	@echo " +---------- FluxPBX install Complete ----------+"
+	@echo " + FluxPBX has been successfully installed.     +"
 	@echo " +                                                 +"
 	@echo " +       Install sounds:                           +"
 	@echo " +       (uhd-sounds includes hd-sounds, sounds)   +"
@@ -58,12 +58,12 @@ install:
 	@echo " +                                                 +"
 	@echo " +       Additional resources:                     +"
 	@echo " +       ----------------------------------        +"
-	@echo " +       https://www.freeswitch.org                +"
-	@echo " +       https://freeswitch.org/confluence         +"
-	@echo " +       https://freeswitch.org/jira               +"
-	@echo " +       http://lists.freeswitch.org               +"
+	@echo " +       https://www.fluxpbx.org                +"
+	@echo " +       https://fluxpbx.org/confluence         +"
+	@echo " +       https://fluxpbx.org/jira               +"
+	@echo " +       http://lists.fluxpbx.org               +"
 	@echo " +                                                 +"
-	@echo " +       irc.freenode.net / #freeswitch            +"
+	@echo " +       irc.freenode.net / #fluxpbx            +"
 	@echo " +                                                 +"
 	@echo " +       Register For ClueCon:                     +"
 	@echo " +       ----------------------------------        +"

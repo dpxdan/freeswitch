@@ -1,5 +1,5 @@
 /*
-* mod_mariadb for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* mod_mariadb for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 * Copyright (C) 2019, Andrey Volk <andywolk@gmail.com>
 *
 * Version: MPL 1.1
@@ -14,17 +14,17 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is ported from FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* The Original Code is ported from FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 *
 * The Initial Developer of the Original Code is
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * Portions created by the Initial Developer are Copyright (C)
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
 * Andrey Volk <andywolk@gmail.com>
 *
-* mariadb_dsn.cpp -- Connection string parser for MariaDB FreeSWITCH module
+* mariadb_dsn.cpp -- Connection string parser for MariaDB FluxPBX module
 *
 */
 #include <switch.h>

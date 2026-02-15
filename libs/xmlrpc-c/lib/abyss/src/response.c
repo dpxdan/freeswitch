@@ -224,7 +224,7 @@ addServerHeaderFld(TSession * const sessionP) {
 
     const char * serverValue;
 
-    xmlrpc_asprintf(&serverValue, "Freeswitch xmlrpc-c_abyss /%s", XMLRPC_C_VERSION);
+    xmlrpc_asprintf(&serverValue, "Fluxpbx xmlrpc-c_abyss /%s", XMLRPC_C_VERSION);
 
     ResponseAddField(sessionP, "Server", serverValue);
 

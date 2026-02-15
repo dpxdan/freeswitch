@@ -1,5 +1,5 @@
 /*
- * H323 endpoint interface for Freeswitch Modular Media Switching Software Library /
+ * H323 endpoint interface for Fluxpbx Modular Media Switching Software Library /
  * Soft-Switch Application
  *
  * Version: MPL 1.1
@@ -22,10 +22,10 @@
  *
  *
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -264,7 +264,7 @@ class FSH323EndPoint:public H323EndPoint {
 	void StopGkClient();
 
 	switch_endpoint_interface_t *GetSwitchInterface() const {
-		return m_freeswitch;
+		return m_fluxpbx;
 	}
 	FSH323Connection *FSMakeCall(const PString & dest, void *userData);
 	list < FSListener > m_listeners;
@@ -272,7 +272,7 @@ class FSH323EndPoint:public H323EndPoint {
 	int m_pi;
   protected:
 	PStringList m_gkPrefixes;
-	switch_endpoint_interface_t *m_freeswitch;
+	switch_endpoint_interface_t *m_fluxpbx;
 	PString m_gkAddress;
 	PString m_gkIdentifer;
 	PString m_endpointname;

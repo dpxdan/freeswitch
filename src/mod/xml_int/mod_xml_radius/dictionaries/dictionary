@@ -26,8 +26,8 @@
 #
 #	Following are the proper new names. Use these.
 #
-$INCLUDE /usr/local/src/freeswitch/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary.cisco
-$INCLUDE /usr/local/src/freeswitch/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary.rfc5090
+$INCLUDE /usr/local/src/fluxpbx/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary.cisco
+$INCLUDE /usr/local/src/fluxpbx/src/mod/xml_int/mod_xml_radius/dictionaries/dictionary.rfc5090
 
 ATTRIBUTE	User-Name		1	string
 ATTRIBUTE	Password		2	string

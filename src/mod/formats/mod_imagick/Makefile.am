@@ -11,7 +11,7 @@ if HAVE_MAGICK7
 mod_imagick_la_CFLAGS  += -DHAVE_MAGIC7
 endif
 
-mod_imagick_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(MAGICK_LIBS)
+mod_imagick_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(MAGICK_LIBS)
 mod_imagick_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 else

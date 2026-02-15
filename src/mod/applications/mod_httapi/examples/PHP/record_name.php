@@ -34,7 +34,7 @@ if ( $exiting ) {
 
 header('Content-Type: text/xml');
 $xml->startElement('document');
-$xml->writeAttribute('type', 'xml/freeswitch-httapi');
+$xml->writeAttribute('type', 'xml/fluxpbx-httapi');
 
 $xml->startElement('work');
 
@@ -43,13 +43,13 @@ $xml->writeAttribute('milliseconds', "1500");
 $xml->endElement();
 
 $xml->startElement('playback');
-$xml->writeAttribute('file', "http://sidious.freeswitch.org/eg/ivr-say_name.wav");
+$xml->writeAttribute('file', "http://sidious.fluxpbx.org/eg/ivr-say_name.wav");
 $xml->endElement();
 
 $xml->startElement('record');
 $xml->writeAttribute('name', "recorded_file");
 $xml->writeAttribute('file', $_REQUEST['session_id'] . ".wav");
-$xml->writeAttribute('error-file', "http://sidious.freeswitch.org/sounds/invalid.wav");
+$xml->writeAttribute('error-file', "http://sidious.fluxpbx.org/sounds/invalid.wav");
 $xml->writeAttribute('input-timeout', "5000");
 $xml->writeAttribute('beep-file', "tone_stream://%(1000,0,460)");
 $xml->endElement();

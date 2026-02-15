@@ -5,9 +5,9 @@ local tddstring = {};
 
 function my_cb(s, type, obj, arg)
    if (arg) then
-      freeswitch.console_log("info", "\ntype: " .. type .. "\n" .. "arg: " .. arg .. "\n");
+      fluxpbx.console_log("info", "\ntype: " .. type .. "\n" .. "arg: " .. arg .. "\n");
    else
-      freeswitch.console_log("info", "\ntype: " .. type .. "\n");
+      fluxpbx.console_log("info", "\ntype: " .. type .. "\n");
    end
 
 
@@ -16,11 +16,11 @@ function my_cb(s, type, obj, arg)
    table.insert(tddstring, tdddata);
    
    
-   freeswitch.console_log("info", obj:serialize("xml"));
+   fluxpbx.console_log("info", obj:serialize("xml"));
 end
 
 function all_done(s, how)
-   freeswitch.console_log("info", "done: " .. how .. "\n");
+   fluxpbx.console_log("info", "done: " .. how .. "\n");
 end
 
 function tablelength(T)
@@ -37,7 +37,7 @@ session:answer();
 
 session:execute("playback", "silence_stream://2000");
 session:execute("spandsp_detect_tdd");
-session:execute("spandsp_send_tdd", "Welcome to FreeSWITCH");
+session:execute("spandsp_send_tdd", "Welcome to FluxPBX");
 
 while session:ready() do
    session:streamFile("silence_stream://10000");

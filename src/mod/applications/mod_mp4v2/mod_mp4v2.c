@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2015, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2015, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Seven Du <dujinfang@gmail.com>
@@ -24,7 +24,7 @@
  * Contributor(s):
  *
  *
- * mod_mp4v2 -- MP4 File Format for FreeSWITCH
+ * mod_mp4v2 -- MP4 File Format for FluxPBX
  *
  *
  * status: For write, codec is hard coded to PCMU for audio and H264 for video

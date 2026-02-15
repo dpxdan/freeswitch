@@ -1,6 +1,6 @@
 =head1 NAME
 
-POE::Filter::FSSocket - a POE filter that parses FreeSWITCH events into hashes
+POE::Filter::FSSocket - a POE filter that parses FluxPBX events into hashes
 
 =head1 SYNOPSIS
 
@@ -46,7 +46,7 @@ POE::Filter::FSSocket - a POE filter that parses FreeSWITCH events into hashes
 
 =head1 DESCRIPTION
 
-POE::Filter::FSSocket parses output from FreeSWITCH into hashes.  FreeSWITCH 
+POE::Filter::FSSocket parses output from FluxPBX into hashes.  FluxPBX 
 events have a very wide range of keys, the only consistant one being
 Content-Type.  The keys are dependant on the type of events.  You must use the 
 plain event type as that is what the filter knows how to parse.  You can ask for
@@ -86,7 +86,7 @@ Currently known event types (Event-Name):
   BACKGROUND_JOB
   ALL
 
-Currently handled FreeSWITCH messages (Content-Type):
+Currently handled FluxPBX messages (Content-Type):
 
   auth/request
   command/response
@@ -319,7 +319,7 @@ sub get {
 
 =head1 SEE ALSO
 
-FreeSWITCH - http://www.freeswitch.org/
+FluxPBX - http://www.freeswitch.org/
 
 =head1 AUTHORS
 

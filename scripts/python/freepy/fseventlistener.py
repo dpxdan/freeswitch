@@ -1,6 +1,6 @@
 """ 
-FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
 
 Version: MPL 1.1
 
@@ -14,10 +14,10 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the
 License.
 
-The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 
 The Initial Developer of the Original Code is
-Anthony Minessale II <anthm@freeswitch.org>
+Anthony Minessale II <anthm@fluxpbx.org>
 Portions created by the Initial Developer are Copyright (C)
 the Initial Developer. All Rights Reserved.
 
@@ -36,7 +36,7 @@ from Queue import Queue
 from freepy import request
 
 """
-This class connects to freeswitch and listens for
+This class connects to fluxpbx and listens for
 events and calls callback with the events.
 
 Example messages
@@ -58,7 +58,7 @@ Content-Type: text/event-xml
 
 """
 
-class FreeswitchEventListener(LineReceiver):
+class FluxpbxEventListener(LineReceiver):
 
     def __init__(self, conncb, discocb=None):
         self.delimiter='\n' # parent class uses this 
@@ -101,7 +101,7 @@ class FreeswitchEventListener(LineReceiver):
         """
         when sniffing custom events, the CUSTOM keyword
         must be present in message
-        http://wiki.freeswitch.org/wiki/Event_Socket#event
+        http://wiki.fluxpbx.org/wiki/Event_Socket#event
         
         @param output_type - eg, xml or plain
         @param events - list of events, eg ['all']
@@ -145,12 +145,12 @@ class FreeswitchEventListener(LineReceiver):
         raise Exception("This is an abstract class, should be overridden "
                         "in a subclass")
 
-class FreeswitchEventListenerFactory(ClientFactory):
+class FluxpbxEventListenerFactory(ClientFactory):
 
     def __init__(self, protoclass, host=None, passwd=None, port=None):
         """
         @param protoclass - a class (not instance) of the protocol
-                            should be a subclass of a FreeswitchEventListener
+                            should be a subclass of a FluxpbxEventListener
         """
 
         # dictionary of observers.  key: event name, value: list of observers
@@ -181,9 +181,9 @@ class FreeswitchEventListenerFactory(ClientFactory):
     def dispatch2observers(self, event_name, event_xml_str, event_dom):
         """
         called back by the underlying protocol upon receiving an
-        event from freeswitch.  Currently subclasses must explicitly
+        event from fluxpbx.  Currently subclasses must explicitly
         call this method from their eventReceived method for observers
-        to get the message.  TODO: move this call to FreeswitchEventListener
+        to get the message.  TODO: move this call to FluxpbxEventListener
         and use observer pattern instead of any subclassing.
         """
         observers = self.event2observer.get(event_name, [])
@@ -261,8 +261,8 @@ class FreeswitchEventListenerFactory(ClientFactory):
         
 
 def test1():
-    fel = FreeswitchEventListener
-    factory = FreeswitchEventListenerFactory(protoclass=fel,
+    fel = FluxpbxEventListener
+    factory = FluxpbxEventListenerFactory(protoclass=fel,
                                              host="127.0.0.1",
                                              port=8021,
                                              passwd="ClueCon")

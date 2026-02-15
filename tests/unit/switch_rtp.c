@@ -175,7 +175,7 @@ FST_TEARDOWN_END()
 
 		r_sdp = switch_core_session_sprintf(session,
 		"v=0\n"
-		"o=FreeSWITCH 1632033305 1632033306 IN IP4 %s\n"
+		"o=FluxPBX 1632033305 1632033306 IN IP4 %s\n"
 		"s=-\n"
 		"c=IN IP4 %s\n"
 		"t=0 0\n"

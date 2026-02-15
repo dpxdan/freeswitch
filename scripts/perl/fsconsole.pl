@@ -67,7 +67,7 @@ POE::Session->create(
 	},
 	'heap' => {
 		'terminal'     => undef,
-		'freeswitch'   => undef,
+		'fluxpbx'   => undef,
 	},
 );
 
@@ -101,7 +101,7 @@ sub handle_start {
 	my $window_id = $terminal->create_window(
 		'Window_Name' => 'console',
 		'Buffer_Size' => 3000,
-		'Title'       => 'FreeSWITCH Console',
+		'Title'       => 'FluxPBX Console',
 		'Status'      => {
 			'0' => {
 				'format' => '%s',
@@ -119,7 +119,7 @@ sub handle_start {
 	$window_id = $terminal->create_window(
 		'Window_Name' => 'log',
 		'Buffer_Size' => 3000,
-		'Title'       => 'FreeSWITCH Logs',
+		'Title'       => 'FluxPBX Logs',
 		'Status'      => {
 			'0' => {
 				'format' => '%s',
@@ -137,7 +137,7 @@ sub handle_start {
 	$window_id = $terminal->create_window(
 		'Window_Name' => 'event',
 		'Buffer_Size' => 3000,
-		'Title'       => 'FreeSWITCH Event',
+		'Title'       => 'FluxPBX Event',
 		'Status'      => {
 			'0' => {
 				'format' => '%s',
@@ -159,12 +159,12 @@ sub handle_start {
 	$kernel->delay_set('update_time' => 1);
 	$terminal->set_status_field(0, 'time' => scalar(localtime));
 	new_message('destination_window' => 0, 'message' =>  "
-Welcome to the FreeSWITCH POE Curses Console!
+Welcome to the FluxPBX POE Curses Console!
   The console is split into three windows:
     - 'console' for api response messages
-    - 'log'     for freeswitch log output (simply send the log level you want 
+    - 'log'     for fluxpbx log output (simply send the log level you want 
                   to start seeing events eg: 'log all')
-    - 'event'   for freeswitch event output (must subscribe in plain format
+    - 'event'   for fluxpbx event output (must subscribe in plain format
                   eg: 'event plain all')
 
 To switch between windows type 'w <windowname' so 'w log' for example.
@@ -181,8 +181,8 @@ Paul\n");
 
 	$terminal->set_status_field($terminal->current_window, 'window_status' => format_window_status());
 
-	#connect to freeswitch
-	$heap->{'freeswitch'} = POE::Component::Client::TCP->new(
+	#connect to fluxpbx
+	$heap->{'fluxpbx'} = POE::Component::Client::TCP->new(
 		'RemoteAddress' => $server_address,
 		'RemotePort'    => $server_port,
 		'ServerInput'   => \&handle_server_input,
@@ -256,7 +256,7 @@ sub handle_quit {
 	exit;
 }
 
-#data from freeswitch
+#data from fluxpbx
 sub handle_server_input {
         my ($kernel,$heap,$input) = @_[KERNEL,HEAP,ARG0];
 

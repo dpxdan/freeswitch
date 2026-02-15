@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Michael Jerris <mike@jerris.com>
  * Pawel Pierscionek <pawel@voiceworks.pl>
  * Bret McDanel <trixter AT 0xdecafbad.com>
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 			   "-R<rate>\tSet Rate (8000,16000,32000,48000) etc.\n"
 			   "-v\t\tVerbose Logging\n"
 			   "<file>\t\tAny file supported by libsndfile\n"
-			   "<tones>\t\tA valid teletone script http://wiki.freeswitch.org/wiki/TGML"
+			   "<tones>\t\tA valid teletone script http://wiki.fluxpbx.org/wiki/TGML"
 			   "\n\n\n"
 			   );
 		return 255;
@@ -168,7 +168,7 @@ int main(int argc, char *argv[])
 	teletone_destroy_session(&ts);
 	switch_core_file_close(&fh);
 
-	printf("File: %s generated...\n\nPlease support:\nFreeSWITCH http://www.freeswitch.org\nClueCon http://www.cluecon.com\n", file);
+	printf("File: %s generated...\n\nPlease support:\nFluxPBX http://www.freeswitch.org\nClueCon http://www.cluecon.com\n", file);
 
  end:
 

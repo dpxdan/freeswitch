@@ -1,7 +1,7 @@
 arg=$1 ; shift
 prefix=`cat config.log | grep ^prefix=\' | awk -F \' '{print $2}'`
 if [ -z $prefix ] ; then
-    prefix="/usr/local/freeswitch"
+    prefix="/usr/local/fluxpbx"
 fi
 unset VERBOSE
 switch_srcdir=`pwd`
@@ -13,7 +13,7 @@ if [ -z $arg ] ; then
     echo "Cleaning tree...."
     $MAKE clean modwipe 2>&1 > /dev/null
     echo "Building core...."
-    $MAKE -j freeswitch 2>&1 > /dev/null
+    $MAKE -j fluxpbx 2>&1 > /dev/null
     MODS=`cat modules.conf | grep -v \#`
     for i in $MODS ; do 
 	MOD_NAME=`echo $i | sed -e 's|^.*/||'`

@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2012, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2012, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -40,7 +40,7 @@
 #define UUID_MULTISET_DESC "Set multiple variables"
 #define UUID_MULTISET_SYNTAX "<uuid> <var>=<value>;<var>=<value>..."
 
-#define KZ_HTTP_PUT_DESC "upload a local freeswitch file to a url"
+#define KZ_HTTP_PUT_DESC "upload a local fluxpbx file to a url"
 #define KZ_HTTP_PUT_SYNTAX "localfile url"
 
 #define KZ_FIRST_OF_DESC "returns first-of existing event header in params"
@@ -377,7 +377,7 @@ SWITCH_STANDARD_API(kz_http_put)
 	switch_curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 10);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_FAILONERROR, 1);
-	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-kazoo/1.0");
+	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-kazoo/1.0");
 	switch_curl_easy_setopt(curl_handle, CURLOPT_HEADERDATA, stream->param_event);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_HEADERFUNCTION, header_callback);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, body_callback);

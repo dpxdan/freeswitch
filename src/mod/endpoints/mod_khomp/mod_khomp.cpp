@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,18 +14,18 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
  * Khomp development team
- * Geovani Ricardo Wiedenhoft <grw.freeswitch  (at) gmail.com>
- * Leonardo Lang              <lang.freeswitch (at) gmail.com>
+ * Geovani Ricardo Wiedenhoft <grw.fluxpbx  (at) gmail.com>
+ * Leonardo Lang              <lang.fluxpbx (at) gmail.com>
  * Eduardo Nunes              <eduardonunesp   (at) gmail.com>
  * Joao Mesquita              <mesquita        (at) khomp.com.br>
  * Raul Fragoso               <raulfragoso     (at) gmail.com>
@@ -40,13 +40,13 @@
 
   \section Introduction
   This module has been developed to make a nice, affordable brazilian board
-  called Khomp (http://www.khomp.com.br) compatible with FreeSWITCH.
+  called Khomp (http://www.khomp.com.br) compatible with FluxPBX.
   This module is supported by the manufacturer.
 
   \section Contributors
   \li Khomp development team
-  \li Geovani Ricardo Wiedenhoft <grw.freeswitch  (at) gmail.com>
-  \li Leonardo Lang              <lang.freeswitch (at) gmail.com>
+  \li Geovani Ricardo Wiedenhoft <grw.fluxpbx  (at) gmail.com>
+  \li Leonardo Lang              <lang.fluxpbx (at) gmail.com>
   \li Eduardo Nunes              <eduardonunesp   (at) gmail.com>
   \li Joao Mesquita              <jmesquita       (at) gmail.com>
   \li Raul Fragoso               <raulfragoso     (at) gmail.com>
@@ -71,7 +71,7 @@ extern "C" void Kstdcall khompAudioListener(int32 deviceid, int32 objectid,
                                           byte * read_buffer, int32 read_size);
 
 /*!
-  \brief Load the module. Expadend by a FreeSWITCH macro.
+  \brief Load the module. Expadend by a FluxPBX macro.
   Things we do here:
   \li Initialize a static structure on KhompPvt
   \li Load the configuration
@@ -88,9 +88,9 @@ SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_khomp_shutdown);
 SWITCH_MODULE_DEFINITION(mod_khomp, mod_khomp_load, mod_khomp_shutdown, NULL);
 
 /*!
- \defgroup fs_states FreeSWITCH State Handlers
-            We get called back from FreeSWITCH core everytime we make a
-            transition to any of these states. Refer to FreeSWITCH docs for a
+ \defgroup fs_states FluxPBX State Handlers
+            We get called back from FluxPBX core everytime we make a
+            transition to any of these states. Refer to FluxPBX docs for a
             detailed explanation of each state.
  */
 /*@{*/
@@ -152,7 +152,7 @@ switch_state_handler_table_t khomp_pr_state_handlers = {
     khompDestroy        /*.on_destroy*/
 };
 
-/* Callbacks for FreeSWITCH */
+/* Callbacks for FluxPBX */
 switch_call_cause_t khompCall(
         switch_core_session_t *session,
         switch_event_t *var_event,
@@ -1272,7 +1272,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_khomp_load)
     /* Two bodies can not occupy the same space at the same time */
     if(switch_loadable_module_exists("mod_kommuter") == SWITCH_STATUS_SUCCESS)
     {
-        LOG(ERROR, D("Kommuter module for FreeSWITCH is already loaded."));
+        LOG(ERROR, D("Kommuter module for FluxPBX is already loaded."));
         return SWITCH_STATUS_FALSE;
     }
 

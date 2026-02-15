@@ -1,4 +1,4 @@
-%module freeswitch
+%module fluxpbx
 %include "cstring.i"
 %include ../../../../swig_common.i
 /** 
@@ -21,7 +21,7 @@
 /** insert the following includes into generated code so it compiles */
 %{
 #include "switch_cpp.h"
-#include "freeswitch_python.h"
+#include "fluxpbx_python.h"
 %}
 
 
@@ -32,5 +32,5 @@
  * build all sorts of c wrappers and python shadows of the c wrappers.
  */
 %include switch_swigable_cpp.h
-%include freeswitch_python.h
+%include fluxpbx_python.h
 

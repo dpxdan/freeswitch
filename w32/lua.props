@@ -48,7 +48,7 @@
   </Target> 
 
   <Target Name="luacopyTarget" BeforeTargets="CustomBuild" DependsOnTargets="luaBinariesDownloadTarget">  
-        <Message Text="Copying lua libraries to the freeswitch output folder." Importance="High" />
+        <Message Text="Copying lua libraries to the fluxpbx output folder." Importance="High" />
         <ItemGroup>  
              <luaFiles Include="$(LuaLibDir)\binaries\$(Platform)\$(Configuration)\*.dll"/>  
         </ItemGroup>  

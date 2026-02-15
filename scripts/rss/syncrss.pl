@@ -6,7 +6,7 @@ $home or die "Usage: $0 <dir>\n";
 chdir($home);
 
 my $hash = {
-	    'freeswitch.rss' => 'http://www.freeswitch.org/xml.php'
+	    'fluxpbx.rss' => 'http://www.freeswitch.org/xml.php'
 	   };
 
 

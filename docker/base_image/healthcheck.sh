@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-# Copyright (C) 2005-2016, Anthony Minessale II <anthm@freeswitch.org>
+# FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+# Copyright (C) 2005-2016, Anthony Minessale II <anthm@fluxpbx.org>
 #
 # Version: MPL 1.1
 #
@@ -15,7 +15,7 @@
 # for the specific language governing rights and limitations under the
 # License.
 #
-# The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+# The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 #
 # The Initial Developer of the Original Code is
 # Michael Jerris <mike@jerris.com>
@@ -27,7 +27,7 @@
 #  Sergey Safarov <s.safarov@gmail.com>
 #
 
-# Check FreeSwitch status
+# Check FluxPbx status
 fs_cli -x status | grep -q ^UP || exit 1
 
 # Check erlang related modules is registered on epmd daemon
@@ -35,7 +35,7 @@ KAZOO_EXIST=$(fs_cli -x "module_exists mod_kazoo")
 ERLANG_EXITS=$(fs_cli -x "module_exists mod_erlang_event")
 
 if [ "$KAZOO_EXIST" == "true" -o "$ERLANG_EXITS" == "true" ]; then
-    /usr/bin/epmd -names | grep -qE "^name freeswitch at port" || exit 1
+    /usr/bin/epmd -names | grep -qE "^name fluxpbx at port" || exit 1
 fi
 
 exit 0

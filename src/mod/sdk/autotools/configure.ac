@@ -112,32 +112,32 @@ AM_CONDITIONAL([CC_HAS_VISIBILITY], [test "x${HAVE_VISIBILITY}" = "xyes"])
 
 
 ##
-## pkgconfig based freeswitch detection code
+## pkgconfig based fluxpbx detection code
 ##
-AC_MSG_RESULT([${as_nl}<<>> FreeSWITCH environment])
+AC_MSG_RESULT([${as_nl}<<>> FluxPBX environment])
 
-PKG_CHECK_MODULES([freeswitch], [freeswitch],
+PKG_CHECK_MODULES([fluxpbx], [fluxpbx],
 	[save_LIBS="${LIBS}"
 	 save_CFLAGS="${CFLAGS}"
 	 save_CPPFLAGS="${CPPFLAGS}"
 
-	 AC_MSG_CHECKING([FreeSWITCH version])
+	 AC_MSG_CHECKING([FluxPBX version])
 
-	 FREESWITCH_VERSION="`${PKG_CONFIG} --modversion freeswitch 2>/dev/null`"
-	 AS_IF([test "x${FREESWITCH_VERSION}" = "x"],
-		[AC_MSG_ERROR([failed to get FreeSWITCH version])],
-		[AC_MSG_RESULT([$FREESWITCH_VERSION])]
+	 FLUXPBX_VERSION="`${PKG_CONFIG} --modversion fluxpbx 2>/dev/null`"
+	 AS_IF([test "x${FLUXPBX_VERSION}" = "x"],
+		[AC_MSG_ERROR([failed to get FluxPBX version])],
+		[AC_MSG_RESULT([$FLUXPBX_VERSION])]
 	 )
 
-	 AC_MSG_CHECKING([whether FreeSWITCH ${FREESWITCH_VERSION} is usable])
-	 CFLAGS="${freeswitch_CFLAGS}"
-	 CPPFLAGS="${freeswitch_CPPFLAGS}"
-	 LIBS="${freeswitch_LIBS}"
+	 AC_MSG_CHECKING([whether FluxPBX ${FLUXPBX_VERSION} is usable])
+	 CFLAGS="${fluxpbx_CFLAGS}"
+	 CPPFLAGS="${fluxpbx_CPPFLAGS}"
+	 LIBS="${fluxpbx_LIBS}"
 	 AC_TRY_LINK([#include <switch.h>],
 		[switch_core_init(0, 0, NULL);],
 		[AC_MSG_RESULT([yes])],
 		[AC_MSG_RESULT([no])
-		 AC_MSG_ERROR([libfreeswitch is unusable, please check config.log for details])]
+		 AC_MSG_ERROR([libfluxpbx is unusable, please check config.log for details])]
 	 )
 	 LIBS="${save_LIBS}"
 	 CFLAGS="${save_CFLAGS}"
@@ -145,52 +145,52 @@ PKG_CHECK_MODULES([freeswitch], [freeswitch],
 
 	 # get locations, critical first
 	 AC_MSG_CHECKING([for installation prefix])
-	 FREESWITCH_PREFIX_DIR="`${PKG_CONFIG} --variable=prefix freeswitch 2>/dev/null`"
+	 FLUXPBX_PREFIX_DIR="`${PKG_CONFIG} --variable=prefix fluxpbx 2>/dev/null`"
 	 AS_IF(
-		[test "x${FREESWITCH_PREFIX_DIR}" = "x"], [AC_MSG_ERROR([unable to get FreeSWITCH prefix directory])],
-		[test ! -e "${FREESWITCH_PREFIX_DIR}"], [AC_MSG_ERROR([FreeSWITCH prefix directory ${FREESWITCH_PREFIX_DIR} does not exist])]
+		[test "x${FLUXPBX_PREFIX_DIR}" = "x"], [AC_MSG_ERROR([unable to get FluxPBX prefix directory])],
+		[test ! -e "${FLUXPBX_PREFIX_DIR}"], [AC_MSG_ERROR([FluxPBX prefix directory ${FLUXPBX_PREFIX_DIR} does not exist])]
 	 )
-	 AC_MSG_RESULT([${FREESWITCH_PREFIX_DIR}])
+	 AC_MSG_RESULT([${FLUXPBX_PREFIX_DIR}])
 
 	 AC_MSG_CHECKING([for modules directory])
-	 FREESWITCH_MODULES_DIR="`${PKG_CONFIG} --variable=modulesdir freeswitch 2>/dev/null`"
+	 FLUXPBX_MODULES_DIR="`${PKG_CONFIG} --variable=modulesdir fluxpbx 2>/dev/null`"
 	 AS_IF(
-		[test "x${FREESWITCH_MODULES_DIR}" = "x"], [AC_MSG_ERROR([unable to get FreeSWITCH modules directory])],
-		[test ! -e "${FREESWITCH_MODULES_DIR}"], [AC_MSG_ERROR([FreeSWITCH modules directory ${FREESWITCH_MODULES_DIR} does not exist])]
+		[test "x${FLUXPBX_MODULES_DIR}" = "x"], [AC_MSG_ERROR([unable to get FluxPBX modules directory])],
+		[test ! -e "${FLUXPBX_MODULES_DIR}"], [AC_MSG_ERROR([FluxPBX modules directory ${FLUXPBX_MODULES_DIR} does not exist])]
 	 )
-	 AC_MSG_RESULT([${FREESWITCH_MODULES_DIR}])
+	 AC_MSG_RESULT([${FLUXPBX_MODULES_DIR}])
 
 	 AC_MSG_CHECKING([for configuration directory])
-	 FREESWITCH_CONFIG_DIR="`${PKG_CONFIG} --variable=sysconfdir freeswitch 2>/dev/null`"
+	 FLUXPBX_CONFIG_DIR="`${PKG_CONFIG} --variable=sysconfdir fluxpbx 2>/dev/null`"
 	 AS_IF(
-		[test "x${FREESWITCH_CONFIG_DIR}" = "x"], [AC_MSG_ERROR([unable to get FreeSWITCH configuration directory])],
-		[test ! -e "${FREESWITCH_CONFIG_DIR}"], [AC_MSG_ERROR([FreeSWITCH configuration directory ${FREESWITCH_CONFIG_DIR} does not exist])]
+		[test "x${FLUXPBX_CONFIG_DIR}" = "x"], [AC_MSG_ERROR([unable to get FluxPBX configuration directory])],
+		[test ! -e "${FLUXPBX_CONFIG_DIR}"], [AC_MSG_ERROR([FluxPBX configuration directory ${FLUXPBX_CONFIG_DIR} does not exist])]
 	 )
-	 AC_MSG_RESULT([${FREESWITCH_CONFIG_DIR}])
+	 AC_MSG_RESULT([${FLUXPBX_CONFIG_DIR}])
 
 	 # non-critical paths
-	 FREESWITCH_HTDOCS_DIR="`${PKG_CONFIG} --variable=htdocsdir freeswitch 2>/dev/null`"
+	 FLUXPBX_HTDOCS_DIR="`${PKG_CONFIG} --variable=htdocsdir fluxpbx 2>/dev/null`"
 
-	 FREESWITCH_RUNTIME_DIR="`${PKG_CONFIG} --variable=runtimedir freeswitch 2>/dev/null`"
-	 FREESWITCH_SCRIPTS_DIR="`${PKG_CONFIG} --variable=scriptsdir freeswitch 2>/dev/null`"
+	 FLUXPBX_RUNTIME_DIR="`${PKG_CONFIG} --variable=runtimedir fluxpbx 2>/dev/null`"
+	 FLUXPBX_SCRIPTS_DIR="`${PKG_CONFIG} --variable=scriptsdir fluxpbx 2>/dev/null`"
 
 	 # cflags, libs
-	 AC_SUBST([FREESWITCH_CFLAGS],   [${freeswitch_CFLAGS}])
-	 AC_SUBST([FREESWITCH_CPPFLAGS], [${freeswitch_CPPFLAGS}])
-	 AC_SUBST([FREESWITCH_LIBS],     [${freeswitch_LIBS}])
+	 AC_SUBST([FLUXPBX_CFLAGS],   [${fluxpbx_CFLAGS}])
+	 AC_SUBST([FLUXPBX_CPPFLAGS], [${fluxpbx_CPPFLAGS}])
+	 AC_SUBST([FLUXPBX_LIBS],     [${fluxpbx_LIBS}])
 
 	 # version
-	 AC_SUBST([FREESWITCH_VERSION])
+	 AC_SUBST([FLUXPBX_VERSION])
 
 	 # locations
-	 AC_SUBST([FREESWITCH_PREFIX_DIR])
-	 AC_SUBST([FREESWITCH_HTDOCS_DIR])
-	 AC_SUBST([FREESWITCH_CONFIG_DIR])
-	 AC_SUBST([FREESWITCH_MODULES_DIR])
-	 AC_SUBST([FREESWITCH_SCRIPTS_DIR])
-	 AC_SUBST([FREESWITCH_RUNTIME_DIR])
+	 AC_SUBST([FLUXPBX_PREFIX_DIR])
+	 AC_SUBST([FLUXPBX_HTDOCS_DIR])
+	 AC_SUBST([FLUXPBX_CONFIG_DIR])
+	 AC_SUBST([FLUXPBX_MODULES_DIR])
+	 AC_SUBST([FLUXPBX_SCRIPTS_DIR])
+	 AC_SUBST([FLUXPBX_RUNTIME_DIR])
 	],
-	[AC_MSG_ERROR([FreeSWITCH not found])]
+	[AC_MSG_ERROR([FluxPBX not found])]
 )
 
 
@@ -225,14 +225,14 @@ AC_MSG_RESULT([
 	Vendor:.................... ${ax_cv_c_compiler_vendor}
 	Symbol visibility:......... ${HAVE_VISIBILITY}
 
-+ FreeSWITCH
-	Version:................... ${FREESWITCH_VERSION}
-	Prefix:.................... ${FREESWITCH_PREFIX_DIR}
-	Modules directory:......... ${FREESWITCH_MODULES_DIR}
-	Configuration directory:... ${FREESWITCH_CONFIG_DIR}
++ FluxPBX
+	Version:................... ${FLUXPBX_VERSION}
+	Prefix:.................... ${FLUXPBX_PREFIX_DIR}
+	Modules directory:......... ${FLUXPBX_MODULES_DIR}
+	Configuration directory:... ${FLUXPBX_CONFIG_DIR}
 
-	Cflags/CPPflags/CXXflags:.. ${FREESWITCH_CFLAGS} ${FREESWITCH_CPPFLAGS}
-	LDflags/Libs:.............. ${FREESWITCH_LIBS} ${FREESWITCH_LDFLAGS}
+	Cflags/CPPflags/CXXflags:.. ${FLUXPBX_CFLAGS} ${FLUXPBX_CPPFLAGS}
+	LDflags/Libs:.............. ${FLUXPBX_LIBS} ${FLUXPBX_LDFLAGS}
 
 + Other
 	N/A

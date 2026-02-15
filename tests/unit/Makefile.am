@@ -12,7 +12,7 @@ AM_LDFLAGS += $(PCAP_LIBS)
 endif 
 
 AM_LDFLAGS += -avoid-version -no-undefined $(SWITCH_AM_LDFLAGS) $(openssl_LIBS)
-AM_LDFLAGS += $(FREESWITCH_LIBS) $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+AM_LDFLAGS += $(FLUXPBX_LIBS) $(switch_builddir)/libfluxpbx.la $(CORE_LIBS) $(APR_LIBS)
 
 # "make check" will not run these.
 examples = switch_eavesdrop

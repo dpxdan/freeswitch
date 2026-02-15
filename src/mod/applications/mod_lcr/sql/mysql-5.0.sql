@@ -1,6 +1,6 @@
 -- MySQL dump 10.11
 --
--- Host: lmdt.intralanman.com    Database: freeswitch
+-- Host: lmdt.intralanman.com    Database: fluxpbx
 -- ------------------------------------------------------
 -- Server version	5.0.51a-17-log
 

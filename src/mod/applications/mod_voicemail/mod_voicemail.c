@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Bret McDanel <trixter AT 0xdecafbad.com>
  * John Wehle (john@feith.com)
  * Raymond Chandler <intralanman@gmail.com>
@@ -619,9 +619,9 @@ vm_profile_t *profile_set_config(vm_profile_t *profile)
 	SWITCH_CONFIG_SET_ITEM(profile->config[i++], "file-extension", SWITCH_CONFIG_STRING, CONFIG_RELOADABLE,
 						   &profile->file_ext, "wav", &config_file_ext, NULL, NULL);
 	SWITCH_CONFIG_SET_ITEM(profile->config[i++], "record-title", SWITCH_CONFIG_STRING, CONFIG_RELOADABLE,
-						   &profile->record_title, "FreeSWITCH Voicemail", &profile->config_str_pool, NULL, NULL);
+						   &profile->record_title, "FluxPBX Voicemail", &profile->config_str_pool, NULL, NULL);
 	SWITCH_CONFIG_SET_ITEM(profile->config[i++], "record-comment", SWITCH_CONFIG_STRING, CONFIG_RELOADABLE,
-						   &profile->record_comment, "FreeSWITCH Voicemail", &profile->config_str_pool, NULL, NULL);
+						   &profile->record_comment, "FluxPBX Voicemail", &profile->config_str_pool, NULL, NULL);
 	SWITCH_CONFIG_SET_ITEM(profile->config[i++], "record-copyright", SWITCH_CONFIG_STRING, CONFIG_RELOADABLE,
 						   &profile->record_copyright, "http://www.freeswitch.org", &profile->config_str_pool, NULL, NULL);
 	SWITCH_CONFIG_SET_ITEM(profile->config[i++], "operator-extension", SWITCH_CONFIG_STRING, CONFIG_RELOADABLE,
@@ -1853,7 +1853,7 @@ static switch_status_t listen_file(switch_core_session_t *session, vm_profile_t 
 
 					if (zstr(profile->email_headers)) {
 						headers = switch_core_session_sprintf(session,
-															  "From: FreeSWITCH mod_voicemail <%s@%s>\nSubject: Voicemail from %s %s\nX-Priority: %d",
+															  "From: FluxPBX mod_voicemail <%s@%s>\nSubject: Voicemail from %s %s\nX-Priority: %d",
 															  cbt->user, cbt->domain, cbt->cid_name, cbt->cid_number, priority);
 					} else {
 						headers = switch_channel_expand_variables(channel, profile->email_headers);
@@ -3003,7 +3003,7 @@ static switch_status_t deliver_vm(vm_profile_t *profile,
 
 		if (send_main) {
 			if (zstr(profile->email_headers)) {
-				headers = switch_mprintf("From: FreeSWITCH mod_voicemail <%s@%s>\n"
+				headers = switch_mprintf("From: FluxPBX mod_voicemail <%s@%s>\n"
 										 "Subject: Voicemail from %s %s\nX-Priority: %d", myid, domain_name, caller_id_name, caller_id_number, priority);
 			} else {
 				headers = switch_event_expand_headers(params, profile->email_headers);
@@ -3057,7 +3057,7 @@ static switch_status_t deliver_vm(vm_profile_t *profile,
 			}
 
 			if (zstr(profile->notify_email_headers)) {
-				headers = switch_mprintf("From: FreeSWITCH mod_voicemail <%s@%s>\n"
+				headers = switch_mprintf("From: FluxPBX mod_voicemail <%s@%s>\n"
 										 "Subject: Voicemail from %s %s\nX-Priority: %d", myid, domain_name, caller_id_name, caller_id_number, priority);
 			} else {
 				headers = switch_event_expand_headers(params, profile->notify_email_headers);
@@ -3630,7 +3630,7 @@ static switch_status_t voicemail_leave_main(switch_core_session_t *session, vm_p
 	switch_time_exp_lt(&tm, ts);
 	switch_strftime_nocheck(date, &retsize, sizeof(date), "%Y-%m-%d %T", &tm);
 	switch_channel_set_variable(channel, "RECORD_DATE", date);
-	switch_channel_set_variable(channel, "RECORD_SOFTWARE", "FreeSWITCH");
+	switch_channel_set_variable(channel, "RECORD_SOFTWARE", "FluxPBX");
 	switch_channel_set_variable(channel, "RECORD_TITLE", profile->record_title);
 	switch_channel_set_variable(channel, "RECORD_COMMENT", profile->record_comment);
 	switch_channel_set_variable(channel, "RECORD_COPYRIGHT", profile->record_copyright);
@@ -4500,7 +4500,7 @@ static void do_rss(vm_profile_t *profile, char *user, char *domain, char *host, 
 	holder.x_channel = switch_xml_add_child_d(holder.xml, "channel", 0);
 
 	x_tmp = switch_xml_add_child_d(holder.x_channel, "title", 0);
-	tmp = switch_mprintf("FreeSWITCH Voicemail for %s@%s", user, domain);
+	tmp = switch_mprintf("FluxPBX Voicemail for %s@%s", user, domain);
 	switch_xml_set_txt_d(x_tmp, tmp);
 	free(tmp);
 
@@ -4877,8 +4877,8 @@ SWITCH_STANDARD_API(voicemail_api_function)
 		host = switch_event_get_header(stream->param_event, "http-host");
 		port = switch_event_get_header(stream->param_event, "http-port");
 		uri = switch_event_get_header(stream->param_event, "http-uri");
-		user = switch_event_get_header(stream->param_event, "freeswitch-user");
-		domain = switch_event_get_header(stream->param_event, "freeswitch-domain");
+		user = switch_event_get_header(stream->param_event, "fluxpbx-user");
+		domain = switch_event_get_header(stream->param_event, "fluxpbx-domain");
 		path_info = switch_event_get_header(stream->param_event, "http-path-info");
 	}
 
@@ -6075,7 +6075,7 @@ SWITCH_STANDARD_API(vm_fsdb_msg_email_function)
 
 		if (zstr(profile->email_headers)) {
 			headers = switch_core_sprintf(pool,
-					"From: FreeSWITCH mod_voicemail <%s@%s>\nSubject: Voicemail from %s %s\nX-Priority: %d",
+					"From: FluxPBX mod_voicemail <%s@%s>\nSubject: Voicemail from %s %s\nX-Priority: %d",
 					id, domain, switch_event_get_header(cbt.my_params, "VM-Message-Caller-Name"),
 					switch_event_get_header(cbt.my_params, "VM-Message-Caller-Number"), priority);
 		} else {

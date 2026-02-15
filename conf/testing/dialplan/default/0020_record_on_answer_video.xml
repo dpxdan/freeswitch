@@ -8,7 +8,7 @@
 	It will cause both sessions to record to the exact same file.
     -->
     <action application="set" data="execute_on_answer=record_session /var/www/html/rec/${strftime(%Y%m%d_%H%M%S)}_${destination_number}.mp4"/>
-    <action application="bridge" data="sofia/external/sip:decode@cantina.freeswitch.org"/>
+    <action application="bridge" data="sofia/external/sip:decode@cantina.fluxpbx.org"/>
   </condition>
 </extension> 
 
@@ -18,7 +18,7 @@
     <action application="set" data="hangup_after_bridge=true"/>
     <action application="set" data="record_concat_video=true"/>
     <action application="record_session" data="/var/www/html/rec/${strftime(%Y%m%d_%H%M%S)}_${destination_number}.mp4"/>
-    <action application="bridge" data="sofia/external/sip:decode@cantina.freeswitch.org"/>
+    <action application="bridge" data="sofia/external/sip:decode@cantina.fluxpbx.org"/>
   </condition>
 </extension> 
 
@@ -29,7 +29,7 @@
     <action application="set" data="record_concat_video=true"/>
     <action application="answer"/>
     <action application="record_session" data="/var/www/html/rec/${strftime(%Y%m%d_%H%M%S)}_${destination_number}.mp4"/>
-    <action application="bridge" data="sofia/external/sip:decode@cantina.freeswitch.org"/>
+    <action application="bridge" data="sofia/external/sip:decode@cantina.fluxpbx.org"/>
   </condition>
 </extension> 
 
@@ -43,7 +43,7 @@
     <!-- bind_meta_app can have these args <key> [a|b|ab] [a|b|o|s] -->
     <action application="bind_meta_app" data="2 a i record_session::/var/www/html/rec/${strftime(%Y%m%d_%H%M%S)}_${destination_number}_a.mp4"/>
     <action application="bind_meta_app" data="2 b i record_session::/var/www/html/rec/${strftime(%Y%m%d_%H%M%S)}_${destination_number}_b.mp4"/>
-    <action application="bridge" data="{sip_h_X-Send-DTMF=*2}sofia/external/sip:decode@cantina.freeswitch.org"/>
+    <action application="bridge" data="{sip_h_X-Send-DTMF=*2}sofia/external/sip:decode@cantina.fluxpbx.org"/>
   </condition>
 </extension> 
 
@@ -56,6 +56,6 @@
     <!-- bind_meta_app can have these args <key> [a|b|ab] [a|b|o|s] -->
     <action application="bind_meta_app" data="2 a i record_session::/var/www/html/rec/${strftime(%Y%m%d_%H%M%S)}_${destination_number}_a.mp4"/>
     <action application="bind_meta_app" data="2 b i record_session::/var/www/html/rec/${strftime(%Y%m%d_%H%M%S)}_${destination_number}_b.mp4"/>
-    <action application="bridge" data="{sip_h_X-Send-DTMF=*2}sofia/external/sip:decode@cantina.freeswitch.org"/>
+    <action application="bridge" data="{sip_h_X-Send-DTMF=*2}sofia/external/sip:decode@cantina.fluxpbx.org"/>
   </condition>
 </extension> 

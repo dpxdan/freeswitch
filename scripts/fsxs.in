@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 #
-# FreeSWITCH fsxs
+# FluxPBX fsxs
 #
 # (C) 2006-2008 Stefan Knoblich <stkn@netdomination.org>
 
 use strict;
 
 #
-# @FOO@ will be replaced by the freeswitch build process
+# @FOO@ will be replaced by the fluxpbx build process
 #
 my %vars = (
 	CC => '@CC@',
@@ -52,7 +52,7 @@ sub do_exec {
 }
 
 sub fsxs_usage {
-	print "FreeSWITCH fsxs\n(C) 2006-2008 Stefan Knoblich <stkn\@netdomination.org>\n";
+	print "FluxPBX fsxs\n(C) 2006-2008 Stefan Knoblich <stkn\@netdomination.org>\n";
 	print "\n";
 	print "Usage:\n";
 	print "\t$0 compile [options] <file1 ...>\n";
@@ -66,7 +66,7 @@ sub fsxs_usage {
 	print "\tcompile: Compile source file(s) into object file(s)\n";
 	print "\tlink:    Create module from object file(s)\n";
 	print "\tbuild:   Build module from source file(s) (compile + link)\n";
-	print "\tinstall: Install module(s) into FreeSWITCH module directory\n";
+	print "\tinstall: Install module(s) into FluxPBX module directory\n";
 	print "\tshow:    Show defined variable(s)\n";
 	print "\n";
 
@@ -206,11 +206,11 @@ else {
 
 	if( $command =~ /^install|build|link|compile|show$/ ) {
 
-		# add -lfreeswitch to the front of the library list
+		# add -lfluxpbx to the front of the library list
 		# we don't want it to be in the show / showq output
 		# but we still want to be able to override it with --set-libs
 		if( $command ne "show" ) {
-			$vars{LIBS} = "-lfreeswitch $vars{LIBS}";
+			$vars{LIBS} = "-lfluxpbx $vars{LIBS}";
 		}
 
 		if( $command =~ /^show|compile|install$/ ) {

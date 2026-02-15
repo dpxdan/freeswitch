@@ -4,25 +4,25 @@ name: unit-tests
 
 steps:
     - name: bootstrap
-      image: signalwire/freeswitch-public-base:bullseye
+      image: signalwire/fluxpbx-public-base:bullseye
       pull: always
       commands:
       - cat /proc/sys/kernel/core_pattern
       - ./bootstrap.sh -j
 
     - name: configure
-      image: signalwire/freeswitch-public-base:bullseye
+      image: signalwire/fluxpbx-public-base:bullseye
       pull: always
       environment:
         REPOTOKEN:
           from_secret: repotoken
       commands:
-      - echo "machine freeswitch.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
+      - echo "machine fluxpbx.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
       - apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yq remove libsofia-sip-ua0 libspandsp-dev
       - DEBIAN_FRONTEND=noninteractive apt-get -yq install libspandsp3-dev
       - export REPOTOKEN=''
       - rm -rf /etc/apt/auth.conf
-      - git clone https://github.com/freeswitch/sofia-sip.git
+      - git clone https://github.com/fluxpbx/sofia-sip.git
       - cd sofia-sip && ./autogen.sh && ./configure.gnu && make -j`nproc` && make install && cd ..
       - echo 'codecs/mod_openh264' >> modules.conf
       - sed -i '/applications\\/mod_http_cache/s/^#//g' modules.conf
@@ -33,13 +33,13 @@ steps:
       - ./configure --enable-address-sanitizer --enable-fake-dlclose
 
     - name: build
-      image: signalwire/freeswitch-public-base:bullseye
+      image: signalwire/fluxpbx-public-base:bullseye
       pull: always
       environment:
         REPOTOKEN:
           from_secret: repotoken
       commands:
-      - echo "machine freeswitch.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
+      - echo "machine fluxpbx.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
       - apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yq remove libsofia-sip-ua0 libspandsp-dev
       - DEBIAN_FRONTEND=noninteractive apt-get -yq install libspandsp3-dev
       - export REPOTOKEN=''
@@ -50,13 +50,13 @@ steps:
       - ./build.sh
 
     - name: run-tests
-      image: signalwire/freeswitch-public-base:bullseye
+      image: signalwire/fluxpbx-public-base:bullseye
       pull: always
       environment:
         REPOTOKEN:
           from_secret: repotoken
       commands:
-      - echo "machine freeswitch.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
+      - echo "machine fluxpbx.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
       - apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yq remove libsofia-sip-ua0 libspandsp-dev
       - DEBIAN_FRONTEND=noninteractive apt-get -yq install libspandsp3-dev
       - export REPOTOKEN=''
@@ -97,19 +97,19 @@ name: scan-build
 
 steps:
     - name: bootstrap
-      image: signalwire/freeswitch-public-base:bullseye
+      image: signalwire/fluxpbx-public-base:bullseye
       pull: always
       commands:
       - ./bootstrap.sh -j
 
     - name: configure
-      image: signalwire/freeswitch-public-base:bullseye
+      image: signalwire/fluxpbx-public-base:bullseye
       pull: always
       environment:
         REPOTOKEN:
           from_secret: repotoken
       commands:
-      - echo "machine freeswitch.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
+      - echo "machine fluxpbx.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
       - apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yq remove libspandsp-dev
       - DEBIAN_FRONTEND=noninteractive apt-get -yq install libsofia-sip-ua-dev libspandsp3-dev
       - export REPOTOKEN=''
@@ -140,13 +140,13 @@ steps:
       - ./configure
 
     - name: scan-build
-      image: signalwire/freeswitch-public-base:bullseye
+      image: signalwire/fluxpbx-public-base:bullseye
       pull: always
       environment:
         REPOTOKEN:
           from_secret: repotoken
       commands:
-      - echo "machine freeswitch.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
+      - echo "machine fluxpbx.signalwire.com password $REPOTOKEN" > /etc/apt/auth.conf
       - apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -yq remove libspandsp-dev
       - DEBIAN_FRONTEND=noninteractive apt-get -yq install libsofia-sip-ua-dev libspandsp3-dev
       - export REPOTOKEN=''

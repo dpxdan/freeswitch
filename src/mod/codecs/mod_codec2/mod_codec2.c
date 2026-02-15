@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library
+ * The Original Code is FluxPBX Modular Media Switching Software Library
  *
  * The Initial Developer of the Original Code is
- * Brian West <brian@freeswitch.org>
+ * Brian West <brian@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -25,7 +25,7 @@
  * Mathieu Rene <mrene@avgs.ca>
  * Dragos Oancea <droancea@yahoo.com>
  *
- * mod_codec2 -- FreeSWITCH CODEC2 Module
+ * mod_codec2 -- FluxPBX CODEC2 Module
  *
  */
 

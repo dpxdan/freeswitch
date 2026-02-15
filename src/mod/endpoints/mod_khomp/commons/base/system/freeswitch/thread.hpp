@@ -288,7 +288,7 @@ private:
         return true;
 
 /*
-        //BUG in Freeswitch  
+        //BUG in Fluxpbx  
 
 THANKS FOR NOT REPORTING IT SO WE MUST LIVE WITH A PROBLEM YOU KNOW ABOUT .....
 

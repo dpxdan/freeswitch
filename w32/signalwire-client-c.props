@@ -52,7 +52,7 @@
   </Target> 
 
   <Target Name="signalwire-client-ccopyTarget" BeforeTargets="CustomBuild" DependsOnTargets="signalwire-client-cBinariesDownloadTarget">  
-        <Message Text="Copying signalwire-client-c libraries to the freeswitch output folder." Importance="High" />
+        <Message Text="Copying signalwire-client-c libraries to the fluxpbx output folder." Importance="High" />
         <ItemGroup>  
              <signalwire-client-cFiles Include="$(signalwire-client-cDir)\binaries\$(Platform)\$(Configuration)\*.dll"/>  
         </ItemGroup>  

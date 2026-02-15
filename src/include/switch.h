@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  *
  * switch.h -- Main Library Header
  *
@@ -49,9 +49,9 @@
 #include <switch_am_config.h>
 #endif
 
-#define FREESWITCH_PEN "27880"
-#define FREESWITCH_OID_PREFIX ".1.3.6.1.4.1." FREESWITCH_PEN
-#define FREESWITCH_ITAD "543"
+#define FLUXPBX_PEN "27880"
+#define FLUXPBX_OID_PREFIX ".1.3.6.1.4.1." FLUXPBX_PEN
+#define FLUXPBX_ITAD "543"
 #define __EXTENSIONS__ 1
 #ifndef MACOSX
 #if !defined(_XOPEN_SOURCE) && !defined(__OpenBSD__) && !defined(__NetBSD__)
@@ -150,13 +150,13 @@
 #include <libteletone.h>
 
 
-/** \mainpage FreeSWITCH
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+/** \mainpage FluxPBX
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 
  * \section intro Introduction
  *
  * \section supports Supported Platforms
- * Freeswitch has been built on the following platforms:
+ * Fluxpbx has been built on the following platforms:
  *
  *  - Linux (x86 & x86_64)
  *  - Windows (MSVC 2012/2013 & VC++ EE 2012/2013)
@@ -166,9 +166,9 @@
  *  - OpenBSD 5.x
  *
  * \section depends Dependencies
- *  Freeswitch makes heavy use of external libraries.
+ *  Fluxpbx makes heavy use of external libraries.
  *
- *  libFreeSWITCH:
+ *  libFluxPBX:
  *		- APR (http://apr.apache.org)
  *		- APR-Util (http://apr.apache.org)
  *		- SQLite (http://www.sqlite.org)
@@ -230,7 +230,7 @@
  *		- libopal (http://www.opalvoip.org)
  *
  *	mod_freetdm
- *		- freetdm (http://wiki.freeswitch.org/wiki/FreeTDM)
+ *		- freetdm (http://wiki.fluxpbx.org/wiki/FreeTDM)
  *
  *  Event Hanlders
  *	mod_xmpp_event
@@ -264,7 +264,7 @@
  *
  * \section license Licensing
  *
- * Freeswitch is licensed under the terms of the MPL 1.1
+ * Fluxpbx is licensed under the terms of the MPL 1.1
  *
  */
 #endif

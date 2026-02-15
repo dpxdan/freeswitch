@@ -306,7 +306,7 @@
                 <item row="0" column="1">
                  <widget class="QLineEdit" name="sofiaUserAgentStringEdit">
                   <property name="text">
-                   <string>FreeSWITCH/FSComm</string>
+                   <string>FluxPBX/FSComm</string>
                   </property>
                  </widget>
                 </item>
@@ -464,7 +464,7 @@
                 <item row="5" column="1">
                  <widget class="QLineEdit" name="sofiaExtRtpIpEdit">
                   <property name="text">
-                   <string>stun:stun.freeswitch.org</string>
+                   <string>stun:stun.fluxpbx.org</string>
                   </property>
                  </widget>
                 </item>
@@ -478,7 +478,7 @@
                 <item row="6" column="1">
                  <widget class="QLineEdit" name="sofiaExtSipIpEdit">
                   <property name="text">
-                   <string>stun:stun.freeswitch.org</string>
+                   <string>stun:stun.fluxpbx.org</string>
                   </property>
                  </widget>
                 </item>

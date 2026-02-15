@@ -1,6 +1,6 @@
 /*
-* FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-* Copyright (C) 2005-2012, Anthony Minessale II <anthm@freeswitch.org>
+* FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+* Copyright (C) 2005-2012, Anthony Minessale II <anthm@fluxpbx.org>
 *
 * Version: MPL 1.1
 *
@@ -14,25 +14,25 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 *
 * The Initial Developer of the Original Code is
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * Portions created by the Initial Developer are Copyright (C)
 * the Initial Developer. All Rights Reserved.
 *
 * Based on mod_skel by
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 *
 * Contributor(s):
 *
 * Daniel Bryars <danb@aeriandi.com>
 * Tim Brown <tim.brown@aeriandi.com>
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * William King <william.king@quentustech.com>
 * Mike Jerris <mike@jerris.com>
 *
-* mod_amqp.c -- Sends FreeSWITCH events to an AMQP broker
+* mod_amqp.c -- Sends FluxPBX events to an AMQP broker
 *
 */
 
@@ -90,7 +90,7 @@ switch_status_t mod_amqp_connection_open(mod_amqp_connection_t *connections, mod
 	snprintf(key_string, 256, "x_%s_ProcessDescription", custom_attr);
 	loginTableEntries[1].key = amqp_cstring_bytes(key_string);
 	loginTableEntries[1].value.kind = AMQP_FIELD_KIND_BYTES;
-	loginTableEntries[1].value.value.bytes = amqp_cstring_bytes("FreeSwitch");
+	loginTableEntries[1].value.value.bytes = amqp_cstring_bytes("FluxPbx");
 
 	snprintf(key_string, 256, "x_%s_ProcessType", custom_attr);
 	loginTableEntries[2].key = amqp_cstring_bytes(key_string);

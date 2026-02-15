@@ -1,6 +1,6 @@
 #!/bin/bash
 ##### -*- mode:shell-script; indent-tabs-mode:nil; sh-basic-offset:2 -*-
-##### release a version of FreeSWITCH
+##### release a version of FluxPBX
 
 sdir="."
 [ -n "${0%/*}" ] && sdir="${0%/*}"
@@ -14,7 +14,7 @@ SYNOPSIS
   $0 [-s] <version>
 
 DESCRIPTION
-  Creates a new FreeSWITCH tag after performing some sanity checks.
+  Creates a new FluxPBX tag after performing some sanity checks.
   The tag is optionally signed if '-s' is provided, but you should
   really sign any public release tags, so pass '-s'.
 
@@ -29,7 +29,7 @@ DESCRIPTION
   etc.
 
   This tool will take care of correctly naming the tag to be
-  consistent with FreeSWITCH git policy from there.
+  consistent with FluxPBX git policy from there.
 
 OPTIONS
   -s
@@ -70,14 +70,14 @@ ngrep '^[0-9]*$' "$gminor" || \
 [ -z "$grev" ] || ngrep '^[.-]' "$grev" || \
   err "The revision '$grev' appears invalid."
 
-echo "We're going to release freeswitch v$gver" >&2
+echo "We're going to release fluxpbx v$gver" >&2
 echo >&2
 
 if ! ($debug || ngrep '-s' "$opts"); then
   cat >&2 <<EOF
 You've asked me to tag a release but haven't asked to me sign it by
 passing -s.  I'll do this if you really want, but it's a bad idea if
-you're making an actual release of FreeSWITCH that'll be seen
+you're making an actual release of FluxPBX that'll be seen
 publicly.
 
 EOF
@@ -135,7 +135,7 @@ set_fs_ver "$gver" "$gmajor" "$gminor" "$gmicro" "$grev"
 
 echo "Committing the new version..." >&2
 git add configure.ac
-if ! (git commit --allow-empty -m "release FreeSWITCH $gver"); then
+if ! (git commit --allow-empty -m "release FluxPBX $gver"); then
   cat >&2 <<EOF
 Committing the new version failed for some reason.  Definitely look
 into this before proceeding.
@@ -144,8 +144,8 @@ EOF
   err "Stopping here."
 fi
 
-echo "Tagging freeswitch v$gver..." >&2
-if ! (git tag -a ${opts} -m "FreeSWITCH $gver" "v$gver"); then
+echo "Tagging fluxpbx v$gver..." >&2
+if ! (git tag -a ${opts} -m "FluxPBX $gver" "v$gver"); then
   cat >&2 <<EOF
 Committing the new tag failed for some reason.  Maybe you didn't
 delete an old tag with this name?  Definitely figure out what's wrong

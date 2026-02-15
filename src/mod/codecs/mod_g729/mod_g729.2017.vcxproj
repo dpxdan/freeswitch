@@ -135,7 +135,7 @@
       </PrecompiledHeader>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libg729.lib;FreeSwitchCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libg729.lib;FluxPbxCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
@@ -152,7 +152,7 @@
       </PrecompiledHeader>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libg729.lib;FreeSwitchCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libg729.lib;FluxPbxCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>
       </OutputFile>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -260,7 +260,7 @@
     <ClCompile Include="mod_g729.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2017.vcxproj">
+    <ProjectReference Include="..\..\..\..\w32\Library\FluxPbxCore.2017.vcxproj">
       <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

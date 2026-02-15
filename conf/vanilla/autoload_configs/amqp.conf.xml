@@ -29,12 +29,12 @@
 
 	<!-- The routing key is made from the format string, using the header values in the event specified in the format_fields.-->
 	<!-- Fields that are prefixed with a # are treated as literals rather than doing a header lookup -->
-	<param name="format_fields" value="#FreeSWITCH,FreeSWITCH-Hostname,Event-Name,Event-Subclass,Unique-ID"/>
+	<param name="format_fields" value="#FluxPBX,FluxPBX-Hostname,Event-Name,Event-Subclass,Unique-ID"/>
 
 	<!-- If enable_fallback_format_fields is enabled, then you can | separate event headers, and if the first does not exist
 	     then the system will check additional configured header values.
 	-->
-	<!-- <param name="format_fields" value="#FreeSWITCH,FreeSWITCH-Hostname|#Unknown,Event-Name,Event-Subclass,Unique-ID"/> -->
+	<!-- <param name="format_fields" value="#FluxPBX,FluxPBX-Hostname|#Unknown,Event-Name,Event-Subclass,Unique-ID"/> -->
 
 	<!--    <param name="event_filter" value="SWITCH_EVENT_ALL"/> -->
 	<param name="event_filter" value="SWITCH_EVENT_CHANNEL_CREATE,SWITCH_EVENT_CHANNEL_DESTROY,SWITCH_EVENT_HEARTBEAT,SWITCH_EVENT_DTMF"/>

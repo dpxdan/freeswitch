@@ -11,7 +11,7 @@
   <PropertyGroup>
     <ProjectGuid>{47213370-b933-487d-9f45-bca26d7e2b6f}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>FreeSWITCH</OutputName>
+    <OutputName>FluxPBX</OutputName>
     <OutputType>Package</OutputType>
     <CertificateThumbprint>bf386393c880967b00adbc438aee534de6211774</CertificateThumbprint>
     <TimestampUrl>http://timestamp.comodoca.com</TimestampUrl>
@@ -23,36 +23,36 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\x86\Debug\</OutputPath>
     <IntermediateOutputPath>obj\X86\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>Debug;FreeSWITCHConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FreeSWITCHBaseDir=$(SolutionDir)Win32\$(Configuration);</DefineConstants>
+    <DefineConstants>Debug;FluxPBXConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FluxPBXBaseDir=$(SolutionDir)Win32\$(Configuration);</DefineConstants>
     <WixVariables>
     </WixVariables>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\x86\release\</OutputPath>
     <IntermediateOutputPath>obj\X86\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>FreeSWITCHConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FreeSWITCHBaseDir=$(SolutionDir)Win32\$(Configuration);</DefineConstants>
+    <DefineConstants>FluxPBXConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FluxPBXBaseDir=$(SolutionDir)Win32\$(Configuration);</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <OutputPath>bin\x64\Debug\</OutputPath>
     <IntermediateOutputPath>obj\X64\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>Debug;FreeSWITCHConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FreeSWITCHBaseDir=$(SolutionDir)$(Platform)\$(Configuration);</DefineConstants>
+    <DefineConstants>Debug;FluxPBXConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FluxPBXBaseDir=$(SolutionDir)$(Platform)\$(Configuration);</DefineConstants>
     <WixVariables>
     </WixVariables>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <OutputPath>bin\x64\Release\</OutputPath>
     <IntermediateOutputPath>obj\X64\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>FreeSWITCHConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FreeSWITCHBaseDir=$(SolutionDir)$(Platform)\$(Configuration);</DefineConstants>
+    <DefineConstants>FluxPBXConfFilesDir=$(ProjectDir)..\..\conf\vanilla;FluxPBXBaseDir=$(SolutionDir)$(Platform)\$(Configuration);</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Fragments\FreeSWITCHConfFiles.wxs" />
-    <Compile Include="Fragments\FreeSWITCHSoundFiles8.wxs" />
-    <Compile Include="Fragments\FreeSWITCHBaseFiles.wxs" />
-    <Compile Include="Fragments\FreeSWITCHhtdocsFilesDir.wxs" />
-    <Compile Include="Fragments\FreeSWITCHimagesFilesDir.wxs" />
-    <Compile Include="Fragments\FreeSWITCHfontsFilesDir.wxs" />
-    <Compile Include="Fragments\FreeSWITCHgrammarFilesDir.wxs" />
-    <Compile Include="FreeSWITCHConsole.wxs" />
+    <Compile Include="Fragments\FluxPBXConfFiles.wxs" />
+    <Compile Include="Fragments\FluxPBXSoundFiles8.wxs" />
+    <Compile Include="Fragments\FluxPBXBaseFiles.wxs" />
+    <Compile Include="Fragments\FluxPBXhtdocsFilesDir.wxs" />
+    <Compile Include="Fragments\FluxPBXimagesFilesDir.wxs" />
+    <Compile Include="Fragments\FluxPBXfontsFilesDir.wxs" />
+    <Compile Include="Fragments\FluxPBXgrammarFilesDir.wxs" />
+    <Compile Include="FluxPBXConsole.wxs" />
     <Compile Include="Product.2017.wxs" />
   </ItemGroup>
   <ItemGroup>
@@ -905,8 +905,8 @@
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\Console\FreeSwitchConsole.2017.vcxproj">
-      <Name>FreeSwitchConsole</Name>
+    <ProjectReference Include="..\Console\FluxPbxConsole.2017.vcxproj">
+      <Name>FluxPbxConsole</Name>
       <Project>{1af3a893-f7be-43dd-b697-8ab2397c0d67}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
@@ -964,11 +964,11 @@
       <Output TaskParameter="Value" PropertyName="MergeModules" />
     </CreateProperty>
     <CreateProperty Value="
-        FreeSWITCHgrammarFilesDir=$(SolutionDir)$(UserFriendlyPlatform)\$(Configuration)\grammar;
-        FreeSWITCHfontsFilesDir=$(SolutionDir)fonts;
-        FreeSWITCHimagesFilesDir=$(SolutionDir)images;
-        FreeSWITCHhtdocsFilesDir=$(SolutionDir)htdocs;
-        FreeSWITCHSoundFilesDir=$(SoundsDir);
+        FluxPBXgrammarFilesDir=$(SolutionDir)$(UserFriendlyPlatform)\$(Configuration)\grammar;
+        FluxPBXfontsFilesDir=$(SolutionDir)fonts;
+        FluxPBXimagesFilesDir=$(SolutionDir)images;
+        FluxPBXhtdocsFilesDir=$(SolutionDir)htdocs;
+        FluxPBXSoundFilesDir=$(SoundsDir);
         MergeModules=$(MergeModules);
         VCVer=$(PlatformToolsetVersion);
         $(DefineConstants)">
@@ -999,19 +999,19 @@
     <CreateItem Include="$(SolutionDir)$(UserFriendlyPlatform)\$(Configuration)\mod\*.dll">
         <Output ItemName="Modules" TaskParameter="Include" />
     </CreateItem>
-    <Message Importance="High" Text="Signing FreeSWITCH Core Library" />
+    <Message Importance="High" Text="Signing FluxPBX Core Library" />
     <SignFile ContinueOnError="WarnAndContinue"
             CertificateThumbprint="$(CertificateThumbprint)"
             TimestampUrl="$(TimestampUrl)"
-            SigningTarget="$(SolutionDir)$(UserFriendlyPlatform)\$(Configuration)\FreeSwitch.dll"
+            SigningTarget="$(SolutionDir)$(UserFriendlyPlatform)\$(Configuration)\FluxPbx.dll"
             TargetFrameworkVersion="v4.5" />
-    <Message Importance="High" Text="Signing FreeSWITCH Executables" />
+    <Message Importance="High" Text="Signing FluxPBX Executables" />
     <SignFile ContinueOnError="WarnAndContinue"
             CertificateThumbprint="$(CertificateThumbprint)"
             TimestampUrl="$(TimestampUrl)"
             SigningTarget="%(ExeFiles.Identity)"
             TargetFrameworkVersion="v4.5" />
-    <Message Importance="High" Text="Signing FreeSWITCH Modules" />
+    <Message Importance="High" Text="Signing FluxPBX Modules" />
     <SignFile Condition="'$(GitCommits)' != '0'" ContinueOnError="WarnAndContinue"
             CertificateThumbprint="$(CertificateThumbprint)"
             SigningTarget="%(Modules.Identity)"
@@ -1023,100 +1023,100 @@
             TargetFrameworkVersion="v4.5" />
     <HeatDirectory
         ToolPath="$(WixToolPath)"
-        OutputFile="$(ProjectDir)Fragments\FreeSWITCHConfFiles.wxs"
+        OutputFile="$(ProjectDir)Fragments\FluxPBXConfFiles.wxs"
         Directory="$(ProjectDir)..\..\conf\vanilla"
         DirectoryRefId="CONFLOCATION"
-        ComponentGroupName="FreeSWITCHConfFiles"
+        ComponentGroupName="FluxPBXConfFiles"
         GenerateGuidsNow="true"
         SuppressRootDirectory="true"
         SuppressRegistry="true"
         SuppressCom="true"
         SuppressFragments="true"
-        PreprocessorVariable="var.FreeSWITCHConfFilesDir">
+        PreprocessorVariable="var.FluxPBXConfFilesDir">
     </HeatDirectory>
     <HeatDirectory
         ToolPath="$(WixToolPath)"
-        OutputFile="$(ProjectDir)Fragments\FreeSWITCHSoundFiles8.wxs"
+        OutputFile="$(ProjectDir)Fragments\FluxPBXSoundFiles8.wxs"
         Directory="$(SoundsDir)"
         DirectoryRefId="SOUNDLOCATION"
-        ComponentGroupName="FreeSWITCHSoundFiles8"
+        ComponentGroupName="FluxPBXSoundFiles8"
         GenerateGuidsNow="true"
         SuppressRootDirectory="true"
         SuppressRegistry="true"
         SuppressCom="true"
         SuppressFragments="true"
-        PreprocessorVariable="var.FreeSWITCHSoundFilesDir">
+        PreprocessorVariable="var.FluxPBXSoundFilesDir">
     </HeatDirectory>
     <HeatDirectory
         ToolPath="$(WixToolPath)"
-        OutputFile="$(ProjectDir)Fragments\FreeSWITCHhtdocsFilesDir.wxs"
+        OutputFile="$(ProjectDir)Fragments\FluxPBXhtdocsFilesDir.wxs"
         Directory="$(ProjectDir)..\..\htdocs"
         DirectoryRefId="INSTALLLOCATION"
-        ComponentGroupName="FreeSWITCHhtdocsFiles"
+        ComponentGroupName="FluxPBXhtdocsFiles"
         GenerateGuidsNow="true"
         SuppressRootDirectory="false"
         SuppressRegistry="true"
         SuppressCom="true"
         SuppressFragments="true"
-        PreprocessorVariable="var.FreeSWITCHhtdocsFilesDir">
+        PreprocessorVariable="var.FluxPBXhtdocsFilesDir">
     </HeatDirectory>
     <HeatDirectory
         ToolPath="$(WixToolPath)"
-        OutputFile="$(ProjectDir)Fragments\FreeSWITCHimagesFilesDir.wxs"
+        OutputFile="$(ProjectDir)Fragments\FluxPBXimagesFilesDir.wxs"
         Directory="$(ProjectDir)..\..\images"
         DirectoryRefId="INSTALLLOCATION"
-        ComponentGroupName="FreeSWITCHimagesFiles"
+        ComponentGroupName="FluxPBXimagesFiles"
         GenerateGuidsNow="true"
         SuppressRootDirectory="false"
         SuppressRegistry="true"
         SuppressCom="true"
         SuppressFragments="true"
-        PreprocessorVariable="var.FreeSWITCHimagesFilesDir">
+        PreprocessorVariable="var.FluxPBXimagesFilesDir">
     </HeatDirectory>
     <HeatDirectory
         ToolPath="$(WixToolPath)"
-        OutputFile="$(ProjectDir)Fragments\FreeSWITCHfontsFilesDir.wxs"
+        OutputFile="$(ProjectDir)Fragments\FluxPBXfontsFilesDir.wxs"
         Directory="$(ProjectDir)..\..\fonts"
         DirectoryRefId="INSTALLLOCATION"
-        ComponentGroupName="FreeSWITCHfontsFiles"
+        ComponentGroupName="FluxPBXfontsFiles"
         GenerateGuidsNow="true"
         SuppressRootDirectory="false"
         SuppressRegistry="true"
         SuppressCom="true"
         SuppressFragments="true"
-        PreprocessorVariable="var.FreeSWITCHfontsFilesDir">
+        PreprocessorVariable="var.FluxPBXfontsFilesDir">
     </HeatDirectory>
     <HeatDirectory
         ToolPath="$(WixToolPath)"
-        OutputFile="$(ProjectDir)Fragments\FreeSWITCHgrammarFilesDir.wxs"
+        OutputFile="$(ProjectDir)Fragments\FluxPBXgrammarFilesDir.wxs"
         Directory="$(SolutionDir)$(UserFriendlyPlatform)\$(Configuration)\grammar"
         DirectoryRefId="INSTALLLOCATION"
-        ComponentGroupName="FreeSWITCHgrammarFiles"
+        ComponentGroupName="FluxPBXgrammarFiles"
         GenerateGuidsNow="true"
         SuppressRootDirectory="false"
         SuppressRegistry="true"
         SuppressCom="true"
         SuppressFragments="true"
-        PreprocessorVariable="var.FreeSWITCHgrammarFilesDir">
+        PreprocessorVariable="var.FluxPBXgrammarFilesDir">
     </HeatDirectory>
     <HeatDirectory
         ToolPath="$(WixToolPath)"
-        OutputFile="$(ProjectDir)Fragments\FreeSWITCHBaseFiles.wxs"
+        OutputFile="$(ProjectDir)Fragments\FluxPBXBaseFiles.wxs"
         Directory="$(SolutionDir)$(UserFriendlyPlatform)\$(Configuration)"
         Transforms="$(ProjectDir)filter.xslt"
         DirectoryRefId="INSTALLLOCATION"
-        ComponentGroupName="FreeSWITCHBaseFiles"
+        ComponentGroupName="FluxPBXBaseFiles"
         GenerateGuidsNow="true"
         SuppressRootDirectory="true"
         SuppressRegistry="true"
         SuppressCom="true"
         SuppressFragments="true"
-        PreprocessorVariable="var.FreeSWITCHBaseDir">
+        PreprocessorVariable="var.FluxPBXBaseDir">
     </HeatDirectory>
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(OutputPath)$(OutputName).msi" DestinationFiles="$(DestinationFileName)" />
-    <Message Importance="High" Text="Signing FreeSWITCH MSI Package" />
+    <Message Importance="High" Text="Signing FluxPBX MSI Package" />
     <Exec ContinueOnError="WarnAndContinue"
         Command="&quot;$(SignToolPath)&quot; sign /fd sha256 /sha1 $(CertificateThumbprint) /t &quot;$(TimestampUrl)&quot; &quot;$(DestinationFileName)&quot;"
         StandardOutputImportance="high" />

@@ -1,11 +1,11 @@
 <!--
     This is a sofia sip profile/user agent.  This will service exactly one ip and port.
-    In FreeSWITCH you can run multiple sip user agents on their own ip and port.
+    In FluxPBX you can run multiple sip user agents on their own ip and port.
 
     When you hear someone say "sofia profile" this is what they are talking about.
 -->
 
-<!-- http://wiki.freeswitch.org/wiki/Sofia_Configuration_Files -->
+<!-- http://wiki.fluxpbx.org/wiki/Sofia_Configuration_Files -->
 <profile name="internal">
   <!--aliases are other names that will work as a valid profile name for this profile-->
   <aliases>
@@ -35,7 +35,7 @@
         bypass media after an attended transfer.
     -->
     <!--<param name="media-option" value="bypass-media-after-att-xfer"/>-->
-    <!-- <param name="user-agent-string" value="FreeSWITCH Rocks!"/> -->
+    <!-- <param name="user-agent-string" value="FluxPBX Rocks!"/> -->
     <param name="debug" value="0"/>
     <param name="sip-trace" value="no"/>
     <param name="context" value="public"/>

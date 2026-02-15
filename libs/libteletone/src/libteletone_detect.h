@@ -1,6 +1,6 @@
 /* 
  * libteletone
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -32,7 +32,7 @@
  * a single arbitrary tone combination which may also exceed 2 simultaneous tones.
  * (controlled by compile time constant TELETONE_MAX_TONES)
  *
- * Copyright (C) 2006 Anthony Minessale II <anthm@freeswitch.org>
+ * Copyright (C) 2006 Anthony Minessale II <anthm@fluxpbx.org>
  *
  *
  * libteletone_detect.c Tone Detection Code

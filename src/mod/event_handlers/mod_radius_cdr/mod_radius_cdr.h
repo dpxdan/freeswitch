@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application Call Detail Recorder module
- * Copyright 2006, Author: Yossi Neiman of Cartis Solutions, Inc. <freeswitch AT cartissolutions.com>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application Call Detail Recorder module
+ * Copyright 2006, Author: Yossi Neiman of Cartis Solutions, Inc. <fluxpbx AT cartissolutions.com>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application Call Detail Recorder module
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application Call Detail Recorder module
  *
  * The Initial Developer of the Original Code is
  * Chris Parker <cparker AT segv.org>

@@ -1,6 +1,6 @@
 stream:write("Content-Type: text/html\n\n");
-stream:write("<title>FreeSWITCH Command Portal</title>");
-stream:write("<h2>FreeSWITCH Command Portal</h2>");
+stream:write("<title>FluxPBX Command Portal</title>");
+stream:write("<h2>FluxPBX Command Portal</h2>");
 stream:write("<form method=post><input name=command size=40> ");
 stream:write("<input type=submit value=\"Execute\">");
 stream:write("</form><hr noshade size=1><br>");
@@ -8,7 +8,7 @@ stream:write("</form><hr noshade size=1><br>");
 command = env:getHeader("command");
 
 if (command)  then
-   api = freeswitch.API();
+   api = fluxpbx.API();
    reply = api:executeString(command);
 
    if (reply) then

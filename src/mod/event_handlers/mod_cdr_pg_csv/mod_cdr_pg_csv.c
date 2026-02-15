@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  * Portions created by Seventh Signal Ltd. & Co. KG and its employees are Copyright (C)
@@ -473,7 +473,7 @@ static switch_status_t load_config(switch_memory_pool_t *pool)
 				if ((attr = switch_xml_attr(field, "var"))) {
 					cdr_field->var_name = switch_core_strdup(pool, attr);
 
-					/* Assume SQL column name is the same as FreeSWITCH channel var name, unless specified otherwise */
+					/* Assume SQL column name is the same as FluxPBX channel var name, unless specified otherwise */
 					if ((attr = switch_xml_attr(field, "column"))) {
 						cdr_field->col_name = switch_core_strdup(pool, attr);
 					} else {

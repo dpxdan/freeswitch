@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package org.freeswitch;
+package org.fluxpbx;
 
 import java.io.*;
 import java.net.*;

@@ -33,10 +33,10 @@
     <!--
 	Set the Switch Name for HA environments.
 	When setting the switch name, it will override the system hostname for all DB and CURL requests
-	allowing cluster environments such as RHCS to have identical FreeSWITCH configurations but run
+	allowing cluster environments such as RHCS to have identical FluxPBX configurations but run
 	as different hostnames.
     -->
-    <!-- <param name="switchname" value="freeswitch"/> -->
+    <!-- <param name="switchname" value="fluxpbx"/> -->
 
     <!-- Maximum number of simultaneous DB handles open -->
     <param name="max-db-handles" value="50"/>
@@ -146,14 +146,14 @@
     <!-- <param name="rtp-end-port" value="32768"/> -->
 
     <!--
-	 Native PostgreSQL support was removed from the FreeSWITCH Core!
+	 Native PostgreSQL support was removed from the FluxPBX Core!
 	 =================================
 	 NOTICE: You MUST enable mod_pgsql        
 	 =================================
 	 According to https://www.postgresql.org/docs/9.6/libpq-connect.html#LIBPQ-CONNSTRING
 	 There are two accepted formats for connection strings supported by the libpq library: 
 	 * For plain keyword = value strings use pgsql://
-	   pgsql://hostaddr=127.0.0.1 dbname=freeswitch user=freeswitch password='' options='-c client_min_messages=NOTICE' application_name='freeswitch'
+	   pgsql://hostaddr=127.0.0.1 dbname=fluxpbx user=fluxpbx password='' options='-c client_min_messages=NOTICE' application_name='fluxpbx'
 	 * For RFC 3986 URIs use postgresql:// or postgres://
 	   postgresql://
 	   postgresql://localhost
@@ -164,9 +164,9 @@
 	   postgresql://other@localhost/otherdb?connect_timeout=10&application_name=myapp
 	   postgresql:///mydb?host=localhost&port=5433
     -->
-    <!-- <param name="core-db-dsn" value="pgsql://hostaddr=127.0.0.1 dbname=freeswitch user=freeswitch password='' options='-c client_min_messages=NOTICE' application_name='freeswitch'" /> -->
-    <!-- <param name="core-db-dsn" value="postgresql://freeswitch:@127.0.0.1/freeswitch?options=-c%20client_min_messages%3DNOTICE&application_name=freeswitch" /> -->
-    <!-- <param name="core-db-dsn" value="mariadb://Server=localhost;Database=freeswitch;Uid=freeswitch;Pwd=pass;" /> -->
+    <!-- <param name="core-db-dsn" value="pgsql://hostaddr=127.0.0.1 dbname=fluxpbx user=fluxpbx password='' options='-c client_min_messages=NOTICE' application_name='fluxpbx'" /> -->
+    <!-- <param name="core-db-dsn" value="postgresql://fluxpbx:@127.0.0.1/fluxpbx?options=-c%20client_min_messages%3DNOTICE&application_name=fluxpbx" /> -->
+    <!-- <param name="core-db-dsn" value="mariadb://Server=localhost;Database=fluxpbx;Uid=fluxpbx;Pwd=pass;" /> -->
     <!-- <param name="core-db-dsn" value="dsn:username:password" /> -->
     <!-- 
 	 Allow to specify the sqlite db at a different location (In this example, move it to ramdrive for

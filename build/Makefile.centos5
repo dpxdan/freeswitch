@@ -1,14 +1,14 @@
 #
-# FreeSWITCH auto-build Makefile (CentOS 5.10 Wingardium Leviosa Edition)
+# FluxPBX auto-build Makefile (CentOS 5.10 Wingardium Leviosa Edition)
 # http://www.freeswitch.org
 # put this file anywhere and type make to
-# create a fully-built freeswitch.git from scratch
+# create a fully-built fluxpbx.git from scratch
 # in that same directory.
 #
-# Brian West <brian@freeswitch.org>
+# Brian West <brian@fluxpbx.org>
 #
-FSPREFIX=/usr/local/freeswitch
-PREFIX=/usr/local/freeswitch
+FSPREFIX=/usr/local/fluxpbx
+PREFIX=/usr/local/fluxpbx
 DOWNLOAD=http://files.freeswitch.org/downloads/libs
 JPEG=v8d
 OPENSSL=1.0.1l
@@ -19,20 +19,20 @@ SPEEX=1.2rc1
 LIBEDIT=20140618-3.1
 LDNS=1.6.17
 
-freeswitch: deps has-git freeswitch.git/Makefile
-	cd freeswitch.git && make
+fluxpbx: deps has-git fluxpbx.git/Makefile
+	cd fluxpbx.git && make
 
-freeswitch.git/Makefile: freeswitch.git/configure
-	cd freeswitch.git && PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig ./configure LDFLAGS='-L$(PREFIX)/lib -Wl,-rpath=$(PREFIX)/lib' CFLAGS='-I$(PREFIX)/include' --prefix=$(FSPREFIX)
+fluxpbx.git/Makefile: fluxpbx.git/configure
+	cd fluxpbx.git && PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig ./configure LDFLAGS='-L$(PREFIX)/lib -Wl,-rpath=$(PREFIX)/lib' CFLAGS='-I$(PREFIX)/include' --prefix=$(FSPREFIX)
 
-freeswitch.git/configure: freeswitch.git/bootstrap.sh
-	cd freeswitch.git && sh bootstrap.sh
+fluxpbx.git/configure: fluxpbx.git/bootstrap.sh
+	cd fluxpbx.git && sh bootstrap.sh
 
-freeswitch.git/bootstrap.sh: has-git
-	test -d freeswitch.git || git clone https://github.com/signalwire/freeswitch.git freeswitch.git
+fluxpbx.git/bootstrap.sh: has-git
+	test -d fluxpbx.git || git clone https://github.com/signalwire/fluxpbx.git fluxpbx.git
 
-install: freeswitch
-	cd freeswitch.git && make install cd-sounds-install cd-moh-install
+install: fluxpbx
+	cd fluxpbx.git && make install cd-sounds-install cd-moh-install
 
 install-git: .done
 .done:
@@ -46,7 +46,7 @@ has-git:
 
 clean:
 	@rm -rf openssl* ldns* jpeg* pcre* perl* pkg-config* speex* sqlite* libedit* curl* *~
-	(cd freeswitch.git && git clean -fdx && git reset --hard HEAD && git pull)
+	(cd fluxpbx.git && git clean -fdx && git reset --hard HEAD && git pull)
 
 libjpeg: jpeg-8d/.done
 

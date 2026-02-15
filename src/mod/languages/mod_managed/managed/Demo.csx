@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -35,8 +35,8 @@
 // -- Copy to managed directory for dynamic compilation
 
 using System;
-using FreeSWITCH;
-using FreeSWITCH.Native;
+using FluxPBX;
+using FluxPBX.Native;
 
 public class AppDemo : IAppPlugin {
 
@@ -86,19 +86,19 @@ public class LoadDemo : ILoadNotificationPlugin {
 public class ScriptDemo {
 
     public static void Main() {
-        switch (FreeSWITCH.Script.ContextType) {
+        switch (FluxPBX.Script.ContextType) {
             case ScriptContextType.Api: {
-                    var ctx = FreeSWITCH.Script.GetApiContext();
+                    var ctx = FluxPBX.Script.GetApiContext();
                     ctx.Stream.Write("Script executing as API with args: " + ctx.Arguments);
                     break;
                 }
             case ScriptContextType.ApiBackground: {
-                    var ctx = FreeSWITCH.Script.GetApiBackgroundContext();
+                    var ctx = FluxPBX.Script.GetApiBackgroundContext();
                     Log.WriteLine(LogLevel.Notice, "Executing as APIBackground with args: " + ctx.Arguments);
                     break;
                 }
             case ScriptContextType.App: {
-                    var ctx = FreeSWITCH.Script.GetAppContext();
+                    var ctx = FluxPBX.Script.GetAppContext();
                     Log.WriteLine(LogLevel.Notice, "Executing as App with args: " + ctx.Arguments);
                     break;
                 }

@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2019, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2019, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -26,7 +26,7 @@
  * Chris Rienzo <chris@signalwire.com>
  * Seven Du <seven@signalwire.com>
  *
- * switch_test.h -- FreeSWITCH test macros
+ * switch_test.h -- FluxPBX test macros
  */
 #ifndef SWITCH_FST_H
 #define SWITCH_FST_H
@@ -71,10 +71,10 @@ static switch_status_t fst_init_core_and_modload(const char *confdir, const char
 	switch_status_t status;
 	const char *err;
 	unsigned long pid = switch_getpid();
-	// Let FreeSWITCH core pick these
-	//SWITCH_GLOBAL_dirs.base_dir = strdup("/usr/local/freeswitch");
-	//SWITCH_GLOBAL_dirs.mod_dir = strdup("/usr/local/freeswitch/mod");
-	//SWITCH_GLOBAL_dirs.lib_dir = strdup("/usr/local/freeswitch/lib");
+	// Let FluxPBX core pick these
+	//SWITCH_GLOBAL_dirs.base_dir = strdup("/usr/local/fluxpbx");
+	//SWITCH_GLOBAL_dirs.mod_dir = strdup("/usr/local/fluxpbx/mod");
+	//SWITCH_GLOBAL_dirs.lib_dir = strdup("/usr/local/fluxpbx/lib");
 	//SWITCH_GLOBAL_dirs.temp_dir = strdup("/tmp");
 
 #ifdef SWITCH_TEST_BASE_DIR_OVERRIDE
@@ -136,7 +136,7 @@ static switch_status_t fst_init_core_and_modload(const char *confdir, const char
 }
 
 /**
- * Park FreeSWITCH session.  This is handy when wanting to use switch_core_session_execute_async() on the test session.
+ * Park FluxPBX session.  This is handy when wanting to use switch_core_session_execute_async() on the test session.
  * @param session to park
  */
 #define fst_session_park(session) \
@@ -278,8 +278,8 @@ static switch_status_t fst_init_core_and_modload(const char *confdir, const char
 	FCT_END()
 
 /**
- * Define the beginning of a freeswitch core test driver.  Only one per test application allowed.
- * @param confdir directory containing freeswitch.xml configuration
+ * Define the beginning of a fluxpbx core test driver.  Only one per test application allowed.
+ * @param confdir directory containing fluxpbx.xml configuration
  */
 #define FST_CORE_EX_BEGIN(confdir, flags) \
 	FCT_BGN() \
@@ -300,7 +300,7 @@ static switch_status_t fst_init_core_and_modload(const char *confdir, const char
 
 
 /**
- * Define the end of a freeswitch core test driver.
+ * Define the end of a fluxpbx core test driver.
  */
 #define FST_CORE_END() \
 		switch_core_destroy(); \
@@ -338,7 +338,7 @@ static switch_status_t fst_init_core_and_modload(const char *confdir, const char
 #define FST_MINCORE_END FST_CORE_END
 
 /**
- * Define the beginning of a FreeSWITCH module test suite.  Loads the module for test.
+ * Define the beginning of a FluxPBX module test suite.  Loads the module for test.
  * @param modname name of module to load.
  * @param suite the name of this test suite
  */
@@ -365,7 +365,7 @@ static switch_status_t fst_init_core_and_modload(const char *confdir, const char
 #endif
 
 /**
- * Define the end of a FreeSWITCH module test suite.
+ * Define the end of a FluxPBX module test suite.
  */
 #ifdef WIN32
 #define FST_MODULE_END() \

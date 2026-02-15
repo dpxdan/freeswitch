@@ -369,7 +369,7 @@ struct KhompPvt
 
         std::string _queued_digits_buffer;
 
-        /* should freeswitch answer before connect event?  */
+        /* should fluxpbx answer before connect event?  */
         bool _pre_answer;
 
         bool _is_progress_sent;
@@ -706,7 +706,7 @@ public:
     switch_core_session_t * owner() const { return _owner; }
 
     /* 
-       Returns the FreeSWITCH channel (switch_channel_t) 
+       Returns the FluxPBX channel (switch_channel_t) 
        Can throw InvalidSwitchChannel, so must be carefull
     */
     switch_channel_t * getFSChannel()
@@ -720,7 +720,7 @@ public:
     }
 
     /* 
-       Returns the FreeSWITCH channel (switch_channel_t) from given session 
+       Returns the FluxPBX channel (switch_channel_t) from given session 
        Can throw InvalidSwitchChannel, so must be carefull
     */
     static switch_channel_t * getFSChannel(switch_core_session_t * s)
@@ -734,7 +734,7 @@ public:
     }
 
     /* 
-       Returns the FreeSWITCH partner session (switch_core_session_t) 
+       Returns the FluxPBX partner session (switch_core_session_t) 
        Can throw InvalidSwitchChannel, so must be carefull
        Don't forget to unlock [unlockPartner(switch_core_session_t*)]
     */
@@ -969,11 +969,11 @@ public:
             return;
         }
 
-        int cause_from_freeswitch = switch_channel_get_cause(channel);
-        if(cause_from_freeswitch != SWITCH_CAUSE_NONE)
+        int cause_from_fluxpbx = switch_channel_get_cause(channel);
+        if(cause_from_fluxpbx != SWITCH_CAUSE_NONE)
         {
-            DBG(FUNC,PVT_FMT(_target,"cause already set to %s from freeswitch") % switch_channel_cause2str((switch_call_cause_t)cause_from_freeswitch));
-            _call->_hangup_cause = cause_from_freeswitch;
+            DBG(FUNC,PVT_FMT(_target,"cause already set to %s from fluxpbx") % switch_channel_cause2str((switch_call_cause_t)cause_from_fluxpbx));
+            _call->_hangup_cause = cause_from_fluxpbx;
             return;
         }
         

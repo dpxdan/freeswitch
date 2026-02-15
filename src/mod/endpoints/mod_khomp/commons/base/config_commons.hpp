@@ -51,9 +51,9 @@
 #elif defined(COMMONS_LIBRARY_USING_CALLWEAVER)
  #define COMMONS_IMPLEMENTATION callweaver
 /****************************************************************************/
-/* FREESWITCH */
-#elif defined(COMMONS_LIBRARY_USING_FREESWITCH)
- #define COMMONS_IMPLEMENTATION freeswitch
+/* FLUXPBX */
+#elif defined(COMMONS_LIBRARY_USING_FLUXPBX)
+ #define COMMONS_IMPLEMENTATION fluxpbx
 /****************************************************************************/
 /* GNU/LINUX (generic) */
 #elif defined(COMMONS_LIBRARY_USING_GNU_LINUX)

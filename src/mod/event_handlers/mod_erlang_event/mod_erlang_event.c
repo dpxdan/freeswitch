@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Andrew Thompson <andrew@hijacked.us>
  * Rob Charlton <rob.charlton@savageminds.com>
  * Tamas Cseke <tamas.cseke@virtual-call-center.eu>
@@ -1309,7 +1309,7 @@ static int config(void)
 	}
 
 	if (!prefs.nodename) {
-		set_pref_nodename("freeswitch");
+		set_pref_nodename("fluxpbx");
 	}
 
 	return 0;
@@ -1741,7 +1741,7 @@ SWITCH_STANDARD_APP(erlang_sendmsg_function)
 	/*switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "sendmsg: {%s, %s} ! %s\n", reg_name, node, argv[2]); */
 
 	ei_x_encode_tuple_header(&buf, 2);
-	ei_x_encode_atom(&buf, "freeswitch_sendmsg");
+	ei_x_encode_atom(&buf, "fluxpbx_sendmsg");
 	_ei_x_encode_string(&buf, argv[2]);
 
 	listener = find_listener(node);

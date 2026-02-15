@@ -3,15 +3,15 @@
 my $myname ;
 my $skype_download_url = "http://download.skype.com/linux/skype-4.3.0.37.tar.bz2";
 my $skype_download_pkg = "skype-4.3.0.37.tar.bz2";
-my $skype_binary_dir = "/usr/local/freeswitch/skypopen/skype-clients-symlinks-dir";
+my $skype_binary_dir = "/usr/local/fluxpbx/skypopen/skype-clients-symlinks-dir";
 my $skype_download_dir = "/tmp/skype_download";
 my $skype_unpacked_dir = "skype-4.3.0.37";
 my $skype_share_dir = "/usr/share/skype";
-my $freeswitch_modules_config_dir = "/usr/local/freeswitch/conf/autoload_configs";
-my $skypopen_sound_driver_dir = "/usr/local/freeswitch/skypopen/skypopen-sound-driver-dir";
-my $skype_config_dir = "/usr/local/freeswitch/skypopen/skype-clients-configuration-dir";
-my $skype_startup_dir = "/usr/local/freeswitch/skypopen/skype-clients-startup-dir";
-my $skype_symlinks_dir = "/usr/local/freeswitch/skypopen/skype-clients-symlinks-dir";
+my $fluxpbx_modules_config_dir = "/usr/local/fluxpbx/conf/autoload_configs";
+my $skypopen_sound_driver_dir = "/usr/local/fluxpbx/skypopen/skypopen-sound-driver-dir";
+my $skype_config_dir = "/usr/local/fluxpbx/skypopen/skype-clients-configuration-dir";
+my $skype_startup_dir = "/usr/local/fluxpbx/skypopen/skype-clients-startup-dir";
+my $skype_symlinks_dir = "/usr/local/fluxpbx/skypopen/skype-clients-symlinks-dir";
 my $skype_clients_to_be_launched = "5";
 my $skype_clients_starting_number = "100";
 my $multi_skypeusername = "one";
@@ -25,13 +25,13 @@ my $sure = "nope";
 system("clear");
 printf("\n");
 printf("This is the interactive installation helper for Skypopen\n");
-printf("(http://wiki.freeswitch.org/wiki/Mod_skypopen_Skype_Endpoint_and_Trunk)\n");
+printf("(http://wiki.fluxpbx.org/wiki/Mod_skypopen_Skype_Endpoint_and_Trunk)\n");
 printf("\n");
-printf("Especially designed for FreeSWITCH\n");
+printf("Especially designed for FluxPBX\n");
 printf("by Giovanni Maruzzelli\n");
 printf("\n");
-printf("Please direct all questions or issues to the FreeSWITCH mailing list or Jira\n");
-printf("(http://lists.freeswitch.org/mailman/listinfo or https://freeswitch.org/jira)\n");
+printf("Please direct all questions or issues to the FluxPBX mailing list or Jira\n");
+printf("(http://lists.fluxpbx.org/mailman/listinfo or https://fluxpbx.org/jira)\n");
 printf("\n");
 printf("\n");
 printf("I'll ask you questions, giving default answers in square brackets [] if any\n");
@@ -69,10 +69,10 @@ printf("To accept the default, just press Enter\n");
 $skype_binary_dir = &promptUser("Enter the directory full path for Skype client binary ", "$skype_binary_dir");
 system("clear");
 printf("\n");
-printf("I'm about to create the FreeSWITCH configuration file for mod_skypopen (skypopen.conf.xml)\n");
-printf("I need to know where to put it, eg: where is the FreeSWITCH modules' config dir\n");
+printf("I'm about to create the FluxPBX configuration file for mod_skypopen (skypopen.conf.xml)\n");
+printf("I need to know where to put it, eg: where is the FluxPBX modules' config dir\n");
 printf("To accept the default, just press Enter\n");
-$freeswitch_modules_config_dir = &promptUser("Enter the directory full path for FreeSWITCH modules' config files ", "$freeswitch_modules_config_dir");
+$fluxpbx_modules_config_dir = &promptUser("Enter the directory full path for FluxPBX modules' config files ", "$fluxpbx_modules_config_dir");
 system("clear");
 printf("\n");
 printf("I'm about to create the directory where to put our fake sound driver\n");
@@ -100,7 +100,7 @@ $skype_symlinks_dir = &promptUser("Enter the directory full path for Skype clien
 system("clear");
 printf("\n");
 printf("How many Skype clients (channels) do you want to launch?\n");
-printf("Each Skype client will be one channel to FreeSWITCH and use approx 70MB of ram\n");
+printf("Each Skype client will be one channel to FluxPBX and use approx 70MB of ram\n");
 printf("A quad core CPU can very easily support 20 or more Skype clients\n");
 printf("Each Skype client allows one concurrent call\n");
 printf("Eg: if you plan to have a max of 10 concurrent (outbound and/or inbound) Skype calls then enter 10\n");
@@ -173,7 +173,7 @@ printf("Please check the following values:\n");
 printf("\n");
 printf("directory for downloading and unpacking Skype client:\n'$skype_download_dir'\n");
 printf("directory for Skype client binary:\n'$skype_binary_dir'\n");
-printf("directory for FreeSWITCH modules' configs:\n'$freeswitch_modules_config_dir'\n");
+printf("directory for FluxPBX modules' configs:\n'$fluxpbx_modules_config_dir'\n");
 printf("directory for fake sound driver:\n'$skypopen_sound_driver_dir'\n");
 printf("directory for Skype clients configs:\n'$skype_config_dir'\n");
 printf("directory for Skype clients startup script:\n'$skype_startup_dir'\n");
@@ -220,18 +220,18 @@ system("mkdir -p $skype_config_dir");
 system("mkdir -p $skype_startup_dir");
 system("mkdir -p $skype_symlinks_dir");
 
-system("echo \"<configuration name=\\\"skypopen.conf\\\" description=\\\"Skypopen Configuration\\\">\" > $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"<global_settings>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"  <param name=\\\"dialplan\\\" value=\\\"XML\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"  <param name=\\\"context\\\" value=\\\"default\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"  <param name=\\\"destination\\\" value=\\\"5000\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"  <param name=\\\"skype_user\\\" value=\\\"$skype_username\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"  <param name=\\\"report_incoming_chatmessages\\\" value=\\\"false\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"  <param name=\\\"write_silence_when_idle\\\" value=\\\"false\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"  <param name=\\\"setsockopt\\\" value=\\\"true\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"</global_settings>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"<!-- one entry follows per each skypopen interface -->\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"<per_interface_settings>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
+system("echo \"<configuration name=\\\"skypopen.conf\\\" description=\\\"Skypopen Configuration\\\">\" > $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"<global_settings>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"  <param name=\\\"dialplan\\\" value=\\\"XML\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"  <param name=\\\"context\\\" value=\\\"default\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"  <param name=\\\"destination\\\" value=\\\"5000\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"  <param name=\\\"skype_user\\\" value=\\\"$skype_username\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"  <param name=\\\"report_incoming_chatmessages\\\" value=\\\"false\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"  <param name=\\\"write_silence_when_idle\\\" value=\\\"false\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"  <param name=\\\"setsockopt\\\" value=\\\"true\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"</global_settings>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"<!-- one entry follows per each skypopen interface -->\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"<per_interface_settings>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
 
 
 system("echo \"#!/bin/sh\" > $skype_startup_dir/start_skype_clients.sh");
@@ -248,12 +248,12 @@ for ($count = 1; $count <= $skype_clients_to_be_launched; $count++) {
 	system("cp -a ../configs/skype-client-configuration-dir-template/skypeclient01/shared.* $skype_config_dir/skype$skype_client_extension");
 	system("cp -a ../configs/skype-client-configuration-dir-template/skypeclient01/skypenameA $skype_config_dir/skype$skype_client_extension/$skype_login");
 
-	system("echo \" <interface id=\\\"$count\\\" name=\\\"skype$skype_client_extension\\\">\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
+	system("echo \" <interface id=\\\"$count\\\" name=\\\"skype$skype_client_extension\\\">\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
 	if($multi_skypeusername ne "one"){
-		system("echo \" <param name=\\\"skype_user\\\" value=\\\"$skype_login\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
+		system("echo \" <param name=\\\"skype_user\\\" value=\\\"$skype_login\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
 	}
-	system("echo \" <param name=\\\"X11-display\\\" value=\\\":$skype_client_extension\\\"/>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-	system("echo \" </interface>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
+	system("echo \" <param name=\\\"X11-display\\\" value=\\\":$skype_client_extension\\\"/>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+	system("echo \" </interface>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
 
 	system("echo \"#start the fake X server on the given port\" >> $skype_startup_dir/start_skype_clients.sh");
 	system("echo \"/usr/bin/Xvfb :$skype_client_extension -ac -nolisten tcp -screen 0 640x480x8 &\" >> $skype_startup_dir/start_skype_clients.sh");
@@ -264,8 +264,8 @@ for ($count = 1; $count <= $skype_clients_to_be_launched; $count++) {
 	system("echo >> $skype_startup_dir/start_skype_clients.sh");
 }
 
-system("echo \"</per_interface_settings>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
-system("echo \"</configuration>\" >> $freeswitch_modules_config_dir/skypopen.conf.xml");
+system("echo \"</per_interface_settings>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
+system("echo \"</configuration>\" >> $fluxpbx_modules_config_dir/skypopen.conf.xml");
 
 system("echo \"exit 0\" >> $skype_startup_dir/start_skype_clients.sh");
 

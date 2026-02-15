@@ -9,7 +9,7 @@
     - skinny-drop tells skinny to drop the call
     - skinny-wait tells skinny to wait 'data' seconds for more numbers before drop
 -->
-<!-- http://wiki.freeswitch.org/wiki/Mod_skinny -->
+<!-- http://wiki.fluxpbx.org/wiki/Mod_skinny -->
 <include>
   <context name="skinny-patterns">
     <!--

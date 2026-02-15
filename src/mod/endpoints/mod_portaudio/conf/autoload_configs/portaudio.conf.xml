@@ -88,7 +88,7 @@
 			If you're device is stereo, you can choose 2 here. However, bear in mind that then
 			your left and right channels will be separated and when creating endpoints you will have
 			to either choose the left or right channel. This may or may not be what you want. This separation
-			means that you can have 2 separate FreeSWITCH calls, listening to one of them in your left channel
+			means that you can have 2 separate FluxPBX calls, listening to one of them in your left channel
 			and the other in the right chanel.
 		-->
 		<param name="channels" value="2" />
@@ -114,8 +114,8 @@
 
 	Endpoints is a way to define the input and output that a given portaudio channel will use.
 	There is a lot of flexibility. You can create endpoints which are "send-only", which means
-	audio will be read from FreeSWITCH and sent down to the provided stream, but no audio will
-	be read from that stream and only silence provided back to FreeSWITCH.
+	audio will be read from FluxPBX and sent down to the provided stream, but no audio will
+	be read from that stream and only silence provided back to FluxPBX.
 
 		send-only endpoint:
 			(FS CORE) ->-> audio ->-> sound-card-x
@@ -133,7 +133,7 @@
 	This means you can have 2 SIP calls connected to the same device haring one call in your left ear and
 	the other call to your right ear :-)
 
-	The name="parameter" of the endpoint allows you to use it in the FreeSWITCH dial plan to dial, ie:
+	The name="parameter" of the endpoint allows you to use it in the FluxPBX dial plan to dial, ie:
 
 	<action application="bridge" data="portaudio/endpoint/usb1out-left" />
 

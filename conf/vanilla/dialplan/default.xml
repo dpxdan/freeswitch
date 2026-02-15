@@ -9,7 +9,7 @@
     they can access.  You can also add a user in the directory with the cidr= attribute acl.conf.xml
     will build the domains ACL using this value.
 -->
-<!-- http://wiki.freeswitch.org/wiki/Dialplan_XML -->
+<!-- http://wiki.fluxpbx.org/wiki/Dialplan_XML -->
 <include>
   <context name="default">
 
@@ -385,7 +385,7 @@
     <extension name="cdquality_stereo_conferences">
       <condition field="destination_number" expression="^(35\d{2}).*?-screen$">
 	<action application="answer"/>
-	<action application="send_display" data="FreeSWITCH Conference|$1"/>
+	<action application="send_display" data="FluxPBX Conference|$1"/>
 	<action application="set" data="conference_member_flags=join-vid-floor"/>
 	<action application="conference" data="$1@video-mcu-stereo"/>
       </condition>
@@ -435,15 +435,15 @@
       </condition>
     </extension>
 
-    <!-- dial the FreeSWITCH conference via SIP-->
-    <extension name="freeswitch_public_conf_via_sip">
+    <!-- dial the FluxPBX conference via SIP-->
+    <extension name="fluxpbx_public_conf_via_sip">
       <condition field="destination_number" expression="^9(888|8888|1616|3232)$">
 	<action application="export" data="hold_music=silence"/>
 	<!--
 	     This will take the SAS from the b-leg and send it to the display on the a-leg phone.
 	     Known working with Polycom and Snom maybe others.
 	-->
-	<action application="bridge" data="sofia/${use_profile}/$1@conference.freeswitch.org"/>
+	<action application="bridge" data="sofia/${use_profile}/$1@conference.fluxpbx.org"/>
       </condition>
     </extension>
 
@@ -510,7 +510,7 @@
     <!-- Create a conference on the fly and pull someone in at the same time. -->
     <extension name="dynamic_conference">
       <condition field="destination_number" expression="^5001$">
-	<action application="conference" data="bridge:mydynaconf:sofia/${use_profile}/1234@conference.freeswitch.org"/>
+	<action application="conference" data="bridge:mydynaconf:sofia/${use_profile}/1234@conference.fluxpbx.org"/>
       </condition>
     </extension>
 

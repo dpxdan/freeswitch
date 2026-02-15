@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -36,7 +36,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace FreeSWITCH {
+namespace FluxPBX {
 
     internal abstract class PluginExecutor : MarshalByRefObject {
         public override object InitializeLifetimeService() {
@@ -292,7 +292,7 @@ namespace FreeSWITCH {
             // Ensure it's a plugin assembly
             var ourName = Assembly.GetExecutingAssembly().GetName().Name;
             if (!asm.GetReferencedAssemblies().Any(n => n.Name == ourName)) {
-                Log.WriteLine(LogLevel.Debug, "Assembly {0} doesn't reference FreeSWITCH.Managed, not loading.", asm.FullName);
+                Log.WriteLine(LogLevel.Debug, "Assembly {0} doesn't reference FluxPBX.Managed, not loading.", asm.FullName);
                 return false; 
             }
 
@@ -312,7 +312,7 @@ namespace FreeSWITCH {
 
     internal class EmbeddedPluginManager : PluginManager {
         
-        // This is for cases where FreeSWITCH is "embedded", that is a .NET app hosts the FS core lib itself.
+        // This is for cases where FluxPBX is "embedded", that is a .NET app hosts the FS core lib itself.
         // In such a case, there may be plugins defined in the main process that need to share address space
         // and be loaded from the main assembly. This class plus changes in Loader.cs (null filenames=embedded)
         // work together to allow such plugins to work. These plugins cannot be reloaded. 

@@ -1,5 +1,5 @@
 /*
- * mod_v8 for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_v8 for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Peter Olsson <peter@olssononline.se>
  *
  * Version: MPL 1.1

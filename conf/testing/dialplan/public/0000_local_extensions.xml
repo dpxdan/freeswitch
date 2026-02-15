@@ -6,7 +6,7 @@
 
 <extension name="Local_Extension">
   <condition field="destination_number" expression="^(6666)$">
-    <action application="bridge" data="sofia/internal/sip:888@cantina.freeswitch.org"/>
+    <action application="bridge" data="sofia/internal/sip:888@cantina.fluxpbx.org"/>
   </condition>
 </extension>
   

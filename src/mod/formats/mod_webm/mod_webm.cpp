@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2015, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2015, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Seven Du <dujinfang@gmail.com>
@@ -140,7 +140,7 @@ static switch_status_t webm_file_open(switch_file_handle_t *handle, const char *
 
 	mkvmuxer::SegmentInfo* const info = context->segment->GetSegmentInfo();
 	info->set_timecode_scale(1000000);
-	info->set_muxing_app("FreeSWITCH");
+	info->set_muxing_app("FluxPBX");
 	info->set_writing_app(switch_version_full());
 
 	context->audio_track_id = context->segment->AddAudioTrack(handle->samplerate, handle->channels, 0);

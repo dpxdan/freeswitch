@@ -1,4 +1,4 @@
-from freeswitch import *
+from fluxpbx import *
 from py_modules.speechtools import Grammar, SpeechDetect
 from py_modules.speechtools import SpeechObtainer
 
@@ -6,7 +6,7 @@ import os
 
 VOICE_ENGINE = "cepstral"
 VOICE = "William"
-GRAMMAR_ROOT = "/usr/src/freeswitch_trunk/scripts"
+GRAMMAR_ROOT = "/usr/src/fluxpbx_trunk/scripts"
 
 """
 Example speech recognition application in python.
@@ -14,8 +14,8 @@ Example speech recognition application in python.
 How to make this work:
 
 * Get mod_openmrcp working along with an MRCP asr server
-* Add /usr/src/freeswitch/scripts or equivalent to your PYTHONPATH
-* Restart freeswitch
+* Add /usr/src/fluxpbx/scripts or equivalent to your PYTHONPATH
+* Restart fluxpbx
 * Create $GRAMMAR_ROOT/mainmenu.xml from contents in mainmenu() comments
 
 """

@@ -4,7 +4,7 @@
 src_repo="$(pwd)"
 
 if [ ! -d .git ]; then
-  echo "error: must be run from within the top level of a FreeSWITCH git tree." 1>&2
+  echo "error: must be run from within the top level of a FluxPBX git tree." 1>&2
   exit 1;
 fi
 
@@ -21,7 +21,7 @@ rev=$(echo "$ver" | cut -d. -f4)
 
 build="$2"
 
-dst_name="freeswitch-$major.$minor.$micro"
+dst_name="fluxpbx-$major.$minor.$micro"
 dst_parent="/tmp/"
 dst_dir="/tmp/$dst_name"
 
@@ -39,7 +39,7 @@ fi
 sed -e "s|\(AC_SUBST(SWITCH_VERSION_MAJOR, \[\).*\(\])\)|\1$major\2|" \
   -e "s|\(AC_SUBST(SWITCH_VERSION_MINOR, \[\).*\(\])\)|\1$minor\2|" \
   -e "s|\(AC_SUBST(SWITCH_VERSION_MICRO, \[\).*\(\])\)|\1$micro\2|" \
-  -e "s|\(AC_INIT(\[freeswitch\], \[\).*\(\], BUG-REPORT-ADDRESS)\)|\1$major.$minor.$micro\2|" \
+  -e "s|\(AC_INIT(\[fluxpbx\], \[\).*\(\], BUG-REPORT-ADDRESS)\)|\1$major.$minor.$micro\2|" \
   -i configure.ac
 
 if [ -n "$rev" ]; then
@@ -51,8 +51,8 @@ if [ -n "$rev" ]; then
 fi
 
 #git add configure.ac
-#git commit -m "Release freeswitch-$ver"
-#git tag -a -m "freeswitch-$ver release" v$ver
+#git commit -m "Release fluxpbx-$ver"
+#git tag -a -m "fluxpbx-$ver release" v$ver
 
 #git clone $src_repo $dst_dir
 #if [ -n "$stash_saved" ]; then
@@ -83,7 +83,7 @@ mv -f $dst_name.tar.* $src_repo/rpmbuild/SOURCES/.
 
 cd $src_repo/rpmbuild/SOURCES
 
-for i in `grep 'Source..\?:' $src_repo/freeswitch.spec|grep -v Source0 |awk '{print $2}'`; do wget $i; done
+for i in `grep 'Source..\?:' $src_repo/fluxpbx.spec|grep -v Source0 |awk '{print $2}'`; do wget $i; done
 
 cd $src_repo
 
@@ -92,7 +92,7 @@ rpmbuild --define "VERSION_NUMBER $ver" \
   --define "_topdir %(pwd)/rpmbuild" \
   --define "_rpmdir %{_topdir}" \
   --define "_srcrpmdir %{_topdir}" \
-  -ba freeswitch.spec
+  -ba fluxpbx.spec
 
 # --define '_rpmfilename %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm' \
 # --define "_sourcedir  %{_topdir}" \

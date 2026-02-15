@@ -23,9 +23,9 @@ if [ $# -gt 0 ]; then
 fi
 eval $(parse_version "$version")
 if [ -n "$grev" ]; then 
-	dst_name="freeswitch-$cmajor.$cminor.$cmicro.$grev"
+	dst_name="fluxpbx-$cmajor.$cminor.$cmicro.$grev"
 else
-	dst_name="freeswitch-$cmajor.$cminor.$cmicro"
+	dst_name="fluxpbx-$cmajor.$cminor.$cmicro"
 fi
 check_input_ver_build $version
 
@@ -57,8 +57,8 @@ zip -r $dst_name.zip $dst_name
 mkdir -p ${src_repo}/../src_dist
 mv -f ${dst_name}.tar.* ${src_repo}/../src_dist
 mv -f $dst_name.zip ${src_repo}/../src_dist
-cp -f ${dst_dir}/freeswitch.spec ${src_repo}/../src_dist
-cp -f ${dst_dir}/freeswitch-config-rayo.spec ${src_repo}/../src_dist
+cp -f ${dst_dir}/fluxpbx.spec ${src_repo}/../src_dist
+cp -f ${dst_dir}/fluxpbx-config-rayo.spec ${src_repo}/../src_dist
 
 rm -rf ${dst_name}.tar $dst_dir
 
@@ -69,7 +69,7 @@ ls -al
 
 cat 1>&2 <<EOF
 ----------------------------------------------------------------------
-The freeswitch-${cver} tarballs have been rolled,
+The fluxpbx-${cver} tarballs have been rolled,
 now we just need to roll packages with them
 ----------------------------------------------------------------------
 EOF

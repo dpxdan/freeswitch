@@ -1,5 +1,5 @@
 /*
- * mod_v8_skel for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_v8_skel for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Peter Olsson <peter@olssononline.se>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_v8_skel for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_v8_skel for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Peter Olsson <peter@olssononline.se>

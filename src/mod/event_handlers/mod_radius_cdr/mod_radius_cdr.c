@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -222,7 +222,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 		/*
 		   cause = switch_channel_get_cause(channel);
 		   if (rc_avpair_add(rad_config, &send, PW_FS_HANGUPCAUSE, &cause, -1, PW_FS_PEC) == NULL) {
-		   switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Hangupcause: %d\n", cause);
+		   switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Hangupcause: %d\n", cause);
 		   rc_destroy(rad_config);
 		   return SWITCH_STATUS_TERM;
 		   }
@@ -230,7 +230,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 		if ((signal_bond = switch_channel_get_partner_uuid(channel)) && !zstr(signal_bond)) {
 			if (rc_avpair_add(rad_config, &send, PW_FS_OTHER_LEG_ID, (void*) signal_bond, -1, PW_FS_PEC) == NULL) {
-				switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "[mod_radius_cdr] Failed adding Freeswitch-Other-Leg-Id: %s\n", uuid_str);
+				switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "[mod_radius_cdr] Failed adding Fluxpbx-Other-Leg-Id: %s\n", uuid_str);
 				rc_destroy(rad_config);
 				goto end;
 			}
@@ -255,7 +255,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->caller_id_number) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_SRC, (void *) profile->caller_id_number, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Src: %s\n", profile->caller_id_number);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Src: %s\n", profile->caller_id_number);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -263,7 +263,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->caller_id_name) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_CLID, (void *) profile->caller_id_name, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-CLID: %s\n", profile->caller_id_name);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-CLID: %s\n", profile->caller_id_name);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -271,7 +271,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->destination_number) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_DST, (void *) profile->destination_number, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Dst: %s\n", profile->destination_number);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Dst: %s\n", profile->destination_number);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -279,7 +279,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->dialplan) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_DIALPLAN, (void *) profile->dialplan, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Dialplan: %s\n", profile->dialplan);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Dialplan: %s\n", profile->dialplan);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -297,7 +297,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->rdnis) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_RDNIS, (void *) profile->rdnis, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-RDNIS: %s\n", profile->rdnis);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-RDNIS: %s\n", profile->rdnis);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -305,7 +305,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->context) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_CONTEXT, (void *) profile->context, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Context: %s\n", profile->context);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Context: %s\n", profile->context);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -313,7 +313,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->ani) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_ANI, (void *) profile->ani, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-ANI: %s\n", profile->ani);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-ANI: %s\n", profile->ani);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -321,7 +321,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->aniii) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_ANIII, (void *) profile->aniii, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-ANIII: %s\n", profile->aniii);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-ANIII: %s\n", profile->aniii);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -329,7 +329,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 
 			if (profile->source) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_SOURCE, (void *) profile->source, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Source: %s\n", profile->source);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Source: %s\n", profile->source);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -341,7 +341,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLSTARTDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Callstartdate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Callstartdate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -353,7 +353,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLANSWERDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Callanswerdate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Callanswerdate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -365,7 +365,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLTRANSFERDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Calltransferdate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Calltransferdate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -377,7 +377,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLENDDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Callenddate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Callenddate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -386,7 +386,7 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 			if (profile->caller_extension && profile->caller_extension->last_application && profile->caller_extension->last_application->application_name) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_LASTAPP,
 								  (void *) profile->caller_extension->last_application->application_name, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Lastapp: %s\n", profile->source);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Lastapp: %s\n", profile->source);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -406,13 +406,13 @@ static switch_status_t my_on_routing(switch_core_session_t *session)
 					}
 
 					if (rc_avpair_add(rad_config, &send, PW_FS_AVPAIR, (void *)radius_avpair_data_tmp, -1, PW_FS_PEC) == NULL) {
-						switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "failed adding Freeswitch-AVPair: %s\n", radius_avpair_data_tmp);
+						switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "failed adding Fluxpbx-AVPair: %s\n", radius_avpair_data_tmp);
 						rc_destroy(rad_config);
 						switch_safe_free(radius_avpair_data);
 						goto end;
 					}
 
-					switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "added Freeswitch-AVPair: %s\n", radius_avpair_data_tmp);
+					switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "added Fluxpbx-AVPair: %s\n", radius_avpair_data_tmp);
 
 					if (delim) {
 						radius_avpair_data_tmp = delim + 2;
@@ -532,7 +532,7 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 
 		cause = switch_channel_get_cause(channel);
 		if (rc_avpair_add(rad_config, &send, PW_FS_HANGUPCAUSE, &cause, -1, PW_FS_PEC) == NULL) {
-			switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Hangupcause: %d\n", cause);
+			switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Hangupcause: %d\n", cause);
 			rc_destroy(rad_config);
 			goto end;
 		}
@@ -573,28 +573,28 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 			}
 			if (profile->caller_id_number) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_SRC, (void *) profile->caller_id_number, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Src: %s\n", profile->caller_id_number);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Src: %s\n", profile->caller_id_number);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (profile->caller_id_name) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_CLID, (void *) profile->caller_id_name, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-CLID: %s\n", profile->caller_id_name);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-CLID: %s\n", profile->caller_id_name);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (profile->destination_number) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_DST, (void *) profile->destination_number, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Dst: %s\n", profile->destination_number);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Dst: %s\n", profile->destination_number);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (profile->dialplan) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_DIALPLAN, (void *) profile->dialplan, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Dialplan: %s\n", profile->dialplan);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Dialplan: %s\n", profile->dialplan);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -610,35 +610,35 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 			}
 			if (profile->rdnis) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_RDNIS, (void *) profile->rdnis, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-RDNIS: %s\n", profile->rdnis);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-RDNIS: %s\n", profile->rdnis);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (profile->context) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_CONTEXT, (void *) profile->context, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Context: %s\n", profile->context);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Context: %s\n", profile->context);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (profile->ani) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_ANI, (void *) profile->ani, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-ANI: %s\n", profile->ani);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-ANI: %s\n", profile->ani);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (profile->aniii) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_ANIII, (void *) profile->aniii, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-ANIII: %s\n", profile->aniii);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-ANIII: %s\n", profile->aniii);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (profile->source) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_SOURCE, (void *) profile->source, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Source: %s\n", profile->source);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Source: %s\n", profile->source);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -646,13 +646,13 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 			if (profile->caller_extension && profile->caller_extension->last_application && profile->caller_extension->last_application->application_name) {
 				if (rc_avpair_add(rad_config, &send, PW_FS_LASTAPP,
 								  (void *) profile->caller_extension->last_application->application_name, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Lastapp: %s\n", profile->source);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Lastapp: %s\n", profile->source);
 					rc_destroy(rad_config);
 					goto end;
 				}
 			}
 			if (rc_avpair_add(rad_config, &send, PW_FS_BILLUSEC, &billusec, -1, PW_FS_PEC) == NULL) {
-				switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Billusec: %u\n", (uint32_t) billusec);
+				switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Billusec: %u\n", (uint32_t) billusec);
 				rc_destroy(rad_config);
 				goto end;
 			}
@@ -663,7 +663,7 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLSTARTDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Callstartdate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Callstartdate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -675,7 +675,7 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLANSWERDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Callanswerdate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Callanswerdate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -687,7 +687,7 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLTRANSFERDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Calltransferdate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Calltransferdate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -699,7 +699,7 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 								tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
 								tm.tm_hour, tm.tm_min, tm.tm_sec, tm.tm_usec, tm.tm_gmtoff / 3600, tm.tm_gmtoff % 3600);
 				if (rc_avpair_add(rad_config, &send, PW_FS_CALLENDDATE, &buffer, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Callenddate: %s\n", buffer);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Callenddate: %s\n", buffer);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -715,7 +715,7 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 				const char *direction_str = profile->direction == SWITCH_CALL_DIRECTION_INBOUND ? "inbound" : "outbound";
 
 				if (rc_avpair_add(rad_config, &send, PW_FS_DIRECTION, (void *) direction_str, -1, PW_FS_PEC) == NULL) {
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Freeswitch-Direction: %s\n", direction_str);
+					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "failed adding Fluxpbx-Direction: %s\n", direction_str);
 					rc_destroy(rad_config);
 					goto end;
 				}
@@ -731,11 +731,11 @@ static switch_status_t my_on_reporting(switch_core_session_t *session)
 					}
 
 					if (rc_avpair_add(rad_config, &send, PW_FS_AVPAIR, (void *) radius_avpair_data, -1, PW_FS_PEC) == NULL) {
-						switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "failed adding Freeswitch-AVPair: %s\n", radius_avpair_data);
+						switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "failed adding Fluxpbx-AVPair: %s\n", radius_avpair_data);
 						rc_destroy(rad_config);
 						goto end;
 					}
-					switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "added Freeswitch-AVPair: %s\n", radius_avpair_data);
+					switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "added Fluxpbx-AVPair: %s\n", radius_avpair_data);
 
 					if (delim) {
 						radius_avpair_data = delim + 2;
@@ -776,7 +776,7 @@ static switch_status_t load_config(void)
 	my_retries = "3";
 	my_deadtime = "0";
 	strncpy(my_seqfile, "/var/run/radius.seq", PATH_MAX - 1);
-	strncpy(my_dictionary, "/usr/local/freeswitch/conf/radius/dictionary", PATH_MAX - 1);
+	strncpy(my_dictionary, "/usr/local/fluxpbx/conf/radius/dictionary", PATH_MAX - 1);
 
 	for (i = 0; i < SERVER_MAX; i++) {
 		my_servers[i][0] = '\0';

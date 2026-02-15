@@ -6,7 +6,7 @@ on='[01;00;35m'
 off='[0m'
 
 if [ -z $mods ] ; then
-    mods="/usr/local/freeswitch/mod"
+    mods="/usr/local/fluxpbx/mod"
 fi
 
 echo "Checking module integrity in target [$mods]"

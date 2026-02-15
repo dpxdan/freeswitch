@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.freeswitch.swig;
+package org.fluxpbx.swig;
 
 public class SWIGTYPE_p_JavaVM {
   private transient long swigCPtr;

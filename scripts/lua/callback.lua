@@ -1,16 +1,16 @@
 function all_done(s, how)
-   freeswitch.console_log("info", "done: " .. how .. "\n");
+   fluxpbx.console_log("info", "done: " .. how .. "\n");
 end
 
 function my_cb(s, type, obj, arg)
    if (arg) then
-      freeswitch.console_log("info", "\ntype: " .. type .. "\n" .. "arg: " .. arg .. "\n");
+      fluxpbx.console_log("info", "\ntype: " .. type .. "\n" .. "arg: " .. arg .. "\n");
    else
-      freeswitch.console_log("info", "\ntype: " .. type .. "\n");
+      fluxpbx.console_log("info", "\ntype: " .. type .. "\n");
    end
 
    if (type == "dtmf") then
-      freeswitch.console_log("info", "\ndigit: [" .. obj['digit'] .. "]\nduration: [" .. obj['duration'] .. "]\n"); 
+      fluxpbx.console_log("info", "\ndigit: [" .. obj['digit'] .. "]\nduration: [" .. obj['duration'] .. "]\n"); 
 
 
       if (obj['digit'] == "1") then
@@ -73,7 +73,7 @@ function my_cb(s, type, obj, arg)
       end
 
    else
-      freeswitch.console_log("info", obj:serialize("xml"));
+      fluxpbx.console_log("info", obj:serialize("xml"));
 
    end
 end

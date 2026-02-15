@@ -1,0 +1,29 @@
+#!/bin/sh
+email=traces@fluxpbx.org
+errorlvl=1
+while [ $errorlvl -gt 0 ]
+do
+	/usr/local/fluxpbx/bin/fluxpbx -core
+	errorlvl=$?
+	if [ $errorlvl -gt 0 ]; then
+		pid=$(cat /usr/local/fluxpbx/run/fluxpbx.pid)
+		corefile=core.$pid
+		tempfile=$(tempfile)
+		if [ -f $corefile ]; then
+			reset
+			echo From: fluxpbx@jasongarland.com >>$tempfile
+			echo >>$tempfile
+			echo >>$tempfile
+			echo Host: $(hostname -f) >>$tempfile
+			gdb /usr/local/fluxpbx/bin/fluxpbx -c $corefile \
+			--eval-command='set pagination off' \
+			--eval-command='bt full' \
+			--eval-command='quit' >>$tempfile
+			cat $tempfile|rmail $email
+			rm $tempfile
+		fi
+	fi
+
+	#sleep 5s
+
+done

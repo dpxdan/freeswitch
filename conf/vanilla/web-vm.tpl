@@ -1,4 +1,4 @@
-<title>FreeSWITCH Voicemail</title>
+<title>FluxPBX Voicemail</title>
 <body bgcolor=eeeeee>
 
 <table bgcolor=ffffff width=75% align=center style="border-style:inset;border-width:2px">

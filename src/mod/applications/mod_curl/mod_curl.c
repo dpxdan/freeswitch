@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,17 +14,17 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
  * Rupa Schomaker <rupa@rupa.com>
- * Yossi Neiman <mishehu@freeswitch.org>
+ * Yossi Neiman <mishehu@fluxpbx.org>
  * Seven Du <dujinfang@gmail.com>
  *
  * mod_curl.c -- API for performing http queries
@@ -306,7 +306,7 @@ static http_data_t *do_lookup_url(switch_memory_pool_t *pool, const char *url, c
 	switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *) http_data);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_HEADERFUNCTION, header_callback);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_HEADERDATA, (void *) http_data);
-	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-curl/1.0");
+	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-curl/1.0");
 
 	switch_curl_easy_perform(curl_handle);
 	switch_curl_easy_getinfo(curl_handle, CURLINFO_RESPONSE_CODE, &httpRes);
@@ -452,7 +452,7 @@ static void http_sendfile_initialize_curl(http_sendfile_data_t *http_data)
 	curl_easy_setopt(http_data->curl_handle, CURLOPT_MAXREDIRS, 15);
 	curl_easy_setopt(http_data->curl_handle, CURLOPT_URL, http_data->url);
 	curl_easy_setopt(http_data->curl_handle, CURLOPT_NOSIGNAL, 1);
-	curl_easy_setopt(http_data->curl_handle, CURLOPT_USERAGENT, "freeswitch-curl/1.0");
+	curl_easy_setopt(http_data->curl_handle, CURLOPT_USERAGENT, "fluxpbx-curl/1.0");
 
 	http_data->sendfile_response = switch_core_alloc(http_data->pool, sizeof(char) * HTTP_SENDFILE_RESPONSE_SIZE);
 	memset(http_data->sendfile_response, 0, sizeof(char) * HTTP_SENDFILE_RESPONSE_SIZE);

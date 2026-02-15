@@ -11,7 +11,7 @@
 # Michael S. Collins
 # 2009-11-11
 # 
-# Freely contributed to the FreeSWITCH project for use as the developers and community see fit
+# Freely contributed to the FluxPBX project for use as the developers and community see fit
 
 use strict;
 use warnings;
@@ -47,7 +47,7 @@ my $opts_ok = GetOptions ("h"         => \&usage,
 ## Confirm that a file spec was provided
 if ( ! $filespec ) {
     warn "\nPlease provide a file specification.\n";
-    die "Example: --files=/usr/local/freeswitch/conf/directory/default/1*.xml\n\n";
+    die "Example: --files=/usr/local/fluxpbx/conf/directory/default/1*.xml\n\n";
 }
 
 ## Collect the files
@@ -149,7 +149,7 @@ sub get_random_digits () {
 sub usage () {
 print <<END_USAGE
 
-Randomize passwords for FreeSWITCH directory entries.
+Randomize passwords for FluxPBX directory entries.
 
 Usage:  ./randomize-passwords.pl --files=<file spec> [-D] [--vmlen=<vm pass length>] [--authlen=<auth pass length>]
 
@@ -160,7 +160,7 @@ Options:
   -D               Delete backups (default is to save backups)
 
   --files          Specify files to process. Use typical file globs. On a standard Linux install it would look like:
-                   --files=/usr/local/freeswitch/conf/directory/default/1*.xml
+                   --files=/usr/local/fluxpbx/conf/directory/default/1*.xml
 
   --vmlen          Set length of voice mail password. (Default is 4 digits)
 
@@ -171,7 +171,7 @@ Options:
 Example:
   To randomize all the passwords for a default Linux install, with 6 digit VM passwords, use this command:
 
-  ./randomize-passwords.pl --files=/usr/local/freeswitch/conf/directory/default/1*.xml -D --vmlen=6
+  ./randomize-passwords.pl --files=/usr/local/fluxpbx/conf/directory/default/1*.xml -D --vmlen=6
 
 END_USAGE
 ;

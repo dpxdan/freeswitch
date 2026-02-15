@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2005-2017, Seven Du <dujinfang@gmail.com>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Seven Du <dujinfang@gmail.com>
@@ -24,7 +24,7 @@
  * Contributor(s):
  *
  * Seven Du <dujinfang@gmail.com>
- * Anthony Minessale <anthm@freeswitch.org>
+ * Anthony Minessale <anthm@fluxpbx.org>
  *
  * mod_video_filter -- FS Video Codec / File Format using libav.org
  *

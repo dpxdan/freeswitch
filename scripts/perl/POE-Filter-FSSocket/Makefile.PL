@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
 	NAME         => 'POE::Filter::FSSocket',
 	AUTHOR       => 'Paul Tinsley <pdt@jackhammer.org>',
-	ABSTRACT     => 'POE filter for getting events out of FreeSWITCH',
+	ABSTRACT     => 'POE filter for getting events out of FluxPBX',
 	VERSION_FROM => 'lib/POE/Filter/FSSocket.pm',
 
 	PM           => { 'lib/POE/Filter/FSSocket.pm' => '$(INST_LIBDIR)/FSSocket.pm' },

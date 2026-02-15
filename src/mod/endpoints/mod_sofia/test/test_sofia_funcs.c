@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2021, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2021, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -87,17 +87,17 @@ FST_TEST_BEGIN(test_protect_url)
 	fst_check(ret == 0);
 	fst_check_string_equals(cp.destination_number, "external/1234@ip");
 
-	cp.destination_number = switch_core_strdup(cp.pool, "external/bryän&!杜金房@freeswitch-testing:9080");
+	cp.destination_number = switch_core_strdup(cp.pool, "external/bryän&!杜金房@fluxpbx-testing:9080");
 	ret = protect_dest_uri(&cp);
 	fst_check(ret == 1);
-	fst_check_string_equals(cp.destination_number, "external/bry%C3%A4n%26!%E6%9D%9C%E9%87%91%E6%88%BF@freeswitch-testing:9080");
+	fst_check_string_equals(cp.destination_number, "external/bry%C3%A4n%26!%E6%9D%9C%E9%87%91%E6%88%BF@fluxpbx-testing:9080");
 
-	cp.destination_number = switch_core_strdup(cp.pool, "external/" SWITCH_URL_UNSAFE "@freeswitch-testing:9080");
+	cp.destination_number = switch_core_strdup(cp.pool, "external/" SWITCH_URL_UNSAFE "@fluxpbx-testing:9080");
 	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_INFO, "before: [%s]\n", cp.destination_number);
 	ret = protect_dest_uri(&cp);
 	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_INFO, "after: [%s]\n", cp.destination_number);
 	fst_check(ret == 1);
-	fst_check_string_equals(cp.destination_number, "external/%0D%0A%20%23%25%26%2B%3A%3B%3C%3D%3E%3F@[\\]^`{|}\"@freeswitch-testing:9080");
+	fst_check_string_equals(cp.destination_number, "external/%0D%0A%20%23%25%26%2B%3A%3B%3C%3D%3E%3F@[\\]^`{|}\"@fluxpbx-testing:9080");
 
 	switch_core_destroy_memory_pool(&cp.pool);
 }

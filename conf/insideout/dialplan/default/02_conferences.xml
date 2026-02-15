@@ -4,7 +4,7 @@
     <condition field="destination_number" expression="^(42|888|899)$">
       <action application="set" data="effective_caller_id_number=42"/>
       <action application="set" data="effective_caller_id_name=Ray"/>
-      <action application="bridge" data="sofia/external/$1@conference.freeswitch.org"/>
+      <action application="bridge" data="sofia/external/$1@conference.fluxpbx.org"/>
     </condition>
   </extension>
 

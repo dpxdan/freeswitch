@@ -15,7 +15,7 @@ Steps to reproduce the behavior:
 1. Using this example configuration...
 2. Dial into conference using verto
 3. Play my_problem_file.mp4 into conference
-4. FreeSWITCH crashes
+4. FluxPBX crashes
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
@@ -24,7 +24,7 @@ A clear and concise description of what you expected to happen.
  - Version [e.g. 1.10.4]
 
 **Trace logs**
-Provide freeswitch logs w/ DEBUG and UUID logging enabled
+Provide fluxpbx logs w/ DEBUG and UUID logging enabled
 
 **backtrace from core file**
 If applicable, provide the full backtrace from the core file.

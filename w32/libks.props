@@ -54,7 +54,7 @@
   </Target> 
 
   <Target Name="libkscopyTarget" BeforeTargets="CustomBuild" DependsOnTargets="libksBinariesDownloadTarget">  
-        <Message Text="Copying libks libraries to the freeswitch output folder." Importance="High" />
+        <Message Text="Copying libks libraries to the fluxpbx output folder." Importance="High" />
         <ItemGroup>  
              <libksFiles Include="$(libksDir)\binaries\$(Platform)\$(Configuration)\*.dll"/>  
         </ItemGroup>  

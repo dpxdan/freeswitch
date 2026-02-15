@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH mod_spandsp.
+ * The Original Code is FluxPBX mod_spandsp.
  *
  * The Initial Developer of the Original Code is
  * Massimo Cetra <devel@navynet.it>
@@ -24,8 +24,8 @@
  *
  * Contributor(s):
  *
- * Brian West <brian@freeswitch.org>
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Brian West <brian@fluxpbx.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Steve Underwood <steveu@coppice.org>
  * Antonio Gallo <agx@linux.it>
  * mod_spandsp.h -- applications provided by SpanDSP

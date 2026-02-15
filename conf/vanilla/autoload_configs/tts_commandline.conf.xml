@@ -8,7 +8,7 @@
 	${file}: output file (quoted, including .wav extension)
     
     Example commands can be found at:
-    https://freeswitch.org/confluence/display/FREESWITCH/mod_tts_commandline#mod_tts_commandline-Examplecommands
+    https://fluxpbx.org/confluence/display/FLUXPBX/mod_tts_commandline#mod_tts_commandline-Examplecommands
 	-->
 	<param name="command" value="echo ${text} | text2wave -f ${rate} > ${file}"/>
     </settings>

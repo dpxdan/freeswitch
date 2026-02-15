@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  *
  *
  * switch_config.c -- Configuration File Parser
@@ -58,7 +58,7 @@ SWITCH_DECLARE(int) switch_config_open_file(switch_config_t *cfg, char *file_pat
 			int last = -1;
 			char *var, *val;
 
-			switch_snprintf(path_buf, sizeof(path_buf), "%s%sfreeswitch.conf", SWITCH_GLOBAL_dirs.conf_dir, SWITCH_PATH_SEPARATOR);
+			switch_snprintf(path_buf, sizeof(path_buf), "%s%sfluxpbx.conf", SWITCH_GLOBAL_dirs.conf_dir, SWITCH_PATH_SEPARATOR);
 			path = path_buf;
 
 			if ((f = fopen(path, "r")) == 0) {

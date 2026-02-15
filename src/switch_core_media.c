@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2021, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2021, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Seven Du <dujinfang@gmail.com>
  *
  * switch_core_media.c -- Core Media
@@ -1997,7 +1997,7 @@ SWITCH_DECLARE(switch_status_t) switch_media_handle_create(switch_media_handle_t
 	*smhp = NULL;
 
 	if (zstr(params->sdp_username)) {
-		params->sdp_username = "FreeSWITCH";
+		params->sdp_username = "FluxPBX";
 	}
 
 
@@ -5317,7 +5317,7 @@ SWITCH_DECLARE(uint8_t) switch_core_media_negotiate_sdp(switch_core_session_t *s
 
 			if (sdp_type == SDP_TYPE_RESPONSE) {
 				if (inactive) {
-					// When freeswitch had previously sent inactive in sip request. it should remain inactive otherwise smode should be sendrecv
+					// When fluxpbx had previously sent inactive in sip request. it should remain inactive otherwise smode should be sendrecv
 					if (a_engine->smode==SWITCH_MEDIA_FLOW_INACTIVE) {
 						switch_core_media_set_smode(smh->session, SWITCH_MEDIA_TYPE_AUDIO, sdp_media_flow(sdp_inactive), sdp_type);
 					} else {

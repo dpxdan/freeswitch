@@ -1,14 +1,14 @@
-all: FreeSWITCH.Managed.dll
+all: FluxPBX.Managed.dll
 
 clean:
-	rm -fr FreeSWITCH.Managed.dll
+	rm -fr FluxPBX.Managed.dll
 
-FreeSWITCH.Managed.dll: AssemblyInfo.cs Extensions.cs Loader.cs Log.cs ManagedSession.cs PluginInterfaces.cs PluginManager.cs ScriptPluginManager.cs swig.cs
-	dmcs -target:library -out:FreeSWITCH.Managed.dll AssemblyInfo.cs Extensions.cs Loader.cs Log.cs ManagedSession.cs PluginInterfaces.cs PluginManager.cs ScriptPluginManager.cs ChannelVariables.cs Util.cs swig.cs XmlSearchBinding.cs
+FluxPBX.Managed.dll: AssemblyInfo.cs Extensions.cs Loader.cs Log.cs ManagedSession.cs PluginInterfaces.cs PluginManager.cs ScriptPluginManager.cs swig.cs
+	dmcs -target:library -out:FluxPBX.Managed.dll AssemblyInfo.cs Extensions.cs Loader.cs Log.cs ManagedSession.cs PluginInterfaces.cs PluginManager.cs ScriptPluginManager.cs ChannelVariables.cs Util.cs swig.cs XmlSearchBinding.cs
 
-install: FreeSWITCH.Managed.dll
-	$(INSTALL) FreeSWITCH.Managed.dll $(DESTDIR)$(MODINSTDIR)
+install: FluxPBX.Managed.dll
+	$(INSTALL) FluxPBX.Managed.dll $(DESTDIR)$(MODINSTDIR)
 
 uninstall:
-	$(UNINSTALL) $(MODINSTDIR)/FreeSWITCH.Managed.dll
+	$(UNINSTALL) $(MODINSTDIR)/FluxPBX.Managed.dll
 

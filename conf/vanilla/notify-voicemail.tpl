@@ -3,7 +3,7 @@ Date: ${RFC2822_DATE}
 To: <${voicemail_notify_email}>
 Subject: Voicemail from "${voicemail_caller_id_name}" <${voicemail_caller_id_number}> ${voicemail_message_len}
 X-Priority: ${voicemail_priority}
-X-Mailer: FreeSWITCH
+X-Mailer: FluxPBX
 
 Content-Type: multipart/alternative; 
 	boundary="000XXX000"

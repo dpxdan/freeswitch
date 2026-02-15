@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using FreeSWITCH.Native;
+using FluxPBX.Native;
 using Stream = System.IO.Stream;
 
 namespace winFailToBan.Internal
@@ -17,7 +17,7 @@ namespace winFailToBan.Internal
         {
             main = new XElement("wtf",
                                   new XElement("document",
-                                               new XAttribute("type", "freeswitch/xml"),
+                                               new XAttribute("type", "fluxpbx/xml"),
                                                new XElement("section",
                                                             new XAttribute("name", SectionName),
                                                             new XAttribute("description", "Auto generated")

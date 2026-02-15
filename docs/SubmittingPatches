@@ -1,11 +1,11 @@
-How to Contribute Patches to FreeSWITCH
+How to Contribute Patches to FluxPBX
 =======================================
 
 Download the Source Code
 ------------------------
 
-    git clone https://github.com/signalwire/freeswitch.git
-    cd freeswitch
+    git clone https://github.com/signalwire/fluxpbx.git
+    cd fluxpbx
 
 Ensure Git is Setup
 -------------------
@@ -37,26 +37,26 @@ Create Your Commits
 Create a Pull Request
 ---------------------
 
-    # navigate to the FreeSWITCH JIRA
-    chromium https://freeswitch.org/jira
+    # navigate to the FluxPBX JIRA
+    chromium https://fluxpbx.org/jira
 
     # create an account in JIRA and create a new issue
 
-    # navigate to FreeSWITCH github
-    chromium https://github.com/signalwire/freeswitch
+    # navigate to FluxPBX github
+    chromium https://github.com/signalwire/fluxpbx
 
     # Using your github credentials, login to github; create a forked FS repository; read
     # the details here:
-    chromium https://freeswitch.org/confluence/display/FREESWITCH/Pull+Requests
+    chromium https://fluxpbx.org/confluence/display/FLUXPBX/Pull+Requests
 
     # add your repository as a remote (change to your username)
-    git remote add fs git@github.com:signalwire/freeswitch.git
+    git remote add fs git@github.com:signalwire/fluxpbx.git
 
     # push your changes to a branch
     git push fs +HEAD:myfeature
 
     # create a pull request as described here:
-    chromium https://freeswitch.org/confluence/display/FREESWITCH/Pull+Requests
+    chromium https://fluxpbx.org/confluence/display/FLUXPBX/Pull+Requests
 
 Guidelines for a Good Commit
 ----------------------------
@@ -199,19 +199,19 @@ Where to Go for Help
 If you have any questions or run into any roadblocks please reach out
 to us.  You can send an email to our development mailing list:
 
-> http://lists.freeswitch.org/mailman/listinfo/freeswitch-dev
+> http://lists.fluxpbx.org/mailman/listinfo/fluxpbx-dev
 
 Note that while you're free to send a patch to that list for questions
 or for review, patches sent to the mailing list will not be considered
-for inclusion.  Patches that you want included in FreeSWITCH must be
+for inclusion.  Patches that you want included in FluxPBX must be
 submitted to JIRA.
 
 You can also reach us on freenode.net at:
 
-> \#freeswitch-dev
+> \#fluxpbx-dev
 
 Finally, feel free to join us in our weekly conference call.  Many of
 the core developers are often on the call and you'll have an
 opportunity at the beginning or end of the call to ask your questions:
 
-> https://freeswitch.org/confluence/display/FREESWITCH/ClueCon+Weekly+Conference+call
+> https://fluxpbx.org/confluence/display/FLUXPBX/ClueCon+Weekly+Conference+call

@@ -1,6 +1,6 @@
 /* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -274,7 +274,7 @@ static switch_status_t switch_opusfile_open(switch_file_handle_t *handle, const 
 		context->samplerate = handle->samplerate;
 		handle->seekable = 0;
 		context->comments = ope_comments_create();
-		ope_comments_add(context->comments, "METADATA", "Freeswitch/mod_opusfile");
+		ope_comments_add(context->comments, "METADATA", "Fluxpbx/mod_opusfile");
 		// opus_multistream_surround_encoder_get_size() in libopus will check these
 		if ((context->channels > 2) && (context->channels <= 8)) {
 			mapping_family = 1;
@@ -478,7 +478,7 @@ static switch_status_t switch_opusfile_write(switch_file_handle_t *handle, void 
 	}
 	if (!context->comments) {
 		context->comments = ope_comments_create();
-		ope_comments_add(context->comments, "METADATA", "Freeswitch/mod_opusfile");
+		ope_comments_add(context->comments, "METADATA", "Fluxpbx/mod_opusfile");
 	}
 	if (context->channels > 2) {
 			mapping_family = 1;
@@ -756,7 +756,7 @@ static switch_status_t switch_opusstream_init(switch_codec_t *codec, switch_code
 		if (encoding) {
 			if (!context->comments) {
 				context->comments = ope_comments_create();
-				ope_comments_add(context->comments, "METADATA", "Freeswitch/mod_opusfile");
+				ope_comments_add(context->comments, "METADATA", "Fluxpbx/mod_opusfile");
 			}
 			if (!context->enc) {
 				int mapping_family = 0;

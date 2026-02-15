@@ -4,34 +4,34 @@
 </p><p>Se todas estas etapas foram executadas com sucesso, prossiga para o item <b>Utilizando o <i>Endpoint</i> da Khomp</b>. Caso algum problema ocorra, consulte o <a href=".htmlMod_Khomp/Manual" title="Mod Khomp/Manual">Manual do Endpoint</a>, seguindo para a seção de <a href=".htmlMod_Khomp/Manual#Solu.C3.A7.C3.A3o_de_problemas" title="Mod Khomp/Manual">Solução de problemas</a>.
 </p>
 <a name="Utilizando_o_Endpoint_da_Khomp" id="Utilizando_o_Endpoint_da_Khomp"></a><h1> <span class="mw-headline"> Utilizando o <i>Endpoint</i> da Khomp </span></h1>
-<p>Após a instalação e inicialização dos serviços necessários pela Khomp, o FreeSWITCH já pode ser carregado ou inicializado.
+<p>Após a instalação e inicialização dos serviços necessários pela Khomp, o FluxPBX já pode ser carregado ou inicializado.
 </p>
-<ul><li> <b>AVISO</b>: Evite usar a opção <b>-nort</b>, pois ela desabilita escalonamento em tempo real, é imprescindível que o <b>FreeSWITCH</b> esteja utilizando o escalonamento em tempo real, especialmente se este estiver sendo executado lado-a-lado com servidores <i>web</i> ou servidores de banco de dados. Utilizar a opção <b>-nort</b> pode resultar em perda de qualidade do áudio, gerando um sério comprometimento nas ligações do sistema.
+<ul><li> <b>AVISO</b>: Evite usar a opção <b>-nort</b>, pois ela desabilita escalonamento em tempo real, é imprescindível que o <b>FluxPBX</b> esteja utilizando o escalonamento em tempo real, especialmente se este estiver sendo executado lado-a-lado com servidores <i>web</i> ou servidores de banco de dados. Utilizar a opção <b>-nort</b> pode resultar em perda de qualidade do áudio, gerando um sério comprometimento nas ligações do sistema.
 </li></ul>
-<p>Após a inicialização do FreeSWITCH, pode-se verificar se o módulo da Khomp foi carregado através do seguinte comando:<br /> 
+<p>Após a inicialização do FluxPBX, pode-se verificar se o módulo da Khomp foi carregado através do seguinte comando:<br /> 
 </p>
-<pre> freeswitch@hostname&gt; module_exists mod_khomp
+<pre> fluxpbx@hostname&gt; module_exists mod_khomp
 </pre>
 <p>A próxima linha deverá responder algo tipo:
 </p>
 <pre> true
 </pre>
-<p>Para verificar se o FreeSWITCH reconheceu todas as placas, digite: 
+<p>Para verificar se o FluxPBX reconheceu todas as placas, digite: 
 </p>
-<pre> freeswitch@hostname&gt; khomp summary
+<pre> fluxpbx@hostname&gt; khomp summary
 </pre>
 <p>A saída desse comando mostrará detalhes de todas placas reconhecidas.
 </p><p>No caso de uma placa de tronco E1, pode-se verificar o estado dos links com o seguinte comando:
 </p>
-<pre> freeswitch@hostname&gt; khomp show links
+<pre> fluxpbx@hostname&gt; khomp show links
 </pre>
 <p>O estado dos canais individuais, por sua vez, pode ser aferido com o comando:
 </p>
-<pre> freeswitch@hostname&gt; khomp show channels
+<pre> fluxpbx@hostname&gt; khomp show channels
 </pre>
-<p>Para mais detalhes sobre os comandos do Endpoint da khomp digite no console do FreeSWITCH: 
+<p>Para mais detalhes sobre os comandos do Endpoint da khomp digite no console do FluxPBX: 
 </p>
-<pre> freeswitch@hostname&gt; help khomp
+<pre> fluxpbx@hostname&gt; help khomp
 </pre>
 <ul><li> <b>IMPORTANTE</b>: Para fazer completo uso da sua placa Khomp, será preciso configurar suas regras de discagem, seja através do arquivo <i>default.xml</i> ou de um aplicativo externo, definindo regras específicas para realizar ao receber ligações.<br /><br />No <a href=".htmlMod_Khomp/Manual" title="Mod Khomp/Manual">Manual do Endpoint</a>, podem ser encontradas informações sobre o formato dos contextos de entrada (responsáveis por receber as ligações) e sobre as opções disponíveis no application Bridge (responsável por realizar ligações) que podem ser utilizadas com o Endpoint da Khomp, além de outras funcionalidades especiais providas pelo mesmo.
 </li></ul>

@@ -1,8 +1,8 @@
 # Please see latest version of this script at
-# http://wiki.freeswitch.org/wiki/Mod_python
+# http://wiki.fluxpbx.org/wiki/Mod_python
 # before reporting errors
 
-from freeswitch import *
+from fluxpbx import *
 
 
 def onDTMF(input, itype, funcargs):

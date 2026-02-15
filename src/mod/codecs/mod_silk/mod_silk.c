@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,17 +14,17 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
- * Brian K. West <brian@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
+ * Brian K. West <brian@fluxpbx.org>
  *
  * mod_silk.c -- Skype(tm) SILK Codec Module
  *
@@ -159,7 +159,7 @@ static switch_status_t switch_silk_fmtp_parse(const char *fmtp, switch_codec_fmt
 
 
 static switch_status_t switch_silk_init(switch_codec_t *codec,
-										switch_codec_flag_t freeswitch_flags,
+										switch_codec_flag_t fluxpbx_flags,
 										const switch_codec_settings_t *codec_settings)
 {
 	struct silk_context *context = NULL;
@@ -167,8 +167,8 @@ static switch_status_t switch_silk_init(switch_codec_t *codec,
 	silk_codec_settings_t silk_codec_settings;
 	SKP_int32 encSizeBytes;
 	SKP_int32 decSizeBytes;
-	int encoding = (freeswitch_flags & SWITCH_CODEC_FLAG_ENCODE);
-	int decoding = (freeswitch_flags & SWITCH_CODEC_FLAG_DECODE);
+	int encoding = (fluxpbx_flags & SWITCH_CODEC_FLAG_ENCODE);
+	int decoding = (fluxpbx_flags & SWITCH_CODEC_FLAG_DECODE);
 
 	if (!(encoding || decoding) || (!(context = switch_core_alloc(codec->memory_pool, sizeof(*context))))) {
 		return SWITCH_STATUS_FALSE;

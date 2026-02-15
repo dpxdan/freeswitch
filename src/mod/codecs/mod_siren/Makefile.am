@@ -6,7 +6,7 @@ if HAVE_G7221
 mod_LTLIBRARIES = mod_siren.la
 mod_siren_la_SOURCES  = mod_siren.c
 mod_siren_la_CFLAGS   = $(AM_CFLAGS) $(G7221_CFLAGS)
-mod_siren_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(G7221_LIBS)
+mod_siren_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(G7221_LIBS)
 mod_siren_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 else

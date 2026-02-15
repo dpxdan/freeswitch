@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -34,7 +34,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace FreeSWITCH.Native {
+namespace FluxPBX.Native {
     public partial class ManagedSession {
 
         // Need to find a better place to put these - then make them public
@@ -84,12 +84,12 @@ namespace FreeSWITCH.Native {
 
             public IDictionary<string, string> GetAllVariables() {
                 var dic = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-                var evt = Native.freeswitch.switch_channel_variable_first(sess.channel);
+                var evt = Native.fluxpbx.switch_channel_variable_first(sess.channel);
                 while(evt != null) {
                     dic.Add(evt.name, evt.value);
                     evt = evt.next;
                 }
-                Native.freeswitch.switch_channel_variable_last(sess.channel);
+                Native.fluxpbx.switch_channel_variable_last(sess.channel);
                 return dic;
             }
 

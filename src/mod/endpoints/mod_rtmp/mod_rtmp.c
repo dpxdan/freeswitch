@@ -1,5 +1,5 @@
 /*
- * mod_rtmp for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_rtmp for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2011-2012, Barracuda Networks Inc.
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_rtmp for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_rtmp for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Barracuda Networks Inc.
  * Portions created by the Initial Developer are Copyright (C)
@@ -23,7 +23,7 @@
  * Contributor(s):
  *
  * Mathieu Rene <mrene@avgs.ca>
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * William King <william.king@quentustech.com>
  * Seven Du <dujinfang@gmail.com>
  *
@@ -1067,7 +1067,7 @@ switch_call_cause_t rtmp_session_create_call(rtmp_session_t *rsession, switch_co
 	if (!(*newsession = switch_core_session_request(rtmp_globals.rtmp_endpoint_interface, SWITCH_CALL_DIRECTION_INBOUND, SOF_NONE, NULL))) {
 		return SWITCH_CAUSE_DESTINATION_OUT_OF_ORDER;
 	}
-	switch_log_printf(SWITCH_CHANNEL_UUID_LOG(rsession->uuid), SWITCH_LOG_INFO, "New FreeSWITCH session created: %s\n",
+	switch_log_printf(SWITCH_CHANNEL_UUID_LOG(rsession->uuid), SWITCH_LOG_INFO, "New FluxPBX session created: %s\n",
 					  switch_core_session_get_uuid(*newsession));
 
 	pool = switch_core_session_get_pool(*newsession);

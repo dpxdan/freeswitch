@@ -1,10 +1,10 @@
 #
-# MIME type configs overriden by the FreeSWITCH project.
+# MIME type configs overriden by the FluxPBX project.
 #
 audio/mpeg					mp3 mpga mp2 mp2a m2a m3a
 image/jpeg					jpg jpeg jpe
 #
-# Additional MIME types added by the FreeSWITCH project.  Any duplicate file extensions listed here will only be
+# Additional MIME types added by the FluxPBX project.  Any duplicate file extensions listed here will only be
 # used to map from MIME -> extension and not extension -> MIME
 audio/x-mpeg					mp3
 audio/mp3					mp3

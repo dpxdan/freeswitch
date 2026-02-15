@@ -424,20 +424,20 @@ bool Cli::_KhompSummary::execute(int argc, char *argv[])
 #endif
 
     std::string khomp_endpoint_rev(MOD_KHOMP_VERSION);
-    std::string freeswitch_rev(SWITCH_VERSION_FULL);
+    std::string fluxpbx_rev(SWITCH_VERSION_FULL);
 
     switch(output_type)
     {
         case Cli::VERBOSE:
         {
             K::Logger::Logg2(classe, stream, FMT("| Khomp Endpoint - %-47s |") % khomp_endpoint_rev);
-            K::Logger::Logg2(classe, stream, FMT("| FreeSWITCH - %-51s |") % freeswitch_rev);
+            K::Logger::Logg2(classe, stream, FMT("| FluxPBX - %-51s |") % fluxpbx_rev);
         } break;
 
         case Cli::CONCISE:
         {
             K::Logger::Logg2(classe, stream, FMT("%s") % khomp_endpoint_rev);
-            K::Logger::Logg2(classe, stream, FMT("%s") % freeswitch_rev);
+            K::Logger::Logg2(classe, stream, FMT("%s") % fluxpbx_rev);
         } break;
 
         case Cli::XML:
@@ -449,12 +449,12 @@ bool Cli::_KhompSummary::execute(int argc, char *argv[])
             switch_xml_t xrevision  = switch_xml_add_child_d(xmod_khomp,"revision",0);
             switch_xml_set_txt_d(xrevision, khomp_endpoint_rev.c_str());
 
-            /* summary/freeswitch */
-            switch_xml_t xfs = switch_xml_add_child_d(root,"freeswitch",0);
+            /* summary/fluxpbx */
+            switch_xml_t xfs = switch_xml_add_child_d(root,"fluxpbx",0);
 
-            /* summary/freeswitch/revision */
+            /* summary/fluxpbx/revision */
             switch_xml_t xfs_rev = switch_xml_add_child_d(xfs,"revision",0);
-            switch_xml_set_txt_d(xfs_rev, freeswitch_rev.c_str());
+            switch_xml_set_txt_d(xfs_rev, fluxpbx_rev.c_str());
         } break;
 
         default:
@@ -970,7 +970,7 @@ bool Cli::_KhompShowCalls::execute(int argc, char *argv[])
     K::Logger::Logg2(C_CLI, stream, " ------------------------------------------------------------------------");
     K::Logger::Logg2(C_CLI, stream, "|------------------------------- Khomp Calls ----------------------------|");
     K::Logger::Logg2(C_CLI, stream, " ------------------------------------------------------------------------ ");
-    K::Logger::Logg2(C_CLI, stream, "|  hw  | freeSWITCH |  khomp call |             khomp channel            |");
+    K::Logger::Logg2(C_CLI, stream, "|  hw  | fluxPBX |  khomp call |             khomp channel            |");
     K::Logger::Logg2(C_CLI, stream, "|  id  |   status   |    status   |                status                |");
     K::Logger::Logg2(C_CLI, stream, "%s", (char*) buffer.c_str());
     K::Logger::Logg2(C_CLI, stream, " ------------------------------------------------------------------------");
@@ -1297,7 +1297,7 @@ bool Cli::_KhompShowStatistics::execute(int argc, char *argv[])
     header.append( " ------------------------------------------------------------------------------------\n");
     header.append( "|----------------------------- Khomp Endpoint Statistics ----------------------------|\n");
     header.append( "|------------------------------------------------------------------------------------|\n");
-    header.append( "|  hw  |          total calls           | channel | FreeSWITCH | channel  |  status  |\n");
+    header.append( "|  hw  |          total calls           | channel | FluxPBX | channel  |  status  |\n");
     header.append( "|  id  | incoming | outgoing |  failed  |  fails  |   status   |  state   |   time   |\n");
     header.append( " ------------------------------------------------------------------------------------");
     std::string footer;
@@ -1606,7 +1606,7 @@ bool Cli::_KhompShowChannels::execute(int argc, char *argv[])
         K::Logger::Logg2(C_CLI, stream, " -----------------------------------------------------------------------");
         K::Logger::Logg2(C_CLI, stream, "|-------------------- Khomp Channels and Connections -------------------|");
         K::Logger::Logg2(C_CLI, stream, "|-----------------------------------------------------------------------|");
-        K::Logger::Logg2(C_CLI, stream, "|  hw  |freeSWITCH|   call   |                   channel                |");
+        K::Logger::Logg2(C_CLI, stream, "|  hw  |fluxPBX|   call   |                   channel                |");
         K::Logger::Logg2(C_CLI, stream, "|  id  |  status  |  status  |                   status                 |");
         K::Logger::Logg2(C_CLI, stream, " -----------------------------------------------------------------------");
     }
@@ -2830,10 +2830,10 @@ bool Cli::_KhompRevision::execute(int argc, char *argv[])
 #endif
 
     std::string khomp_endpoint_rev(MOD_KHOMP_VERSION);
-    std::string freeswitch_rev(SWITCH_VERSION_FULL);
+    std::string fluxpbx_rev(SWITCH_VERSION_FULL);
 
     K::Logger::Logg2(C_CLI, stream, FMT("Khomp Endpoint - %s") % khomp_endpoint_rev);
-    K::Logger::Logg2(C_CLI, stream, FMT("FreeSWITCH - %s") % freeswitch_rev);
+    K::Logger::Logg2(C_CLI, stream, FMT("FluxPBX - %s") % fluxpbx_rev);
     return true;
 }
 

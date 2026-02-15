@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2008, Eric des Courtis <eric.des.courtis@benbria.com>
  *
  * Version: MPL 1.1
@@ -26,7 +26,7 @@
  * 	- Magor Communications Corporation
  *
  * Special thanks to the following people for their help:
- * 	- The FreeSWITCH Team
+ * 	- The FluxPBX Team
  * 	- Matt Battig
  * 	- Dean Swan
  * 	- Lucas Cornelisse
@@ -115,7 +115,7 @@
 /*! Number of expected parameters in api call. */
 #define VMD_PARAMS 2
 
-/*! FreeSWITCH CUSTOM event type. */
+/*! FluxPBX CUSTOM event type. */
 #define VMD_EVENT_BEEP "vmd::beep"
 
 /* Prototypes */
@@ -151,7 +151,7 @@ typedef struct vmd_session_info {
 	vmd_state_t state;
 	/*! Snapshot of DESA samples. */
 	vmd_point_t points[POINTS+1];
-	/*! Internal FreeSWITCH session. */
+	/*! Internal FluxPBX session. */
 	switch_core_session_t *session;
 	/*! Codec information for the session. */
 	vmd_codec_info_t vmd_codec;
@@ -499,7 +499,7 @@ double freq_estimator(double *x)
 		);
 }
 
-/*! \brief FreeSWITCH module loading function
+/*! \brief FluxPBX module loading function
  *
  * @author Eric des Courtis
  * @return Load success or failure.
@@ -528,7 +528,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_vmd_load)
 	return SWITCH_STATUS_SUCCESS;
 }
 
-/*! \brief FreeSWITCH application handler function.
+/*! \brief FluxPBX application handler function.
  *  This handles calls made from applications such as LUA and the dialplan
  *
  * @author Eric des Courtis
@@ -613,7 +613,7 @@ SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_vmd_shutdown)
 	return SWITCH_STATUS_SUCCESS;
 }
 
-/*! \brief FreeSWITCH API handler function.
+/*! \brief FluxPBX API handler function.
  *  This function handles API calls such as the ones from mod_event_socket and in some cases
  *  scripts such as LUA scripts.
  *
@@ -655,7 +655,7 @@ SWITCH_STANDARD_API(vmd_api_main)
 	uuid = argv[0];
 	command = argv[1];
 
-	/* using uuid locate a reference to the FreeSWITCH session */
+	/* using uuid locate a reference to the FluxPBX session */
 	vmd_session = switch_core_session_locate(uuid);
 
 	/* If the session was not found exit */
@@ -692,7 +692,7 @@ SWITCH_STANDARD_API(vmd_api_main)
 		goto end;
 	}
 
-	/* Allocate memory attached to this FreeSWITCH session for
+	/* Allocate memory attached to this FluxPBX session for
 	 * use in the callback routine and to store state information */
 	vmd_info = (vmd_session_info_t *) switch_core_session_alloc(vmd_session, sizeof(vmd_session_info_t)
 		);

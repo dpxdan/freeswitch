@@ -14,7 +14,7 @@ my $running = 1;
 my $con;
 
 my $USAGE = "
-FreeSWITCH Logger Utility
+FluxPBX Logger Utility
 
 USAGE:
 -h --help                   This help
@@ -22,7 +22,7 @@ USAGE:
 -p --port <port>            Choose port
 -P -pass  <pass>            Choose password
 -f --file <file>            Output file
--pb --paste-bin <name>	    Post to FreeSWITCH Paste Bin
+-pb --paste-bin <name>	    Post to FluxPBX Paste Bin
 -sp --sip-profiles <list>   List of SIP profiles to trace
 -sd --sip-debug <level>     Set SIP debug level
 
@@ -135,9 +135,9 @@ if ($paste) {
     
     print STDERR "Posting to pastebin, please wait...\n";
 
-    system("wget --output-file=/dev/null --http-user=pastebin --http-password=freeswitch http://pastebin.freeswitch.org --post-file=$path");
+    system("wget --output-file=/dev/null --http-user=pastebin --http-password=fluxpbx http://pastebin.fluxpbx.org --post-file=$path");
     $pb = `ls [0-9]*`;
-    print STDERR "Data posted to pastebin [$paste] http://pastebin.freeswitch.org/$pb\n";
+    print STDERR "Data posted to pastebin [$paste] http://pastebin.fluxpbx.org/$pb\n";
     chdir("..") or die "I/O Error!";
     system("rm -fr .fs_logger");
 }

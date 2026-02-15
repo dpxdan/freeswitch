@@ -5,7 +5,7 @@
   <X-PRE-PROCESS cmd="set" data="sound_prefix=$${base_dir}/sounds/en/us/callie"/>
   <!--<Z-PRE-PROCESS cmd="set" data="sound_prefix=$${base_dir}/sounds/en/us/allison"/>-->
   <!--
-      This setting is what sets the default domain FreeSWITCH will use if all else fails.
+      This setting is what sets the default domain FluxPBX will use if all else fails.
       
       FreeSWICH will default to $${local_ip_v4} unless changed.  Changing this setting does 
       affect the sip authentication.  Please review conf/directory/default.xml for more
@@ -25,7 +25,7 @@
        codecname[@8000h|16000h|32000h[@XXi]]
        
        XX is the frame size must be multples allowed for the codec
-       FreeSWITCH can support 10-120ms on some codecs. 
+       FluxPBX can support 10-120ms on some codecs. 
        We do not support exceeding the MTU of the RTP packet.
 
 
@@ -49,7 +49,7 @@
        AAL2-G726-24     - Same as G726-24 but using AAL2 packing. (multiples of 10)
        AAL2-G726-32     - Same as G726-32 but using AAL2 packing. (multiples of 10)
        AAL2-G726-40     - Same as G726-40 but using AAL2 packing. (multiples of 10)
-       LPC              - LPC10 using 90ms ptime (only supports 90ms at this time in FreeSWITCH)
+       LPC              - LPC10 using 90ms ptime (only supports 90ms at this time in FluxPBX)
        L16              - L16 isn't recommended for VoIP but you can do it. L16 can exceed the MTU rather quickly.
        
        These are the passthru audio codecs:
@@ -86,7 +86,7 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
+  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=stun:stun.fluxpbx.org"/>
 
   <!-- external_sip_ip
        Used as the public IP address for SDP.
@@ -94,7 +94,7 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="set" data="external_sip_ip=stun:stun.freeswitch.org"/>
+  <X-PRE-PROCESS cmd="set" data="external_sip_ip=stun:stun.fluxpbx.org"/>
 
   <!-- unroll-loops
        Used to turn on sip loopback unrolling.
@@ -106,7 +106,7 @@
        Used by: conference.conf.xml and user directory for default
        outbound callerid name and number.
   -->
-  <X-PRE-PROCESS cmd="set" data="outbound_caller_name=FreeSWITCH"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_caller_name=FluxPBX"/>
   <X-PRE-PROCESS cmd="set" data="outbound_caller_id=0000000000"/>
 
   <!-- various debug and defaults -->

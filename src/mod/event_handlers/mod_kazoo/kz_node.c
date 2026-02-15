@@ -54,7 +54,7 @@ void kz_nodes_collect_apps(cJSON *container)
 	cJSON *apps = cJSON_CreateObject();
 	cJSON *app = cJSON_CreateObject();
 	cJSON_AddItemToObject(app, "Uptime", cJSON_CreateNumber(switch_core_uptime()));
-	cJSON_AddItemToObject(apps, "freeswitch", app);
+	cJSON_AddItemToObject(apps, "fluxpbx", app);
 	cJSON_AddItemToObject(container, "WhApps", apps);
 }
 

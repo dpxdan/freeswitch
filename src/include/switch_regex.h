@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Michael Jerris <mike@jerris.com>
@@ -37,7 +37,7 @@
 SWITCH_BEGIN_EXTERN_C
 /**
  * @defgroup switch_regex Regular Expressions
- * @ingroup FREESWITCH
+ * @ingroup FLUXPBX
  * @{
  */
 	typedef struct real_pcre switch_regex_t;

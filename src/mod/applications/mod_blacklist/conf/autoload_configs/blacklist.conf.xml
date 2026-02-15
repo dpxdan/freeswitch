@@ -3,9 +3,9 @@
 	<!--
 		Example blacklist, the referenced file contains blacklisted items, one entry per line
 
-		NOTE: make sure the file exists and is readable by FreeSWITCH.
+		NOTE: make sure the file exists and is readable by FluxPBX.
 
-	<list name="example" filename="/usr/local/freeswitch/conf/blacklists/example.list"/>
+	<list name="example" filename="/usr/local/fluxpbx/conf/blacklists/example.list"/>
 	-->
 </lists>
 </configuration>

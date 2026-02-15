@@ -1,0 +1,21 @@
+[Unit]
+Description=FluxPBX
+After=syslog.target network.target
+After=postgresql.service postgresql-9.3.service postgresql-9.4.service mysqld.service httpd.service
+
+[Service]
+# You can use Type=notify only if you compile FluxPBX with --enable-systemd configure option
+# In this case you have to run FluxPBX in foreground mode (-nf option)!
+#Type=notify
+#NotifyAccess=main
+User=fluxpbx
+EnvironmentFile=-/etc/sysconfig/fluxpbx
+# RuntimeDirectory is not yet supported in CentOS 7. A workaround is to use /etc/tmpfiles.d/fluxpbx.conf
+#RuntimeDirectory=/run/fluxpbx
+#RuntimeDirectoryMode=0750
+WorkingDirectory=/run/fluxpbx
+ExecStart=/usr/bin/fluxpbx -nc -nf $FLUXPBX_PARAMS
+ExecReload=/usr/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

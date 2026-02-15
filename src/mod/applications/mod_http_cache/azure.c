@@ -1,5 +1,5 @@
 /*
- * azure.c for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * azure.c for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Grasshopper
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is aws.c for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is aws.c for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Grasshopper
  * Portions created by the Initial Developer are Copyright (C)
@@ -289,7 +289,7 @@ switch_status_t azure_blob_finalise_put(http_profile_t *profile, const char *url
 	switch_curl_easy_setopt(curl_handle, CURLOPT_URL, full_url);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 10);
-	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-http-cache/1.0");
+	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-http-cache/1.0");
 
 	upload_info.read_ptr = xmlDoc;
 	upload_info.size_left = strlen(xmlDoc);

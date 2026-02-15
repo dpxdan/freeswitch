@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.freeswitch.swig;
+package org.fluxpbx.swig;
 
 public class SWIGTYPE_p_SWITCH_DECLARE_CLASS {
   private long swigCPtr;

@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-# Copyright (C) 2005-2016, Anthony Minessale II <anthm@freeswitch.org>
+# FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+# Copyright (C) 2005-2016, Anthony Minessale II <anthm@fluxpbx.org>
 #
 # Version: MPL 1.1
 #
@@ -15,7 +15,7 @@
 # for the specific language governing rights and limitations under the
 # License.
 #
-# The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+# The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 #
 # The Initial Developer of the Original Code is
 # Michael Jerris <mike@jerris.com>
@@ -28,7 +28,7 @@
 #
 
 BASEURL=http://files.freeswitch.org
-PID_FILE=/var/run/freeswitch/freeswitch.pid
+PID_FILE=/var/run/fluxpbx/fluxpbx.pid
 
 get_password() {
     < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-12};echo;
@@ -41,14 +41,14 @@ get_sound_version() {
 
 wget_helper() {
     local SOUND_FILE=$1
-    grep -q $SOUND_FILE /usr/share/freeswitch/sounds/soundfiles_present.txt 2> /dev/null
+    grep -q $SOUND_FILE /usr/share/fluxpbx/sounds/soundfiles_present.txt 2> /dev/null
     if [ "$?" -eq 0 ]; then
         echo "Skipping download of $SOUND_FILE. Already present"
         return
     fi
     wget $BASEURL/$SOUND_FILE
     if [ -f $SOUND_FILE ]; then
-        echo $SOUND_FILE >> /usr/share/freeswitch/sounds/soundfiles_present.txt
+        echo $SOUND_FILE >> /usr/share/fluxpbx/sounds/soundfiles_present.txt
     fi
 }
 
@@ -60,7 +60,7 @@ download_sound_rates() {
 
     for i in $SOUND_RATES
     do
-        f=freeswitch-sounds-$SOUND_TYPE-$i-$SOUND_VERSION.tar.gz
+        f=fluxpbx-sounds-$SOUND_TYPE-$i-$SOUND_VERSION.tar.gz
         echo "Downloading $f"
         wget_helper $f
     done
@@ -77,21 +77,21 @@ download_sound_types() {
 }
 
 extract_sound_files() {
-    local SOUND_FILES=freeswitch-sounds-*.tar.gz
+    local SOUND_FILES=fluxpbx-sounds-*.tar.gz
     for f in $SOUND_FILES
     do
         if [ -f $f ]; then
             echo "Extracting file $f"
-            tar xzf $f -C /usr/share/freeswitch/sounds/
+            tar xzf $f -C /usr/share/fluxpbx/sounds/
         fi
     done
 }
 
 delete_archives() {
-    local FILES_COUNT=$(ls -1 freeswitch-sounds-*.tar.gz 2> /dev/null | wc -l)
+    local FILES_COUNT=$(ls -1 fluxpbx-sounds-*.tar.gz 2> /dev/null | wc -l)
     if [ "$FILES_COUNT" -ne 0 ]; then
         echo "Removing downloaded 'tar.gz' archives"
-        rm -f freeswitch-sounds-*.tar.gz
+        rm -f fluxpbx-sounds-*.tar.gz
     fi
 }
 
@@ -110,17 +110,17 @@ if [ "$EPMD"="true" ]; then
     /usr/bin/epmd -daemon
 fi
 
-if [ ! -f "/etc/freeswitch/freeswitch.xml" ]; then
+if [ ! -f "/etc/fluxpbx/fluxpbx.xml" ]; then
     SIP_PASSWORD=$(get_password)
-    mkdir -p /etc/freeswitch
-    cp -varf /usr/share/freeswitch/conf/vanilla/* /etc/freeswitch/
-    sed -i -e "s/default_password=.*\?/default_password=$SIP_PASSWORD\"/" /etc/freeswitch/vars.xml
-    echo "New FreeSwitch password for SIP calls set to '$SIP_PASSWORD'"
+    mkdir -p /etc/fluxpbx
+    cp -varf /usr/share/fluxpbx/conf/vanilla/* /etc/fluxpbx/
+    sed -i -e "s/default_password=.*\?/default_password=$SIP_PASSWORD\"/" /etc/fluxpbx/vars.xml
+    echo "New FluxPbx password for SIP calls set to '$SIP_PASSWORD'"
 fi
 
-trap '/usr/bin/freeswitch -stop' SIGTERM
+trap '/usr/bin/fluxpbx -stop' SIGTERM
 
-/usr/bin/freeswitch -nc -nf -nonat &
+/usr/bin/fluxpbx -nc -nf -nonat &
 pid="$!"
 
 wait $pid

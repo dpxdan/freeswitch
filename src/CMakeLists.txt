@@ -1,4 +1,4 @@
-#FREESWITCH CMAKE file
+#FLUXPBX CMAKE file
 #Shane Burrell 2009 (supjigator)
 
 
@@ -8,7 +8,7 @@ INCLUDE_DIRECTORIES(include/ ../libs/libresample/include/ ../libs/srtp/crypto/in
 
 
 
-SET ( freeswitch_la_SRCS 
+SET ( fluxpbx_la_SRCS 
 
 switch_apr.c 
 switch_buffer.c 
@@ -96,7 +96,7 @@ include/switch_odbc.h
 )
 
 
-ADD_LIBRARY(freeswitch_la ${freeswitch_la_SRCS})
+ADD_LIBRARY(fluxpbx_la ${fluxpbx_la_SRCS})
 
 
 

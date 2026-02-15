@@ -31,7 +31,7 @@ using Microsoft.Build.Framework;
         public override bool Execute()
         {
             /*SoundsDir = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-            SoundsDir += "\\FreeSWITCH\\sounds"; */
+            SoundsDir += "\\FluxPBX\\sounds"; */
 
             string platform = (@"$(Platform)" == "x86") ? "Win32" : @"$(Platform)";
 
@@ -97,7 +97,7 @@ using Microsoft.Build.Framework;
                 }
             }
 
-            SoundFileName = "freeswitch-sounds-" + SoundPrimaryName + "-" + SoundQuality + "-" + SoundVersion + ".tar.gz";
+            SoundFileName = "fluxpbx-sounds-" + SoundPrimaryName + "-" + SoundQuality + "-" + SoundVersion + ".tar.gz";
             return true;
         }
     }

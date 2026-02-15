@@ -9,7 +9,7 @@ mod_LTLIBRARIES = mod_skypopen.la
 mod_skypopen_la_SOURCES  = mod_skypopen.c skypopen_protocol.c
 mod_skypopen_la_CFLAGS   = $(AM_CFLAGS)
 mod_skypopen_la_CPPFLAGS = -I$(SPANDSP_DIR)/src -I$(SPANDSP_BUILDDIR)/src -I.
-mod_skypopen_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(SPANDSP_LA)
+mod_skypopen_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(SPANDSP_LA)
 mod_skypopen_la_LDFLAGS  = -avoid-version -module -no-undefined -shared -lX11
 
 BUILT_SOURCES = $(SPANDSP_LA)

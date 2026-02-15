@@ -1,4 +1,4 @@
-/* Opal endpoint interface for Freeswitch Modular Media Switching Software Library /
+/* Opal endpoint interface for Fluxpbx Modular Media Switching Software Library /
  * Soft-Switch Application
  *
  * Version: MPL 1.1
@@ -24,8 +24,8 @@
  */
 
 
-#ifndef __FREESWITCH_MOD_OPAL__
-#define __FREESWITCH_MOD_OPAL__
+#ifndef __FLUXPBX_MOD_OPAL__
+#define __FLUXPBX_MOD_OPAL__
 
 #if defined(__GNUC__) && defined(HAVE_VISIBILITY)
 #pragma GCC visibility push(default)
@@ -105,14 +105,14 @@ class FSManager : public OpalManager
 
     switch_status_t ReadConfig(int reload);
 
-    switch_endpoint_interface_t *GetSwitchInterface() const { return m_FreeSwitch; }
+    switch_endpoint_interface_t *GetSwitchInterface() const { return m_FluxPbx; }
     const PString & GetContext() const { return m_context; }
     const PString & GetDialPlan() const { return m_dialplan; }
     const PString & GetCodecPrefs() const { return m_codecPrefs; }
     bool GetDisableTranscoding() const { return m_disableTranscoding; }
 
   private:
-    switch_endpoint_interface_t *m_FreeSwitch;
+    switch_endpoint_interface_t *m_FluxPbx;
 
     H323EndPoint *m_h323ep;
     IAX2EndPoint *m_iaxep;
@@ -317,7 +317,7 @@ class FSConnection : public OpalLocalConnection
 };
 
 
-#endif /* __FREESWITCH_MOD_OPAL__ */
+#endif /* __FLUXPBX_MOD_OPAL__ */
 
 /* For Emacs:
  * Local Variables:

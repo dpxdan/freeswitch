@@ -1,4 +1,4 @@
-mod_radius_cdr - A cdr Accounting module for FreeSWITCH.
+mod_radius_cdr - A cdr Accounting module for FluxPBX.
 
 cparker at segv dot org
 
@@ -52,12 +52,12 @@ event_handlers/mod_radius_cdr
 
 5) Run make, and make install.  Make sure the module is built and installed.
 
-6) Configure FreeSWITCH to load mod_radius_cdr
+6) Configure FluxPBX to load mod_radius_cdr
 
-   - Copy the 'mod_radius_cdr.conf.xml' file to the FreeSWITCH conf directory
-   - Copy the 'radius/' directory to the FreeSWITCH conf directory
+   - Copy the 'mod_radius_cdr.conf.xml' file to the FluxPBX conf directory
+   - Copy the 'radius/' directory to the FluxPBX conf directory
    - Edit 'conf/modules.conf' to load mod_radius_cdr
-   - Edit 'conf/freeswitch.xml' to include 'mod_radius_cdr.conf.xml'
+   - Edit 'conf/fluxpbx.xml' to include 'mod_radius_cdr.conf.xml'
 
 =========================================================================================
 
@@ -66,10 +66,10 @@ Here's a sample RADIUS transaction ( logged to a detail file via FreeRADIUS serv
 Fri Jun  8 08:23:10 2007
         Acct-Status-Type = Start
         Acct-Session-Id = "d734ff5e-bf04-4045-8cb3-f5744574808b"
-        Freeswitch-Src = "8478797989"
-        Freeswitch-CLID = "Chris Parker"
-        Freeswitch-Dst = "888"
-        Freeswitch-Dialplan = "XML"
+        Fluxpbx-Src = "8478797989"
+        Fluxpbx-CLID = "Chris Parker"
+        Fluxpbx-Dst = "888"
+        Fluxpbx-Dialplan = "XML"
         NAS-Port = 0
         Acct-Delay-Time = 0
         NAS-IP-Address = 127.0.0.1
@@ -80,13 +80,13 @@ Fri Jun  8 08:23:10 2007
 Fri Jun  8 08:23:31 2007
         Acct-Status-Type = Stop
         Acct-Session-Id = "d734ff5e-bf04-4045-8cb3-f5744574808b"
-        Freeswitch-Hangupcause = Normal-Clearing
-        Freeswitch-Src = "8478797989"
-        Freeswitch-CLID = "Chris Parker"
-        Freeswitch-Dst = "888"
-        Freeswitch-Dialplan = "XML"
-        Freeswitch-Lastapp = "bridge"
-        Freeswitch-Billusec = 21460442
+        Fluxpbx-Hangupcause = Normal-Clearing
+        Fluxpbx-Src = "8478797989"
+        Fluxpbx-CLID = "Chris Parker"
+        Fluxpbx-Dst = "888"
+        Fluxpbx-Dialplan = "XML"
+        Fluxpbx-Lastapp = "bridge"
+        Fluxpbx-Billusec = 21460442
         NAS-Port = 0
         Acct-Delay-Time = 0
         NAS-IP-Address = 127.0.0.1

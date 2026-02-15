@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2020, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2020, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Luke Dashjr <luke@openmethods.com> (OpenMethods, LLC)
  * Joseph Sullivan <jossulli@amazon.com>
  * Emmanuel Schmidbauer <eschmidbauer@gmail.com>
@@ -246,7 +246,7 @@ static inline void *switch_must_realloc(void *_b, size_t _z)
 
 /*!
   \defgroup core1 Core Library
-  \ingroup FREESWITCH
+  \ingroup FLUXPBX
   \{
 */
 
@@ -2772,7 +2772,7 @@ SWITCH_DECLARE(uint32_t) switch_core_max_audio_channels(uint32_t limit);
  \param [in] user
  \param [in] realm
  \param [in] token
- \param [in] url - a freeswitch dial string
+ \param [in] url - a fluxpbx dial string
  \param [in] expires
  \param [in] network_ip
  \param [in] network_port

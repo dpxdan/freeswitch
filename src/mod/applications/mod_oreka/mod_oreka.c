@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2011, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2011, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Oreka Recording Module
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Oreka Recording Module
  *
  * The Initial Developer of the Original Code is
  * Moises Silva <moises.silva@gmail.com>
@@ -303,10 +303,10 @@ static int oreka_send_sip_message(oreka_session_t *oreka, oreka_recording_status
 	/* Fill in the SDP first if this is the beginning */
 	if (status == FS_OREKA_START) {
 		sdp.write_function(&sdp, "v=0\r\n");
-		sdp.write_function(&sdp, "o=freeswitch %s 1 IN IP4 %s\r\n", session_uuid, globals.local_ipv4_str);
+		sdp.write_function(&sdp, "o=fluxpbx %s 1 IN IP4 %s\r\n", session_uuid, globals.local_ipv4_str);
 		sdp.write_function(&sdp, "c=IN IP4 %s\r\n", globals.sip_server_ipv4_str);
 		sdp.write_function(&sdp, "s=Phone Recording (%s)\r\n", type == FS_OREKA_READ ? "RX" : "TX");
-		sdp.write_function(&sdp, "i=FreeSWITCH Oreka Recorder (pid=%d)\r\n", globals.our_pid);
+		sdp.write_function(&sdp, "i=FluxPBX Oreka Recorder (pid=%d)\r\n", globals.our_pid);
 		sdp.write_function(&sdp, "m=audio %d RTP/AVP 0\r\n", type == FS_OREKA_READ ? oreka->read_rtp_port : oreka->write_rtp_port);
 		sdp.write_function(&sdp, "a=rtpmap:0 PCMU/%d\r\n", type == FS_OREKA_READ
 				? oreka->read_impl.samples_per_second : oreka->write_impl.samples_per_second);
@@ -331,7 +331,7 @@ static int oreka_send_sip_message(oreka_session_t *oreka, oreka_recording_status
 	sip_header.write_function(&sip_header, "CSeq: 1 %s\r\n", method);
 
 	/* Contact */
-	sip_header.write_function(&sip_header, "Contact: sip:freeswitch@%s:5061\r\n", globals.local_ipv4_str);
+	sip_header.write_function(&sip_header, "Contact: sip:fluxpbx@%s:5061\r\n", globals.local_ipv4_str);
 
 	/* Max-Forwards */
 	sip_header.write_function(&sip_header, "Max-Forwards: 70\r\n", method);

@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * Version: MPL 1.1
  *
@@ -13,10 +13,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -379,7 +379,7 @@ static switch_status_t load_profile(switch_xml_t xml)
 
 	if (zstr(new_profile->logfile)) {
 		char logfile[512];
-		switch_snprintf(logfile, sizeof(logfile), "%s%s%s", SWITCH_GLOBAL_dirs.log_dir, SWITCH_PATH_SEPARATOR, "freeswitch.log");
+		switch_snprintf(logfile, sizeof(logfile), "%s%s%s", SWITCH_GLOBAL_dirs.log_dir, SWITCH_PATH_SEPARATOR, "fluxpbx.log");
 		new_profile->logfile = strdup(logfile);
 	}
 

@@ -4,10 +4,10 @@
 	<settings>
 		<param name="listen-ip" value="0.0.0.0" />
 		<param name="listen-port" value="6031" />
-		<!--<param name="cookie-file" value="/etc/freeswitch/autoload_configs/.erlang.cookie"/> -->
+		<!--<param name="cookie-file" value="/etc/fluxpbx/autoload_configs/.erlang.cookie"/> -->
 		<param name="cookie" value="change_me" />
 		<param name="shortname" value="false" />
-		<param name="nodename" value="freeswitch" />
+		<param name="nodename" value="fluxpbx" />
 		<!--<param name="kazoo-var-prefix" value="ecallmgr" />-->
 		<!--<param name="compat-rel" value="12"/>-->
 		<param name="send-all-headers" value="false" />
@@ -283,9 +283,9 @@
 			<field name="variable_Switch-URI" as="Switch-URI" />
 		</definition>
 
-		<definition name="freeswitch-url">
-			<field name="FreeSWITCH-Hostname" as="Media-Server" />
-			<field name="FreeSWITCH-Hostname" as="Switch-Hostname" />
+		<definition name="fluxpbx-url">
+			<field name="FluxPBX-Hostname" as="Media-Server" />
+			<field name="FluxPBX-Hostname" as="Switch-Hostname" />
 			<field name="Switch-Nodename" />
 			<field name="variable_Switch-URL" as="Switch-URL" />
 			<field name="Switch-URI" type="reference" />
@@ -365,7 +365,7 @@
 			<field name="Switch-Nodename" as="Node" />
 
 			<field name="variable_sip_invite_domain" as="Domain-Name" />
-			<field name="App-Name" type="static" value="freeswitch" />
+			<field name="App-Name" type="static" value="fluxpbx" />
 			<field name="App-Version" type="static" value="1.0" />
 		</definition>
 
@@ -384,7 +384,7 @@
 			<field name="sip-tags" type="reference" />
 			<field name="presence-id" type="reference" />
 			<field name="loopback" type="reference" />
-			<field name="freeswitch-url" type="reference" />
+			<field name="fluxpbx-url" type="reference" />
 			<field name="other-leg" type="reference" />
 			<field name="user-agent" type="reference" />
 			<field name="Custom-Channel-Vars" type="reference" />
@@ -395,7 +395,7 @@
 
 		<definition name="fetch-info">
 			<field name="Event-Category" type="static" value="fetch" />
-			<field name="App-Name" type="static" value="freeswitch" />
+			<field name="App-Name" type="static" value="fluxpbx" />
 			<field name="App-Version" type="static" value="1.0" />
 			<field name="Switch-Nodename" as="Node" />
 			<field name="Fetch-UUID" />
@@ -408,7 +408,7 @@
 			<field name="Custom-SIP-Headers" type="reference" />
 			<field name="Custom-Channel-Vars" type="reference" />
 			<field name="Custom-Application-Vars" type="reference" />
-			<field name="freeswitch-url" type="reference" />
+			<field name="fluxpbx-url" type="reference" />
 			<field name="Control" type="reference" />
 			<field name="Privacy" type="reference" />
 			<field name="debug-call" type="reference" />
@@ -552,8 +552,8 @@
 			<field name="Event-Name" type="static" value="event" />
 			<field name="Switch-Nodename" as="Node" />
 			<field name="Core-UUID" />
-			<field name="freeswitch-url" type="reference" />
-			<field name="App-Name" type="static" value="freeswitch" />
+			<field name="fluxpbx-url" type="reference" />
+			<field name="App-Name" type="static" value="fluxpbx" />
 			<field name="App-Version" type="static" value="1.0" />
 			<field name="Action" as="Event" />
 			<field name="Conference-Name" as="Conference-ID" />
@@ -663,7 +663,7 @@
 			<field name="to-did" type="reference" />
 			<field name="loopback" type="reference" />
 			<field name="sip-tags" type="reference" />
-			<field name="freeswitch-url" type="reference" />
+			<field name="fluxpbx-url" type="reference" />
 			<field name="destination-number" type="reference" />
 			<field name="Resource-Type" type="static" value="audio" />
 			<field name="hunt-context" type="reference" />
@@ -1070,18 +1070,18 @@
 				<event name="HEARTBEAT">
 					<fields verbose="true">
 						<field name="Core-UUID" />
-						<field name="FreeSWITCH-Hostname" as="AS-FreeSWITCH-Hostname" />
-						<field name="First-Expanded-FreeSWITCH-Hostname" type="expand"
-							value="${FreeSWITCH-Hostname}" />
-						<field name="Second-Expanded-FreeSWITCH-Hostname" type="expand"
-							value="${Event-Date-Timestamp}@${FreeSWITCH-Hostname}" />
-						<field name="Event-Category" type="static" value="myfreeswitch-category" />
-						<field name="Event-Info" as="FreeSWITCH-Is-Ready" />
+						<field name="FluxPBX-Hostname" as="AS-FluxPBX-Hostname" />
+						<field name="First-Expanded-FluxPBX-Hostname" type="expand"
+							value="${FluxPBX-Hostname}" />
+						<field name="Second-Expanded-FluxPBX-Hostname" type="expand"
+							value="${Event-Date-Timestamp}@${FluxPBX-Hostname}" />
+						<field name="Event-Category" type="static" value="myfluxpbx-category" />
+						<field name="Event-Info" as="FluxPBX-Is-Ready" />
 						<field name="First-Check-First-Of" type="first-of"
 							value="Event-Calling-Line-Number|Event-Sequence" />
 						<field name="Second-Check-First-Of" type="first-of"
 							value="Non-Existing|Event-Calling-Line-Number|Event-Sequence" />
-						<field name="FreeSWITCH" type="start-with" />
+						<field name="FluxPBX" type="start-with" />
 						<field name="Session-Since-Startup" serialize-as="number" />
 					</fields>
 				</event>
@@ -1116,7 +1116,7 @@
 						<field name="Event-Category" type="static" value="cdr" />
 						<field name="Event-Name" type="static" value="report" />
 						<field name="msg-id" type="reference" />
-						<field name="App-Name" type="static" value="freeswitch" />
+						<field name="App-Name" type="static" value="fluxpbx" />
 						<field name="App-Version" type="static" value="1.0" />
 						<field name="timestamp" type="reference" />
 						<field name="Unique-ID" as="Call-ID" />
@@ -1133,7 +1133,7 @@
 						<field name="sip-tags" type="reference" />
 						<field name="presence-id" type="reference" />
 						<field name="loopback" type="reference" />
-						<field name="freeswitch-url" type="reference" />
+						<field name="fluxpbx-url" type="reference" />
 						<field name="user-agent" type="reference" />
 						<field name="Custom-Channel-Vars" type="reference" />
 						<field name="Custom-Application-Vars" type="reference" />

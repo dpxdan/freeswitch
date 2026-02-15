@@ -35,7 +35,7 @@ loop do
     @con.execute("log", "1, Wee-wa-wee-wa")
     @con.execute("info", "")
     @con.execute("answer", "")
-    @con.execute("playback", "/usr/local/freeswitch/sounds/music/8000/suite-espanola-op-47-leyenda.wav")
+    @con.execute("playback", "/usr/local/fluxpbx/sounds/music/8000/suite-espanola-op-47-leyenda.wav")
 
     while @con.connected
       e = @con.recvEvent

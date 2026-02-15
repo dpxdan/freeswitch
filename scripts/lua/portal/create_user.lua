@@ -1,7 +1,7 @@
 user_id = argv[1];
 if (user_id == nil or user_id == "") then os.exit() end
 
-conf = "/usr/local/freeswitch/conf"
+conf = "/usr/local/fluxpbx/conf"
 dir  = conf .. "/directory/default"
 template = dir .. "/1001.xml"
 dest     = dir .. "/" .. user_id .. ".xml"
@@ -17,5 +17,5 @@ while true do
     dest_file:write(line .. "\n")
 end
 
-api = freeswitch.API()
+api = fluxpbx.API()
 api:execute("reloadxml")

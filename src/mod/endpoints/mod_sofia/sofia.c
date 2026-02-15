@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,22 +14,22 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
- * Ken Rice <krice@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
+ * Ken Rice <krice@fluxpbx.org>
  * Paul D. Tinsley <pdt at jackhammer.org>
  * Bret McDanel <trixter AT 0xdecafbad.com>
  * Marcel Barbulescu <marcelbarbulescu@gmail.com>
  * Norman Brandinger
- * Raymond Chandler <intralanman@freeswitch.org>
+ * Raymond Chandler <intralanman@fluxpbx.org>
  * Nathan Patrick <npatrick at corp.sonic.net>
  * Joseph Sullivan <jossulli@amazon.com>
  * Emmanuel Schmidbauer <e.schmidbauer@gmail.com>
@@ -776,7 +776,7 @@ void sofia_handle_sip_i_notify(switch_core_session_t *session, int status,
 		gw_sub_ptr->expires = switch_epoch_time_now(NULL) + delta;
 	}
 
-	/* dispatch freeswitch event */
+	/* dispatch fluxpbx event */
 	if (switch_event_create(&s_event, SWITCH_EVENT_NOTIFY_IN) == SWITCH_STATUS_SUCCESS) {
 		switch_event_add_header_string(s_event, SWITCH_STACK_BOTTOM, "event", sip->sip_event->o_type);
 		switch_event_add_header_string(s_event, SWITCH_STACK_BOTTOM, "pl_data", sip->sip_payload ? sip->sip_payload->pl_data : "");
@@ -813,7 +813,7 @@ void sofia_handle_sip_i_notify(switch_core_session_t *session, int status,
 			switch_safe_free(hold);
 		}
 		switch_event_fire(&s_event);
-		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_DEBUG, "dispatched freeswitch event for message-summary NOTIFY\n");
+		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_DEBUG, "dispatched fluxpbx event for message-summary NOTIFY\n");
 	} else {
 		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "Failed to create event\n");
 		goto error;
@@ -1016,12 +1016,12 @@ void sofia_handle_sip_i_bye(switch_core_session_t *session, int status,
 	}
 
 	if (sip->sip_reason && sip->sip_reason->re_protocol && (!strcasecmp(sip->sip_reason->re_protocol, "Q.850")
-															|| !strcasecmp(sip->sip_reason->re_protocol, "FreeSWITCH")
+															|| !strcasecmp(sip->sip_reason->re_protocol, "FluxPBX")
 															|| !strcasecmp(sip->sip_reason->re_protocol, profile->sdp_username)) && sip->sip_reason->re_cause) {
 		tech_pvt->q850_cause = atoi(sip->sip_reason->re_cause);
 		cause = tech_pvt->q850_cause;
 	} else {
-		cause = sofia_glue_sip_cause_to_freeswitch(status);
+		cause = sofia_glue_sip_cause_to_fluxpbx(status);
 	}
 
 	if (sip->sip_content_type && sip->sip_content_type->c_type) {
@@ -2749,8 +2749,8 @@ void event_handler(switch_event_t *event)
 		char *network_port = switch_event_get_header_nil(event, "orig-network-port");
 		char *username = switch_event_get_header_nil(event, "orig-username");
 		char *realm = switch_event_get_header_nil(event, "orig-realm");
-		char *orig_server_host = switch_event_get_header_nil(event, "orig-FreeSWITCH-IPv4");
-		char *orig_hostname = switch_event_get_header_nil(event, "orig-FreeSWITCH-Hostname");
+		char *orig_server_host = switch_event_get_header_nil(event, "orig-FluxPBX-IPv4");
+		char *orig_hostname = switch_event_get_header_nil(event, "orig-FluxPBX-Hostname");
 		char *fixed_contact_str = NULL;
 
 		sofia_profile_t *profile = NULL;
@@ -4012,7 +4012,7 @@ static void parse_gateways(sofia_profile_t *profile, switch_xml_t gateways_tag, 
 				}
 			} else {
 				if (zstr(username)) {
-					username = "FreeSWITCH";
+					username = "FluxPBX";
 				}
 
 				if (zstr(password)) {
@@ -4624,7 +4624,7 @@ switch_status_t config_sofia(sofia_config_t reload, char *profile_name)
 
 					profile->pool = pool;
 
-					profile->user_agent = switch_core_sprintf(profile->pool, "FreeSWITCH-mod_sofia/%s", switch_version_full());
+					profile->user_agent = switch_core_sprintf(profile->pool, "FluxPBX-mod_sofia/%s", switch_version_full());
 
 					profile->sip_user_ping_max = 3;
 					profile->sip_user_ping_min = 1;
@@ -6189,7 +6189,7 @@ switch_status_t config_sofia(sofia_config_t reload, char *profile_name)
 				}
 
 				if (!profile->sdp_username) {
-					profile->sdp_username = switch_core_strdup(profile->pool, "FreeSWITCH");
+					profile->sdp_username = switch_core_strdup(profile->pool, "FluxPBX");
 				}
 
 				if (!profile->rtpip[0] && !profile->rtpip6[0]) {
@@ -6666,7 +6666,7 @@ static void sofia_handle_sip_r_invite(switch_core_session_t *session, int status
 		}
 
 		if (status >= 400 && sip->sip_reason && sip->sip_reason->re_protocol && (!strcasecmp(sip->sip_reason->re_protocol, "Q.850")
-				|| !strcasecmp(sip->sip_reason->re_protocol, "FreeSWITCH")
+				|| !strcasecmp(sip->sip_reason->re_protocol, "FluxPBX")
 				|| !strcasecmp(sip->sip_reason->re_protocol, profile->sdp_username)) && sip->sip_reason->re_cause) {
 				tech_pvt->q850_cause = atoi(sip->sip_reason->re_cause);
 			switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_DEBUG, "Remote Reason: %d\n", tech_pvt->q850_cause);
@@ -6781,14 +6781,14 @@ static void sofia_handle_sip_r_invite(switch_core_session_t *session, int status
 		}
 
 		if ((status == 180 || status == 183 || status == 200)) {
-			const char *x_freeswitch_support;
+			const char *x_fluxpbx_support;
 
 			switch_channel_set_flag(channel, CF_MEDIA_ACK);
 
 			sofia_glue_store_session_id(session, profile, sip, 1);
 
-			if ((x_freeswitch_support = sofia_glue_get_unknown_header(sip, "X-FS-Support"))) {
-				tech_pvt->x_freeswitch_support_remote = switch_core_session_strdup(session, x_freeswitch_support);
+			if ((x_fluxpbx_support = sofia_glue_get_unknown_header(sip, "X-FS-Support"))) {
+				tech_pvt->x_fluxpbx_support_remote = switch_core_session_strdup(session, x_fluxpbx_support);
 			}
 
 			if (sip->sip_user_agent && sip->sip_user_agent->g_string) {
@@ -8718,7 +8718,7 @@ static void sofia_handle_sip_i_state(switch_core_session_t *session, int status,
 			if (tech_pvt->q850_cause && !switch_channel_var_true(channel, "ignore_q850_reason")) {
 				cause = tech_pvt->q850_cause;
 			} else {
-				cause = sofia_glue_sip_cause_to_freeswitch(status);
+				cause = sofia_glue_sip_cause_to_fluxpbx(status);
 			}
 			if (status) {
 				switch_snprintf(st, sizeof(st), "%d", status);
@@ -9890,21 +9890,21 @@ void sofia_handle_sip_i_info(nua_t *nua, sofia_profile_t *profile, nua_handle_t 
 		if (sip && sip->sip_content_type && sip->sip_content_type->c_type && sip->sip_content_type->c_subtype &&
 			sip->sip_payload && sip->sip_payload->pl_data) {
 
-			if (!strncasecmp(sip->sip_content_type->c_type, "freeswitch", 10)) {
+			if (!strncasecmp(sip->sip_content_type->c_type, "fluxpbx", 10)) {
 
 				if (!strcasecmp(sip->sip_content_type->c_subtype, "session-event")) {
 					if (session) {
 
 						if (create_info_event(sip, nh, &event) == SWITCH_STATUS_SUCCESS) {
 							if (switch_core_session_queue_event(session, &event) == SWITCH_STATUS_SUCCESS) {
-								switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_DEBUG, "queued freeswitch event for INFO\n");
-								nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("freeswitch/session-event-response"),
+								switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_DEBUG, "queued fluxpbx event for INFO\n");
+								nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("fluxpbx/session-event-response"),
 											SIPTAG_PAYLOAD_STR("+OK MESSAGE QUEUED"), NUTAG_WITH_THIS_MSG(de->data->e_msg),
 											TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 											TAG_END());
 							} else {
 								switch_event_destroy(&event);
-								nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("freeswitch/session-event-response"),
+								nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("fluxpbx/session-event-response"),
 											SIPTAG_PAYLOAD_STR("-ERR MESSAGE NOT QUEUED"), NUTAG_WITH_THIS_MSG(de->data->e_msg),
 											TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 											TAG_END());
@@ -9912,7 +9912,7 @@ void sofia_handle_sip_i_info(nua_t *nua, sofia_profile_t *profile, nua_handle_t 
 						}
 
 					} else {
-						nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("freeswitch/session-event-response"),
+						nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("fluxpbx/session-event-response"),
 									SIPTAG_PAYLOAD_STR("-ERR INVALID SESSION"), NUTAG_WITH_THIS_MSG(de->data->e_msg), 
 									TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 									TAG_END());
@@ -9935,13 +9935,13 @@ void sofia_handle_sip_i_info(nua_t *nua, sofia_profile_t *profile, nua_handle_t 
 					}
 
 					if (switch_api_execute(cmd, arg, NULL, &stream) == SWITCH_STATUS_SUCCESS) {
-						nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("freeswitch/api-response"),
+						nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("fluxpbx/api-response"),
 									SIPTAG_PAYLOAD_STR(stream.data), NUTAG_WITH_THIS_MSG(de->data->e_msg), 
 									TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 									TAG_END());
 					} else {
 
-						nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("freeswitch/api-response"),
+						nua_respond(nh, SIP_200_OK, SIPTAG_CONTENT_TYPE_STR("fluxpbx/api-response"),
 									SIPTAG_PAYLOAD_STR("-ERR INVALID COMMAND"), NUTAG_WITH_THIS_MSG(de->data->e_msg), 
 									TAG_IF(!zstr(session_id_header), SIPTAG_HEADER_STR(session_id_header)),
 									TAG_END());
@@ -10001,7 +10001,7 @@ void sofia_handle_sip_i_info(nua_t *nua, sofia_profile_t *profile, nua_handle_t 
 			}
 		}
 
-		if (sip && sip->sip_content_type && sip->sip_content_type->c_type && !strcasecmp(sip->sip_content_type->c_type, "freeswitch/data")) {
+		if (sip && sip->sip_content_type && sip->sip_content_type->c_type && !strcasecmp(sip->sip_content_type->c_type, "fluxpbx/data")) {
 			char *data = NULL;
 
 			if (sip->sip_payload && sip->sip_payload->pl_data) {
@@ -10219,7 +10219,7 @@ void sofia_handle_sip_i_info(nua_t *nua, sofia_profile_t *profile, nua_handle_t 
 			switch_channel_event_set_data(channel, event);
 		}
 		switch_event_fire(&event);
-		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_DEBUG1, "dispatched freeswitch event for INFO\n");
+		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_DEBUG1, "dispatched fluxpbx event for INFO\n");
 	}
 
 	nua_respond(nh, SIP_200_OK, NUTAG_WITH_THIS_MSG(de->data->e_msg), 
@@ -10516,7 +10516,7 @@ void sofia_handle_sip_i_invite(switch_core_session_t *session, nua_t *nua, sofia
 			   This secondary check is here to double check the conclusion of nat settigs to ensure we don't set net
 			   in cases where we don't really need to be doing this.
 
-			   Why would you want to do this?  Well if your FreeSWITCH is behind nat and you want to talk to endpoints behind
+			   Why would you want to do this?  Well if your FluxPBX is behind nat and you want to talk to endpoints behind
 			   remote NAT over the public internet in addition to endpoints behind nat with you.  This simplifies that process.
 
 			*/
@@ -11555,7 +11555,7 @@ void sofia_handle_sip_i_invite(switch_core_session_t *session, nua_t *nua, sofia
 				switch_channel_set_name(channel, un->un_value);
 				switch_channel_set_variable(channel, "push_channel_name", "true");
 			} else if (!strcasecmp(un->un_name, "X-FS-Support")) {
-				tech_pvt->x_freeswitch_support_remote = switch_core_session_strdup(session, un->un_value);
+				tech_pvt->x_fluxpbx_support_remote = switch_core_session_strdup(session, un->un_value);
 			} else if (!strcasecmp(un->un_name, "Geolocation")) {
 				switch_channel_set_variable(channel, "sip_geolocation", un->un_value);
 			} else if (!strcasecmp(un->un_name, "Geolocation-Error")) {

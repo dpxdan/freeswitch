@@ -38,7 +38,7 @@ $dopull && (git pull "$remote" || err "failed to pull")
 for patch in "$@"; do
   wget -O - "$patch" | git am
 done
-printf '# Building FreeSWITCH %s\n' "$(git describe HEAD)" \
+printf '# Building FluxPBX %s\n' "$(git describe HEAD)" \
   > ${now}-fsbuild.log
 (./bootstrap.sh && ./configure -C && make VERBOSE=1) 2>&1 \
   | tee -a ${now}-fsbuild.log

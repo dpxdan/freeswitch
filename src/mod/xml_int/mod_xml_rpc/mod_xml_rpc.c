@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * John Wehle <john@feith.com>
  * Garmt Boekholt <garmt@cimico.com>
  * Seven Du <dujinfang@gmail.com>
@@ -33,7 +33,7 @@
  * embedded webserver for FS
  * exposes fs api to web (and ajax, javascript, ...)
  * supports GET/POST requests (as defined below)
- * and similar XMLRPC format /RPC2 freeswitch.api and management.api
+ * and similar XMLRPC format /RPC2 fluxpbx.api and management.api
  *
  * usage:
  * (1) http:/host:port/[txt|web|xml]api/fsapicommand[?arg[ arg]*][ &key=value[+&key=value]*]
@@ -532,8 +532,8 @@ static abyss_bool http_directory_auth(TSession *r, char *domain_name)
 				switch_snprintf(z, sizeof(z), "%s@%s", (box ? box : user), domain_name);
 				r->requestInfo.user = strdup(z);
 
-				ResponseAddField(r, "freeswitch-user", (box ? box : user));
-				ResponseAddField(r, "freeswitch-domain", domain_name);
+				ResponseAddField(r, "fluxpbx-user", (box ? box : user));
+				ResponseAddField(r, "fluxpbx-domain", domain_name);
 				ResponseStatus(r, 200);
 				rval = TRUE;
 				goto done;
@@ -867,9 +867,9 @@ abyss_bool handler_hook(TSession * r)
 
 	for (i = 0; i < r->responseHeaderFields.size; i++) {
 		TTableItem *ti = &r->responseHeaderFields.item[i];
-		if (!strcasecmp(ti->name, "freeswitch-user")) {
+		if (!strcasecmp(ti->name, "fluxpbx-user")) {
 			fs_user = ti->value;
-		} else if (!strcasecmp(ti->name, "freeswitch-domain")) {
+		} else if (!strcasecmp(ti->name, "fluxpbx-domain")) {
 			fs_domain = ti->value;
 		}
 	}
@@ -895,8 +895,8 @@ abyss_bool handler_hook(TSession * r)
 		if (api) {
 			switch_event_add_header_string(evnt, SWITCH_STACK_BOTTOM, "HTTP-API", "api");
 		}
-		if (fs_user)   switch_event_add_header_string(evnt, SWITCH_STACK_BOTTOM, "FreeSWITCH-User", fs_user);
-		if (fs_domain) switch_event_add_header_string(evnt, SWITCH_STACK_BOTTOM, "FreeSWITCH-Domain", fs_domain);
+		if (fs_user)   switch_event_add_header_string(evnt, SWITCH_STACK_BOTTOM, "FluxPBX-User", fs_user);
+		if (fs_domain) switch_event_add_header_string(evnt, SWITCH_STACK_BOTTOM, "FluxPBX-Domain", fs_domain);
 		if (path_info) switch_event_add_header_string(evnt, SWITCH_STACK_BOTTOM, "HTTP-Path-Info", path_info);
 
 		if (info->host)        switch_event_add_header_string(evnt, SWITCH_STACK_BOTTOM, "HTTP-HOST", info->host);
@@ -1033,7 +1033,7 @@ abyss_bool handler_hook(TSession * r)
 	}
 
 	/* Generation of the server field */
-	switch_snprintf(v, sizeof(v), "FreeSWITCH-%s-mod_xml_rpc", switch_version_full());
+	switch_snprintf(v, sizeof(v), "FluxPBX-%s-mod_xml_rpc", switch_version_full());
 	ResponseAddField(r, "Server", v);
 
 	if (html) {
@@ -1100,7 +1100,7 @@ abyss_bool handler_hook(TSession * r)
 	return ret;
 }
 
-static xmlrpc_value *freeswitch_api(xmlrpc_env * const envP, xmlrpc_value * const paramArrayP, void *const userData, void *const callInfo)
+static xmlrpc_value *fluxpbx_api(xmlrpc_env * const envP, xmlrpc_value * const paramArrayP, void *const userData, void *const callInfo)
 {
 	char *command = NULL, *arg = NULL;
 	switch_stream_handle_t stream = { 0 };
@@ -1155,7 +1155,7 @@ static xmlrpc_value *freeswitch_api(xmlrpc_env * const envP, xmlrpc_value * cons
 	return val;
 }
 
-static xmlrpc_value *freeswitch_man(xmlrpc_env * const envP, xmlrpc_value * const paramArrayP, void *const userData)
+static xmlrpc_value *fluxpbx_man(xmlrpc_env * const envP, xmlrpc_value * const paramArrayP, void *const userData)
 {
 	char *oid = NULL, *relative_oid, *s_action = NULL, *data = NULL;
 	char buf[SWITCH_MAX_MANAGEMENT_BUFFER_LEN] = "";
@@ -1168,8 +1168,8 @@ static xmlrpc_value *freeswitch_man(xmlrpc_env * const envP, xmlrpc_value * cons
 		return NULL;
 	}
 
-	if (!strncasecmp(oid, FREESWITCH_OID_PREFIX, strlen(FREESWITCH_OID_PREFIX))) {
-		relative_oid = oid + strlen(FREESWITCH_OID_PREFIX);
+	if (!strncasecmp(oid, FLUXPBX_OID_PREFIX, strlen(FLUXPBX_OID_PREFIX))) {
+		relative_oid = oid + strlen(FLUXPBX_OID_PREFIX);
 	} else {
 		relative_oid = oid;
 	}
@@ -1224,11 +1224,11 @@ SWITCH_MODULE_RUNTIME_FUNCTION(mod_xml_rpc_runtime)
 
 	globals.registryP = xmlrpc_registry_new(&env);
 
-	/* TODO why twice and why add_method for freeswitch.api and add_method2 for freeswitch.management ? */
-    xmlrpc_registry_add_method2(&env, globals.registryP, "freeswitch.api", &freeswitch_api, NULL, NULL, NULL);
-    xmlrpc_registry_add_method2(&env, globals.registryP, "freeswitch_api", &freeswitch_api, NULL, NULL, NULL);
-    xmlrpc_registry_add_method(&env, globals.registryP, NULL, "freeswitch.management", &freeswitch_man, NULL);
-    xmlrpc_registry_add_method(&env, globals.registryP, NULL, "freeswitch_management", &freeswitch_man, NULL);
+	/* TODO why twice and why add_method for fluxpbx.api and add_method2 for fluxpbx.management ? */
+    xmlrpc_registry_add_method2(&env, globals.registryP, "fluxpbx.api", &fluxpbx_api, NULL, NULL, NULL);
+    xmlrpc_registry_add_method2(&env, globals.registryP, "fluxpbx_api", &fluxpbx_api, NULL, NULL, NULL);
+    xmlrpc_registry_add_method(&env, globals.registryP, NULL, "fluxpbx.management", &fluxpbx_man, NULL);
+    xmlrpc_registry_add_method(&env, globals.registryP, NULL, "fluxpbx_management", &fluxpbx_man, NULL);
 
 	MIMETypeInit();
 
@@ -1239,7 +1239,7 @@ SWITCH_MODULE_RUNTIME_FUNCTION(mod_xml_rpc_runtime)
 		}
 	}
 
-	switch_snprintf(logfile, sizeof(logfile), "%s%s%s", SWITCH_GLOBAL_dirs.log_dir, SWITCH_PATH_SEPARATOR, "freeswitch_http.log");
+	switch_snprintf(logfile, sizeof(logfile), "%s%s%s", SWITCH_GLOBAL_dirs.log_dir, SWITCH_PATH_SEPARATOR, "fluxpbx_http.log");
 	ServerCreate(&globals.abyssServer, "XmlRpcServer", globals.port, SWITCH_GLOBAL_dirs.htdocs_dir, logfile);
 
 	xmlrpc_server_abyss_set_handler(&env, &globals.abyssServer, "/RPC2", globals.registryP);

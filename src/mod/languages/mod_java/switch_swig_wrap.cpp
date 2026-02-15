@@ -232,14 +232,14 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 #include "switch.h"
 #include "switch_cpp.h"
-#include "freeswitch_java.h"
+#include "fluxpbx_java.h"
 
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_setGlobalVariable(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_setGlobalVariable(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -261,7 +261,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_setGlobalVariable
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_getGlobalVariable(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_getGlobalVariable(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jstring jresult = 0 ;
   char *arg1 = (char *) 0 ;
   char *result = 0 ;
@@ -281,7 +281,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_getGlobalVaria
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_consoleLog(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_consoleLog(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -303,7 +303,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_consoleLog(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_consoleLog2(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jint jarg4, jstring jarg5) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_consoleLog2(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jint jarg4, jstring jarg5) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -341,7 +341,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_consoleLog2(JNIEn
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_consoleCleanLog(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_consoleCleanLog(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -356,7 +356,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_consoleCleanLog(J
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_running(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_running(JNIEnv *jenv, jclass jcls) {
   jboolean jresult = 0 ;
   bool result;
   
@@ -368,7 +368,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_running(JNIEn
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_email(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5, jstring jarg6, jstring jarg7) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_email(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5, jstring jarg6, jstring jarg7) {
   jboolean jresult = 0 ;
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -429,7 +429,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_email(JNIEnv 
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1IVRMenu(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5, jstring jarg6, jstring jarg7, jstring jarg8, jstring jarg9, jstring jarg10, jstring jarg11, jint jarg12, jint jarg13, jint jarg14, jint jarg15, jint jarg16, jint jarg17) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1IVRMenu(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5, jstring jarg6, jstring jarg7, jstring jarg8, jstring jarg9, jstring jarg10, jstring jarg11, jint jarg12, jint jarg13, jint jarg14, jint jarg15, jint jarg16, jint jarg17) {
   jlong jresult = 0 ;
   IVRMenu *arg1 = (IVRMenu *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -526,7 +526,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1IVRMenu(JNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1IVRMenu(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1IVRMenu(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   IVRMenu *arg1 = (IVRMenu *) 0 ;
   
   (void)jenv;
@@ -536,7 +536,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1IVRMenu(J
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_IVRMenu_1bindAction(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_IVRMenu_1bindAction(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
   IVRMenu *arg1 = (IVRMenu *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -568,7 +568,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_IVRMenu_1bindActi
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_IVRMenu_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_IVRMenu_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3) {
   IVRMenu *arg1 = (IVRMenu *) 0 ;
   CoreSession *arg2 = (CoreSession *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -589,7 +589,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_IVRMenu_1execute(
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1API(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1API(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) NULL ;
   API *result = 0 ;
@@ -604,7 +604,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1API(JNIEnv 
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1API(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1API(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   API *arg1 = (API *) 0 ;
   
   (void)jenv;
@@ -614,7 +614,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1API(JNIEn
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_API_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_API_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jstring jresult = 0 ;
   API *arg1 = (API *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -644,7 +644,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_API_1execute(J
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_API_1executeString(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_API_1executeString(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jstring jresult = 0 ;
   API *arg1 = (API *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -667,7 +667,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_API_1executeSt
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_API_1getTime(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_API_1getTime(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   API *arg1 = (API *) 0 ;
   char *result = 0 ;
@@ -682,7 +682,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_API_1getTime(J
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1function_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1function_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   void *arg2 = (void *) 0 ;
   
@@ -695,7 +695,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1function_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1function_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   void *result = 0 ;
@@ -710,7 +710,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1threadState_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1threadState_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   void *arg2 = (void *) 0 ;
   
@@ -723,7 +723,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1threadState_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1threadState_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   void *result = 0 ;
@@ -738,7 +738,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1extra_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1extra_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   void *arg2 = (void *) 0 ;
   
@@ -751,7 +751,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1extra_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1extra_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   void *result = 0 ;
@@ -766,7 +766,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1funcargs_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1funcargs_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -792,7 +792,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callback_1state_1t_1funcargs_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_input_1callback_1state_1t_1funcargs_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   char *result = 0 ;
@@ -807,7 +807,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_input_1callbac
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1input_1callback_1state_1t(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1input_1callback_1state_1t(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   input_callback_state *result = 0 ;
   
@@ -819,7 +819,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1input_1call
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1input_1callback_1state_1t(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1input_1callback_1state_1t(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   input_callback_state *arg1 = (input_callback_state *) 0 ;
   
   (void)jenv;
@@ -829,7 +829,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1input_1ca
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_S_1HUP_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_S_1HUP_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   session_flag_t result;
   
@@ -841,7 +841,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_S_1HUP_1get(JNIEn
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_S_1FREE_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_S_1FREE_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   session_flag_t result;
   
@@ -853,7 +853,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_S_1FREE_1get(JNIE
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_S_1RDLOCK_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_S_1RDLOCK_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   session_flag_t result;
   
@@ -865,7 +865,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_S_1RDLOCK_1get(JN
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1digit_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jchar jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_DTMF_1digit_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jchar jarg2) {
   DTMF *arg1 = (DTMF *) 0 ;
   char arg2 ;
   
@@ -878,7 +878,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1digit_1set(
 }
 
 
-SWIGEXPORT jchar JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1digit_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jchar JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_DTMF_1digit_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jchar jresult = 0 ;
   DTMF *arg1 = (DTMF *) 0 ;
   char result;
@@ -893,7 +893,7 @@ SWIGEXPORT jchar JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1digit_1get
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1duration_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_DTMF_1duration_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   DTMF *arg1 = (DTMF *) 0 ;
   uint32_t arg2 ;
   uint32_t *argp2 ;
@@ -912,7 +912,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1duration_1s
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1duration_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_DTMF_1duration_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   DTMF *arg1 = (DTMF *) 0 ;
   uint32_t result;
@@ -927,7 +927,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_DTMF_1duration_1
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1DTMF(JNIEnv *jenv, jclass jcls, jchar jarg1, jlong jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1DTMF(JNIEnv *jenv, jclass jcls, jchar jarg1, jlong jarg2) {
   jlong jresult = 0 ;
   char arg1 ;
   uint32_t arg2 = (uint32_t) SWITCH_DEFAULT_DTMF_DURATION ;
@@ -949,7 +949,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1DTMF(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1DTMF(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1DTMF(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   DTMF *arg1 = (DTMF *) 0 ;
   
   (void)jenv;
@@ -959,7 +959,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1DTMF(JNIE
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Stream_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1Stream_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   Stream *result = 0 ;
   
@@ -971,7 +971,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Stream_1_1S
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Stream_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1Stream_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   jlong jresult = 0 ;
   switch_stream_handle_t *arg1 = (switch_stream_handle_t *) 0 ;
   Stream *result = 0 ;
@@ -985,7 +985,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Stream_1_1S
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1Stream(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1Stream(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Stream *arg1 = (Stream *) 0 ;
   
   (void)jenv;
@@ -995,7 +995,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1Stream(JN
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1read(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Stream_1read(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   jstring jresult = 0 ;
   Stream *arg1 = (Stream *) 0 ;
   int *arg2 = (int *) 0 ;
@@ -1012,7 +1012,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1read(J
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1write(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Stream_1write(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   Stream *arg1 = (Stream *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -1030,7 +1030,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1write(JNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1raw_1write(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Stream_1raw_1write(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3) {
   Stream *arg1 = (Stream *) 0 ;
   char *arg2 = (char *) 0 ;
   int arg3 ;
@@ -1050,7 +1050,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1raw_1writ
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1get_1data(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Stream_1get_1data(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   Stream *arg1 = (Stream *) 0 ;
   char *result = 0 ;
@@ -1065,7 +1065,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Stream_1get_1d
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1event_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1event_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   Event *arg1 = (Event *) 0 ;
   switch_event_t *arg2 = (switch_event_t *) 0 ;
   
@@ -1078,7 +1078,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1event_1set
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1event_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1event_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   switch_event_t *result = 0 ;
@@ -1093,7 +1093,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1event_1ge
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1serialized_1string_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1serialized_1string_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -1119,7 +1119,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1serialized
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1serialized_1string_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1serialized_1string_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *result = 0 ;
@@ -1134,7 +1134,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1seriali
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1mine_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1mine_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   Event *arg1 = (Event *) 0 ;
   int arg2 ;
   
@@ -1147,7 +1147,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1mine_1set(
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1mine_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1mine_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   int result;
@@ -1162,7 +1162,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1mine_1get(
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Event_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1Event_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
   jlong jresult = 0 ;
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) NULL ;
@@ -1188,7 +1188,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Event_1_1SW
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Event_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1Event_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   jlong jresult = 0 ;
   switch_event_t *arg1 = (switch_event_t *) 0 ;
   int arg2 = (int) 0 ;
@@ -1204,7 +1204,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1Event_1_1SW
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1Event(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1Event(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Event *arg1 = (Event *) 0 ;
   
   (void)jenv;
@@ -1214,7 +1214,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1Event(JNI
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1chat_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1chat_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jint jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1243,7 +1243,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1chat_1exec
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1chat_1send(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1chat_1send(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jint jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) NULL ;
@@ -1265,7 +1265,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1chat_1send
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1serialize(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1serialize(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jstring jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) NULL ;
@@ -1287,7 +1287,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1seriali
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1setPriority(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1setPriority(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   jboolean jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   switch_priority_t arg2 = (switch_priority_t) SWITCH_PRIORITY_NORMAL ;
@@ -1310,7 +1310,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1setPri
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1getHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1getHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jstring jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1332,7 +1332,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1getHead
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1getBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1getBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *result = 0 ;
@@ -1347,7 +1347,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1getBody
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1getType(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1getType(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *result = 0 ;
@@ -1362,7 +1362,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1getType
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1addBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1addBody(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jboolean jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1384,7 +1384,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1addBod
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1addHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1addHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jboolean jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1413,7 +1413,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1addHea
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1delHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1delHeader(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jboolean jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1435,7 +1435,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1delHea
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1fire(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1fire(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   bool result;
@@ -1450,7 +1450,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1fire(J
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1merge(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_Event_1merge(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jboolean jresult = 0 ;
   Event *arg1 = (Event *) 0 ;
   Event *arg2 = (Event *) 0 ;
@@ -1468,7 +1468,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_Event_1merge(
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1events_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1events_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   switch_queue_t *arg2 = (switch_queue_t *) 0 ;
   
@@ -1481,7 +1481,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1ev
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1events_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1events_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   switch_queue_t *result = 0 ;
@@ -1496,7 +1496,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1event_1id_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1event_1id_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   switch_event_types_t arg2 ;
   switch_event_types_t *argp2 ;
@@ -1515,7 +1515,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1event_1id_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1event_1id_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   switch_event_types_t result;
@@ -1530,7 +1530,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1callback_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1callback_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -1556,7 +1556,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1callback_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1callback_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   char *result = 0 ;
@@ -1571,7 +1571,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1subclass_1name_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1subclass_1name_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -1597,7 +1597,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1subclass_1name_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1subclass_1name_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   char *result = 0 ;
@@ -1612,7 +1612,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1cb_1arg_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1cb_1arg_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -1638,7 +1638,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e_1cb_1arg_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1e_1cb_1arg_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   char *result = 0 ;
@@ -1653,7 +1653,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1enodes_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1enodes_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   switch_event_node_t **arg2 ;
   
@@ -1671,7 +1671,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1en
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1enodes_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1enodes_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   switch_event_node_t **result = 0 ;
@@ -1686,7 +1686,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1e
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1node_1index_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1node_1index_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   uint32_t arg2 ;
   uint32_t *argp2 ;
@@ -1705,7 +1705,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1no
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1node_1index_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1node_1index_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   uint32_t result;
@@ -1720,7 +1720,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1n
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1EventConsumer(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jint jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1EventConsumer(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jint jarg3) {
   jlong jresult = 0 ;
   char *arg1 = (char *) NULL ;
   char *arg2 = (char *) "" ;
@@ -1748,7 +1748,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1EventConsum
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1EventConsumer(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1EventConsumer(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   
   (void)jenv;
@@ -1758,7 +1758,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1EventCons
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1bind(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1bind(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   jint jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -1787,7 +1787,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1bi
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1pop(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1pop(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3) {
   jlong jresult = 0 ;
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   int arg2 = (int) 0 ;
@@ -1806,7 +1806,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1p
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1cleanup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_EventConsumer_1cleanup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   EventConsumer *arg1 = (EventConsumer *) 0 ;
   
   (void)jenv;
@@ -1817,7 +1817,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_EventConsumer_1cl
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1CoreSession(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1CoreSession(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   
   (void)jenv;
@@ -1827,7 +1827,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1CoreSessi
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1session_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1session_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_core_session_t *arg2 = (switch_core_session_t *) 0 ;
   
@@ -1840,7 +1840,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1sess
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1session_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1session_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_core_session_t *result = 0 ;
@@ -1855,7 +1855,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1ses
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1channel_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1channel_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_channel_t *arg2 = (switch_channel_t *) 0 ;
   
@@ -1868,7 +1868,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1chan
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1channel_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1channel_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_channel_t *result = 0 ;
@@ -1883,7 +1883,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cha
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1flags_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1flags_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   unsigned int arg2 ;
   
@@ -1896,7 +1896,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1flag
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1flags_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1flags_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   unsigned int result;
@@ -1911,7 +1911,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1fla
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1allocated_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1allocated_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
   
@@ -1924,7 +1924,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1allo
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1allocated_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1allocated_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int result;
@@ -1939,7 +1939,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1allo
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cb_1state_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1cb_1state_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   input_callback_state *arg2 = (input_callback_state *) 0 ;
   
@@ -1953,7 +1953,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cb_1
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cb_1state_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1cb_1state_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   input_callback_state *result = 0 ;
@@ -1968,7 +1968,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cb_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hook_1state_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1hook_1state_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_channel_state_t arg2 ;
   switch_channel_state_t *argp2 ;
@@ -1987,7 +1987,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hook
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hook_1state_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1hook_1state_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_channel_state_t result;
@@ -2002,7 +2002,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hoo
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cause_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1cause_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_call_cause_t arg2 ;
   switch_call_cause_t *argp2 ;
@@ -2021,7 +2021,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1caus
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cause_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1cause_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_call_cause_t result;
@@ -2036,7 +2036,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cau
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1uuid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1uuid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -2062,7 +2062,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1uuid
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1uuid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1uuid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *result = 0 ;
@@ -2077,7 +2077,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1u
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1tts_1name_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1tts_1name_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -2103,7 +2103,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1tts_
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1tts_1name_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1tts_1name_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *result = 0 ;
@@ -2118,7 +2118,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1t
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1voice_1name_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1voice_1name_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -2144,7 +2144,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1voic
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1voice_1name_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1voice_1name_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *result = 0 ;
@@ -2159,7 +2159,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1v
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1insertFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jint jarg4) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1insertFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jint jarg4) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2190,7 +2190,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1inse
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1answer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1answer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int result;
@@ -2205,7 +2205,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1answ
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1print(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1print(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2227,7 +2227,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1prin
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1preAnswer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1preAnswer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int result;
@@ -2242,7 +2242,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1preA
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hangup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1hangup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) "normal_clearing" ;
   
@@ -2260,7 +2260,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hang
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hangupState(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1hangupState(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   
   (void)jenv;
@@ -2271,7 +2271,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hang
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setVariable(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1setVariable(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2296,7 +2296,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setV
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setPrivate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jlong jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1setPrivate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jlong jarg3) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   void *arg3 = (void *) 0 ;
@@ -2316,7 +2316,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setP
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1getPrivate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1getPrivate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2338,7 +2338,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1get
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1getVariable(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1getVariable(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2360,7 +2360,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1g
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1process_1callback_1result(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1process_1callback_1result(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2382,7 +2382,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1pro
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1say(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5, jstring jarg6) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1say(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5, jstring jarg6) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2428,7 +2428,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1say(
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1sayPhrase(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1sayPhrase(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) "" ;
@@ -2460,7 +2460,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1sayP
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1hangupCause(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1hangupCause(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *result = 0 ;
@@ -2475,7 +2475,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1h
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1getState(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1getState(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *result = 0 ;
@@ -2490,7 +2490,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1g
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1recordFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3, jint jarg4, jint jarg5) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1recordFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3, jint jarg4, jint jarg5) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2518,7 +2518,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1reco
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1originate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3, jint jarg4, jlong jarg5) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1originate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3, jint jarg4, jlong jarg5) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   CoreSession *arg2 = (CoreSession *) 0 ;
@@ -2547,7 +2547,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1orig
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1destroy(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1destroy(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   
   (void)jenv;
@@ -2558,7 +2558,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1dest
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setDTMFCallback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1setDTMFCallback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jstring jarg3) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   void *arg2 = (void *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2578,7 +2578,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setD
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1speak(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1speak(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2600,7 +2600,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1spea
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1set_1tts_1parms(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1set_1tts_1parms(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2625,7 +2625,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1set_
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1set_1tts_1params(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1set_1tts_1params(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -2650,7 +2650,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1set_
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1collectDigits_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1collectDigits_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -2667,7 +2667,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1coll
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1collectDigits_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1collectDigits_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -2686,7 +2686,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1coll
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1getDigits_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1getDigits_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -2712,7 +2712,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1g
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1getDigits_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4, jint jarg5) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1getDigits_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4, jint jarg5) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -2740,7 +2740,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1g
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1getDigits_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4, jint jarg5, jint jarg6) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1getDigits_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jstring jarg3, jint jarg4, jint jarg5, jint jarg6) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -2770,7 +2770,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1g
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1transfer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1transfer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2806,7 +2806,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1tran
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1read(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3, jstring jarg4, jint jarg5, jstring jarg6, jint jarg7) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1read(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3, jstring jarg4, jint jarg5, jstring jarg6, jint jarg7) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -2843,7 +2843,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1r
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1detectSpeech(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1detectSpeech(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jstring jarg5) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) NULL ;
@@ -2882,7 +2882,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1dete
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1playAndGetDigits(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3, jint jarg4, jint jarg5, jstring jarg6, jstring jarg7, jstring jarg8, jstring jarg9, jstring jarg10, jint jarg11, jstring jarg12) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1playAndGetDigits(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3, jint jarg4, jint jarg5, jstring jarg6, jstring jarg7, jstring jarg8, jstring jarg9, jstring jarg10, jint jarg11, jstring jarg12) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -2949,7 +2949,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1p
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1playAndDetectSpeech(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1playAndDetectSpeech(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -2986,7 +2986,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1p
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1streamFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1streamFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -3010,7 +3010,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1stre
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1sleep(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1sleep(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int arg2 ;
@@ -3029,7 +3029,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1slee
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1flushEvents(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1flushEvents(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int result;
@@ -3044,7 +3044,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1flus
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1flushDigits(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1flushDigits(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   int result;
@@ -3059,7 +3059,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1flus
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setAutoHangup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1setAutoHangup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
   jint jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   bool arg2 ;
@@ -3076,7 +3076,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setA
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setHangupHook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1setHangupHook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   void *arg2 = (void *) 0 ;
   
@@ -3089,7 +3089,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setH
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1ready(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1ready(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   bool result;
@@ -3104,7 +3104,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1bridged(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1bridged(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   bool result;
@@ -3119,7 +3119,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1answered(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1answered(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   bool result;
@@ -3134,7 +3134,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1mediaReady(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1mediaReady(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   bool result;
@@ -3149,7 +3149,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1waitForAnswer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1waitForAnswer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   CoreSession *arg2 = (CoreSession *) 0 ;
   
@@ -3163,7 +3163,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1wait
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1execute(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) NULL ;
@@ -3188,7 +3188,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1exec
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1sendEvent(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1sendEvent(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   Event *arg2 = (Event *) 0 ;
   
@@ -3202,7 +3202,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1send
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setEventData(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1setEventData(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   Event *arg2 = (Event *) 0 ;
   
@@ -3216,7 +3216,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1setE
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1getXMLCDR(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1getXMLCDR(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *result = 0 ;
@@ -3231,7 +3231,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1g
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1begin_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1begin_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   bool result;
@@ -3246,7 +3246,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1end_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1end_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   bool result;
@@ -3261,7 +3261,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1get_1uuid(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jstring JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1get_1uuid(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jstring jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *result = 0 ;
@@ -3276,7 +3276,7 @@ SWIGEXPORT jstring JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1g
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1get_1cb_1args(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1get_1cb_1args(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   switch_input_args_t *result = 0 ;
@@ -3291,7 +3291,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1get
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1check_1hangup_1hook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1check_1hangup_1hook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   
   (void)jenv;
@@ -3302,7 +3302,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1chec
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1run_1dtmf_1callback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1run_1dtmf_1callback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3) {
   jlong jresult = 0 ;
   CoreSession *arg1 = (CoreSession *) 0 ;
   void *arg2 = (void *) 0 ;
@@ -3327,7 +3327,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1run
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1consoleLog(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1consoleLog(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -3352,7 +3352,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cons
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1consoleLog2(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jint jarg5, jstring jarg6) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_CoreSession_1consoleLog2(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3, jstring jarg4, jint jarg5, jstring jarg6) {
   CoreSession *arg1 = (CoreSession *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -3393,7 +3393,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_CoreSession_1cons
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_console_1log(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_console_1log(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -3415,7 +3415,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_console_1log(JNIE
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_console_1log2(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jint jarg4, jstring jarg5) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_console_1log2(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2, jstring jarg3, jint jarg4, jstring jarg5) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -3453,7 +3453,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_console_1log2(JNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_console_1clean_1log(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_console_1clean_1log(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -3468,7 +3468,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_console_1clean_1l
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_msleep(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_msleep(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   unsigned int arg1 ;
   
   (void)jenv;
@@ -3478,7 +3478,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_msleep(JNIEnv *je
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_bridge(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_bridge(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   CoreSession *arg1 = 0 ;
   CoreSession *arg2 = 0 ;
   
@@ -3500,7 +3500,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_bridge(JNIEnv *je
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_hanguphook(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_hanguphook(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   jlong jresult = 0 ;
   switch_core_session_t *arg1 = (switch_core_session_t *) 0 ;
   switch_status_t result;
@@ -3514,7 +3514,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_hanguphook(JNIEn
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_dtmf_1callback(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4, jlong jarg5) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_dtmf_1callback(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4, jlong jarg5) {
   jlong jresult = 0 ;
   switch_core_session_t *arg1 = (switch_core_session_t *) 0 ;
   void *arg2 = (void *) 0 ;
@@ -3542,7 +3542,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_dtmf_1callback(J
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_javaVM_1set(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_javaVM_1set(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   JavaVM *arg1 = (JavaVM *) 0 ;
   
   (void)jenv;
@@ -3552,7 +3552,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_javaVM_1set(JNIEn
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_javaVM_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_javaVM_1get(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   JavaVM *result = 0 ;
   
@@ -3564,7 +3564,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_javaVM_1get(JNIE
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_setOriginateStateHandler(JNIEnv *jenv, jclass jcls, jobject jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_setOriginateStateHandler(JNIEnv *jenv, jclass jcls, jobject jarg1) {
   jobject arg1 ;
   
   (void)jenv;
@@ -3574,7 +3574,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_setOriginateState
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1JavaSession_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1JavaSession_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   JavaSession *result = 0 ;
   
@@ -3586,7 +3586,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1JavaSession
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1JavaSession_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1JavaSession_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jlong jresult = 0 ;
   char *arg1 = (char *) 0 ;
   JavaSession *result = 0 ;
@@ -3605,7 +3605,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1JavaSession
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1JavaSession_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_new_1JavaSession_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   jlong jresult = 0 ;
   switch_core_session_t *arg1 = (switch_core_session_t *) 0 ;
   JavaSession *result = 0 ;
@@ -3619,7 +3619,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_new_1JavaSession
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1JavaSession(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_delete_1JavaSession(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   JavaSession *arg1 = (JavaSession *) 0 ;
   
   (void)jenv;
@@ -3629,7 +3629,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_delete_1JavaSessi
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1begin_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1begin_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   JavaSession *arg1 = (JavaSession *) 0 ;
   bool result;
@@ -3644,7 +3644,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1end_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1end_1allow_1threads(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   JavaSession *arg1 = (JavaSession *) 0 ;
   bool result;
@@ -3659,7 +3659,7 @@ SWIGEXPORT jboolean JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1setDTMFCallback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jobject jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1setDTMFCallback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jobject jarg2, jstring jarg3) {
   JavaSession *arg1 = (JavaSession *) 0 ;
   jobject arg2 ;
   char *arg3 = (char *) 0 ;
@@ -3679,7 +3679,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1setD
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1setHangupHook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jobject jarg2) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1setHangupHook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jobject jarg2) {
   JavaSession *arg1 = (JavaSession *) 0 ;
   jobject arg2 ;
   
@@ -3692,7 +3692,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1setH
 }
 
 
-SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1check_1hangup_1hook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT void JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1check_1hangup_1hook(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   JavaSession *arg1 = (JavaSession *) 0 ;
   
   (void)jenv;
@@ -3703,7 +3703,7 @@ SWIGEXPORT void JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1chec
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1run_1dtmf_1callback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1run_1dtmf_1callback(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3) {
   jlong jresult = 0 ;
   JavaSession *arg1 = (JavaSession *) 0 ;
   void *arg2 = (void *) 0 ;
@@ -3728,7 +3728,7 @@ SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1run
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1originate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3, jint jarg4) {
+SWIGEXPORT jint JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1originate(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jstring jarg3, jint jarg4) {
   jint jresult = 0 ;
   JavaSession *arg1 = (JavaSession *) 0 ;
   JavaSession *arg2 = (JavaSession *) 0 ;
@@ -3755,7 +3755,7 @@ SWIGEXPORT jint JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1orig
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_freeswitch_swig_freeswitchJNI_JavaSession_1SWIGUpcast(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_fluxpbx_swig_fluxpbxJNI_JavaSession_1SWIGUpcast(JNIEnv *jenv, jclass jcls, jlong jarg1) {
     jlong baseptr = 0;
     (void)jenv;
     (void)jcls;

@@ -824,7 +824,7 @@ APR_DECLARE(int) fspr_vformatter(int (*flush_func)(fspr_vformatter_buff_t *),
              * the first if condition is never true.
              */
 
-			/* HACK BY FREESWITCH TEAM TO FIX COMPATIBILITY 2010-09-27 */
+			/* HACK BY FLUXPBX TEAM TO FIX COMPATIBILITY 2010-09-27 */
 			if (*fmt == 'l' && *(fmt + 1) == 'l') {
                 var_type = IS_QUAD;
 				fmt += 2;
@@ -848,7 +848,7 @@ APR_DECLARE(int) fspr_vformatter(int (*flush_func)(fspr_vformatter_buff_t *),
             else if (*fmt == 'l') {
                 var_type = IS_LONG;
                 fmt++;
-				/* HACK BY FREESWITCH TEAM TO FIX COMPATIBILITY 2010-09-27 */
+				/* HACK BY FLUXPBX TEAM TO FIX COMPATIBILITY 2010-09-27 */
 				if (*fmt == 'l') {
 					var_type = IS_QUAD;
 					fmt++;

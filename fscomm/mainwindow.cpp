@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Joao Mesquita <jmesquita@freeswitch.org>
+ * Joao Mesquita <jmesquita@fluxpbx.org>
  *
  */
 
@@ -83,7 +83,7 @@ MainWindow::MainWindow(QWidget *parent) :
     dialpadMapper->setMapping(ui->dtmfPoundBtn, QString("#"));
     connect(dialpadMapper, SIGNAL(mapped(QString)), this, SLOT(sendDTMF(QString)));
 
-    /* Connect events related to FreeSWITCH */
+    /* Connect events related to FluxPBX */
     connect(g_FSHost, SIGNAL(ready()),this, SLOT(fshostReady()));
     connect(g_FSHost, SIGNAL(ringing(QSharedPointer<Call>)), this, SLOT(ringing(QSharedPointer<Call>)));
     connect(g_FSHost, SIGNAL(answered(QSharedPointer<Call>)), this, SLOT(answered(QSharedPointer<Call>)));
@@ -152,7 +152,7 @@ void MainWindow::setDefaultAccount()
         return;
 
     ISettings *settings = new ISettings();
-    //settings->beginGroup("FreeSWITCH/conf/globals");
+    //settings->beginGroup("FluxPBX/conf/globals");
     switch_core_set_variable("default_gateway", accName.toAscii().data());
     //settings->setValue("default_gateway", accName);
     //settings->endGroup();
@@ -289,7 +289,7 @@ void MainWindow::makeCall()
     QSharedPointer<Account> acc = g_FSHost->getCurrentDefaultAccount();
     if (!acc.isNull()) {
         /*QSettings *settings = fscommSettings();
-        settings->beginGroup("FreeSWITCH/conf/sofia.conf/profiles/profile/gateways/");
+        settings->beginGroup("FluxPBX/conf/sofia.conf/profiles/profile/gateways/");
         settings->beginGroup(acc.data()->getUUID());
         settings->beginGroup("gateway/global_vars");
         QString cidName = settings->value("caller_id_name").toString();
@@ -299,12 +299,12 @@ void MainWindow::makeCall()
         settings->endGroup();
 
         if (cidName.isEmpty()) {
-            settings->beginGroup("FreeSWITCH/conf/portaudio.conf/settings/params");
+            settings->beginGroup("FluxPBX/conf/portaudio.conf/settings/params");
             cidName = settings->value("cid-name").toString();
             settings->endGroup();
         }
         if (cidNum.isEmpty()) {
-            settings->beginGroup("FreeSWITCH/conf/portaudio.conf/settings/params");
+            settings->beginGroup("FluxPBX/conf/portaudio.conf/settings/params");
             cidNum = settings->value("cid-num").toString();
             settings->endGroup();
         }*/
@@ -655,10 +655,10 @@ void MainWindow::showAbout()
 
     QMessageBox::about(this, tr("About FSComm"),
                        tr("<h2>FSComm</h2>"
-                          "<p>Author: Jo&atilde;o Mesquita &lt;jmesquita@freeswitch.org>"
-                          "<p>FsComm is a softphone based on libfreeswitch."
-                          "<p>The FreeSWITCH&trade; images and name are trademark of"
-                          " Anthony Minessale II, primary author of FreeSWITCH&trade;."
+                          "<p>Author: Jo&atilde;o Mesquita &lt;jmesquita@fluxpbx.org>"
+                          "<p>FsComm is a softphone based on libfluxpbx."
+                          "<p>The FluxPBX&trade; images and name are trademark of"
+                          " Anthony Minessale II, primary author of FluxPBX&trade;."
                           "<p>Compiled FSComm version: %1"
                           "<p>%2").arg(SWITCH_VERSION_FULL, result));
 }

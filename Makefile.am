@@ -1,7 +1,7 @@
 EXTRA_DIST =
 SUBDIRS = . src build tests/unit
 AUTOMAKE_OPTIONS = foreign subdir-objects
-NAME = freeswitch
+NAME = fluxpbx
 
 if SYSTEM_APR
 AM_LIBAPR_CFLAGS := $(shell apr-1-config --cflags)
@@ -37,8 +37,8 @@ MY_DEFAULT_ARGS= --build=$(build) --host=$(host) --target=$(target) --prefix="$(
 	 test ! -z $$full_sound_dir || full_sound_dir=`echo $(DEFAULT_SOUNDS)`; \
 	 base_sound_dir=`echo $$full_sound_dir | sed -e 's|-[^-]*000$$||' ` ;\
 	 sounds_version=`grep $$base_sound_dir $(switch_srcdir)/build/sounds_version.txt | cut -d ' '  -f2`;\
-	 soundfile=`echo freeswitch-sounds-$$full_sound_dir-$$moh_version.tar.gz`; \
-	 echo $$full_sound_dir | grep  music  >/dev/null || soundfile=`echo freeswitch-sounds-$$full_sound_dir-$$sounds_version.tar.gz`; \
+	 soundfile=`echo fluxpbx-sounds-$$full_sound_dir-$$moh_version.tar.gz`; \
+	 echo $$full_sound_dir | grep  music  >/dev/null || soundfile=`echo fluxpbx-sounds-$$full_sound_dir-$$sounds_version.tar.gz`; \
 	 args="$@"; if test -z "$$args" || test "$${args#-l*}" = "$$args"; then \
 	   if test "$$target_prefix" = "sounds"; then \
 	     if test "$$target" = "install"; then \
@@ -108,7 +108,7 @@ cd-moh-install: uhd-moh-install sounds-music-48000-install
 # (1) if the variable is set in `config.status', edit `config.status'
 #     (which will cause the Makefiles to be regenerated when you run `make');
 # (2) otherwise, pass the desired values on the `make' command line.
-all-recursive: libfreeswitch.la
+all-recursive: libfluxpbx.la
 clean-recusive: clean_core
 install-recursive: install-libLTLIBRARIES install-binPROGRAMS
 
@@ -142,7 +142,7 @@ CORE_CFLAGS += -DENABLE_SRTP
 CORE_LIBS += libs/srtp/libsrtp.la
 endif
 
-MOD_LINK      = $(switch_srcdir)/libfreeswitch.la
+MOD_LINK      = $(switch_srcdir)/libfluxpbx.la
 CLEANFILES    = src/include/switch_version.h src/include/switch_swigable_cpp.h
 BUILT_SOURCES = src/mod/modules.inc src/include/switch_version.h src/include/switch_swigable_cpp.h 
 
@@ -167,15 +167,15 @@ CORE_CFLAGS += -DSWITCH_HAVE_FVAD $(LIBFVAD_CFLAGS)
 endif
 
 ##
-## libfreeswitch
+## libfluxpbx
 ##
 noinst_LTLIBRARIES        =
 if ENABLE_LIBYUV
-noinst_LTLIBRARIES += libfreeswitch_libyuv.la
+noinst_LTLIBRARIES += libfluxpbx_libyuv.la
 endif
 
 if ENABLE_LIBYUV
-libfreeswitch_libyuv_la_SOURCES = \
+libfluxpbx_libyuv_la_SOURCES = \
 libs/libyuv/source/compare.cc	\
 libs/libyuv/source/compare_common.cc	\
 libs/libyuv/source/compare_gcc.cc	\
@@ -226,22 +226,22 @@ libs/libyuv/source/scale_win.cc	\
 libs/libyuv/source/video_common.cc	
 
 
-libfreeswitch_libyuv_la_CPPFLAGS = -O2 -fomit-frame-pointer -Ilibs/libyuv/include
-CORE_LIBS+=libfreeswitch_libyuv.la
+libfluxpbx_libyuv_la_CPPFLAGS = -O2 -fomit-frame-pointer -Ilibs/libyuv/include
+CORE_LIBS+=libfluxpbx_libyuv.la
 endif
 
-lib_LTLIBRARIES	         = libfreeswitch.la
-libfreeswitch_la_CFLAGS  = $(CORE_CFLAGS) $(SQLITE_CFLAGS) $(GUMBO_CFLAGS) $(FVAD_CFLAGS) $(FREETYPE_CFLAGS) $(CURL_CFLAGS) $(PCRE_CFLAGS) $(SPEEX_CFLAGS) $(LIBEDIT_CFLAGS) $(openssl_CFLAGS) $(SOFIA_SIP_CFLAGS) $(AM_CFLAGS) $(TPL_CFLAGS)
-libfreeswitch_la_LDFLAGS = -version-info 1:0:0 $(AM_LDFLAGS) $(PLATFORM_CORE_LDFLAGS) -no-undefined
-libfreeswitch_la_LIBADD  = $(CORE_LIBS) $(APR_LIBS) $(SQLITE_LIBS) $(GUMBO_LIBS) $(FVAD_LIBS) $(FREETYPE_LIBS) $(CURL_LIBS) $(PCRE_LIBS) $(SPEEX_LIBS) $(LIBEDIT_LIBS) $(SYSTEMD_LIBS) $(openssl_LIBS) $(PLATFORM_CORE_LIBS) $(TPL_LIBS) $(SPANDSP_LIBS) $(SOFIA_SIP_LIBS)
-libfreeswitch_la_DEPENDENCIES = $(BUILT_SOURCES)
+lib_LTLIBRARIES	         = libfluxpbx.la
+libfluxpbx_la_CFLAGS  = $(CORE_CFLAGS) $(SQLITE_CFLAGS) $(GUMBO_CFLAGS) $(FVAD_CFLAGS) $(FREETYPE_CFLAGS) $(CURL_CFLAGS) $(PCRE_CFLAGS) $(SPEEX_CFLAGS) $(LIBEDIT_CFLAGS) $(openssl_CFLAGS) $(SOFIA_SIP_CFLAGS) $(AM_CFLAGS) $(TPL_CFLAGS)
+libfluxpbx_la_LDFLAGS = -version-info 1:0:0 $(AM_LDFLAGS) $(PLATFORM_CORE_LDFLAGS) -no-undefined
+libfluxpbx_la_LIBADD  = $(CORE_LIBS) $(APR_LIBS) $(SQLITE_LIBS) $(GUMBO_LIBS) $(FVAD_LIBS) $(FREETYPE_LIBS) $(CURL_LIBS) $(PCRE_LIBS) $(SPEEX_LIBS) $(LIBEDIT_LIBS) $(SYSTEMD_LIBS) $(openssl_LIBS) $(PLATFORM_CORE_LIBS) $(TPL_LIBS) $(SPANDSP_LIBS) $(SOFIA_SIP_LIBS)
+libfluxpbx_la_DEPENDENCIES = $(BUILT_SOURCES)
 
 if HAVE_PNG
-libfreeswitch_la_LIBADD += $(LIBPNG_LIBS)
+libfluxpbx_la_LIBADD += $(LIBPNG_LIBS)
 endif
 
 if HAVE_ODBC
-libfreeswitch_la_LDFLAGS += $(ODBC_LIB_FLAGS)
+libfluxpbx_la_LDFLAGS += $(ODBC_LIB_FLAGS)
 endif
 
 library_includetestdir = $(includedir)/test
@@ -305,12 +305,12 @@ library_include_HEADERS = \
 	src/include/switch_hashtable.h \
 	src/include/switch_image.h
 
-nodist_libfreeswitch_la_SOURCES = \
+nodist_libfluxpbx_la_SOURCES = \
 	src/include/switch_frame.h \
 	src/include/switch_swigable_cpp.h \
 	src/include/switch_version.h
 
-libfreeswitch_la_SOURCES = \
+libfluxpbx_la_SOURCES = \
 	src/switch_apr.c \
 	src/switch_apr_queue.c \
 	src/switch_buffer.c \
@@ -397,10 +397,10 @@ libfreeswitch_la_SOURCES = \
 	libs/libnatpmp/getgateway.c
 
 if ENABLE_CPP
-libfreeswitch_la_SOURCES += src/switch_cpp.cpp
+libfluxpbx_la_SOURCES += src/switch_cpp.cpp
 endif
 
-$(libfreeswitch_la_SOURCES): $(CORE_LIBS) $(switch_builddir)/modules.conf  
+$(libfluxpbx_la_SOURCES): $(CORE_LIBS) $(switch_builddir)/modules.conf  
 
 src/include/switch_swigable_cpp.h: $(switch_srcdir)/src/include/switch_cpp.h
 	cat $(switch_srcdir)/src/include/switch_cpp.h | perl $(switch_srcdir)/build/strip.pl > $(switch_srcdir)/src/include/switch_swigable_cpp.h
@@ -412,7 +412,7 @@ src/include/switch_swigable_cpp.h: $(switch_srcdir)/src/include/switch_cpp.h
 ##
 ## Applications
 ##
-bin_PROGRAMS = freeswitch fs_cli fs_ivrd tone2wav fs_encode fs_tts
+bin_PROGRAMS = fluxpbx fs_cli fs_ivrd tone2wav fs_encode fs_tts
 
 ##
 ## fs_cli ()
@@ -432,7 +432,7 @@ endif
 fs_encode_SOURCES = src/fs_encode.c
 fs_encode_CFLAGS  = $(AM_CFLAGS)
 fs_encode_LDFLAGS = $(AM_LDFLAGS)
-fs_encode_LDADD   = libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+fs_encode_LDADD   = libfluxpbx.la $(CORE_LIBS) $(APR_LIBS)
 
 if HAVE_ODBC
 fs_encode_LDADD += $(ODBC_LIB_FLAGS)
@@ -444,7 +444,7 @@ endif
 fs_tts_SOURCES = src/fs_tts.c
 fs_tts_CFLAGS  = $(AM_CFLAGS)
 fs_tts_LDFLAGS = $(AM_LDFLAGS)
-fs_tts_LDADD   = libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+fs_tts_LDADD   = libfluxpbx.la $(CORE_LIBS) $(APR_LIBS)
 
 ##
 ## tone2wav ()
@@ -452,7 +452,7 @@ fs_tts_LDADD   = libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
 tone2wav_SOURCES = src/tone2wav.c
 tone2wav_CFLAGS  = $(AM_CFLAGS)
 tone2wav_LDFLAGS = $(AM_LDFLAGS)
-tone2wav_LDADD   = libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+tone2wav_LDADD   = libfluxpbx.la $(CORE_LIBS) $(APR_LIBS)
 
 if HAVE_ODBC
 tone2wav_LDADD += $(ODBC_LIB_FLAGS)
@@ -468,16 +468,16 @@ fs_ivrd_CFLAGS  = $(AM_CFLAGS) -I$(switch_srcdir)/libs/esl/src/include
 fs_ivrd_LDFLAGS = $(AM_LDFLAGS) -lpthread $(ESL_LDFLAGS) -lm
 
 ##
-## freeswitch ()
+## fluxpbx ()
 ##
-nodist_freeswitch_SOURCES = src/include/switch_version.h
-freeswitch_SOURCES = src/switch.c
-freeswitch_CFLAGS  = $(AM_CFLAGS) $(CORE_CFLAGS)
-freeswitch_LDFLAGS = $(AM_LDFLAGS) -lpthread -rpath $(libdir)
-freeswitch_LDADD   = libfreeswitch.la libs/apr/libapr-1.la
+nodist_fluxpbx_SOURCES = src/include/switch_version.h
+fluxpbx_SOURCES = src/switch.c
+fluxpbx_CFLAGS  = $(AM_CFLAGS) $(CORE_CFLAGS)
+fluxpbx_LDFLAGS = $(AM_LDFLAGS) -lpthread -rpath $(libdir)
+fluxpbx_LDADD   = libfluxpbx.la libs/apr/libapr-1.la
 
 if HAVE_ODBC
-freeswitch_LDADD += $(ODBC_LIB_FLAGS)
+fluxpbx_LDADD += $(ODBC_LIB_FLAGS)
 endif
 
 
@@ -512,7 +512,7 @@ scripts/fsxs: scripts/fsxs.in
 ##
 
 pkgconfigdir   = @pkgconfigdir@
-pkgconfig_DATA = build/freeswitch.pc
+pkgconfig_DATA = build/fluxpbx.pc
 
 $(switch_builddir)/modules.conf:
 	if test -f $@; then touch $@; else cp $(switch_srcdir)/build/modules.conf.in $@ ;fi
@@ -529,7 +529,7 @@ src/mod/modules.inc: $(switch_builddir)/modules.conf
 	@echo "OUR_DISABLED_INSTALL_MODULES=$(OUR_DISABLED_INSTALL_MODS)" >> $(switch_builddir)/src/mod/modules.inc
 	@echo "OUR_DISABLED_UNINSTALL_MODULES=$(OUR_DISABLED_UNINSTALL_MODS)" >> $(switch_builddir)/src/mod/modules.inc
 
-$(OUR_MODULES): $(switch_builddir)/modules.conf libfreeswitch.la src/mod/modules.inc
+$(OUR_MODULES): $(switch_builddir)/modules.conf libfluxpbx.la src/mod/modules.inc
 	@set fnord $$MAKEFLAGS; amf=$$2; \
 	(cd src/mod && $(MAKE) $(AM_MAKEFLAGS) $@) \
 	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
@@ -540,7 +540,7 @@ $(switch_builddir)/build/print_git_revision: $(switch_srcdir)/build/print_git_re
 
 src/switch_version.lo: src/include/switch_version.h
 
-src/include/switch_version.h: src/include/switch_version.h.in Makefile $(switch_builddir)/build/print_git_revision $(libfreeswitch_la_SOURCES) $(library_include_HEADERS)
+src/include/switch_version.h: src/include/switch_version.h.in Makefile $(switch_builddir)/build/print_git_revision $(libfluxpbx_la_SOURCES) $(library_include_HEADERS)
 	@cat $< > $@; \
 	if [ -d $(switch_srcdir)/.git ] && [ -n "$$(which git)" ]; then \
 	  xver="$$(cd $(switch_srcdir)/ && $(switch_builddir)/build/print_git_revision)"; \
@@ -645,8 +645,8 @@ is-scm:
 	@if [ ! -d .git ] ; then \
 		echo ; echo ; \
 		echo "*****************************************************************************************************" ; \
-		echo "You cannot update a release tarball without a git tree.  Please clone FreeSWITCH as so:              " ; \
-		echo "  git clone https://github.com/signalwire/freeswitch.git                                             " ; \
+		echo "You cannot update a release tarball without a git tree.  Please clone FluxPBX as so:              " ; \
+		echo "  git clone https://github.com/signalwire/fluxpbx.git                                             " ; \
 		echo "*****************************************************************************************************" ; \
 		echo ; echo ; \
 		exit 1; \
@@ -672,7 +672,7 @@ iksemel-dep:
 	make -C src/mod/formats/mod_ssml deps
 
 core: $(switch_builddir)/modules.conf src/include/switch_version.h $(CORE_LIBS) 
-	$(MAKE) $(AM_MAKEFLAGS) libfreeswitch.la
+	$(MAKE) $(AM_MAKEFLAGS) libfluxpbx.la
 
 distclean: clean
 
@@ -681,8 +681,8 @@ core-clean: clean_core
 core-install: core_install
 
 clean_core: clean-libLTLIBRARIES
-	rm -f $(libfreeswitch_la_OBJECTS)
-	rm -f `echo $(libfreeswitch_la_OBJECTS) | sed -e's|.lo|.o|g'`
+	rm -f $(libfluxpbx_la_OBJECTS)
+	rm -f `echo $(libfluxpbx_la_OBJECTS) | sed -e's|.lo|.o|g'`
 
 install_core: install-libLTLIBRARIES
 
@@ -781,10 +781,10 @@ speedy-current: update-clean is-scm
 
 wayclean: clean
 
-modules: libfreeswitch.la $(switch_builddir)/modules.conf src/mod/modules.inc
+modules: libfluxpbx.la $(switch_builddir)/modules.conf src/mod/modules.inc
 	@cd src/mod && $(MAKE) $(AM_MAKEFLAGS)
 
-install_mod: libfreeswitch.la $(switch_builddir)/modules.conf src/mod/modules.inc
+install_mod: libfluxpbx.la $(switch_builddir)/modules.conf src/mod/modules.inc
 	@cd src/mod && $(MAKE) $(AM_MAKEFLAGS) install
 
 mod_install: install_mod
@@ -800,7 +800,7 @@ modclean: $(switch_builddir)/modules.conf src/mod/modules.inc
 modwipe:
 	rm -f $(modulesdir)/*.so $(modulesdir)/*.la $(modulesdir)/*.dll $(modulesdir)/*.dylib
 
-print_tests: libfreeswitch.la $(switch_builddir)/modules.conf src/mod/modules.inc
+print_tests: libfluxpbx.la $(switch_builddir)/modules.conf src/mod/modules.inc
 	@cd tests/unit && $(MAKE) $(AM_MAKEFLAGS) print_tests
 	@cd src/mod && $(MAKE) $(AM_MAKEFLAGS) print_tests
 

@@ -45,10 +45,10 @@ sub usage {
 
   fslog reader
 
-  Feed me a FreeSWITCH log file and I will colorize the output
-    fslog freeswitch.log
+  Feed me a FluxPBX log file and I will colorize the output
+    fslog fluxpbx.log
     -OR-
-    grep foo freeswitch.log | fslog | more
+    grep foo fluxpbx.log | fslog | more
 
   NOTE: some versions of more and less do not support colorized text.
 

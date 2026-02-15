@@ -12,7 +12,7 @@
     <param name="namespace" value="test.cdr"/>
 
     <!-- Set username and password to enable MongoDB authentication -->
-    <!-- <param name="username" value="freeswitch"/> -->
+    <!-- <param name="username" value="fluxpbx"/> -->
     <!-- <param name="password" value="secret"/> -->
 
     <!-- If true, create CDR for B-leg of call (default: true) -->

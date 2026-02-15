@@ -18,8 +18,8 @@
  */
 
 
-#ifndef FREESWITCH_DSO_H
-#define FREESWITCH_DSO_H
+#ifndef FLUXPBX_DSO_H
+#define FLUXPBX_DSO_H
 
 SWITCH_BEGIN_EXTERN_C
 

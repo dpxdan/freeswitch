@@ -1,5 +1,5 @@
 /*
- * mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Grasshopper
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Grasshopper
  * Portions created by the Initial Developer are Copyright (C)
@@ -371,8 +371,8 @@ static void insert_fax_metadata(switch_event_t *event, const char *name, iks *re
 }
 
 /**
- * Handle fax completion event from FreeSWITCH core
- * @param event received from FreeSWITCH core.  It will be destroyed by the core after this function returns.
+ * Handle fax completion event from FluxPBX core
+ * @param event received from FluxPBX core.  It will be destroyed by the core after this function returns.
  */
 static void on_execute_complete_event(switch_event_t *event)
 {

@@ -1,0 +1,21 @@
+ check process fluxpbx with pidfile /opt/fluxpbx/run/fluxpbx.pid
+   group voice
+   start program = "/etc/init.d/fluxpbx start"
+   stop  program = "/etc/init.d/fluxpbx stop"
+   if failed port 5060 type UDP then restart
+   if 5 restarts within 5 cycles then timeout
+   depends on fluxpbx_bin
+   depends on fluxpbx_rc
+
+ check file fluxpbx_bin with path /opt/fluxpbx/bin/fluxpbx
+   group voice
+   if failed checksum then unmonitor
+   if failed permission 755 then unmonitor
+   if failed uid fluxpbx then unmonitor
+
+ check file fluxpbx_rc with path /etc/init.d/fluxpbx
+   group voice
+   if failed checksum then unmonitor
+   if failed permission 755 then unmonitor
+   if failed uid root then unmonitor
+   if failed gid root then unmonitor

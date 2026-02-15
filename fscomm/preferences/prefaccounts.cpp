@@ -162,8 +162,8 @@ void PrefAccounts::readConfig()
     TODO: We have to figure out what to do with the default account stuff!
     if (_ui->accountsTable->rowCount() == 1)
     {
-        QString default_gateway = _settings->value(QString("/FreeSWITCH/conf/sofia.conf/profiles/profile/gateways/%1/gateway/attrs/name").arg(_ui->accountsTable->item(0,0)->data(Qt::UserRole).toString())).toString();
-        _settings->beginGroup("FreeSWITCH/conf/globals");
+        QString default_gateway = _settings->value(QString("/FluxPBX/conf/sofia.conf/profiles/profile/gateways/%1/gateway/attrs/name").arg(_ui->accountsTable->item(0,0)->data(Qt::UserRole).toString())).toString();
+        _settings->beginGroup("FluxPBX/conf/globals");
         _settings->setValue("default_gateway", default_gateway);
         _settings->endGroup();
         switch_core_set_variable("default_gateway", default_gateway.toAscii().data());

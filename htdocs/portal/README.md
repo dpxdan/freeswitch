@@ -1,12 +1,12 @@
-# The FreeSWITCH Portal Project
+# The FluxPBX Portal Project
 
-The FreeSWITCH Portal Project is designed to show an intuitive view of the FreeSWITCH internals.
+The FluxPBX Portal Project is designed to show an intuitive view of the FluxPBX internals.
 
-It can be used by FreeSWITCH funs, administrators, developers etc.
+It can be used by FluxPBX funs, administrators, developers etc.
 
 It does not aims to replace GUIs such as fusionPBX or blue.box.
 
-It would be very easy to use and super helpful for new FreeSWITCH users.
+It would be very easy to use and super helpful for new FluxPBX users.
 
 ## Philosophy
 
@@ -16,12 +16,12 @@ Mainly developed with static html and Javascripts, and perhaps some lua scripts 
 
 ## Install
 
-Assume you installed FreeSWITCH in the default place - /usr/local/freeswitch, you can do
+Assume you installed FluxPBX in the default place - /usr/local/fluxpbx, you can do
 
-    cd /usr/local/freeswitch/htdocs
-    git clone https://github.com/seven1240/FreeSWITCH-Portal.git portal
+    cd /usr/local/fluxpbx/htdocs
+    git clone https://github.com/seven1240/FluxPBX-Portal.git portal
 
-In FreeSWITCH you need to
+In FluxPBX you need to
 
     load mod_xml_rpc
 
@@ -29,11 +29,11 @@ Open your browser (Only Chrome is tested) and go to
 
     http://localhost:8080/portal/index.html
 
-If you it asking for username and password you can find them in /usr/local/freeswitch/conf/autoload_configs/xml\_rpc.conf.xml. For more information see <http://wiki.freeswitch.org/wiki/Mod_xml_rpc> .
+If you it asking for username and password you can find them in /usr/local/fluxpbx/conf/autoload_configs/xml\_rpc.conf.xml. For more information see <http://wiki.fluxpbx.org/wiki/Mod_xml_rpc> .
 
 ## Todo
 
-* Websocket: by add websocket support in FreeSWITCH we can see channel changes lively, I have some working code as a patch to mod\_event\_socket.
+* Websocket: by add websocket support in FluxPBX we can see channel changes lively, I have some working code as a patch to mod\_event\_socket.
 
 * Modify users: A raw idea to add a new user would be something like below and reloadxml.
 
@@ -55,7 +55,7 @@ If you it asking for username and password you can find them in /usr/local/frees
 
 ## Security
 
-The primary goal is to help new users learn and use FreeSWITCH. Please DON'T put this on your production server as I haven't think anything about security.
+The primary goal is to help new users learn and use FluxPBX. Please DON'T put this on your production server as I haven't think anything about security.
 
 ## Development
 

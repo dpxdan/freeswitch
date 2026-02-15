@@ -8,7 +8,7 @@
   <profiles>
     <!--
         This is a sofia sip profile/user agent.  This will service exactly one
-        ip and port.  In FreeSWITCH you can run multiple sip user agents on
+        ip and port.  In FluxPBX you can run multiple sip user agents on
         their own ip and port.
     -->
     <profile name="example">
@@ -82,10 +82,10 @@
         <!-- <param name="media-option" value="bypass-media-after-hold"/> -->
 
         <!-- Can be set to "_undef_" to remove the User-Agent header -->
-        <!-- <param name="user-agent-string" value="FreeSWITCH Rocks!"/> -->
+        <!-- <param name="user-agent-string" value="FluxPBX Rocks!"/> -->
 
         <param name="debug" value="0"/>
-        <!-- If you want FreeSWITCH to shutdown if this profile fails to load,
+        <!-- If you want FluxPBX to shutdown if this profile fails to load,
              uncomment the next line. -->
         <!-- <param name="shutdown-on-fail" value="true"/> -->
         <param name="sip-trace" value="no"/>
@@ -104,18 +104,18 @@
              Sometimes, in extremely rare edge cases, the Sofia SIP stack may
              stop responding. These options allow you to enable and control a
              watchdog on the Sofia SIP stack so that if it stops responding for
-             the specified number of milliseconds, it will cause FreeSWITCH to
+             the specified number of milliseconds, it will cause FluxPBX to
              crash immediately. This is useful if you run in an HA environment
              and need to ensure automated recovery from such a condition. Note
              that if your server is idle a lot, the watchdog may fire due to not
              receiving any SIP messages. Thus, if you expect your system to be
              idle, you should leave the watchdog disabled. It can be toggled on
-             and off through the FreeSWITCH CLI either on an individual profile
+             and off through the FluxPBX CLI either on an individual profile
              basis or globally for all profiles. So, if you run in an HA
              environment with a master and slave, you should use the CLI to make
              sure the watchdog is only enabled on the master.
 
-             If such crash occurs, FreeSWITCH will dump core if allowed. The
+             If such crash occurs, FluxPBX will dump core if allowed. The
              stacktrace will include function watchdog_triggered_abort().
         -->
         <param name="watchdog-enabled" value="no"/>

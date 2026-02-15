@@ -5,7 +5,7 @@
   </ImportGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <_PropertySheetDisplayName>Freeswitch Core Windows Libraries</_PropertySheetDisplayName>
+    <_PropertySheetDisplayName>Fluxpbx Core Windows Libraries</_PropertySheetDisplayName>
   </PropertyGroup>
   <PropertyGroup>
     <WinlibsPropsImported>true</WinlibsPropsImported>

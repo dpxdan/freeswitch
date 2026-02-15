@@ -323,8 +323,8 @@
       <prompt phrase="Esa fue una entrada inválida." filename="ivr-that_was_an_invalid_entry.wav"/>
       <prompt phrase="Esta es una llamada de..." filename="ivr-this_is_a_call_from.wav"/>
       <prompt phrase="Este menú de audiorrespuesta le permitirá probar algunas de las características..." filename="ivr-this_ivr_will_let_you_test_features.wav"/>
-      <prompt phrase="Para llamar a la conferencia de FreeSWITCH..." filename="ivr-to_call_the_freeswitch_conference.wav"/>
-      <prompt phrase="Para hacer una prueba de eco de FreeSWITCH..." filename="ivr-to_do_a_freeswitch_echo_test.wav"/>
+      <prompt phrase="Para llamar a la conferencia de FluxPBX..." filename="ivr-to_call_the_fluxpbx_conference.wav"/>
+      <prompt phrase="Para hacer una prueba de eco de FluxPBX..." filename="ivr-to_do_a_fluxpbx_echo_test.wav"/>
       <prompt phrase="Para hacer una prueba de eco de FWD..." filename="ivr-to_do_a_fwd_echo_test.wav"/>
       <prompt phrase="Para escuchar un ejemplo de un submenú de audio respuesta..." filename="ivr-to_hear_sample_submenu.wav"/>
       <prompt phrase="Para escuchar simios gritando..." filename="ivr-to_hear_screaming_monkeys.wav"/>
@@ -332,7 +332,7 @@
       <prompt phrase="Para repetir estas opciones..." filename="ivr-to_repeat_these_options.wav"/>
       <prompt phrase="Para regresar al menú anterior..." filename="ivr-to_return_to_previous_menu.wav"/>
       <prompt phrase="Para hablar con un operador..." filename="ivr-to_speak_with_an_operator.wav"/>
-      <prompt phrase="Bienvenido a FreeSWITCH, el futuro de la telefonía." filename="ivr-welcome_to_freeswitch.wav"/>
+      <prompt phrase="Bienvenido a FluxPBX, el futuro de la telefonía." filename="ivr-welcome_to_fluxpbx.wav"/>
       <prompt phrase="Usted puede colgar en cualquier momento para salir." filename="ivr-you_may_exit_by_hanging_up.wav"/>
       <prompt phrase="O" filename="ivr-or.wav"/>
       <prompt phrase="No" filename="ivr-not.wav"/>

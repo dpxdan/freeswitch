@@ -1,6 +1,6 @@
 """
-FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
 
 Version: MPL 1.1
 
@@ -14,10 +14,10 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the
 License.
 
-The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 
 The Initial Developer of the Original Code is
-Anthony Minessale II <anthm@freeswitch.org>
+Anthony Minessale II <anthm@fluxpbx.org>
 Portions created by the Initial Developer are Copyright (C)
 the Initial Developer. All Rights Reserved.
 
@@ -41,7 +41,7 @@ from freepy.globals import debug
 
 """
 These are response handlers for different types of requests.
-It reads the response from freeswitch, and calls back
+It reads the response from fluxpbx, and calls back
 self.deferred with the result.
 
 The naming could be improved, but here is the translation:
@@ -324,8 +324,8 @@ class ListConfRequest(ApiRequest):
     lineReceived: Content-Type: api/response
     lineReceived: Content-Length: 233
     lineReceived:
-    lineReceived: 2;sofia/mydomain.com/foo@bar.com;e9be6e72-2410-11dc-8daf-7bcec6dda2ae;FreeSWITCH;0000000000;hear|speak;0;0;300
-    lineReceived: 1;sofia/mydomain.com/foo2@bar.com;e9be5fcc-2410-11dc-8daf-7bcec6dda2ae;FreeSWITCH;0000000000;hear|speak;0;0;300
+    lineReceived: 2;sofia/mydomain.com/foo@bar.com;e9be6e72-2410-11dc-8daf-7bcec6dda2ae;FluxPBX;0000000000;hear|speak;0;0;300
+    lineReceived: 1;sofia/mydomain.com/foo2@bar.com;e9be5fcc-2410-11dc-8daf-7bcec6dda2ae;FluxPBX;0000000000;hear|speak;0;0;300
 
     """
 
@@ -337,7 +337,7 @@ class ListConfRequest(ApiRequest):
         """
         conf not empty example
         ======================
-        1;sofia/mydomain.com/888@conference.freeswitch.org;898e6552-24ab-11dc-9df7-9fccd4095451;FreeSWITCH;0000000000;hear|speak;0;0;300
+        1;sofia/mydomain.com/888@conference.fluxpbx.org;898e6552-24ab-11dc-9df7-9fccd4095451;FluxPBX;0000000000;hear|speak;0;0;300
 
         conf empty example
         ==================

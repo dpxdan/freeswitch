@@ -49,25 +49,25 @@ tbl_rates = {['8000'] = 1 ,['16000'] = 1, ['32000'] = 1, ['48000'] = 1};
 stype = argv[1];
 srate = argv[2];
 
-freeswitch.consoleLog("INFO","Args: Type = " .. argv[1] .. ', Rate = ' .. argv[2] .. "\n");
+fluxpbx.consoleLog("INFO","Args: Type = " .. argv[1] .. ', Rate = ' .. argv[2] .. "\n");
 
 if ( tbl_types[stype] == nil ) then 
-	freeswitch.consoleLog("ERR","Type '" .. stype .. "' is not valid.\n");
+	fluxpbx.consoleLog("ERR","Type '" .. stype .. "' is not valid.\n");
 elseif ( tbl_rates[srate] == nil ) then 
-	freeswitch.consoleLog("ERR","Rate '" .. srate .. "' is not valid.\n");
+	fluxpbx.consoleLog("ERR","Rate '" .. srate .. "' is not valid.\n");
 else 
 	-- Looks good, let's play some sound files
 	sound_base = session:getVariable('sounds_dir') .. '/en/us/callie/' .. stype .. '/' .. srate;
 	input_file = '/tmp/filez.txt';
 	res, what, code = os.execute('ls -1 ' .. sound_base  .. ' > ' .. input_file);
-	freeswitch.consoleLog("INFO","Result of system call: " .. what .. " " .. code .. "\n");
+	fluxpbx.consoleLog("INFO","Result of system call: " .. what .. " " .. code .. "\n");
 	if ( res == true and what == 'exit' and code == 0 ) then
 		for fname in io.lines(input_file) do
-			freeswitch.consoleLog("NOTICE","Playing file: " .. fname .. "\n");
+			fluxpbx.consoleLog("NOTICE","Playing file: " .. fname .. "\n");
 			session:streamFile(sound_base .. '/' .. fname);
 			session:sleep(100);
 		end
 	else
-		freeswitch.consoleLog("ERR","Result of system call: " .. what .. " " .. code .. "\n");
+		fluxpbx.consoleLog("ERR","Result of system call: " .. what .. " " .. code .. "\n");
 	end
 end

@@ -7,7 +7,7 @@ use Data::Dumper;
 
 my $editor = $ENV{"EDITOR"} || $ENV{"VISUAL"} || `which emacs` || `which vi`;
 my $default_versions = "1.9 1.8";
-my $default_components = "freeswitch-core";
+my $default_components = "fluxpbx-core";
 my $desc_head = "; Enter the description lines beginning with a ; will be ignored.\n";
 
 chomp($editor);
@@ -116,7 +116,7 @@ my $jira;
 my $issue;
 
 if (!$opts{debug}) {
-    $jira = JIRA::REST->new('https://freeswitch.org/jira', $opts{user}, $opts{pass}) or die "login incorrect:";
+    $jira = JIRA::REST->new('https://fluxpbx.org/jira', $opts{user}, $opts{pass}) or die "login incorrect:";
     $issue = $jira->GET("/issue/FS-7985") or die "login incorrect:";
 }
 

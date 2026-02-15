@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  *
  * The Initial Developer of this module is
  * Darren Schreiber <d@d-man.org>
@@ -112,7 +112,7 @@ static struct {
 static void nibblebill_pause(switch_core_session_t *session);
 
 /**************************
-* Setup FreeSWITCH Macros *
+* Setup FluxPBX Macros *
 **************************/
 /* Define the module's load function */
 SWITCH_MODULE_LOAD_FUNCTION(mod_nibblebill_load);

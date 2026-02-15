@@ -1,6 +1,6 @@
 /* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,24 +14,24 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  * 
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  *
  *
  * api.js Demo javascript FSAPI Interface
  *
  * To use this script:
- * 1) Put it in $prefix/scripts. (eg /usr/local/freeswitch/scripts)
- * 2) Load mod_xml_rpc and point a browser to your FreeSWITCH machine.
- *    http://your.freeswitch.box:8080/api/jsapi?api.js
+ * 1) Put it in $prefix/scripts. (eg /usr/local/fluxpbx/scripts)
+ * 2) Load mod_xml_rpc and point a browser to your FluxPBX machine.
+ *    http://your.fluxpbx.box:8080/api/jsapi?api.js
  */
 
 /* Other possible js commands */
@@ -47,8 +47,8 @@ if (session) {
 }
 
 request.write("Content-Type: text/html\n\n");
-request.write("<title>FreeSWITCH Command Portal</title>");
-request.write("<h2>FreeSWITCH Command Portal</h2>");
+request.write("<title>FluxPBX Command Portal</title>");
+request.write("<h2>FluxPBX Command Portal</h2>");
 request.write("<form method=post><input name=command size=40> ");
 request.write("<input type=submit value=\"Execute\">");
 request.write("</form><hr noshade size=1><br>");

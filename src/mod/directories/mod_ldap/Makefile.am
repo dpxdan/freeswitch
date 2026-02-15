@@ -6,7 +6,7 @@ if HAVE_LDAP
 mod_LTLIBRARIES = mod_ldap.la
 mod_ldap_la_SOURCES  = mod_ldap.c
 mod_ldap_la_CFLAGS   = $(AM_CFLAGS) -DWITH_OPENLDAP -DLDAP_DEPRECATED
-mod_ldap_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(OPENLDAP_LIBS)
+mod_ldap_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(OPENLDAP_LIBS)
 mod_ldap_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 else

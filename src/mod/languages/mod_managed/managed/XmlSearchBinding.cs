@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -34,9 +34,9 @@ using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Reflection;
-using FreeSWITCH.Native;
+using FluxPBX.Native;
 
-namespace FreeSWITCH {
+namespace FluxPBX {
 
     public class SwitchXmlSearchBinding : IDisposable {
 
@@ -70,8 +70,8 @@ namespace FreeSWITCH {
         void dispose() {
             if (disposed) return;
             // HACK: FS crashes if we unbind after shutdown is pretty complete. This is still a race condition.
-            if (freeswitch.switch_core_ready() == switch_bool_t.SWITCH_FALSE) return; 
-            freeswitch.switch_xml_unbind_search_function_ptr(this.function);
+            if (fluxpbx.switch_core_ready() == switch_bool_t.SWITCH_FALSE) return; 
+            fluxpbx.switch_xml_unbind_search_function_ptr(this.function);
             disposed = true;
         }
         ~SwitchXmlSearchBinding() {
@@ -82,12 +82,12 @@ namespace FreeSWITCH {
             switch_xml_search_function_delegate boundFunc = (section, tag, key, keyval, param, userData) => {
                 var args = new XmlBindingArgs { Section = section, TagName = tag, KeyName = key, KeyValue = keyval, Parameters = new switch_event(param, false) };
                 var xmlStr = f(args);
-                var fsxml = string.IsNullOrEmpty(xmlStr) ? null : freeswitch.switch_xml_parse_str_dynamic(xmlStr, switch_bool_t.SWITCH_TRUE);
+                var fsxml = string.IsNullOrEmpty(xmlStr) ? null : fluxpbx.switch_xml_parse_str_dynamic(xmlStr, switch_bool_t.SWITCH_TRUE);
                 return switch_xml.getCPtr(fsxml).Handle;
             };
             var fp = Marshal.GetFunctionPointerForDelegate(boundFunc);
             var swigFp = new SWIGTYPE_p_f_p_q_const__char_p_q_const__char_p_q_const__char_p_q_const__char_p_switch_event_t_p_void__p_switch_xml(fp, false);
-            var res = freeswitch.switch_xml_bind_search_function_ret(swigFp, (uint)sections, null, null);
+            var res = fluxpbx.switch_xml_bind_search_function_ret(swigFp, (uint)sections, null, null);
             if (res != switch_status_t.SWITCH_STATUS_SUCCESS) {
                 throw new InvalidOperationException("Call to switch_xml_bind_search_function_ret failed, result: " + res + ".");
             }

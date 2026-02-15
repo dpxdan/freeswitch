@@ -3,7 +3,7 @@
   <!--<Z-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/allison"/>-->
 
   <!--
-      This setting is what sets the default domain FreeSWITCH will use if all else fails.
+      This setting is what sets the default domain FluxPBX will use if all else fails.
       
       FreeSWICH will default to $${local_ip_v4} unless changed.  Changing this setting does 
       affect the sip authentication.  Please review conf/directory/default.xml for more
@@ -35,7 +35,7 @@
   --> 
   <X-PRE-PROCESS cmd="set" data="unroll_loops=true"/>
 
-  <X-PRE-PROCESS cmd="set" data="outbound_caller_name=FreeSWITCH"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_caller_name=FluxPBX"/>
   <X-PRE-PROCESS cmd="set" data="outbound_caller_id=0000000000"/>
 
   <!-- various debug and defaults -->
@@ -49,7 +49,7 @@
   <X-PRE-PROCESS cmd="set" data="presence_privacy=false"/>
 
   <!--
-      SIP and TLS settings. http://wiki.freeswitch.org/wiki/Tls
+      SIP and TLS settings. http://wiki.fluxpbx.org/wiki/Tls
   -->
   <X-PRE-PROCESS cmd="set" data="sip_tls_version=tlsv1"/>
 

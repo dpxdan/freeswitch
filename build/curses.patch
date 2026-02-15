@@ -6,8 +6,8 @@ Index: Makefile.am
  if ADD_LIBEDIT
  CORE_CFLAGS    += -Ilibs/libedit/src -DSWITCH_HAVE_LIBEDIT
  CORE_LIBS      += libs/libedit/src/.libs/libedit.a
--freeswitch_LDADD += -lcurses
-+freeswitch_LDADD += -lncurses
+-fluxpbx_LDADD += -lcurses
++fluxpbx_LDADD += -lncurses
  endif
  
  

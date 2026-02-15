@@ -10,30 +10,30 @@ if [ -f "config.status" -a -z "$prefix" ] ; then
     prefix=$(cat config.status | grep '"prefix"' | awk -F\" '{print $4}')
 fi
 
-if [ -z "$prefix" -a -d "/usr/local/freeswitch" ] ; then
-    prefix="/usr/local/freeswitch"
+if [ -z "$prefix" -a -d "/usr/local/fluxpbx" ] ; then
+    prefix="/usr/local/fluxpbx"
 fi
-if [ -z "$prefix" -a -d "/opt/freeswitch" ] ; then
-    prefix="/opt/freeswitch"
+if [ -z "$prefix" -a -d "/opt/fluxpbx" ] ; then
+    prefix="/opt/fluxpbx"
 fi
 
 if [ -z "$prefix" ] ; then
     prefix=$FS_PREFIX
 fi
 
-if [ -z "$prefix" -a -f "./bin/freeswitch" ] ; then
+if [ -z "$prefix" -a -f "./bin/fluxpbx" ] ; then
     prefix=`pwd`
 fi
 
 if [ -z "$prefix" ] ; then
-    echo "Unable to locate freeswitch prefix directory."
+    echo "Unable to locate fluxpbx prefix directory."
     exit 255
 fi
 
 if [ "$arg" = "gcore" ] ; then
 	user=$1
 	shift
-	fspid=`cat $prefix/run/freeswitch.pid`
+	fspid=`cat $prefix/run/fluxpbx.pid`
 	echo "pulling gcore $fspid"
 	gcore -o core $fspid
 else
@@ -48,11 +48,11 @@ if [ -z "$core" ] ; then
 fi
 
 if [ -z "$core" ] ; then
-	core=`ls -1 freeswitch.core 2> /dev/null`
+	core=`ls -1 fluxpbx.core 2> /dev/null`
 fi
 
 if [ -z "$core" ] ; then
-	echo "You must be in the current directory with a core file from FreeSWITCH!"
+	echo "You must be in the current directory with a core file from FluxPBX!"
 	exit 255
 fi
 
@@ -87,16 +87,16 @@ fi
 post_cmd=""
 #command -v wget >/dev/null 2>&1
 #if [ $? -eq 0 ]; then
-#    post_cmd="curl -d name=fscore_pb --data-urlencode text@$post_file https://newpastebin.freeswitch.org/api/create"
-#    post_cmd="wget --output-file=/dev/null --output-document=/tmp/fscore_pb.tmp/pb_out --http-user=pastebin --http-password=freeswitch https://pastebin.freeswitch.org --post-file=$post_file"
+#    post_cmd="curl -d name=fscore_pb --data-urlencode text@$post_file https://newpastebin.fluxpbx.org/api/create"
+#    post_cmd="wget --output-file=/dev/null --output-document=/tmp/fscore_pb.tmp/pb_out --http-user=pastebin --http-password=fluxpbx https://pastebin.fluxpbx.org --post-file=$post_file"
 #    echo -n "paste=Send&remember=0&poster=$user&format=none&expiry=f&code2=" > $post_file
 #fi
 
 if [ -z "$post_cmd" ]; then
     command -v curl >/dev/null 2>&1
     if [ $? -eq 0 ]; then 
-	post_cmd="curl -o /tmp/fscore_pb.tmp/pb_out -d name=fscore_pb --data-urlencode text@$post_file https://pastebin.freeswitch.org/api/create"
-	# post_cmd="curl -o /tmp/fscore_pb.tmp/pb_out --user pastebin:freeswitch http://pastebin.freeswitch.org -d paste=Send -d remember=0 -d poster=$user -d format=none -d expiry=f --data-urlencode code2@$post_file"
+	post_cmd="curl -o /tmp/fscore_pb.tmp/pb_out -d name=fscore_pb --data-urlencode text@$post_file https://pastebin.fluxpbx.org/api/create"
+	# post_cmd="curl -o /tmp/fscore_pb.tmp/pb_out --user pastebin:fluxpbx http://pastebin.fluxpbx.org -d paste=Send -d remember=0 -d poster=$user -d format=none -d expiry=f --data-urlencode code2@$post_file"
     fi
 fi
 
@@ -162,7 +162,7 @@ thread apply all bt full
 quit
 EOF
 
-gdb $prefix/bin/freeswitch `echo $core | tail -n1` -x fscore_pb.$$.gdb 1 >> $post_file 2>/dev/null
+gdb $prefix/bin/fluxpbx `echo $core | tail -n1` -x fscore_pb.$$.gdb 1 >> $post_file 2>/dev/null
 
 rm fscore_pb.$$.gdb
 rm -fr $tmpdir 
@@ -179,5 +179,5 @@ if [ -e /tmp/fscore_pb.tmp/pb_out ]; then
     pb=`cat /tmp/fscore_pb.tmp/pb_out`
     echo "Please report $pb to the developers."
 else
-    echo "Please check recent posts on http://pastebin.freeswitch.org/ and find your issue to report to the developers."
+    echo "Please check recent posts on http://pastebin.fluxpbx.org/ and find your issue to report to the developers."
 fi

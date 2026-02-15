@@ -1,10 +1,10 @@
-%module freeswitch
+%module fluxpbx
 %include ../../../../swig_common.i
 /** insert the following includes into generated code so it compiles */
 %{
 #include "switch.h"
 #include "switch_cpp.h"
-#include "freeswitch_java.h"
+#include "fluxpbx_java.h"
 %}
 
 %ignore SwitchToMempool;   
@@ -20,11 +20,11 @@
 
 // I thought we were using swig because it's easier than the alternatives :-)
 
-%typemap(jtype) jobject dtmfCallback "org.freeswitch.DTMFCallback"
-%typemap(jstype) jobject dtmfCallback "org.freeswitch.DTMFCallback"
+%typemap(jtype) jobject dtmfCallback "org.fluxpbx.DTMFCallback"
+%typemap(jstype) jobject dtmfCallback "org.fluxpbx.DTMFCallback"
 
-%typemap(jtype) jobject hangupHook "org.freeswitch.HangupHook"
-%typemap(jstype) jobject hangupHook "org.freeswitch.HangupHook"
+%typemap(jtype) jobject hangupHook "org.fluxpbx.HangupHook"
+%typemap(jstype) jobject hangupHook "org.fluxpbx.HangupHook"
 
 // Taken from various.i definitions for BYTE
 %typemap(jni) char *dtmf_buf "jbyteArray"
@@ -60,10 +60,10 @@
 #define SWITCH_DECLARE(type) type
 %javamethodmodifiers CoreSession::originate(CoreSession *, char *, int, switch_state_handler_table_t *) "protected";
 %javaexception ("java.util.TooManyListenersException") setOriginateStateHandler(jobject);
-%typemap(jtype) jobject stateHandler "org.freeswitch.StateHandler"
-%typemap(jstype) jobject stateHandler "org.freeswitch.StateHandler"
+%typemap(jtype) jobject stateHandler "org.fluxpbx.StateHandler"
+%typemap(jstype) jobject stateHandler "org.fluxpbx.StateHandler"
 
 %include "enums.swg"
 %include switch_swigable_cpp.h
-%include freeswitch_java.h
+%include fluxpbx_java.h
 

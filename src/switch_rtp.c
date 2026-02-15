@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Marcel Barbulescu <marcelbarbulescu@gmail.com>
  * Seven Du <dujinfang@gmail.com>
  * Noah Mehl - Open Telecom Foundation <https://opentelecom.foundation>
@@ -910,7 +910,7 @@ static switch_status_t ice_out(switch_rtp_t *rtp_session, switch_rtp_ice_t *ice,
 
 		switch_stun_packet_attribute_add_priority(packet, ice->ice_params->cands[ice->ice_params->chosen[ice->proto]][ice->proto].priority);
 
-		switch_snprintf(sw, sizeof(sw), "FreeSWITCH (%s)", switch_version_revision_human());
+		switch_snprintf(sw, sizeof(sw), "FluxPBX (%s)", switch_version_revision_human());
 		switch_stun_packet_attribute_add_software(packet, sw, (uint16_t)strlen(sw));
 
 		if ((ice->type & ICE_CONTROLLED)) {
@@ -2448,7 +2448,7 @@ static int check_rtcp_and_ice(switch_rtp_t *rtp_session)
 		p += sizeof(switch_rtcp_sdes_unit_t) + unit->length;
 		unit = (switch_rtcp_sdes_unit_t *) p;
 		unit->type = _RTCP_SDES_NOTE;
-		snprintf((char *)unit->value, 80, "FreeSWITCH.org -- Come to ClueCon.com");
+		snprintf((char *)unit->value, 80, "FluxPBX.org -- Come to ClueCon.com");
 		unit->length = strlen((char *)unit->value);
 		sdes_bytes += sizeof(switch_rtcp_sdes_unit_t) + unit->length;
 

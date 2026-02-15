@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2010, Eric des Courtis <eric.des.courtis@benbria.com>
  *
  * Version: MPL 1.1
@@ -426,7 +426,7 @@ static switch_status_t avmd_init_buffer(struct avmd_buffer *b, size_t buf_sz, ui
 
 /*! \brief The avmd session data initialization function.
  * @param avmd_session A reference to a avmd session.
- * @param fs_session A reference to a FreeSWITCH session.
+ * @param fs_session A reference to a FluxPBX session.
  * @details Avmd globals mutex must be locked.
  */
 static switch_status_t init_avmd_session_data(avmd_session_t *avmd_session, switch_core_session_t *fs_session, switch_mutex_t *mutex)
@@ -586,13 +586,13 @@ static switch_bool_t avmd_callback(switch_media_bug_t * bug, void *user_data, sw
 		if (type != SWITCH_ABC_TYPE_INIT) {
 			switch_mutex_unlock(avmd_session->mutex);
 		}
-		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "No FreeSWITCH session assigned!\n");
+		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "No FluxPBX session assigned!\n");
 		return SWITCH_FALSE;
 	}
 
 	channel = switch_core_session_get_channel(fs_session);
 	if (channel == NULL) {
-		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "No channel for FreeSWITCH session!\n");
+		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "No channel for FluxPBX session!\n");
 		return SWITCH_FALSE;
 	}
 
@@ -1412,7 +1412,7 @@ SWITCH_STANDARD_APP(avmd_start_app) {
 	uint8_t report = 0;
 
 	if (session == NULL) {
-		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "BUGGG. FreeSWITCH session is NULL! Please report to developers\n");
+		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "BUGGG. FluxPBX session is NULL! Please report to developers\n");
 		return;
 	}
 
@@ -1420,7 +1420,7 @@ SWITCH_STANDARD_APP(avmd_start_app) {
 	 * At this moment this cannot return NULL, it will either succeed or assert failed, but we make ourself secure anyway */
 	channel = switch_core_session_get_channel(session);
 	if (channel == NULL) {
-		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "BUGGG. No channel for FreeSWITCH session! Please report this to the developers.\n");
+		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "BUGGG. No channel for FluxPBX session! Please report this to the developers.\n");
 		goto end;
 	}
 
@@ -1430,7 +1430,7 @@ SWITCH_STANDARD_APP(avmd_start_app) {
 		return;
 	}
 
-	/* Allocate memory attached to this FreeSWITCH session for use in the callback routine and to store state information */
+	/* Allocate memory attached to this FluxPBX session for use in the callback routine and to store state information */
 	avmd_session = (avmd_session_t *) switch_core_session_alloc(session, sizeof(avmd_session_t));
 	if (avmd_session == NULL) {
 		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "Can't allocate memory for avmd session!\n");
@@ -1554,7 +1554,7 @@ SWITCH_STANDARD_APP(avmd_stop_app) {
 	avmd_beep_state_t   beep_status = BEEP_NOTDETECTED;
 
 	if (session == NULL) {
-		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "FreeSWITCH is NULL! Please report to developers\n");
+		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "FluxPBX is NULL! Please report to developers\n");
 		return;
 	}
 
@@ -1562,7 +1562,7 @@ SWITCH_STANDARD_APP(avmd_stop_app) {
 	 * At this moment this cannot return NULL, it will either succeed or assert failed, but we make ourself secure anyway */
 	channel = switch_core_session_get_channel(session);
 	if (channel == NULL) {
-		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "No channel for FreeSWITCH session! Please report this to the developers.\n");
+		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(session), SWITCH_LOG_ERROR, "No channel for FluxPBX session! Please report this to the developers.\n");
 		return;
 	}
 
@@ -1595,7 +1595,7 @@ SWITCH_STANDARD_APP(avmd_stop_app) {
 	return;
 }
 
-/*! \brief FreeSWITCH application handler function.
+/*! \brief FluxPBX application handler function.
  *  This handles calls made from applications such as LUA and the dialplan.
  */
 SWITCH_STANDARD_APP(avmd_start_function) {
@@ -1604,7 +1604,7 @@ SWITCH_STANDARD_APP(avmd_start_function) {
 
 	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_WARNING, "YOU ARE USING DEPRECATED APP INTERFACE. Please read documentation about new syntax\n");
 	if (session == NULL) {
-		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "No FreeSWITCH session assigned!\n");
+		switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "No FluxPBX session assigned!\n");
 		return;
 	}
 
@@ -1652,7 +1652,7 @@ SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_avmd_shutdown) {
 	return SWITCH_STATUS_SUCCESS;
 }
 
-/*! \brief FreeSWITCH API handler function. */
+/*! \brief FluxPBX API handler function. */
 SWITCH_STANDARD_API(avmd_api_main) {
 	switch_media_bug_t *bug = NULL;
 	avmd_session_t *avmd_session = NULL;
@@ -1770,9 +1770,9 @@ SWITCH_STANDARD_API(avmd_api_main) {
 	uuid = argv[0];
 	command = argv[1];
 
-	fs_session = switch_core_session_locate(uuid);  /* using uuid locate a reference to the FreeSWITCH session */
+	fs_session = switch_core_session_locate(uuid);  /* using uuid locate a reference to the FluxPBX session */
 	if (fs_session == NULL) {
-		stream->write_function(stream, "-ERR, no FreeSWITCH session for uuid [%s]!\n-USAGE: %s\n\n", uuid, AVMD_SYNTAX);
+		stream->write_function(stream, "-ERR, no FluxPBX session for uuid [%s]!\n-USAGE: %s\n\n", uuid, AVMD_SYNTAX);
 		goto end;
 	}
 
@@ -1780,7 +1780,7 @@ SWITCH_STANDARD_API(avmd_api_main) {
 	 * At this moment this cannot return NULL, it will either succeed or assert failed, but we make ourself secure anyway */
 	channel = switch_core_session_get_channel(fs_session);
 	if (channel == NULL) {
-		stream->write_function(stream, "-ERR, no channel for FreeSWITCH session [%s]!\n Please report this to the developers\n\n", uuid);
+		stream->write_function(stream, "-ERR, no channel for FluxPBX session [%s]!\n Please report this to the developers\n\n", uuid);
 		goto end;
 	}
 
@@ -1804,7 +1804,7 @@ SWITCH_STANDARD_API(avmd_api_main) {
 		}
 		if (avmd_globals.settings.report_status == 1) {
 			switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(fs_session), SWITCH_LOG_ERROR, "Avmd already started!\n");
-			stream->write_function(stream, "-ERR, avmd for FreeSWITCH session [%s]\n already started\n\n", uuid);
+			stream->write_function(stream, "-ERR, avmd for FluxPBX session [%s]\n already started\n\n", uuid);
 		}
 		goto end;
 	}
@@ -1822,14 +1822,14 @@ SWITCH_STANDARD_API(avmd_api_main) {
 			flags |= SMBF_WRITE_REPLACE;
 	}
 	if (flags == 0) {
-		stream->write_function(stream, "-ERR, can't set direction for channel [%s]\n for FreeSWITCH session [%s]. Please check avmd configuration\n\n", switch_channel_get_name(channel), uuid);
+		stream->write_function(stream, "-ERR, can't set direction for channel [%s]\n for FluxPBX session [%s]. Please check avmd configuration\n\n", switch_channel_get_name(channel), uuid);
 		switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(fs_session), SWITCH_LOG_ERROR, "Can't set direction for channel [%s]\n", switch_channel_get_name(channel));
 		status = SWITCH_STATUS_FALSE;
 		goto end;
 	}
 	if ((SWITCH_CALL_DIRECTION_OUTBOUND == switch_channel_direction(channel)) && (avmd_globals.settings.outbound_channnel == 1)) {
 		if (switch_channel_test_flag(channel, CF_MEDIA_SET) == 0) {
-			stream->write_function(stream, "-ERR, channel [%s] for FreeSWITCH session [%s]\n has no read codec assigned yet. Please try again.\n\n", switch_channel_get_name(channel), uuid);
+			stream->write_function(stream, "-ERR, channel [%s] for FluxPBX session [%s]\n has no read codec assigned yet. Please try again.\n\n", switch_channel_get_name(channel), uuid);
 			switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(fs_session), SWITCH_LOG_ERROR, "Channel [%s] has no codec assigned yet. Please try again\n", switch_channel_get_name(channel));
 			status = SWITCH_STATUS_FALSE;
 			goto end;
@@ -1840,10 +1840,10 @@ SWITCH_STANDARD_API(avmd_api_main) {
 		goto end;
 	}
 
-	avmd_session = (avmd_session_t *) switch_core_session_alloc(fs_session, sizeof(avmd_session_t)); /* Allocate memory attached to this FreeSWITCH session for use in the callback routine and to store state information */
+	avmd_session = (avmd_session_t *) switch_core_session_alloc(fs_session, sizeof(avmd_session_t)); /* Allocate memory attached to this FluxPBX session for use in the callback routine and to store state information */
 	status = init_avmd_session_data(avmd_session, fs_session, NULL);
 	if (status != SWITCH_STATUS_SUCCESS) {
-		stream->write_function(stream, "-ERR, failed to initialize avmd session\n for FreeSWITCH session [%s]\n", uuid);
+		stream->write_function(stream, "-ERR, failed to initialize avmd session\n for FluxPBX session [%s]\n", uuid);
 		switch (status) {
 			case SWITCH_STATUS_MEMERR:
 				stream->write_function(stream, "-ERR, buffer error\n\n");

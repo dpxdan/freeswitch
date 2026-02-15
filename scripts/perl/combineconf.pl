@@ -3,12 +3,12 @@ use strict;
 
 =head1 NAME
 
-combineconf.pl - expand #include PIs in a freeswitch conf file
+combineconf.pl - expand #include PIs in a fluxpbx conf file
 
 =head1 SYNOPSIS
 
  # cd conf
- # ../scripts/combineconf.pl freeswitch.xml > freeswitch_combined.xml
+ # ../scripts/combineconf.pl fluxpbx.xml > fluxpbx_combined.xml
 
 =head1 DESCRIPTION
 

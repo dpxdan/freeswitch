@@ -18,8 +18,8 @@
       digit-len="4">
 
     <!-- The following are the definitions for the digits the user dials -->
-    <!-- Digit 1 transfer caller to the public FreeSWITCH conference -->
-    <entry action="menu-exec-app" digits="1" param="bridge sofia/$${domain}/888@conference.freeswitch.org"/>
+    <!-- Digit 1 transfer caller to the public FluxPBX conference -->
+    <entry action="menu-exec-app" digits="1" param="bridge sofia/$${domain}/888@conference.fluxpbx.org"/>
     <entry action="menu-exec-app" digits="2" param="transfer 9196 XML default"/>    <!-- FS echo -->
     <entry action="menu-exec-app" digits="3" param="transfer 9664 XML default"/>    <!-- MOH -->
     <entry action="menu-exec-app" digits="4" param="transfer 9191 XML default"/>    <!-- ClueCon -->

@@ -266,7 +266,7 @@
       <prompt phrase="S'il vous plaît" filename="ivr-please.wav"/>
       <prompt phrase="Veuillez nous rappeler au" filename="ivr-please_return_our_call_at.wav"/>
       <prompt phrase="concernant la référence" filename="ivr-regarding_reference_number.wav"/>
-      <prompt phrase="Ceci est un example de menu. FreeSWITCH est très flexible dans la conception de système interactifs." filename="ivr-sample_submenu.wav"/>
+      <prompt phrase="Ceci est un example de menu. FluxPBX est très flexible dans la conception de système interactifs." filename="ivr-sample_submenu.wav"/>
       <prompt phrase="Veuillez prononcer votre nom après le bip" filename="ivr-say_name.wav"/>
       <prompt phrase="Envoyer cet appelant vers la messagerie vocale" filename="ivr-send_to_voicemail.wav"/>
       <prompt phrase="Pour parler avec un de nos agents" filename="ivr-speak_to_a_customer_service_representative.wav"/>
@@ -274,9 +274,9 @@
       <prompt phrase="Merci" filename="ivr-thank_you.wav"/>
       <prompt phrase="Votre choix n'est pas valide" filename="ivr-that_was_an_invalid_entry.wav"/>
       <prompt phrase="Cet appel est de" filename="ivr-this_is_a_call_from.wav"/>
-      <prompt phrase="Ce menu interactif vous permet de tester certaines des fonctionalités de votre système FreeSWITCH." filename="ivr-this_ivr_will_let_you_test_features.wav"/>
-      <prompt phrase="Pour appeler la conférence téléphonique de FreeSWITCH" filename="ivr-to_call_the_freeswitch_conference.wav"/>
-      <prompt phrase="Pour faire un test d'écho avec FreeSWITCH" filename="ivr-to_do_a_freeswitch_echo_test.wav"/>
+      <prompt phrase="Ce menu interactif vous permet de tester certaines des fonctionalités de votre système FluxPBX." filename="ivr-this_ivr_will_let_you_test_features.wav"/>
+      <prompt phrase="Pour appeler la conférence téléphonique de FluxPBX" filename="ivr-to_call_the_fluxpbx_conference.wav"/>
+      <prompt phrase="Pour faire un test d'écho avec FluxPBX" filename="ivr-to_do_a_fluxpbx_echo_test.wav"/>
       <prompt phrase="Pour faire un test d'écho avec FWD" filename="ivr-to_do_a_fwd_echo_test.wav"/>
       <prompt phrase="Pour entendre un exemple de menu" filename="ivr-to_hear_sample_submenu.wav"/>
       <prompt phrase="Pour entendre des singes qui hurlent" filename="ivr-to_hear_screaming_monkeys.wav"/>
@@ -284,7 +284,7 @@
       <prompt phrase="Pour répéter ces options" filename="ivr-to_repeat_these_options.wav"/>
       <prompt phrase="Pour revenir au menu précédent" filename="ivr-to_return_to_previous_menu.wav"/>
       <prompt phrase="Pour parler avec un opérateur" filename="ivr-to_speak_with_an_operator.wav"/>
-      <prompt phrase="FreeSWITCH, le futur de la téléphonie, vous souhaite la bienvenue" filename="ivr-welcome_to_freeswitch.wav"/>
+      <prompt phrase="FluxPBX, le futur de la téléphonie, vous souhaite la bienvenue" filename="ivr-welcome_to_fluxpbx.wav"/>
       <prompt phrase="Raccrochez à tout moment pour quitter" filename="ivr-you_may_exit_by_hanging_up.wav"/>
       <!-- Suggested additions; "not" would require syntax handling; is "call" a verb or a noun?
        <prompt phrase="ou" filename ="ivr-or.wav"/>

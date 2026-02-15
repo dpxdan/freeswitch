@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2005-2010, James Martelletti <james@nerdc0re.com>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * James Martelletti <james@nerdc0re.com>
@@ -33,7 +33,7 @@
 #include <stdlib.h>
 #include <syslog.h>
 
-#define DEFAULT_IDENT    "freeswitch"
+#define DEFAULT_IDENT    "fluxpbx"
 #define DEFAULT_FACILITY LOG_USER
 #define DEFAULT_LEVEL    "warning"
 #define DEFAULT_FORMAT   "[message]"

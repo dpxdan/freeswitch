@@ -1,4 +1,4 @@
-<!-- http://wiki.freeswitch.org/wiki/Dialplan_XML -->
+<!-- http://wiki.fluxpbx.org/wiki/Dialplan_XML -->
 <include>
   <context name="features">
 

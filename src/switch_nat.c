@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,17 +14,17 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
- * Brian K. West <brian@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
+ * Brian K. West <brian@fluxpbx.org>
  * Rupa Schomaker <rupa@rupa.com>
  *
  *
@@ -498,10 +498,10 @@ static switch_status_t switch_nat_add_mapping_upnp(switch_port_t port, switch_na
 
 	if (proto == SWITCH_NAT_TCP) {
 		r = UPNP_AddPortMapping(nat_globals.urls.controlURL, nat_globals.data.servicetype, port_str, port_str,
-								nat_globals.pvt_addr, "FreeSWITCH", "TCP", 0);
+								nat_globals.pvt_addr, "FluxPBX", "TCP", 0);
 	} else if (proto == SWITCH_NAT_UDP) {
 		r = UPNP_AddPortMapping(nat_globals.urls.controlURL, nat_globals.data.servicetype, port_str, port_str,
-								nat_globals.pvt_addr, "FreeSWITCH", "UDP", 0);
+								nat_globals.pvt_addr, "FluxPBX", "UDP", 0);
 	}
 
 	if (r == UPNPCOMMAND_SUCCESS) {

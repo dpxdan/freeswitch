@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 """
-FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
 
 Version: MPL 1.1
 
@@ -16,10 +16,10 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the
 License.
 
-The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 
 The Initial Developer of the Original Code is
-Anthony Minessale II <anthm@freeswitch.org>
+Anthony Minessale II <anthm@fluxpbx.org>
 Portions created by the Initial Developer are Copyright (C)
 the Initial Developer. All Rights Reserved.
 
@@ -338,20 +338,20 @@ class FsHelperTest:
     def test_dialconf(self):
 
         # the following parties will be dialed out from the conference
-        # called "freeswitch" on the local freeswitch instance.
+        # called "fluxpbx" on the local fluxpbx instance.
         # one party is actually another conference, just to make
         # the example more confusing.
         people2dial = [
             {
-                'name': 'freeswitch',
-                'number': '888@conference.freeswitch.org'
+                'name': 'fluxpbx',
+                'number': '888@conference.fluxpbx.org'
             },
             {
                 'name': 'mouselike',
                 'number': ' 904@mouselike.org'
             }
         ]
-        d = self.fshelper.dialconf(people2dial, "freeswitch", bgapi=False)
+        d = self.fshelper.dialconf(people2dial, "fluxpbx", bgapi=False)
         def failed(error):
             print "Failed to dial users!"
             reactor.stop()
@@ -364,7 +364,7 @@ class FsHelperTest:
 
     def test_listconf(self):
 
-        d = self.fshelper.listconf("freeswitch")
+        d = self.fshelper.listconf("fluxpbx")
         def failed(failure):
             print "Failed to list users!"
             reactor.stop()
@@ -376,7 +376,7 @@ class FsHelperTest:
         d.addCallback(worked)
         return d
 
-    def test_confkick(self, member_id="6", conf_name="freeswitch"):
+    def test_confkick(self, member_id="6", conf_name="fluxpbx"):
 
         d = self.fshelper.confkick(member_id, conf_name)
         def failed(failure):

@@ -44,7 +44,7 @@ local commands = {
 local num_tests=0;
 local num_passed=0;
 
-local api = freeswitch.API();
+local api = fluxpbx.API();
 
 -- do for each command
 for _, cmd in pairs(commands) do

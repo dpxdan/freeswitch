@@ -86,7 +86,7 @@ if ( $users ) {
 }
 
 if ( ! $config_path ) {
-  $config_path = '/usr/local/freeswitch/conf';
+  $config_path = '/usr/local/fluxpbx/conf';
 } 
 
 ## Check to make sure the directories in question exists
@@ -271,9 +271,9 @@ ENDUSERTEMPLATE
 sub usage {
   print <<ENDUSAGE;
 
-            FreeSWITCH add user utility
+            FluxPBX add user utility
 
-Adds one or more users to the FreeSWITCH directory using XML files.
+Adds one or more users to the FluxPBX directory using XML files.
 
 
  Syntax:
@@ -289,7 +289,7 @@ To specify a range of user IDs use the --users option. Separate the beginning an
 end of the range with a hyphen (-) character.
 
 By default add_user will look for the XML directory in its default location of
-/usr/local/freeswitch/conf/directory. Use the --confpath (configuration path)
+/usr/local/fluxpbx/conf/directory. Use the --confpath (configuration path)
 option to specify an alternate directory location.
 
 

@@ -4,7 +4,7 @@
 src_repo="$(pwd)"
 
 if [ ! -d .git ]; then
-  echo "error: must be run from within the top level of a FreeSWITCH git tree." 1>&2
+  echo "error: must be run from within the top level of a FluxPBX git tree." 1>&2
   exit 1;
 fi
 

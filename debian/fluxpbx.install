@@ -1,0 +1,4 @@
+/usr/bin
+fonts/FreeMono.ttf /usr/share/fluxpbx/fonts/
+fonts/FreeSans.ttf /usr/share/fluxpbx/fonts/
+images/*.png /var/lib/fluxpbx/images/

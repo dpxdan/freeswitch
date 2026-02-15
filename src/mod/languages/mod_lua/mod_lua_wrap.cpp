@@ -2714,11 +2714,11 @@ static swig_module_info swig_module = {swig_types, 32, 0, 0, 0, 0};
 
 /* -------- TYPES TABLE (END) -------- */
 
-#define SWIG_name      "freeswitch"
-#define SWIG_init      luaopen_freeswitch
-#define SWIG_init_user luaopen_freeswitch_user
+#define SWIG_name      "fluxpbx"
+#define SWIG_init      luaopen_fluxpbx
+#define SWIG_init_user luaopen_fluxpbx_user
 
-#define SWIG_LUACODE   luaopen_freeswitch_luacode
+#define SWIG_LUACODE   luaopen_fluxpbx_luacode
 
 namespace swig {
 typedef struct{} LANGUAGE_OBJ;
@@ -2738,7 +2738,7 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 
 #include "switch.h"
 #include "switch_cpp.h"
-#include "freeswitch_lua.h"
+#include "fluxpbx_lua.h"
 
 
 #ifdef __cplusplus	/* generic alloc/dealloc fns*/
@@ -10338,7 +10338,7 @@ static swig_lua_namespace* swig_SwigModule_namespaces[] = {
 };
 
 static swig_lua_namespace swig_SwigModule = {
-    "freeswitch",
+    "fluxpbx",
     swig_SwigModule_methods,
     swig_SwigModule_attributes,
     swig_SwigModule_constants,

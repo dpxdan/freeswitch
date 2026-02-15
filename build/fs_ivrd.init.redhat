@@ -2,7 +2,7 @@
 #
 #       /etc/rc.d/init.d/fs_ivrd
 #
-#       The FreeSwitch Open Source Voice Platform
+#       The FluxPbx Open Source Voice Platform
 #
 #  chkconfig: 345 89 14
 #  description: Starts and stops the fs_ivrd server daemon
@@ -14,11 +14,11 @@
 . /etc/init.d/functions
 
 PROG_NAME=fs_ivrd
-PID_FILE=${PID_FILE-/usr/local/freeswitch/run/fs_ivrd.pid}
-#FS_USER=${FS_USER-freeswitch}
+PID_FILE=${PID_FILE-/usr/local/fluxpbx/run/fs_ivrd.pid}
+#FS_USER=${FS_USER-fluxpbx}
 FS_USER=${FS_USER-root}
-FS_FILE=${FS_FILE-/usr/local/freeswitch/bin/fs_ivrd} 
-FS_HOME=${FS_HOME-/usr/local/freeswitch}
+FS_FILE=${FS_FILE-/usr/local/fluxpbx/bin/fs_ivrd} 
+FS_HOME=${FS_HOME-/usr/local/fluxpbx}
 LOCK_FILE=/var/lock/subsys/fs_ivrd
 IVRD_ARGS="-h localhost -p 9090"
 RETVAL=0

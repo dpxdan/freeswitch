@@ -39,8 +39,8 @@ difficult to achieve the precise transcoding procedure laid down in the G.711
 specification by other means.
 */
 
-#if !defined(FREESWITCH_G711_H)
-#define FREESWITCH_G711_H
+#if !defined(FLUXPBX_G711_H)
+#define FLUXPBX_G711_H
 
 #ifdef __cplusplus
 extern "C" {

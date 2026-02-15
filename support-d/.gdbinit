@@ -1,7 +1,7 @@
 handle SIGPIPE pass noprint nostop
 handle SIGTTIN pass noprint nostop
 
-# FreeSWITCH Custom GDB commands
+# FluxPBX Custom GDB commands
 define list_sessions
 	dont-repeat
 	printf "Listing sessions: \n"

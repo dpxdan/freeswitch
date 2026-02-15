@@ -10,27 +10,27 @@ perl -i -pe 's/1024/4096/g' *.sh
 ./new-root-ca.sh
 ./new-server-cert.sh self.bkw.org
 ./sign-server-cert.sh self.bkw.org
-cat self.bkw.org.crt self.bkw.org.key > /usr/local/freeswitch/certs/wss.pem
+cat self.bkw.org.crt self.bkw.org.key > /usr/local/fluxpbx/certs/wss.pem
 
 Setup Apache:
 
 default-ssl:
 
-SSLCertificateFile    /usr/local/freeswitch/certs/wss.pem
-SSLCertificateKeyFile /usr/local/freeswitch/certs/wss.pem
-SSLCertificateChainFile /usr/local/freeswitch/certs/wss.pem
+SSLCertificateFile    /usr/local/fluxpbx/certs/wss.pem
+SSLCertificateKeyFile /usr/local/fluxpbx/certs/wss.pem
+SSLCertificateChainFile /usr/local/fluxpbx/certs/wss.pem
 
 Setup Sofia TLS:
 
-cat self.bkw.org.crt self.bkw.org.key > /usr/local/freeswitch/certs/agent.pem
-cat ca.crt > /usr/local/freeswitch/certs/cafile.pem
+cat self.bkw.org.crt self.bkw.org.key > /usr/local/fluxpbx/certs/agent.pem
+cat ca.crt > /usr/local/fluxpbx/certs/cafile.pem
 
 vars.xml:
 
 <X-PRE-PROCESS cmd="set" data="internal_ssl_enable=true"/>
 <X-PRE-PROCESS cmd="set" data="external_ssl_enable=true"/>
 
-Restart FreeSWITCH.
+Restart FluxPBX.
 
 Now make sure your system has ca.crt imported so it will trust your new found hotness.
 

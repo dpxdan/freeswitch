@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -34,9 +34,9 @@ using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Reflection;
-using FreeSWITCH.Native;
+using FluxPBX.Native;
 
-namespace FreeSWITCH
+namespace FluxPBX
 {
     public class SwitchEventWrap : switch_event, IDisposable
     {
@@ -65,7 +65,7 @@ namespace FreeSWITCH
         {
             if (disposed) return;
             disposed = true;
-            freeswitch.switch_event_destroy(p_p_switch_event);
+            fluxpbx.switch_event_destroy(p_p_switch_event);
             Marshal.FreeCoTaskMem(native_ptr_ptr);
         }
     }
@@ -101,8 +101,8 @@ namespace FreeSWITCH
         {
             if (disposed) return;
             // HACK: FS crashes if we unbind after shutdown is pretty complete. This is still a race condition.
-            if (freeswitch.switch_core_ready() == switch_bool_t.SWITCH_FALSE) return;
-            freeswitch.switch_event_unbind_callback(this.function);
+            if (fluxpbx.switch_core_ready() == switch_bool_t.SWITCH_FALSE) return;
+            fluxpbx.switch_event_unbind_callback(this.function);
             disposed = true;
         }
         ~EventBinding()
@@ -112,7 +112,7 @@ namespace FreeSWITCH
         public static switch_event SwitchEventDupe(switch_event evt)
         {
             IntPtr clone_ptr_ptr = Marshal.AllocCoTaskMem(IntPtr.Size);
-            freeswitch.switch_event_dup(new SWIGTYPE_p_p_switch_event(clone_ptr_ptr, false), evt);
+            fluxpbx.switch_event_dup(new SWIGTYPE_p_p_switch_event(clone_ptr_ptr, false), evt);
             SwitchEventWrap dupe_evt = new SwitchEventWrap(clone_ptr_ptr);
             return dupe_evt;
         }
@@ -137,7 +137,7 @@ namespace FreeSWITCH
             }
             var fp = Marshal.GetFunctionPointerForDelegate(boundFunc);
             var swigFp = new SWIGTYPE_p_f_p_switch_event__void(fp, false);
-            var res = freeswitch.switch_event_bind(id, event_types, subclass_name, swigFp, null);
+            var res = fluxpbx.switch_event_bind(id, event_types, subclass_name, swigFp, null);
             if (res != switch_status_t.SWITCH_STATUS_SUCCESS)
             {
                 throw new InvalidOperationException("Call to switch_event_bind failed, result: " + res + ".");

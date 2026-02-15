@@ -122,7 +122,7 @@ void Opt::initialize(void)
         FUNCTION_VALUE(&Options::_log_trace_option), "", false));
 
     Globals::options.add(Config::Option("record-prefix",
-        FUNCTION_VALUE(&Options::_record_prefix), "/var/spool/freeswitch/monitor/"));
+        FUNCTION_VALUE(&Options::_record_prefix), "/var/spool/fluxpbx/monitor/"));
 
     Globals::options.add(Config::Option("fxs-global-orig", &Options::_fxs_global_orig_base,  "0"));
 

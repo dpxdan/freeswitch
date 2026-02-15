@@ -11,7 +11,7 @@ RADCLIENT_LA=${RADCLIENT_LIBDIR}/libfreeradius-client.la
 mod_LTLIBRARIES = mod_xml_radius.la
 mod_xml_radius_la_SOURCES  = mod_xml_radius.c
 mod_xml_radius_la_CFLAGS   = $(AM_CFLAGS) -I$(RADCLIENT_DIR)/include
-mod_xml_radius_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(RADCLIENT_LA)
+mod_xml_radius_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(RADCLIENT_LA)
 mod_xml_radius_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 BUILT_SOURCES=$(RADCLIENT_LA)

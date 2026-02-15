@@ -1,5 +1,5 @@
 /*
- * mod_v8 for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_v8 for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Peter Olsson <peter@olssononline.se>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * Ported from the Original Code in FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * Ported from the Original Code in FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Andrey Volk <andywolk@gmail.com>
@@ -245,7 +245,7 @@ JS_DBH_FUNCTION_IMPL(query)
 				return;
 			}
 		}
-		else { /* if no callback func arg is passed from javascript, an empty initialized struct will be sent - see freeswitch.i */
+		else { /* if no callback func arg is passed from javascript, an empty initialized struct will be sent - see fluxpbx.i */
 			if (switch_cache_db_execute_sql(dbh, (char *)sql, &err) == SWITCH_STATUS_SUCCESS) {
 				return;
 			}

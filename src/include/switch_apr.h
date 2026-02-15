@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Eliot Gable <egable@gmail.com>
  *
  * switch_apr.h -- APR includes header
@@ -66,7 +66,7 @@ SWITCH_DECLARE(int) switch_thread_equal(switch_thread_id_t tid1, switch_thread_i
 */
 /**
  * @defgroup switch_apr Brought To You By APR
- * @ingroup FREESWITCH
+ * @ingroup FLUXPBX
  * @{
  */
 /**
@@ -1016,7 +1016,7 @@ SWITCH_DECLARE(switch_status_t) switch_thread_create(switch_thread_t ** new_thre
 /** A structure to represent sockets */
 	 typedef struct fspr_socket_t switch_socket_t;
 
-/** Freeswitch's socket address type, used to ensure protocol independence */
+/** Fluxpbx's socket address type, used to ensure protocol independence */
 	 typedef struct fspr_sockaddr_t switch_sockaddr_t;
 
 	 typedef enum {

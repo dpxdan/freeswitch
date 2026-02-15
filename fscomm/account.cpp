@@ -9,7 +9,7 @@ Account::Account(QString name) :
     _statusPhrase = QString();
 
     QSettings settings;
-    settings.beginGroup("FreeSWITCH/conf/sofia.conf/profiles/profile/gateways");
+    settings.beginGroup("FluxPBX/conf/sofia.conf/profiles/profile/gateways");
     foreach(QString g, settings.childGroups())
     {
         settings.beginGroup(g);

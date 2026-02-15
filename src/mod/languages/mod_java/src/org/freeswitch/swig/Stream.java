@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.freeswitch.swig;
+package org.fluxpbx.swig;
 
 public class Stream {
   private transient long swigCPtr;
@@ -29,34 +29,34 @@ public class Stream {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        freeswitchJNI.delete_Stream(swigCPtr);
+        fluxpbxJNI.delete_Stream(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public Stream() {
-    this(freeswitchJNI.new_Stream__SWIG_0(), true);
+    this(fluxpbxJNI.new_Stream__SWIG_0(), true);
   }
 
   public Stream(SWIGTYPE_p_switch_stream_handle_t arg0) {
-    this(freeswitchJNI.new_Stream__SWIG_1(SWIGTYPE_p_switch_stream_handle_t.getCPtr(arg0)), true);
+    this(fluxpbxJNI.new_Stream__SWIG_1(SWIGTYPE_p_switch_stream_handle_t.getCPtr(arg0)), true);
   }
 
   public String read(SWIGTYPE_p_int len) {
-    return freeswitchJNI.Stream_read(swigCPtr, this, SWIGTYPE_p_int.getCPtr(len));
+    return fluxpbxJNI.Stream_read(swigCPtr, this, SWIGTYPE_p_int.getCPtr(len));
   }
 
   public void write(String data) {
-    freeswitchJNI.Stream_write(swigCPtr, this, data);
+    fluxpbxJNI.Stream_write(swigCPtr, this, data);
   }
 
   public void raw_write(String data, int len) {
-    freeswitchJNI.Stream_raw_write(swigCPtr, this, data, len);
+    fluxpbxJNI.Stream_raw_write(swigCPtr, this, data, len);
   }
 
   public String get_data() {
-    return freeswitchJNI.Stream_get_data(swigCPtr, this);
+    return fluxpbxJNI.Stream_get_data(swigCPtr, this);
   }
 
 }

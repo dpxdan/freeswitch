@@ -22,7 +22,7 @@ print $q->header(-type => "text/xml");
 
 my $writer = new XML::Writer(OUTPUT => STDOUT, DATA_MODE => 1);
 
-$writer->startTag('document', type => 'xml/freeswitch-httapi');
+$writer->startTag('document', type => 'xml/fluxpbx-httapi');
 
 $writer->startTag('params');
 if ($exten) {
@@ -41,7 +41,7 @@ if ($exten eq "invalid" || $pin eq "invalid") {
 
 if ($exten && $pin) {
   $writer->startTag('work');
-  $writer->dataElement("playback", "http://sidious.freeswitch.org/sounds/ext_num.wav");
+  $writer->dataElement("playback", "http://sidious.fluxpbx.org/sounds/ext_num.wav");
   $writer->dataElement("say", $exten, language => "en", type => "name_spelled", method => "pronounced");
   $writer->emptyTag('pause', milliseconds => "1500");
   $writer->dataElement("say", $pin, language => "en", type => "name_spelled", method => "pronounced");
@@ -51,8 +51,8 @@ if ($exten && $pin) {
   $writer->startTag('work');
   $writer->startTag('playback', 
 		    name => "pin", 
-		    file => "http://sidious.freeswitch.org/sounds/pin.wav",
-		    'error-file' => "http://sidious.freeswitch.org/sounds/bad-pin.wav",
+		    file => "http://sidious.fluxpbx.org/sounds/pin.wav",
+		    'error-file' => "http://sidious.fluxpbx.org/sounds/bad-pin.wav",
 		    'input-timeout' => "5000");
 		   
 
@@ -63,9 +63,9 @@ if ($exten && $pin) {
   $writer->startTag('work');
   $writer->startTag('playback', 
 		    name => "exten", 
-		    file => "http://sidious.freeswitch.org/sounds/exten.wav",
+		    file => "http://sidious.fluxpbx.org/sounds/exten.wav",
 		    loops => "3",
-		    'error-file' => "http://sidious.freeswitch.org/sounds/invalid.wav",
+		    'error-file' => "http://sidious.fluxpbx.org/sounds/invalid.wav",
 		    'input-timeout' => "5000");
 
   $writer->dataElement("bind", "~\\d+\#", strip => "#");

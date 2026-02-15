@@ -1,5 +1,5 @@
 /*
- * The FreeSWITCH Portal Project
+ * The FluxPBX Portal Project
  * Copyright (C) 2013-2013, Seven Du <dujinfang@gmail.com>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is The FreeSWITCH Portal Project Software/Application
+ * The Original Code is The FluxPBX Portal Project Software/Application
  *
  * The Initial Developer of the Original Code is
  * Seven Du <dujinfang@gmail.com>
@@ -26,7 +26,7 @@
  * Seven Du <dujinfang@gmail.com>
  *
  *
- * fsportal.js -- The FreeSWITCH Portal Project
+ * fsportal.js -- The FluxPBX Portal Project
  *
  */
 

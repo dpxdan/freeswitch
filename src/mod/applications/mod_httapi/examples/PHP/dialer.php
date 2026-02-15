@@ -12,7 +12,7 @@ if ( $_REQUEST['exiting'] ) {
 
 header('Content-Type: text/xml');
 $xml->startElement('document');
-$xml->writeAttribute('type', 'xml/freeswitch-httapi');
+$xml->writeAttribute('type', 'xml/fluxpbx-httapi');
 
 $xml->startElement('work');
 
@@ -22,8 +22,8 @@ $xml->endElement(); // </pause>
 
 $xml->startElement('playback');
 $xml->writeAttribute('name', 'digits');
-$xml->writeAttribute('file', 'http://sidious.freeswitch.org/sounds/exten.wav');
-$xml->writeAttribute('error-file', 'http://sidious.freeswitch.org/sounds/invalid.wav');
+$xml->writeAttribute('file', 'http://sidious.fluxpbx.org/sounds/exten.wav');
+$xml->writeAttribute('error-file', 'http://sidious.fluxpbx.org/sounds/invalid.wav');
 $xml->writeAttribute('input-timeout', '5000');
 $xml->writeAttribute('action', 'dial:default:XML');
 

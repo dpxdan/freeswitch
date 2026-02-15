@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / SKEL codec module
+ * The Original Code is FluxPBX Modular Media Switching Software Library / SKEL codec module
  *
  * The Initial Developer of the Original Code is
  * Moises Silva <moy@sangoma.com>
@@ -24,22 +24,22 @@
  * Contributor(s):
  * Moises Silva <moy@sangoma.com>
  *
- * mod_skel_codec -- FreeSWITCH skeleton codec
+ * mod_skel_codec -- FluxPBX skeleton codec
  *
  */
 
 /*
  * Other source of reference for module building:
  * src/mod/applications/mod_skel/mod_skel.c
- * http://files.freeswitch.org/cluecon_2009/presentations/Silva_FreeSWITCH_Modules_For_Asterisk_Devs.ppt
+ * http://files.freeswitch.org/cluecon_2009/presentations/Silva_FluxPBX_Modules_For_Asterisk_Devs.ppt
  * You can load this codec with this command:
- * freeswitch@localhost> load mod_skel_codec
+ * fluxpbx@localhost> load mod_skel_codec
  * 2009-09-23 12:56:55.616573 [CONSOLE] switch_loadable_module.c:889 Successfully Loaded [mod_skel_codec]
  * 2009-09-23 12:56:55.616573 [NOTICE] switch_loadable_module.c:182 Adding Codec 'SKEL' (SKEL 8.0k) 8000hz 20ms
  * 2009-09-23 12:56:55.616573 [NOTICE] switch_loadable_module.c:270 Adding API Function 'skel_sayhi'
  *
  * Then test the API with:
- * freeswitch@localhost.localdomain> skel_sayhi
+ * fluxpbx@localhost.localdomain> skel_sayhi
  * API CALL [skel_sayhi()] output:
  * Hello, I am the skeleton codec and I am not useful for users ... I feel so depressed :-(
  * */

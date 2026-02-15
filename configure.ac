@@ -3,7 +3,7 @@
 
 # Must change all of the below together
 # For a release, set revision for that tagged release as well and uncomment
-AC_INIT([freeswitch], [1.10.12-dev], bugs@freeswitch.org)
+AC_INIT([fluxpbx], [1.10.12-dev], bugs@fluxpbx.org)
 AC_SUBST(SWITCH_VERSION_MAJOR, [1])
 AC_SUBST(SWITCH_VERSION_MINOR, [10])
 AC_SUBST(SWITCH_VERSION_MICRO, [12-dev])
@@ -58,12 +58,12 @@ AS_CASE([$host], [sparc-*-solaris2*], [AC_CHECK_LIB(mtmalloc, malloc)])
 AC_ARG_ENABLE([fhs],[AS_HELP_STRING([--disable-fhs],
 	[Do Not follow the FHS when placing files and directories (default only when not specifying prefix])],[enable_fhs="$enableval"],[enable_fhs="yes"])
 
-AC_PREFIX_DEFAULT(/usr/local/freeswitch)
+AC_PREFIX_DEFAULT(/usr/local/fluxpbx)
 # AC_PREFIX_DEFAULT does not get expanded until too late so we need to do this to use prefix in this script
 
 if test "x$prefix" = "xNONE" ; then
     enable_fhs=no
-    prefix='/usr/local/freeswitch'
+    prefix='/usr/local/fluxpbx'
 fi
 
 if test "x${exec_prefix}" = "xNONE" ; then
@@ -87,26 +87,26 @@ default_fontsdir="$prefix/fonts"
 default_imagesdir="$prefix/images"
 
 if test "${enable_fhs}" = "yes"; then
-    eval full_datadir="${datadir}/freeswitch"
+    eval full_datadir="${datadir}/fluxpbx"
     eval datadir=$full_datadir
     eval full_localstatedir="${localstatedir}"
     eval localstatedir=$full_localstatedir
     eval libdir=$libdir
-    default_cachedir="${localstatedir}/cache/freeswitch"
-    rundir="${localstatedir}/run/freeswitch"
-    logdir="${localstatedir}/log/freeswitch"
-    localstatedir="${localstatedir}/lib/freeswitch"
+    default_cachedir="${localstatedir}/cache/fluxpbx"
+    rundir="${localstatedir}/run/fluxpbx"
+    logdir="${localstatedir}/log/fluxpbx"
+    localstatedir="${localstatedir}/lib/fluxpbx"
     default_scriptdir="${datadir}/scripts"
     default_grammardir="${datadir}/grammar"
     default_soundsdir="${datadir}/sounds"
     default_htdocsdir="${datadir}/htdocs"
     default_fontsdir="${datadir}/fonts"
-    default_modulesdir="${libdir}/freeswitch/mod"
+    default_modulesdir="${libdir}/fluxpbx/mod"
     default_dbdir="${localstatedir}/db"
     default_storagedir="${localstatedir}/storage"
     default_recordingsdir="${localstatedir}/recordings"
     default_imagesdir="${localstatedir}/images"
-    eval confdir="${sysconfdir}/freeswitch"
+    eval confdir="${sysconfdir}/fluxpbx"
     eval default_certsdir="${confdir}/tls"
 else
     if test "$datadir" = "\${datarootdir}" ; then
@@ -118,7 +118,7 @@ else
 fi
 
 if test "$includedir" = "\${prefix}/include" ; then
-   includedir="${prefix}/include/freeswitch"
+   includedir="${prefix}/include/fluxpbx"
 fi
 
 default_pkgconfigdir="$libdir/pkgconfig"
@@ -356,7 +356,7 @@ if test -z "$LIBTOOL_MAJOR_VERSION" ; then
 	LIBTOOL_MAJOR_VERSION="`sed -n -e '/^VERSION/{s/^.*=\"\{0,1\}\([[0-9]]\{1,\}\)\..*/\1/;p;}' ${switch_srcdir}/build/config/ltmain.sh`"
 fi
 if test -z "$LIBTOOL_MAJOR_VERSION" ; then
-	AC_MSG_ERROR([Failed to detect your libtool version, please open a bug report on https://freeswitch.org/jira])
+	AC_MSG_ERROR([Failed to detect your libtool version, please open a bug report on https://fluxpbx.org/jira])
 fi
 AC_MSG_RESULT([${LIBTOOL_MAJOR_VERSION}])
 
@@ -1267,7 +1267,7 @@ case $host in
 esac
 
 if ! (test -x "$PKG_CONFIG" || test -x "$(which pkg-config)"); then
-  AC_MSG_ERROR([You need to install pkg-config to configure FreeSWITCH.])
+  AC_MSG_ERROR([You need to install pkg-config to configure FluxPBX.])
 fi
 
 # temporary workaround for Debian libldns-dev package bug
@@ -2273,8 +2273,8 @@ AC_CONFIG_FILES([Makefile
 		build/getsounds.sh
 		build/getlib.sh
 		build/getg729.sh
-		build/freeswitch.pc
-		build/standalone_module/freeswitch.pc
+		build/fluxpbx.pc
+		build/standalone_module/fluxpbx.pc
 		build/modmake.rules
                 libs/esl/Makefile
                 libs/esl/perl/Makefile
@@ -2357,7 +2357,7 @@ AC_OUTPUT
 ##
 
 echo
-echo "-------------------------- FreeSWITCH configuration --------------------------"
+echo "-------------------------- FluxPBX configuration --------------------------"
 echo ""
 echo "  Locations:"
 echo ""

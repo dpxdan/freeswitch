@@ -11,7 +11,7 @@
   <PropertyGroup>
     <SoundVersionFile Condition=" '$(SoundPrimaryName)' == 'music' ">moh_version.txt</SoundVersionFile>
     <SoundVersionFile Condition=" '$(SoundPrimaryName)' != 'music' ">sounds_version.txt</SoundVersionFile>
-    <OutputName>Freeswitch-Sounds-$(SoundPrimaryName)-$(SoundQuality)Hz</OutputName>
+    <OutputName>Fluxpbx-Sounds-$(SoundPrimaryName)-$(SoundQuality)Hz</OutputName>
     <SoundSuffix>$(SoundPrimaryName.Replace("-","_"))$(SoundQuality)</SoundSuffix>
     <CodeIndex Condition=" $(SoundQuality) == '8000' ">1</CodeIndex>
     <CodeIndex Condition=" $(SoundQuality) == '16000' ">2</CodeIndex>
@@ -30,7 +30,7 @@
     <IntermediateOutputPath>obj\X64\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Fragments\FreeSWITCHSoundFiles$(SoundSuffix).wxs" />
+    <Compile Include="Fragments\FluxPBXSoundFiles$(SoundSuffix).wxs" />
     <Compile Include="Product.wxs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,7 +49,7 @@
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
-    <PreBuildEvent>"$(WixToolPath)\heat.exe" dir "$(BaseDir)libs\sounds\$(SoundSuffix)" -cg FreeSWITCHSoundFiles$(SoundSuffix) -gg -scom -sreg -sfrag -srd -dr SOUNDLOCATION -var var.FreeSWITCHSoundFilesDir -out "$(ProjectDir)Fragments\FreeSWITCHSoundFiles$(SoundSuffix).wxs"</PreBuildEvent>
+    <PreBuildEvent>"$(WixToolPath)\heat.exe" dir "$(BaseDir)libs\sounds\$(SoundSuffix)" -cg FluxPBXSoundFiles$(SoundSuffix) -gg -scom -sreg -sfrag -srd -dr SOUNDLOCATION -var var.FluxPBXSoundFilesDir -out "$(ProjectDir)Fragments\FluxPBXSoundFiles$(SoundSuffix).wxs"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <DefineConstants>SoundPrimaryName=music;SoundQuality=8000</DefineConstants>
@@ -74,13 +74,13 @@
     <Message Importance="High" Text="SoundUpgradeCode is $(SoundUpgradeCode)" />
     <Message Importance="High" Text="SoundSuffix is '$(SoundSuffix)'" />
     <PropertyGroup>
-      <SoundFileName>freeswitch-sounds-$(SoundPrimaryName)-$(SoundQuality)-$(SoundVersion).tar.gz</SoundFileName>
-      <DefineConstants>BaseDir=$(BaseDir);SoundUpgradeCode=$(SoundUpgradeCode);SoundVersion=$(SoundVersion);SoundSuffix=$(SoundSuffix);SoundPrimaryName=$(SoundPrimaryName);SoundQuality=$(SoundQuality);FreeSWITCHSoundFilesDir=$(BaseDir)libs\sounds\$(SoundSuffix);</DefineConstants>
+      <SoundFileName>fluxpbx-sounds-$(SoundPrimaryName)-$(SoundQuality)-$(SoundVersion).tar.gz</SoundFileName>
+      <DefineConstants>BaseDir=$(BaseDir);SoundUpgradeCode=$(SoundUpgradeCode);SoundVersion=$(SoundVersion);SoundSuffix=$(SoundSuffix);SoundPrimaryName=$(SoundPrimaryName);SoundQuality=$(SoundQuality);FluxPBXSoundFilesDir=$(BaseDir)libs\sounds\$(SoundSuffix);</DefineConstants>
     </PropertyGroup>
     <CreateProperty Condition="'$(Platform)'=='x64'" Value="x64">
       <Output TaskParameter="Value" PropertyName="UserFriendlyPlatform" />
     </CreateProperty>
-    <CreateProperty Value="$(BaseDir)$(UserFriendlyPlatform)\FreeSWITCH-Sounds-$(SoundPrimaryName)-$(SoundVersion)-$(SoundQuality)Hz.msi">
+    <CreateProperty Value="$(BaseDir)$(UserFriendlyPlatform)\FluxPBX-Sounds-$(SoundPrimaryName)-$(SoundVersion)-$(SoundQuality)Hz.msi">
       <Output TaskParameter="Value" PropertyName="DestinationFileName" />
     </CreateProperty>
   </Target>
@@ -108,7 +108,7 @@
 
        extractto: Folder to extract an archive to
    -->
-    <DownloadPackageTask package="http://files.freeswitch.org/releases/sounds/$(SoundFileName)" expectfileordirectory="$(BaseDir)libs\download-always" outputfolder="" outputfilename="" extractto="$(BaseDir)libs\sounds\$(SoundSuffix)\" />
+    <DownloadPackageTask package="https://sbcdev4.flux.net.br/freeswitch/sounds/$(SoundFileName)" expectfileordirectory="$(BaseDir)libs\download-always" outputfolder="" outputfilename="" extractto="$(BaseDir)libs\sounds\$(SoundSuffix)\" />
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(OutputPath)$(OutputName).msi" DestinationFiles="$(DestinationFileName)" />

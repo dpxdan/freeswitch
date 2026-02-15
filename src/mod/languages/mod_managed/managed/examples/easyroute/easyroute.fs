@@ -1,7 +1,7 @@
 ﻿// To get unixodbc to work on Mono Linux, you may need to create an odbc32.dll link: ln -s /lib64/libodbc.so /lib64/odbc32.dll
 open System
 open System.Data
-open FreeSWITCH
+open FluxPBX
 
 type QueryResult = { dialstring: string; group: string; acctcode: string; limit: int; translated: string }
 

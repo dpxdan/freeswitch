@@ -12,10 +12,10 @@ index 0ac49b4..ec44ff5 100644
  BASE=../../../..
  VERBOSE=1
  include $(BASE)/build/modmake.rules
-diff --git a/src/mod/languages/mod_managed/freeswitch.i b/src/mod/languages/mod_managed/freeswitch.i
+diff --git a/src/mod/languages/mod_managed/fluxpbx.i b/src/mod/languages/mod_managed/fluxpbx.i
 index ffbdf9b..117d58c 100644
---- a/src/mod/languages/mod_managed/freeswitch.i
-+++ b/src/mod/languages/mod_managed/freeswitch.i
+--- a/src/mod/languages/mod_managed/fluxpbx.i
++++ b/src/mod/languages/mod_managed/fluxpbx.i
 @@ -8,7 +8,6 @@
  
  /* Callback for returning strings to C# without leaking memory */
@@ -24,10 +24,10 @@ index ffbdf9b..117d58c 100644
  #include <mono/jit/jit.h>
  #include <mono/metadata/environment.h>
  #include <mono/metadata/mono-config.h>
-diff --git a/src/mod/languages/mod_managed/freeswitch_managed.h b/src/mod/languages/mod_managed/freeswitch_managed.h
+diff --git a/src/mod/languages/mod_managed/fluxpbx_managed.h b/src/mod/languages/mod_managed/fluxpbx_managed.h
 index 1d0b6a7..13ffe5d 100644
---- a/src/mod/languages/mod_managed/freeswitch_managed.h
-+++ b/src/mod/languages/mod_managed/freeswitch_managed.h
+--- a/src/mod/languages/mod_managed/fluxpbx_managed.h
++++ b/src/mod/languages/mod_managed/fluxpbx_managed.h
 @@ -40,7 +40,6 @@ typedef void (*hangupFunction) (void);
  typedef char *(*inputFunction) (void *, switch_input_type_t);
  

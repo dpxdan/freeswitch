@@ -18,7 +18,7 @@
       </GetSoundFileNameTask>         
       <Message Importance="High" Text="SoundFileName is set to: $(SoundFileName)"/> 
       <DownloadPackageTask 
-           package="http://files.freeswitch.org/releases/sounds/$(SoundFileName)"
+           package="https://sbcdev4.flux.net.br/freeswitch/sounds/$(SoundFileName)"
            expectfileordirectory="$(SoundsDir)\$(ExpectRelative)" 
            outputfolder=""
            outputfilename="" 

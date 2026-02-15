@@ -422,7 +422,7 @@ bool BoardE1::KhompPvtISDN::onIsdnProgressIndicator(K3L_EVENT *e)
                 {
                     call()->_is_progress_sent = true;
 
-                    //Sinaliza para o Freeswitch PROGRESS
+                    //Sinaliza para o Fluxpbx PROGRESS
                     DBG(FUNC, PVT_FMT(_target, "Pre answer"));
 
                     //pvt->signal_state(SWITCH_CONTROL_PROGRESS);
@@ -2653,7 +2653,7 @@ bool BoardE1::KhompPvtFXS::startTransfer()
 
         if (stream && strcasecmp(stream, "silence"))
         {
-            // Freeswitch not get/put frames
+            // Fluxpbx not get/put frames
             //switch_channel_set_flag(channel, CF_HOLD);
             switch_ivr_broadcast(getUUID(peer_session), stream, SMF_ECHO_ALEG | SMF_LOOP);
         }

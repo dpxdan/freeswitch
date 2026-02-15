@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.freeswitch.esl;
+package org.fluxpbx.esl;
 
 public class ESLevent {
   private long swigCPtr;

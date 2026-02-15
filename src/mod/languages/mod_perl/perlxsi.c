@@ -10,7 +10,7 @@
 EXTERN_C void xs_init(pTHX);
 
 EXTERN_C void boot_DynaLoader(pTHX_ CV * cv);
-EXTERN_C void boot_freeswitch(pTHX_ CV * cv);
+EXTERN_C void boot_fluxpbx(pTHX_ CV * cv);
 
 EXTERN_C void xs_init(pTHX)
 {
@@ -19,5 +19,5 @@ EXTERN_C void xs_init(pTHX)
 
 	/* DynaLoader is a special case */
 	newXS("DynaLoader::boot_DynaLoader", boot_DynaLoader, file);
-	newXS("freeswitchc::boot_freeswitch", boot_freeswitch, file);
+	newXS("fluxpbxc::boot_fluxpbx", boot_fluxpbx, file);
 }

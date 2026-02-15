@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / G722 codec module
+ * The Original Code is FluxPBX Modular Media Switching Software Library / G722 codec module
  *
  * The Initial Developer of the Original Code is
- * Brian K. West <brian@freeswitch.org>
+ * Brian K. West <brian@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- * Brian K. West <brian@freeswitch.org>
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Brian K. West <brian@fluxpbx.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Michael Jerris <mike@jerris.com>
  *
  * mod_spandsp_codecs.c -- VoIP Codecs (G.711, G.722, G.726, GSM-FR, IMA_ADPCM, LPC10)

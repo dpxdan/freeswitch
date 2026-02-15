@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2018, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2018, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -392,7 +392,7 @@ FST_CORE_BEGIN("./conf")
 			fst_xcheck(switch_file_exists(filename, fst_pool) == SWITCH_STATUS_SUCCESS, "Expect switch_system() to use shell to create file via > redirection");
 			unlink(filename);
 
-			// verify exec-set works- see conf/freeswitch.xml for test setup of shell_exec_set_test global variable
+			// verify exec-set works- see conf/fluxpbx.xml for test setup of shell_exec_set_test global variable
 			fst_check_string_equals(switch_core_get_variable("shell_exec_set_test"), "usr");
 #endif
 		}

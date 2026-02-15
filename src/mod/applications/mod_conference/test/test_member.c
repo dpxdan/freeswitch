@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2019, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2019, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -61,9 +61,9 @@ FST_CORE_BEGIN("./conf")
 
 			sprintf(logo, "%s%s%s%s%s%s%s", "{position=left-bot,text_x=center,"
 			"center_offset=190,text=#000000:transparent:", SWITCH_GLOBAL_dirs.conf_dir, SWITCH_PATH_SEPARATOR, "font/AEH.ttf:50:"
-			"'FREESWITCH ROCKS',alt_text_x=center,alt_center_offset=190,"
+			"'FLUXPBX ROCKS',alt_text_x=center,alt_center_offset=190,"
 			"alt_text_y=88,alt_text=#ffffff:transparent:", SWITCH_GLOBAL_dirs.conf_dir, SWITCH_PATH_SEPARATOR, "font/AEH.ttf:40:"
-			"'freeswitch'}");
+			"'fluxpbx'}");
 			sprintf(path, "%s%s%s%s", logo, SWITCH_GLOBAL_dirs.conf_dir, SWITCH_PATH_SEPARATOR, "../images/signalwire.png");
 			switch_mutex_init(&member->write_mutex, SWITCH_MUTEX_NESTED, fst_pool);
 			switch_mutex_init(&member->flag_mutex, SWITCH_MUTEX_NESTED, fst_pool);

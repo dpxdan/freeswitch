@@ -1,4 +1,4 @@
-package FreeSWITCH::Client;
+package FluxPBX::Client;
 $|=1;
 use IO::Socket::INET;
 use IO::Select;

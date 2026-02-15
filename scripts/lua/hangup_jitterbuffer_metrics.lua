@@ -41,7 +41,7 @@ local v = request_body .. '}}';
 
 local r, c, h, s = https.request{
 	method = 'POST',
-	url = "http://"..ip..":80/freeswitch_metrics",
+	url = "http://"..ip..":80/fluxpbx_metrics",
 	headers = {
 		["Content-Type"] = "application/json",
 		["Content-Length"] = string.len(v)

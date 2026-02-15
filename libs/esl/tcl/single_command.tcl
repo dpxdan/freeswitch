@@ -9,14 +9,14 @@ if { $argc < 1 } {
 }
 
 #
-# Open connection to FreeSWITCH ESL
-#   (FreeSWITCH must be running for this to work)
+# Open connection to FluxPBX ESL
+#   (FluxPBX must be running for this to work)
 #
 ESLconnection esl {127.0.0.1} 8021 {ClueCon}
 
 #
 # Send request               (given as args to sendRecv)
-# Get answer from FreeSWITCH (return value from sendRecv)
+# Get answer from FluxPBX (return value from sendRecv)
 # Translate reponse to text  (getBody command)
 # Print it                   (puts)
 #

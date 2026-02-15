@@ -3,17 +3,17 @@ set -e
 
 # Source docker-entrypoint.sh:
 # https://github.com/docker-library/postgres/blob/master/9.4/docker-entrypoint.sh
-# https://github.com/kovalyshyn/docker-freeswitch/blob/vanilla/docker-entrypoint.sh
+# https://github.com/kovalyshyn/docker-fluxpbx/blob/vanilla/docker-entrypoint.sh
 
-if [ "$1" = 'freeswitch' ]; then
+if [ "$1" = 'fluxpbx' ]; then
 
-    if [ ! -f "/etc/freeswitch/freeswitch.xml" ]; then
-        mkdir -p /etc/freeswitch
-        cp -varf /usr/share/freeswitch/conf/vanilla/* /etc/freeswitch/
+    if [ ! -f "/etc/fluxpbx/fluxpbx.xml" ]; then
+        mkdir -p /etc/fluxpbx
+        cp -varf /usr/share/fluxpbx/conf/vanilla/* /etc/fluxpbx/
     fi
 
-    chown -R freeswitch:freeswitch /etc/freeswitch
-    chown -R freeswitch:freeswitch /var/{run,lib}/freeswitch
+    chown -R fluxpbx:fluxpbx /etc/fluxpbx
+    chown -R fluxpbx:fluxpbx /var/{run,lib}/fluxpbx
     
     if [ -d /docker-entrypoint.d ]; then
         for f in /docker-entrypoint.d/*.sh; do
@@ -21,7 +21,7 @@ if [ "$1" = 'freeswitch' ]; then
         done
     fi
     
-    exec gosu freeswitch /usr/bin/freeswitch -u freeswitch -g freeswitch -nonat -c
+    exec gosu fluxpbx /usr/bin/fluxpbx -u fluxpbx -g fluxpbx -nonat -c
 fi
 
 exec "$@"

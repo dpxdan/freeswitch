@@ -1,5 +1,5 @@
 /*
-* mod_mariadb for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* mod_mariadb for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 * Copyright (C) 2019, Andrey Volk <andywolk@gmail.com>
 *
 * Version: MPL 1.1
@@ -14,17 +14,17 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is ported from FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* The Original Code is ported from FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 *
 * The Initial Developer of the Original Code is
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * Portions created by the Initial Developer are Copyright (C)
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
 * Andrey Volk <andywolk@gmail.com>
 *
-* mod_mariadb.c -- MariaDB (MySQL) FreeSWITCH module
+* mod_mariadb.c -- MariaDB (MySQL) FluxPBX module
 *
 */
 
@@ -1028,7 +1028,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_mariadb_load)
 		https://dev.mysql.com/doc/refman/8.0/en/column-count-limit.html
 
 		Setting database flag to SWITCH_DATABASE_FLAG_ROW_SIZE_LIMIT 
-		will allow FreeSWITCH Core to properly create wide tables such as the channel table 
+		will allow FluxPBX Core to properly create wide tables such as the channel table 
 		which size exeeds the limit in the case of a multi-byte charset like utf8 (1-4 bytes per character).
 	*/
 	database_interface->flags = SWITCH_DATABASE_FLAG_ROW_SIZE_LIMIT;

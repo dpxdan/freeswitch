@@ -1,6 +1,6 @@
 /*
- * Freeswitch Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * Fluxpbx Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Seven Du <dujinfang@gmail.com>
  *
  * mod_verto.c -- HTML5 Verto interface
@@ -1679,7 +1679,7 @@ static void http_static_handler(kws_request_t *request, verto_vhost_t *vhost)
 		switch_snprintf((char *)chunk, sizeof(chunk),
 			"HTTP/1.1 200 OK\r\n"
 			"Date: %s\r\n"
-			"Server: FreeSWITCH-%s-mod_verto\r\n"
+			"Server: FluxPBX-%s-mod_verto\r\n"
 			"Content-Type: %s\r\n"
 			"Content-Length: %" SWITCH_SIZE_T_FMT "\r\n\r\n",
 			date,
@@ -1748,7 +1748,7 @@ new_req:
 			"Content-Length: 0\r\n"
 			"Date: %s\r\n"
 			"Allow: HEAD,GET,POST,PUT,DELETE,PATCH,OPTIONS\r\n"
-			"Server: FreeSWITCH-%s-mod_verto\r\n\r\n",
+			"Server: FluxPBX-%s-mod_verto\r\n\r\n",
 			switch_event_get_header(stream.param_event, "Event-Date-GMT"),
 			switch_version_full());
 

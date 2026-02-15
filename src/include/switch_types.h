@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2021, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2021, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,19 +14,19 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Bret McDanel <trixter AT 0xdecafbad dot com>
  * Joseph Sullivan <jossulli@amazon.com>
- * Raymond Chandler <intralanman@freeswitch.org>
+ * Raymond Chandler <intralanman@fluxpbx.org>
  * Emmanuel Schmidbauer <e.schmidbauer@gmail.com>
  * Andrey Volk <andywolk@gmail.com>
  *
@@ -939,7 +939,7 @@ typedef enum {
 	  But, now that you have a remote RTP stream, you'd rather send those timestamps as-is in case they will be fed to a remote jitter buffer......
 	  Ok, so this causes the audio to completely fade out despite the fact that we send the mark bit which should give them heads up its happening.
 
-	  Sigh, This flag will tell FreeSWITCH that if it ever generates even one RTP packet itself, to continue to generate all of them and ignore the
+	  Sigh, This flag will tell FluxPBX that if it ever generates even one RTP packet itself, to continue to generate all of them and ignore the
 	  actual timestamps in the frames.
 
 	 */

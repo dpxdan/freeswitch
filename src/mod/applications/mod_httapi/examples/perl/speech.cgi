@@ -23,7 +23,7 @@ print $q->header(-type => "text/xml");
 
 my $writer = new XML::Writer(OUTPUT => STDOUT, DATA_MODE => 1);
 
-$writer->startTag('document', type => 'xml/freeswitch-httapi');
+$writer->startTag('document', type => 'xml/fluxpbx-httapi');
 
 if ($result) {
     $writer->startTag('work');
@@ -44,8 +44,8 @@ if ($result) {
 		      name => "result",
 		      'asr-engine' => "pocketsphinx", 
 		      'asr-grammar' => "pizza_yesno",
-		      file => "http://sidious.freeswitch.org/sounds/ConfirmDelivery.wav",
-		      'error-file' => "http://sidious.freeswitch.org/sounds/invalid.wav"
+		      file => "http://sidious.fluxpbx.org/sounds/ConfirmDelivery.wav",
+		      'error-file' => "http://sidious.fluxpbx.org/sounds/invalid.wav"
 	);
 
     $writer->dataElement("bind", "~\\d+\#", strip => "#");

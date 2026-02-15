@@ -1,6 +1,6 @@
 """ 
-FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
 
 Version: MPL 1.1
 
@@ -14,10 +14,10 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the
 License.
 
-The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 
 The Initial Developer of the Original Code is
-Anthony Minessale II <anthm@freeswitch.org>
+Anthony Minessale II <anthm@fluxpbx.org>
 Portions created by the Initial Developer are Copyright (C)
 the Initial Developer. All Rights Reserved.
 
@@ -38,7 +38,7 @@ import freepy.globals
 from freepy.globals import debug
 
 """
-freepy library -- connect to freeswitch mod_socket_event via python/twisted
+freepy library -- connect to fluxpbx mod_socket_event via python/twisted
 
 All commands currently use api instead of bgapi.  For the networking model
 used (twisted), this seems to work well and is simpler.
@@ -94,7 +94,7 @@ class FreepyDispatcher(LineReceiver):
         """
         Instruct conference to join a particular user via dialout
         @param conf_name - the name of the conference (arbitrary)
-        @param party2dial - a freeswitch sofia url, eg, sofia/mydomain.com/foo@bar.com
+        @param party2dial - a fluxpbx sofia url, eg, sofia/mydomain.com/foo@bar.com
         @return - a deferred that will be called back with a string like:
                   Reply-Text: +OK Job-UUID: 4d410a8e-2409-11dc-99bf-a5e17fab9c65
 
@@ -229,7 +229,7 @@ class FreepyDispatcher(LineReceiver):
             <created>2007-09-27 11:46:01</created>
             <name>sofia/test/4761</name>
             <state>CS_LOOPBACK</state>
-            <cid_name>FreeSWITCH</cid_name>
+            <cid_name>FluxPBX</cid_name>
             <cid_num>0000000000</cid_num>
             <ip_addr></ip_addr>
             <dest>outgoing2endpoint-6207463</dest>

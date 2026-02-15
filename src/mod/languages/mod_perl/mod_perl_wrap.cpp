@@ -1567,10 +1567,10 @@ static swig_module_info swig_module = {swig_types, 30, 0, 0, 0, 0};
 
 /* -------- TYPES TABLE (END) -------- */
 
-#define SWIG_init    boot_freeswitch
+#define SWIG_init    boot_fluxpbx
 
-#define SWIG_name   "freeswitchc::boot_freeswitch"
-#define SWIG_prefix "freeswitchc::"
+#define SWIG_name   "fluxpbxc::boot_fluxpbx"
+#define SWIG_prefix "fluxpbxc::"
 
 #define SWIGVERSION 0x030012 
 #define SWIG_VERSION SWIGVERSION
@@ -1598,7 +1598,7 @@ SWIGEXPORT void SWIG_init (CV *cv, CPerlObj *);
 
 
 #include "switch_cpp.h"
-#include "freeswitch_perl.h"
+#include "fluxpbx_perl.h"
 
 
 SWIGINTERN swig_type_info*
@@ -2009,8 +2009,8 @@ extern "C" {
 #endif
 
 #ifdef PERL_OBJECT
-#define MAGIC_CLASS _wrap_freeswitch_var::
-class _wrap_freeswitch_var : public CPerlObj {
+#define MAGIC_CLASS _wrap_fluxpbx_var::
+class _wrap_fluxpbx_var : public CPerlObj {
 public:
 #else
 #define MAGIC_CLASS
@@ -10632,17 +10632,17 @@ XS(_wrap_Session_setPERL) {
 static void *_p_PERL__SessionTo_p_CoreSession(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((CoreSession *)  ((PERL::Session *) x));
 }
-static swig_type_info _swigt__p_API = {"_p_API", "API *", 0, 0, (void*)"freeswitch::API", 0};
-static swig_type_info _swigt__p_CoreSession = {"_p_CoreSession", "CoreSession *", 0, 0, (void*)"freeswitch::CoreSession", 0};
-static swig_type_info _swigt__p_DTMF = {"_p_DTMF", "DTMF *", 0, 0, (void*)"freeswitch::DTMF", 0};
-static swig_type_info _swigt__p_Event = {"_p_Event", "Event *", 0, 0, (void*)"freeswitch::Event", 0};
-static swig_type_info _swigt__p_EventConsumer = {"_p_EventConsumer", "EventConsumer *", 0, 0, (void*)"freeswitch::EventConsumer", 0};
-static swig_type_info _swigt__p_IVRMenu = {"_p_IVRMenu", "IVRMenu *", 0, 0, (void*)"freeswitch::IVRMenu", 0};
-static swig_type_info _swigt__p_PERL__Session = {"_p_PERL__Session", "PERL::Session *", 0, 0, (void*)"freeswitch::Session", 0};
+static swig_type_info _swigt__p_API = {"_p_API", "API *", 0, 0, (void*)"fluxpbx::API", 0};
+static swig_type_info _swigt__p_CoreSession = {"_p_CoreSession", "CoreSession *", 0, 0, (void*)"fluxpbx::CoreSession", 0};
+static swig_type_info _swigt__p_DTMF = {"_p_DTMF", "DTMF *", 0, 0, (void*)"fluxpbx::DTMF", 0};
+static swig_type_info _swigt__p_Event = {"_p_Event", "Event *", 0, 0, (void*)"fluxpbx::Event", 0};
+static swig_type_info _swigt__p_EventConsumer = {"_p_EventConsumer", "EventConsumer *", 0, 0, (void*)"fluxpbx::EventConsumer", 0};
+static swig_type_info _swigt__p_IVRMenu = {"_p_IVRMenu", "IVRMenu *", 0, 0, (void*)"fluxpbx::IVRMenu", 0};
+static swig_type_info _swigt__p_PERL__Session = {"_p_PERL__Session", "PERL::Session *", 0, 0, (void*)"fluxpbx::Session", 0};
 static swig_type_info _swigt__p_PerlInterpreter = {"_p_PerlInterpreter", "PerlInterpreter *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Stream = {"_p_Stream", "Stream *", 0, 0, (void*)"freeswitch::Stream", 0};
+static swig_type_info _swigt__p_Stream = {"_p_Stream", "Stream *", 0, 0, (void*)"fluxpbx::Stream", 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_input_callback_state = {"_p_input_callback_state", "input_callback_state_t *|input_callback_state *", 0, 0, (void*)"freeswitch::input_callback_state_t", 0};
+static swig_type_info _swigt__p_input_callback_state = {"_p_input_callback_state", "input_callback_state_t *|input_callback_state *", 0, 0, (void*)"fluxpbx::input_callback_state_t", 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_switch_event_node_t = {"_p_p_switch_event_node_t", "switch_event_node_t **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_session_flag_t = {"_p_session_flag_t", "enum session_flag_t *|session_flag_t *", 0, 0, (void*)0, 0};
@@ -10773,192 +10773,192 @@ static swig_variable_info swig_variables[] = {
 {0,0,0,0}
 };
 static swig_command_info swig_commands[] = {
-{"freeswitchc::setGlobalVariable", _wrap_setGlobalVariable},
-{"freeswitchc::getGlobalVariable", _wrap_getGlobalVariable},
-{"freeswitchc::consoleLog", _wrap_consoleLog},
-{"freeswitchc::consoleLog2", _wrap_consoleLog2},
-{"freeswitchc::consoleCleanLog", _wrap_consoleCleanLog},
-{"freeswitchc::running", _wrap_running},
-{"freeswitchc::email", _wrap_email},
-{"freeswitchc::new_IVRMenu", _wrap_new_IVRMenu},
-{"freeswitchc::delete_IVRMenu", _wrap_delete_IVRMenu},
-{"freeswitchc::IVRMenu_bindAction", _wrap_IVRMenu_bindAction},
-{"freeswitchc::IVRMenu_execute", _wrap_IVRMenu_execute},
-{"freeswitchc::new_API", _wrap_new_API},
-{"freeswitchc::delete_API", _wrap_delete_API},
-{"freeswitchc::API_execute", _wrap_API_execute},
-{"freeswitchc::API_executeString", _wrap_API_executeString},
-{"freeswitchc::API_getTime", _wrap_API_getTime},
-{"freeswitchc::input_callback_state_t_function_set", _wrap_input_callback_state_t_function_set},
-{"freeswitchc::input_callback_state_t_function_get", _wrap_input_callback_state_t_function_get},
-{"freeswitchc::input_callback_state_t_threadState_set", _wrap_input_callback_state_t_threadState_set},
-{"freeswitchc::input_callback_state_t_threadState_get", _wrap_input_callback_state_t_threadState_get},
-{"freeswitchc::input_callback_state_t_extra_set", _wrap_input_callback_state_t_extra_set},
-{"freeswitchc::input_callback_state_t_extra_get", _wrap_input_callback_state_t_extra_get},
-{"freeswitchc::input_callback_state_t_funcargs_set", _wrap_input_callback_state_t_funcargs_set},
-{"freeswitchc::input_callback_state_t_funcargs_get", _wrap_input_callback_state_t_funcargs_get},
-{"freeswitchc::new_input_callback_state_t", _wrap_new_input_callback_state_t},
-{"freeswitchc::delete_input_callback_state_t", _wrap_delete_input_callback_state_t},
-{"freeswitchc::DTMF_digit_set", _wrap_DTMF_digit_set},
-{"freeswitchc::DTMF_digit_get", _wrap_DTMF_digit_get},
-{"freeswitchc::DTMF_duration_set", _wrap_DTMF_duration_set},
-{"freeswitchc::DTMF_duration_get", _wrap_DTMF_duration_get},
-{"freeswitchc::new_DTMF", _wrap_new_DTMF},
-{"freeswitchc::delete_DTMF", _wrap_delete_DTMF},
-{"freeswitchc::new_Stream", _wrap_new_Stream},
-{"freeswitchc::delete_Stream", _wrap_delete_Stream},
-{"freeswitchc::Stream_read", _wrap_Stream_read},
-{"freeswitchc::Stream_write", _wrap_Stream_write},
-{"freeswitchc::Stream_raw_write", _wrap_Stream_raw_write},
-{"freeswitchc::Stream_get_data", _wrap_Stream_get_data},
-{"freeswitchc::Event_event_set", _wrap_Event_event_set},
-{"freeswitchc::Event_event_get", _wrap_Event_event_get},
-{"freeswitchc::Event_serialized_string_set", _wrap_Event_serialized_string_set},
-{"freeswitchc::Event_serialized_string_get", _wrap_Event_serialized_string_get},
-{"freeswitchc::Event_mine_set", _wrap_Event_mine_set},
-{"freeswitchc::Event_mine_get", _wrap_Event_mine_get},
-{"freeswitchc::new_Event", _wrap_new_Event},
-{"freeswitchc::delete_Event", _wrap_delete_Event},
-{"freeswitchc::Event_chat_execute", _wrap_Event_chat_execute},
-{"freeswitchc::Event_chat_send", _wrap_Event_chat_send},
-{"freeswitchc::Event_serialize", _wrap_Event_serialize},
-{"freeswitchc::Event_setPriority", _wrap_Event_setPriority},
-{"freeswitchc::Event_getHeader", _wrap_Event_getHeader},
-{"freeswitchc::Event_getBody", _wrap_Event_getBody},
-{"freeswitchc::Event_getType", _wrap_Event_getType},
-{"freeswitchc::Event_addBody", _wrap_Event_addBody},
-{"freeswitchc::Event_addHeader", _wrap_Event_addHeader},
-{"freeswitchc::Event_delHeader", _wrap_Event_delHeader},
-{"freeswitchc::Event_fire", _wrap_Event_fire},
-{"freeswitchc::Event_merge", _wrap_Event_merge},
-{"freeswitchc::EventConsumer_events_set", _wrap_EventConsumer_events_set},
-{"freeswitchc::EventConsumer_events_get", _wrap_EventConsumer_events_get},
-{"freeswitchc::EventConsumer_e_event_id_set", _wrap_EventConsumer_e_event_id_set},
-{"freeswitchc::EventConsumer_e_event_id_get", _wrap_EventConsumer_e_event_id_get},
-{"freeswitchc::EventConsumer_e_callback_set", _wrap_EventConsumer_e_callback_set},
-{"freeswitchc::EventConsumer_e_callback_get", _wrap_EventConsumer_e_callback_get},
-{"freeswitchc::EventConsumer_e_subclass_name_set", _wrap_EventConsumer_e_subclass_name_set},
-{"freeswitchc::EventConsumer_e_subclass_name_get", _wrap_EventConsumer_e_subclass_name_get},
-{"freeswitchc::EventConsumer_e_cb_arg_set", _wrap_EventConsumer_e_cb_arg_set},
-{"freeswitchc::EventConsumer_e_cb_arg_get", _wrap_EventConsumer_e_cb_arg_get},
-{"freeswitchc::EventConsumer_enodes_set", _wrap_EventConsumer_enodes_set},
-{"freeswitchc::EventConsumer_enodes_get", _wrap_EventConsumer_enodes_get},
-{"freeswitchc::EventConsumer_node_index_set", _wrap_EventConsumer_node_index_set},
-{"freeswitchc::EventConsumer_node_index_get", _wrap_EventConsumer_node_index_get},
-{"freeswitchc::new_EventConsumer", _wrap_new_EventConsumer},
-{"freeswitchc::delete_EventConsumer", _wrap_delete_EventConsumer},
-{"freeswitchc::EventConsumer_bind", _wrap_EventConsumer_bind},
-{"freeswitchc::EventConsumer_pop", _wrap_EventConsumer_pop},
-{"freeswitchc::EventConsumer_cleanup", _wrap_EventConsumer_cleanup},
-{"freeswitchc::delete_CoreSession", _wrap_delete_CoreSession},
-{"freeswitchc::CoreSession_session_set", _wrap_CoreSession_session_set},
-{"freeswitchc::CoreSession_session_get", _wrap_CoreSession_session_get},
-{"freeswitchc::CoreSession_channel_set", _wrap_CoreSession_channel_set},
-{"freeswitchc::CoreSession_channel_get", _wrap_CoreSession_channel_get},
-{"freeswitchc::CoreSession_flags_set", _wrap_CoreSession_flags_set},
-{"freeswitchc::CoreSession_flags_get", _wrap_CoreSession_flags_get},
-{"freeswitchc::CoreSession_allocated_set", _wrap_CoreSession_allocated_set},
-{"freeswitchc::CoreSession_allocated_get", _wrap_CoreSession_allocated_get},
-{"freeswitchc::CoreSession_cb_state_set", _wrap_CoreSession_cb_state_set},
-{"freeswitchc::CoreSession_cb_state_get", _wrap_CoreSession_cb_state_get},
-{"freeswitchc::CoreSession_hook_state_set", _wrap_CoreSession_hook_state_set},
-{"freeswitchc::CoreSession_hook_state_get", _wrap_CoreSession_hook_state_get},
-{"freeswitchc::CoreSession_cause_set", _wrap_CoreSession_cause_set},
-{"freeswitchc::CoreSession_cause_get", _wrap_CoreSession_cause_get},
-{"freeswitchc::CoreSession_uuid_set", _wrap_CoreSession_uuid_set},
-{"freeswitchc::CoreSession_uuid_get", _wrap_CoreSession_uuid_get},
-{"freeswitchc::CoreSession_tts_name_set", _wrap_CoreSession_tts_name_set},
-{"freeswitchc::CoreSession_tts_name_get", _wrap_CoreSession_tts_name_get},
-{"freeswitchc::CoreSession_voice_name_set", _wrap_CoreSession_voice_name_set},
-{"freeswitchc::CoreSession_voice_name_get", _wrap_CoreSession_voice_name_get},
-{"freeswitchc::CoreSession_insertFile", _wrap_CoreSession_insertFile},
-{"freeswitchc::CoreSession_answer", _wrap_CoreSession_answer},
-{"freeswitchc::CoreSession_print", _wrap_CoreSession_print},
-{"freeswitchc::CoreSession_preAnswer", _wrap_CoreSession_preAnswer},
-{"freeswitchc::CoreSession_hangup", _wrap_CoreSession_hangup},
-{"freeswitchc::CoreSession_hangupState", _wrap_CoreSession_hangupState},
-{"freeswitchc::CoreSession_setVariable", _wrap_CoreSession_setVariable},
-{"freeswitchc::CoreSession_setPrivate", _wrap_CoreSession_setPrivate},
-{"freeswitchc::CoreSession_getPrivate", _wrap_CoreSession_getPrivate},
-{"freeswitchc::CoreSession_getVariable", _wrap_CoreSession_getVariable},
-{"freeswitchc::CoreSession_process_callback_result", _wrap_CoreSession_process_callback_result},
-{"freeswitchc::CoreSession_say", _wrap_CoreSession_say},
-{"freeswitchc::CoreSession_sayPhrase", _wrap_CoreSession_sayPhrase},
-{"freeswitchc::CoreSession_hangupCause", _wrap_CoreSession_hangupCause},
-{"freeswitchc::CoreSession_getState", _wrap_CoreSession_getState},
-{"freeswitchc::CoreSession_recordFile", _wrap_CoreSession_recordFile},
-{"freeswitchc::CoreSession_originate", _wrap_CoreSession_originate},
-{"freeswitchc::CoreSession_destroy", _wrap_CoreSession_destroy},
-{"freeswitchc::CoreSession_setDTMFCallback", _wrap_CoreSession_setDTMFCallback},
-{"freeswitchc::CoreSession_speak", _wrap_CoreSession_speak},
-{"freeswitchc::CoreSession_set_tts_parms", _wrap_CoreSession_set_tts_parms},
-{"freeswitchc::CoreSession_set_tts_params", _wrap_CoreSession_set_tts_params},
-{"freeswitchc::CoreSession_collectDigits", _wrap_CoreSession_collectDigits},
-{"freeswitchc::CoreSession_getDigits", _wrap_CoreSession_getDigits},
-{"freeswitchc::CoreSession_transfer", _wrap_CoreSession_transfer},
-{"freeswitchc::CoreSession_read", _wrap_CoreSession_read},
-{"freeswitchc::CoreSession_detectSpeech", _wrap_CoreSession_detectSpeech},
-{"freeswitchc::CoreSession_playAndGetDigits", _wrap_CoreSession_playAndGetDigits},
-{"freeswitchc::CoreSession_playAndDetectSpeech", _wrap_CoreSession_playAndDetectSpeech},
-{"freeswitchc::CoreSession_streamFile", _wrap_CoreSession_streamFile},
-{"freeswitchc::CoreSession_sleep", _wrap_CoreSession_sleep},
-{"freeswitchc::CoreSession_flushEvents", _wrap_CoreSession_flushEvents},
-{"freeswitchc::CoreSession_flushDigits", _wrap_CoreSession_flushDigits},
-{"freeswitchc::CoreSession_setAutoHangup", _wrap_CoreSession_setAutoHangup},
-{"freeswitchc::CoreSession_setHangupHook", _wrap_CoreSession_setHangupHook},
-{"freeswitchc::CoreSession_ready", _wrap_CoreSession_ready},
-{"freeswitchc::CoreSession_bridged", _wrap_CoreSession_bridged},
-{"freeswitchc::CoreSession_answered", _wrap_CoreSession_answered},
-{"freeswitchc::CoreSession_mediaReady", _wrap_CoreSession_mediaReady},
-{"freeswitchc::CoreSession_waitForAnswer", _wrap_CoreSession_waitForAnswer},
-{"freeswitchc::CoreSession_execute", _wrap_CoreSession_execute},
-{"freeswitchc::CoreSession_sendEvent", _wrap_CoreSession_sendEvent},
-{"freeswitchc::CoreSession_setEventData", _wrap_CoreSession_setEventData},
-{"freeswitchc::CoreSession_getXMLCDR", _wrap_CoreSession_getXMLCDR},
-{"freeswitchc::CoreSession_begin_allow_threads", _wrap_CoreSession_begin_allow_threads},
-{"freeswitchc::CoreSession_end_allow_threads", _wrap_CoreSession_end_allow_threads},
-{"freeswitchc::CoreSession_get_uuid", _wrap_CoreSession_get_uuid},
-{"freeswitchc::CoreSession_get_cb_args", _wrap_CoreSession_get_cb_args},
-{"freeswitchc::CoreSession_check_hangup_hook", _wrap_CoreSession_check_hangup_hook},
-{"freeswitchc::CoreSession_run_dtmf_callback", _wrap_CoreSession_run_dtmf_callback},
-{"freeswitchc::CoreSession_consoleLog", _wrap_CoreSession_consoleLog},
-{"freeswitchc::CoreSession_consoleLog2", _wrap_CoreSession_consoleLog2},
-{"freeswitchc::console_log", _wrap_console_log},
-{"freeswitchc::console_log2", _wrap_console_log2},
-{"freeswitchc::console_clean_log", _wrap_console_clean_log},
-{"freeswitchc::msleep", _wrap_msleep},
-{"freeswitchc::bridge", _wrap_bridge},
-{"freeswitchc::hanguphook", _wrap_hanguphook},
-{"freeswitchc::dtmf_callback", _wrap_dtmf_callback},
-{"freeswitchc::new_Session", _wrap_new_Session},
-{"freeswitchc::delete_Session", _wrap_delete_Session},
-{"freeswitchc::Session_destroy", _wrap_Session_destroy},
-{"freeswitchc::Session_begin_allow_threads", _wrap_Session_begin_allow_threads},
-{"freeswitchc::Session_end_allow_threads", _wrap_Session_end_allow_threads},
-{"freeswitchc::Session_check_hangup_hook", _wrap_Session_check_hangup_hook},
-{"freeswitchc::Session_run_dtmf_callback", _wrap_Session_run_dtmf_callback},
-{"freeswitchc::Session_setME", _wrap_Session_setME},
-{"freeswitchc::Session_setInputCallback", _wrap_Session_setInputCallback},
-{"freeswitchc::Session_unsetInputCallback", _wrap_Session_unsetInputCallback},
-{"freeswitchc::Session_setHangupHook", _wrap_Session_setHangupHook},
-{"freeswitchc::Session_ready", _wrap_Session_ready},
-{"freeswitchc::Session_callback_mutex_set", _wrap_Session_callback_mutex_set},
-{"freeswitchc::Session_callback_mutex_get", _wrap_Session_callback_mutex_get},
-{"freeswitchc::Session_destroying_set", _wrap_Session_destroying_set},
-{"freeswitchc::Session_destroying_get", _wrap_Session_destroying_get},
-{"freeswitchc::Session_event_idx_set", _wrap_Session_event_idx_set},
-{"freeswitchc::Session_event_idx_get", _wrap_Session_event_idx_get},
-{"freeswitchc::Session_suuid_set", _wrap_Session_suuid_set},
-{"freeswitchc::Session_suuid_get", _wrap_Session_suuid_get},
-{"freeswitchc::Session_cb_function_set", _wrap_Session_cb_function_set},
-{"freeswitchc::Session_cb_function_get", _wrap_Session_cb_function_get},
-{"freeswitchc::Session_cb_arg_set", _wrap_Session_cb_arg_set},
-{"freeswitchc::Session_cb_arg_get", _wrap_Session_cb_arg_get},
-{"freeswitchc::Session_hangup_func_str_set", _wrap_Session_hangup_func_str_set},
-{"freeswitchc::Session_hangup_func_str_get", _wrap_Session_hangup_func_str_get},
-{"freeswitchc::Session_hangup_func_arg_set", _wrap_Session_hangup_func_arg_set},
-{"freeswitchc::Session_hangup_func_arg_get", _wrap_Session_hangup_func_arg_get},
-{"freeswitchc::Session_setPERL", _wrap_Session_setPERL},
+{"fluxpbxc::setGlobalVariable", _wrap_setGlobalVariable},
+{"fluxpbxc::getGlobalVariable", _wrap_getGlobalVariable},
+{"fluxpbxc::consoleLog", _wrap_consoleLog},
+{"fluxpbxc::consoleLog2", _wrap_consoleLog2},
+{"fluxpbxc::consoleCleanLog", _wrap_consoleCleanLog},
+{"fluxpbxc::running", _wrap_running},
+{"fluxpbxc::email", _wrap_email},
+{"fluxpbxc::new_IVRMenu", _wrap_new_IVRMenu},
+{"fluxpbxc::delete_IVRMenu", _wrap_delete_IVRMenu},
+{"fluxpbxc::IVRMenu_bindAction", _wrap_IVRMenu_bindAction},
+{"fluxpbxc::IVRMenu_execute", _wrap_IVRMenu_execute},
+{"fluxpbxc::new_API", _wrap_new_API},
+{"fluxpbxc::delete_API", _wrap_delete_API},
+{"fluxpbxc::API_execute", _wrap_API_execute},
+{"fluxpbxc::API_executeString", _wrap_API_executeString},
+{"fluxpbxc::API_getTime", _wrap_API_getTime},
+{"fluxpbxc::input_callback_state_t_function_set", _wrap_input_callback_state_t_function_set},
+{"fluxpbxc::input_callback_state_t_function_get", _wrap_input_callback_state_t_function_get},
+{"fluxpbxc::input_callback_state_t_threadState_set", _wrap_input_callback_state_t_threadState_set},
+{"fluxpbxc::input_callback_state_t_threadState_get", _wrap_input_callback_state_t_threadState_get},
+{"fluxpbxc::input_callback_state_t_extra_set", _wrap_input_callback_state_t_extra_set},
+{"fluxpbxc::input_callback_state_t_extra_get", _wrap_input_callback_state_t_extra_get},
+{"fluxpbxc::input_callback_state_t_funcargs_set", _wrap_input_callback_state_t_funcargs_set},
+{"fluxpbxc::input_callback_state_t_funcargs_get", _wrap_input_callback_state_t_funcargs_get},
+{"fluxpbxc::new_input_callback_state_t", _wrap_new_input_callback_state_t},
+{"fluxpbxc::delete_input_callback_state_t", _wrap_delete_input_callback_state_t},
+{"fluxpbxc::DTMF_digit_set", _wrap_DTMF_digit_set},
+{"fluxpbxc::DTMF_digit_get", _wrap_DTMF_digit_get},
+{"fluxpbxc::DTMF_duration_set", _wrap_DTMF_duration_set},
+{"fluxpbxc::DTMF_duration_get", _wrap_DTMF_duration_get},
+{"fluxpbxc::new_DTMF", _wrap_new_DTMF},
+{"fluxpbxc::delete_DTMF", _wrap_delete_DTMF},
+{"fluxpbxc::new_Stream", _wrap_new_Stream},
+{"fluxpbxc::delete_Stream", _wrap_delete_Stream},
+{"fluxpbxc::Stream_read", _wrap_Stream_read},
+{"fluxpbxc::Stream_write", _wrap_Stream_write},
+{"fluxpbxc::Stream_raw_write", _wrap_Stream_raw_write},
+{"fluxpbxc::Stream_get_data", _wrap_Stream_get_data},
+{"fluxpbxc::Event_event_set", _wrap_Event_event_set},
+{"fluxpbxc::Event_event_get", _wrap_Event_event_get},
+{"fluxpbxc::Event_serialized_string_set", _wrap_Event_serialized_string_set},
+{"fluxpbxc::Event_serialized_string_get", _wrap_Event_serialized_string_get},
+{"fluxpbxc::Event_mine_set", _wrap_Event_mine_set},
+{"fluxpbxc::Event_mine_get", _wrap_Event_mine_get},
+{"fluxpbxc::new_Event", _wrap_new_Event},
+{"fluxpbxc::delete_Event", _wrap_delete_Event},
+{"fluxpbxc::Event_chat_execute", _wrap_Event_chat_execute},
+{"fluxpbxc::Event_chat_send", _wrap_Event_chat_send},
+{"fluxpbxc::Event_serialize", _wrap_Event_serialize},
+{"fluxpbxc::Event_setPriority", _wrap_Event_setPriority},
+{"fluxpbxc::Event_getHeader", _wrap_Event_getHeader},
+{"fluxpbxc::Event_getBody", _wrap_Event_getBody},
+{"fluxpbxc::Event_getType", _wrap_Event_getType},
+{"fluxpbxc::Event_addBody", _wrap_Event_addBody},
+{"fluxpbxc::Event_addHeader", _wrap_Event_addHeader},
+{"fluxpbxc::Event_delHeader", _wrap_Event_delHeader},
+{"fluxpbxc::Event_fire", _wrap_Event_fire},
+{"fluxpbxc::Event_merge", _wrap_Event_merge},
+{"fluxpbxc::EventConsumer_events_set", _wrap_EventConsumer_events_set},
+{"fluxpbxc::EventConsumer_events_get", _wrap_EventConsumer_events_get},
+{"fluxpbxc::EventConsumer_e_event_id_set", _wrap_EventConsumer_e_event_id_set},
+{"fluxpbxc::EventConsumer_e_event_id_get", _wrap_EventConsumer_e_event_id_get},
+{"fluxpbxc::EventConsumer_e_callback_set", _wrap_EventConsumer_e_callback_set},
+{"fluxpbxc::EventConsumer_e_callback_get", _wrap_EventConsumer_e_callback_get},
+{"fluxpbxc::EventConsumer_e_subclass_name_set", _wrap_EventConsumer_e_subclass_name_set},
+{"fluxpbxc::EventConsumer_e_subclass_name_get", _wrap_EventConsumer_e_subclass_name_get},
+{"fluxpbxc::EventConsumer_e_cb_arg_set", _wrap_EventConsumer_e_cb_arg_set},
+{"fluxpbxc::EventConsumer_e_cb_arg_get", _wrap_EventConsumer_e_cb_arg_get},
+{"fluxpbxc::EventConsumer_enodes_set", _wrap_EventConsumer_enodes_set},
+{"fluxpbxc::EventConsumer_enodes_get", _wrap_EventConsumer_enodes_get},
+{"fluxpbxc::EventConsumer_node_index_set", _wrap_EventConsumer_node_index_set},
+{"fluxpbxc::EventConsumer_node_index_get", _wrap_EventConsumer_node_index_get},
+{"fluxpbxc::new_EventConsumer", _wrap_new_EventConsumer},
+{"fluxpbxc::delete_EventConsumer", _wrap_delete_EventConsumer},
+{"fluxpbxc::EventConsumer_bind", _wrap_EventConsumer_bind},
+{"fluxpbxc::EventConsumer_pop", _wrap_EventConsumer_pop},
+{"fluxpbxc::EventConsumer_cleanup", _wrap_EventConsumer_cleanup},
+{"fluxpbxc::delete_CoreSession", _wrap_delete_CoreSession},
+{"fluxpbxc::CoreSession_session_set", _wrap_CoreSession_session_set},
+{"fluxpbxc::CoreSession_session_get", _wrap_CoreSession_session_get},
+{"fluxpbxc::CoreSession_channel_set", _wrap_CoreSession_channel_set},
+{"fluxpbxc::CoreSession_channel_get", _wrap_CoreSession_channel_get},
+{"fluxpbxc::CoreSession_flags_set", _wrap_CoreSession_flags_set},
+{"fluxpbxc::CoreSession_flags_get", _wrap_CoreSession_flags_get},
+{"fluxpbxc::CoreSession_allocated_set", _wrap_CoreSession_allocated_set},
+{"fluxpbxc::CoreSession_allocated_get", _wrap_CoreSession_allocated_get},
+{"fluxpbxc::CoreSession_cb_state_set", _wrap_CoreSession_cb_state_set},
+{"fluxpbxc::CoreSession_cb_state_get", _wrap_CoreSession_cb_state_get},
+{"fluxpbxc::CoreSession_hook_state_set", _wrap_CoreSession_hook_state_set},
+{"fluxpbxc::CoreSession_hook_state_get", _wrap_CoreSession_hook_state_get},
+{"fluxpbxc::CoreSession_cause_set", _wrap_CoreSession_cause_set},
+{"fluxpbxc::CoreSession_cause_get", _wrap_CoreSession_cause_get},
+{"fluxpbxc::CoreSession_uuid_set", _wrap_CoreSession_uuid_set},
+{"fluxpbxc::CoreSession_uuid_get", _wrap_CoreSession_uuid_get},
+{"fluxpbxc::CoreSession_tts_name_set", _wrap_CoreSession_tts_name_set},
+{"fluxpbxc::CoreSession_tts_name_get", _wrap_CoreSession_tts_name_get},
+{"fluxpbxc::CoreSession_voice_name_set", _wrap_CoreSession_voice_name_set},
+{"fluxpbxc::CoreSession_voice_name_get", _wrap_CoreSession_voice_name_get},
+{"fluxpbxc::CoreSession_insertFile", _wrap_CoreSession_insertFile},
+{"fluxpbxc::CoreSession_answer", _wrap_CoreSession_answer},
+{"fluxpbxc::CoreSession_print", _wrap_CoreSession_print},
+{"fluxpbxc::CoreSession_preAnswer", _wrap_CoreSession_preAnswer},
+{"fluxpbxc::CoreSession_hangup", _wrap_CoreSession_hangup},
+{"fluxpbxc::CoreSession_hangupState", _wrap_CoreSession_hangupState},
+{"fluxpbxc::CoreSession_setVariable", _wrap_CoreSession_setVariable},
+{"fluxpbxc::CoreSession_setPrivate", _wrap_CoreSession_setPrivate},
+{"fluxpbxc::CoreSession_getPrivate", _wrap_CoreSession_getPrivate},
+{"fluxpbxc::CoreSession_getVariable", _wrap_CoreSession_getVariable},
+{"fluxpbxc::CoreSession_process_callback_result", _wrap_CoreSession_process_callback_result},
+{"fluxpbxc::CoreSession_say", _wrap_CoreSession_say},
+{"fluxpbxc::CoreSession_sayPhrase", _wrap_CoreSession_sayPhrase},
+{"fluxpbxc::CoreSession_hangupCause", _wrap_CoreSession_hangupCause},
+{"fluxpbxc::CoreSession_getState", _wrap_CoreSession_getState},
+{"fluxpbxc::CoreSession_recordFile", _wrap_CoreSession_recordFile},
+{"fluxpbxc::CoreSession_originate", _wrap_CoreSession_originate},
+{"fluxpbxc::CoreSession_destroy", _wrap_CoreSession_destroy},
+{"fluxpbxc::CoreSession_setDTMFCallback", _wrap_CoreSession_setDTMFCallback},
+{"fluxpbxc::CoreSession_speak", _wrap_CoreSession_speak},
+{"fluxpbxc::CoreSession_set_tts_parms", _wrap_CoreSession_set_tts_parms},
+{"fluxpbxc::CoreSession_set_tts_params", _wrap_CoreSession_set_tts_params},
+{"fluxpbxc::CoreSession_collectDigits", _wrap_CoreSession_collectDigits},
+{"fluxpbxc::CoreSession_getDigits", _wrap_CoreSession_getDigits},
+{"fluxpbxc::CoreSession_transfer", _wrap_CoreSession_transfer},
+{"fluxpbxc::CoreSession_read", _wrap_CoreSession_read},
+{"fluxpbxc::CoreSession_detectSpeech", _wrap_CoreSession_detectSpeech},
+{"fluxpbxc::CoreSession_playAndGetDigits", _wrap_CoreSession_playAndGetDigits},
+{"fluxpbxc::CoreSession_playAndDetectSpeech", _wrap_CoreSession_playAndDetectSpeech},
+{"fluxpbxc::CoreSession_streamFile", _wrap_CoreSession_streamFile},
+{"fluxpbxc::CoreSession_sleep", _wrap_CoreSession_sleep},
+{"fluxpbxc::CoreSession_flushEvents", _wrap_CoreSession_flushEvents},
+{"fluxpbxc::CoreSession_flushDigits", _wrap_CoreSession_flushDigits},
+{"fluxpbxc::CoreSession_setAutoHangup", _wrap_CoreSession_setAutoHangup},
+{"fluxpbxc::CoreSession_setHangupHook", _wrap_CoreSession_setHangupHook},
+{"fluxpbxc::CoreSession_ready", _wrap_CoreSession_ready},
+{"fluxpbxc::CoreSession_bridged", _wrap_CoreSession_bridged},
+{"fluxpbxc::CoreSession_answered", _wrap_CoreSession_answered},
+{"fluxpbxc::CoreSession_mediaReady", _wrap_CoreSession_mediaReady},
+{"fluxpbxc::CoreSession_waitForAnswer", _wrap_CoreSession_waitForAnswer},
+{"fluxpbxc::CoreSession_execute", _wrap_CoreSession_execute},
+{"fluxpbxc::CoreSession_sendEvent", _wrap_CoreSession_sendEvent},
+{"fluxpbxc::CoreSession_setEventData", _wrap_CoreSession_setEventData},
+{"fluxpbxc::CoreSession_getXMLCDR", _wrap_CoreSession_getXMLCDR},
+{"fluxpbxc::CoreSession_begin_allow_threads", _wrap_CoreSession_begin_allow_threads},
+{"fluxpbxc::CoreSession_end_allow_threads", _wrap_CoreSession_end_allow_threads},
+{"fluxpbxc::CoreSession_get_uuid", _wrap_CoreSession_get_uuid},
+{"fluxpbxc::CoreSession_get_cb_args", _wrap_CoreSession_get_cb_args},
+{"fluxpbxc::CoreSession_check_hangup_hook", _wrap_CoreSession_check_hangup_hook},
+{"fluxpbxc::CoreSession_run_dtmf_callback", _wrap_CoreSession_run_dtmf_callback},
+{"fluxpbxc::CoreSession_consoleLog", _wrap_CoreSession_consoleLog},
+{"fluxpbxc::CoreSession_consoleLog2", _wrap_CoreSession_consoleLog2},
+{"fluxpbxc::console_log", _wrap_console_log},
+{"fluxpbxc::console_log2", _wrap_console_log2},
+{"fluxpbxc::console_clean_log", _wrap_console_clean_log},
+{"fluxpbxc::msleep", _wrap_msleep},
+{"fluxpbxc::bridge", _wrap_bridge},
+{"fluxpbxc::hanguphook", _wrap_hanguphook},
+{"fluxpbxc::dtmf_callback", _wrap_dtmf_callback},
+{"fluxpbxc::new_Session", _wrap_new_Session},
+{"fluxpbxc::delete_Session", _wrap_delete_Session},
+{"fluxpbxc::Session_destroy", _wrap_Session_destroy},
+{"fluxpbxc::Session_begin_allow_threads", _wrap_Session_begin_allow_threads},
+{"fluxpbxc::Session_end_allow_threads", _wrap_Session_end_allow_threads},
+{"fluxpbxc::Session_check_hangup_hook", _wrap_Session_check_hangup_hook},
+{"fluxpbxc::Session_run_dtmf_callback", _wrap_Session_run_dtmf_callback},
+{"fluxpbxc::Session_setME", _wrap_Session_setME},
+{"fluxpbxc::Session_setInputCallback", _wrap_Session_setInputCallback},
+{"fluxpbxc::Session_unsetInputCallback", _wrap_Session_unsetInputCallback},
+{"fluxpbxc::Session_setHangupHook", _wrap_Session_setHangupHook},
+{"fluxpbxc::Session_ready", _wrap_Session_ready},
+{"fluxpbxc::Session_callback_mutex_set", _wrap_Session_callback_mutex_set},
+{"fluxpbxc::Session_callback_mutex_get", _wrap_Session_callback_mutex_get},
+{"fluxpbxc::Session_destroying_set", _wrap_Session_destroying_set},
+{"fluxpbxc::Session_destroying_get", _wrap_Session_destroying_get},
+{"fluxpbxc::Session_event_idx_set", _wrap_Session_event_idx_set},
+{"fluxpbxc::Session_event_idx_get", _wrap_Session_event_idx_get},
+{"fluxpbxc::Session_suuid_set", _wrap_Session_suuid_set},
+{"fluxpbxc::Session_suuid_get", _wrap_Session_suuid_get},
+{"fluxpbxc::Session_cb_function_set", _wrap_Session_cb_function_set},
+{"fluxpbxc::Session_cb_function_get", _wrap_Session_cb_function_get},
+{"fluxpbxc::Session_cb_arg_set", _wrap_Session_cb_arg_set},
+{"fluxpbxc::Session_cb_arg_get", _wrap_Session_cb_arg_get},
+{"fluxpbxc::Session_hangup_func_str_set", _wrap_Session_hangup_func_str_set},
+{"fluxpbxc::Session_hangup_func_str_get", _wrap_Session_hangup_func_str_get},
+{"fluxpbxc::Session_hangup_func_arg_set", _wrap_Session_hangup_func_arg_set},
+{"fluxpbxc::Session_hangup_func_arg_get", _wrap_Session_hangup_func_arg_get},
+{"fluxpbxc::Session_setPERL", _wrap_Session_setPERL},
 {0,0}
 };
 /* -----------------------------------------------------------------------------
@@ -11253,9 +11253,9 @@ XS(SWIG_init) {
     SvREADONLY_on(sv);
   }
   
-  SWIG_TypeClientData(SWIGTYPE_p_IVRMenu, (void*) "freeswitch::IVRMenu");
-  SWIG_TypeClientData(SWIGTYPE_p_API, (void*) "freeswitch::API");
-  SWIG_TypeClientData(SWIGTYPE_p_input_callback_state, (void*) "freeswitch::input_callback_state_t");
+  SWIG_TypeClientData(SWIGTYPE_p_IVRMenu, (void*) "fluxpbx::IVRMenu");
+  SWIG_TypeClientData(SWIGTYPE_p_API, (void*) "fluxpbx::API");
+  SWIG_TypeClientData(SWIGTYPE_p_input_callback_state, (void*) "fluxpbx::input_callback_state_t");
   /*@SWIG:/usr/share/swig3.0/perl5/perltypemaps.swg,65,%set_constant@*/ do {
     SV *sv = get_sv((char*) SWIG_prefix "S_HUP", TRUE | 0x2 | GV_ADDMULTI);
     sv_setsv(sv, SWIG_From_int  SWIG_PERL_CALL_ARGS_1(static_cast< int >(S_HUP)));
@@ -11271,12 +11271,12 @@ XS(SWIG_init) {
     sv_setsv(sv, SWIG_From_int  SWIG_PERL_CALL_ARGS_1(static_cast< int >(S_RDLOCK)));
     SvREADONLY_on(sv);
   } while(0) /*@SWIG@*/;
-  SWIG_TypeClientData(SWIGTYPE_p_DTMF, (void*) "freeswitch::DTMF");
-  SWIG_TypeClientData(SWIGTYPE_p_Stream, (void*) "freeswitch::Stream");
-  SWIG_TypeClientData(SWIGTYPE_p_Event, (void*) "freeswitch::Event");
-  SWIG_TypeClientData(SWIGTYPE_p_EventConsumer, (void*) "freeswitch::EventConsumer");
-  SWIG_TypeClientData(SWIGTYPE_p_CoreSession, (void*) "freeswitch::CoreSession");
-  SWIG_TypeClientData(SWIGTYPE_p_PERL__Session, (void*) "freeswitch::Session");
+  SWIG_TypeClientData(SWIGTYPE_p_DTMF, (void*) "fluxpbx::DTMF");
+  SWIG_TypeClientData(SWIGTYPE_p_Stream, (void*) "fluxpbx::Stream");
+  SWIG_TypeClientData(SWIGTYPE_p_Event, (void*) "fluxpbx::Event");
+  SWIG_TypeClientData(SWIGTYPE_p_EventConsumer, (void*) "fluxpbx::EventConsumer");
+  SWIG_TypeClientData(SWIGTYPE_p_CoreSession, (void*) "fluxpbx::CoreSession");
+  SWIG_TypeClientData(SWIGTYPE_p_PERL__Session, (void*) "fluxpbx::Session");
   ST(0) = &PL_sv_yes;
   XSRETURN(1);
 }

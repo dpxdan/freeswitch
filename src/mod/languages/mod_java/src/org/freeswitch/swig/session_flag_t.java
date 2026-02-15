@@ -6,12 +6,12 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.freeswitch.swig;
+package org.fluxpbx.swig;
 
 public enum session_flag_t {
-  S_HUP(freeswitchJNI.S_HUP_get()),
-  S_FREE(freeswitchJNI.S_FREE_get()),
-  S_RDLOCK(freeswitchJNI.S_RDLOCK_get());
+  S_HUP(fluxpbxJNI.S_HUP_get()),
+  S_FREE(fluxpbxJNI.S_FREE_get()),
+  S_RDLOCK(fluxpbxJNI.S_RDLOCK_get());
 
   public final int swigValue() {
     return swigValue;

@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2015, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2015, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Seven Du <dujinfang@gmail.com>
@@ -191,7 +191,7 @@ static switch_status_t switch_vorbis_init(switch_codec_t *codec, switch_codec_fl
 	}
 
 	vorbis_comment_init(&context->vc);
-	vorbis_comment_add_tag(&context->vc, "ENCODER", "FreeSWITCH");
+	vorbis_comment_add_tag(&context->vc, "ENCODER", "FluxPBX");
 
 	ret = vorbis_analysis_init(&context->vd, &context->vi);
 	if (ret) {

@@ -49,7 +49,7 @@
   </Target> 
 
   <Target Name="v8copyTarget" BeforeTargets="CustomBuild" DependsOnTargets="v8BinariesDownloadTarget">  
-        <Message Text="Copying v8 libraries to the freeswitch output folder." Importance="High" />
+        <Message Text="Copying v8 libraries to the fluxpbx output folder." Importance="High" />
         <ItemGroup>  
              <v8Files Include="$(V8libDir)\binaries\$(Platform)\$(Configuration)\*.dll"/>  
         </ItemGroup>  

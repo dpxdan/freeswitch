@@ -2,13 +2,13 @@
 =pod
 Tests to verify that the provided modifications to timezone formats produce 
 the correct results. The first set of tests verify the fixTzstr subroutine 
-converts the quoted values to something that won't make FreeSWITCH default to
+converts the quoted values to something that won't make FluxPBX default to
 UTC.
 
 The second set of tests confirms that those timezone changes actually produce
 the correct timestamps.
 
-Make sure FreeSWITCH already has already loaded the timezones.conf.xml that you 
+Make sure FluxPBX already has already loaded the timezones.conf.xml that you 
 want to test.
 
 To run tests:

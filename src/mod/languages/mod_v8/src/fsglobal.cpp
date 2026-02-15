@@ -1,5 +1,5 @@
 /*
- * mod_v8 for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_v8 for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Peter Olsson <peter@olssononline.se>
  *
  * Version: MPL 1.1
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * Ported from the Original Code in FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * Ported from the Original Code in FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  * Peter Olsson <peter@olssononline.se>
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * William King <william.king@quentustech.com>
  *
  * fsglobal.cpp -- JavaScript Global functions
@@ -206,7 +206,7 @@ JS_GLOBAL_FUNCTION_IMPL_STATIC(FetchURLHash)
 		switch_curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 10);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, FSGlobal::HashCallback);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *) &config_data);
-		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-v8/1.0");
+		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-v8/1.0");
 
 		switch_curl_easy_perform(curl_handle);
 
@@ -256,7 +256,7 @@ JS_GLOBAL_FUNCTION_IMPL_STATIC(FetchURLFile)
 			switch_curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 10);
 			switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, FSGlobal::FileCallback);
 			switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *) &config_data);
-			switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-v8/1.0");
+			switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-v8/1.0");
 
 			switch_curl_easy_perform(curl_handle);
 
@@ -322,7 +322,7 @@ JS_GLOBAL_FUNCTION_IMPL_STATIC(FetchURL)
 		switch_curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 10);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, FSGlobal::FetchUrlCallback);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *) &config_data);
-		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-v8/1.0");
+		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-v8/1.0");
 
 		code = switch_curl_easy_perform(curl_handle);
 

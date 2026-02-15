@@ -1,5 +1,5 @@
 /*
- * mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2018, Grasshopper
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Grasshopper
  * Portions created by the Initial Developer are Copyright (C)
@@ -23,7 +23,7 @@
  * Contributor(s):
  * Chris Rienzo <chris.rienzo@grasshopper.com>
  *
- * mod_rayo.h -- Rayo server / node implementation.  Allows MxN clustering of FreeSWITCH and Rayo Clients (like Adhearsion)
+ * mod_rayo.h -- Rayo server / node implementation.  Allows MxN clustering of FluxPBX and Rayo Clients (like Adhearsion)
  *
  */
 #ifndef MOD_RAYO_H

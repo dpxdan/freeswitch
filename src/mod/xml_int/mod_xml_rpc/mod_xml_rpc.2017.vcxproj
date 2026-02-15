@@ -174,7 +174,7 @@
     <ProjectReference Include="..\..\..\..\libs\win32\xmlrpc-c\xmltok.2017.vcxproj">
       <Project>{b535402e-38d2-4d54-8360-423acbd17192}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2017.vcxproj">
+    <ProjectReference Include="..\..\..\..\w32\Library\FluxPbxCore.2017.vcxproj">
       <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

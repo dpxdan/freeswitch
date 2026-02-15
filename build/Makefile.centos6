@@ -1,31 +1,31 @@
 #
-# FreeSWITCH auto-build Makefile (CentOS 6.5/Debian 7 Nike Edition, JUST DO IT!)
+# FluxPBX auto-build Makefile (CentOS 6.5/Debian 7 Nike Edition, JUST DO IT!)
 # http://www.freeswitch.org
 # put this file anywhere and type make to
-# create a fully-built freeswitch.git from scratch
+# create a fully-built fluxpbx.git from scratch
 # in that same directory.
 #
 #
 RPMS=git gcc-c++ autoconf automake libtool wget python ncurses-devel zlib-devel libjpeg-devel openssl-devel e2fsprogs-devel sqlite-devel libcurl-devel pcre-devel speex-devel ldns-devel libedit-devel
 DEBS=git build-essential automake autoconf 'libtool-bin|libtool' wget python uuid-dev zlib1g-dev 'libjpeg8-dev|libjpeg62-turbo-dev' libncurses5-dev libssl-dev libpcre3-dev libcurl4-openssl-dev libldns-dev libedit-dev libspeexdsp-dev  libspeexdsp-dev libsqlite3-dev perl libgdbm-dev libdb-dev bison libvlc-dev pkg-config
 
-freeswitch: deps has-git freeswitch.git/Makefile
-	cd freeswitch.git && make
+fluxpbx: deps has-git fluxpbx.git/Makefile
+	cd fluxpbx.git && make
 
-freeswitch.git/Makefile: freeswitch.git/configure
-	cd freeswitch.git && ./configure
+fluxpbx.git/Makefile: fluxpbx.git/configure
+	cd fluxpbx.git && ./configure
 
-freeswitch.git/configure: freeswitch.git/bootstrap.sh
-	cd freeswitch.git && sh bootstrap.sh
+fluxpbx.git/configure: fluxpbx.git/bootstrap.sh
+	cd fluxpbx.git && sh bootstrap.sh
 
-freeswitch.git/bootstrap.sh: has-git
-	test -d freeswitch.git || git clone https://github.com/signalwire/freeswitch.git freeswitch.git
+fluxpbx.git/bootstrap.sh: has-git
+	test -d fluxpbx.git || git clone https://github.com/signalwire/fluxpbx.git fluxpbx.git
 
 rpmforge:
 	(which rpm && rpm -i http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm) || true
 
 install:
-	cd freeswitch.git && make install cd-sounds-install cd-moh-install
+	cd fluxpbx.git && make install cd-sounds-install cd-moh-install
 
 has-git:
 	@git --version || (echo "please install git" && false)

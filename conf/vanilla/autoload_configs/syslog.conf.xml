@@ -10,7 +10,7 @@
   <!-- debug   - debug-level message -->
   <settings>
     <param name="facility" value="user"/>
-    <param name="ident" value="freeswitch"/>
+    <param name="ident" value="fluxpbx"/>
     <param name="loglevel" value="warning"/>
     <!-- log uuids in syslogs -->
     <param name="uuid" value="true"/>

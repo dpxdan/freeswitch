@@ -464,8 +464,8 @@
       <prompt phrase="Das war ein ungültiger Eintrag" filename="ivr-that_was_an_invalid_entry.wav"/>
       <prompt phrase="Dies ist ein Anruf von" filename="ivr-this_is_a_call_from.wav"/>
       <prompt phrase="Dieser Ai Wee Arr ermöglicht Ihnen den Test einiger Funktionen" filename="ivr-this_ivr_will_let_you_test_features.wav"/>
-      <prompt phrase="Um die FreeSWITCH Konferenz anzurufen" filename="ivr-to_call_the_freeswitch_conference.wav"/>
-      <prompt phrase="Um einen FreeSWITCH echo test zu machen" filename="ivr-to_do_a_freeswitch_echo_test.wav"/>
+      <prompt phrase="Um die FluxPBX Konferenz anzurufen" filename="ivr-to_call_the_fluxpbx_conference.wav"/>
+      <prompt phrase="Um einen FluxPBX echo test zu machen" filename="ivr-to_do_a_fluxpbx_echo_test.wav"/>
       <prompt phrase="Um einen vorwärts echo test zu machen" filename="ivr-to_do_a_fwd_echo_test.wav"/>
       <prompt phrase="Um ein Beispiel-Untermenü des Ai Wee Arr zu hören" filename="ivr-to_hear_sample_submenu.wav"/>
       <prompt phrase="Um schreiende Affen zu hören" filename="ivr-to_hear_screaming_monkeys.wav"/>
@@ -473,7 +473,7 @@
       <prompt phrase="Um diese Optionen zu wiederholen" filename="ivr-to_repeat_these_options.wav"/>
       <prompt phrase="Um zum vorherigen Menü zurückzukehren" filename="ivr-to_return_to_previous_menu.wav"/>
       <prompt phrase="Um mit der Vermittlung zu sprechen" filename="ivr-to_speak_with_an_operator.wav"/>
-      <prompt phrase="Willkommen bei FreeSWITCH, der Zukunft der Telefonie" filename="ivr-welcome_to_freeswitch.wav"/>
+      <prompt phrase="Willkommen bei FluxPBX, der Zukunft der Telefonie" filename="ivr-welcome_to_fluxpbx.wav"/>
       <prompt phrase="Sie können jederzeit beenden, indem Sie einfach auflegen." filename="ivr-you_may_exit_by_hanging_up.wav"/>
       <prompt phrase="oder" filename="ivr-or.wav"/>
       <prompt phrase="nicht" filename="ivr-not.wav"/>
@@ -641,7 +641,7 @@
       <prompt phrase="Sie machen es falsch, aber ich werde trotzdem versuchen, Sie zu Verbinden. Dummkopf!" filename="ivr-youre_doing_it_wrong.wav"/>
       <prompt phrase="drei ... zwei ... eins ... wir sind ASTERISK los!" filename="ivr-were_asterisk_free.wav"/>
       <prompt phrase="Vielen Dank für Ihren Anruf bei der Dusche Telekom A G. Bei uns fühlen sich Ihre Anrufe niemals nicht so frisch an! " filename="ivr-douche_telecom.wav"/>
-      <prompt phrase="Um mehr über FreeSWITCH zu erfahren" filename="ivr-to_learn_more_about_freeswitch.wav"/>
+      <prompt phrase="Um mehr über FluxPBX zu erfahren" filename="ivr-to_learn_more_about_fluxpbx.wav"/>
       <prompt phrase="Es gibt" filename="ivr-there_is.wav"/>
       <prompt phrase="Diese Nummer ist auf der Sperrliste." filename="ivr-do_not_call_list.wav"/>
       <prompt phrase="Der Verbindungsaufbau wurde abgebrochen." filename="ivr-call_attempt_aborted.wav"/>
@@ -788,24 +788,24 @@
       <prompt phrase="Die ClueCon ist die wichtigste Konferenz für Open Source Telefonie Entwickler." filename="misc-cluecon_is_premier_conference.wav"/>
       <prompt phrase="Sie findet jeden Sommer in Chicago statt." filename="misc-chicago_each_summer.wav"/>
       <prompt phrase="Die ClueCon bringt ein breites Spektrum von VoIP Ingenieuren, Software-Entwicklern und Geschäftsleuten zusammen." filename="misc-wide_range_of_persons.wav"/>
-      <prompt phrase="Indem Sie an der ClueCon teilnehmen, zeigen Sie nicht nur Unterstützung für FreeSwitch, sondern auch für das ganze Spektrum der Open Source Telefonie Software." filename="misc-support_open_source_by_attending.wav"/>
-      <prompt phrase="FreeSWITCH ist eine Open Source Software, die von der Open Source Telephony Advancement Group OSTAG unterstützt wird." filename="misc-freeswitch_sponsored_by_ostag.wav"/>
+      <prompt phrase="Indem Sie an der ClueCon teilnehmen, zeigen Sie nicht nur Unterstützung für FluxPbx, sondern auch für das ganze Spektrum der Open Source Telefonie Software." filename="misc-support_open_source_by_attending.wav"/>
+      <prompt phrase="FluxPBX ist eine Open Source Software, die von der Open Source Telephony Advancement Group OSTAG unterstützt wird." filename="misc-fluxpbx_sponsored_by_ostag.wav"/>
       <prompt phrase="OSTAG treibt die nächste Generation der Telefonie durch Open Source Software voran. Mehr Informationen erhalten Sie unter W W W punkt OSTAG punkt org." filename="misc-ostag_learn_more.wav"/>
-      <prompt phrase="Um mehr über FreeSWITCH Lösungen zu erfahren, drücken Sie bitte" filename="misc-learn_more_about_freeswitch_solutions.wav"/>
-      <prompt phrase="Um mehr über FreeSWITCH zu erfahren, drücken Sie bitte" filename="misc-information_about_freeswitch.wav"/>
-      <prompt phrase="FreeSWITCH ist eine Telekommunikations-Plattform auf dem neuesten Stand der Technik." filename="misc-freeswitch_is_state_of_the_art.wav"/>
+      <prompt phrase="Um mehr über FluxPBX Lösungen zu erfahren, drücken Sie bitte" filename="misc-learn_more_about_fluxpbx_solutions.wav"/>
+      <prompt phrase="Um mehr über FluxPBX zu erfahren, drücken Sie bitte" filename="misc-information_about_fluxpbx.wav"/>
+      <prompt phrase="FluxPBX ist eine Telekommunikations-Plattform auf dem neuesten Stand der Technik." filename="misc-fluxpbx_is_state_of_the_art.wav"/>
       <prompt phrase="Sie ist stabil, hoch skalierbar und erweiterbar." filename="misc-it_is_stable_scalable_extensible.wav"/>
       <prompt phrase="Und das beste ist: jedermann kann sie kostenlos herunterladen und benutzen." filename="misc-free_to_download.wav"/>
-      <prompt phrase="Besuchen Sie W W W punkt freeswitch punkt org um mehr über unser Projekt und die weltweite Gemeinschaft zu erfahren." filename="misc-freeswitch_dot_org_more.wav"/>
+      <prompt phrase="Besuchen Sie W W W punkt fluxpbx punkt org um mehr über unser Projekt und die weltweite Gemeinschaft zu erfahren." filename="misc-fluxpbx_dot_org_more.wav"/>
       <prompt phrase="Sangoma." filename="misc-Sangoma.wav"/>
-      <prompt phrase="FreeSWITCH Solutions bietet das beste FreeSWITCH consulting, das man für Geld kaufen kann." filename="misc-fss_best_consulting.wav"/>
-      <prompt phrase="Wir haben ein Netzwerk von FreeSWITCH experten, das auch die Kern-Entwickler von FreeSWITCH umfasst." filename="misc-fss_network_of_experts.wav"/>
-      <prompt phrase="Nehmen Sie mit uns Kontakt auf unter W W W punkt freeswitch solutions punkt com um zu erfahren wie wir Sie unterstützen können, ihre FreeSWITCH Erfahrung auf ein ganz neues Niveau zu bringen." filename="misc-fss_contact_us.wav"/>
+      <prompt phrase="FluxPBX Solutions bietet das beste FluxPBX consulting, das man für Geld kaufen kann." filename="misc-fss_best_consulting.wav"/>
+      <prompt phrase="Wir haben ein Netzwerk von FluxPBX experten, das auch die Kern-Entwickler von FluxPBX umfasst." filename="misc-fss_network_of_experts.wav"/>
+      <prompt phrase="Nehmen Sie mit uns Kontakt auf unter W W W punkt fluxpbx solutions punkt com um zu erfahren wie wir Sie unterstützen können, ihre FluxPBX Erfahrung auf ein ganz neues Niveau zu bringen." filename="misc-fss_contact_us.wav"/>
       <prompt phrase="Das ist so ein Scheiß für Helikopter-Eltern." filename="misc-soccer_mom.wav"/>
-      <prompt phrase="Möchten Sie live mit anderen Mitgliedern der FreeSWITCH Gemeinschaft reden?" filename="misc-speak_live_with_community.wav"/>
-      <prompt phrase="Machen Sie mit, jeden Mittwoch um 13 Uhr nordamerikanischer Ostküsten-Zeit beziehungsweise 19 Uhr mitteleuropäischer Zeit, bei der öffentlichen FreeSWITCH Konferenz." filename="misc-join_us_each_wed.wav"/>
-      <prompt phrase="Weitere Informationen gibt es online unter wiki punkt FreeSwitch punkt org." filename="misc-more_info_wiki.wav"/>
-      <prompt phrase="Willkommen bei der FreeSWITCH Telefonkonferenz!" filename="misc-welcome_freeswitch_conf_call.wav"/>
+      <prompt phrase="Möchten Sie live mit anderen Mitgliedern der FluxPBX Gemeinschaft reden?" filename="misc-speak_live_with_community.wav"/>
+      <prompt phrase="Machen Sie mit, jeden Mittwoch um 13 Uhr nordamerikanischer Ostküsten-Zeit beziehungsweise 19 Uhr mitteleuropäischer Zeit, bei der öffentlichen FluxPBX Konferenz." filename="misc-join_us_each_wed.wav"/>
+      <prompt phrase="Weitere Informationen gibt es online unter wiki punkt FluxPbx punkt org." filename="misc-more_info_wiki.wav"/>
+      <prompt phrase="Willkommen bei der FluxPBX Telefonkonferenz!" filename="misc-welcome_fluxpbx_conf_call.wav"/>
       <prompt phrase="E hundert vierundsechtzig punkt org" filename="misc-e164_dot_org.wav"/>
       <prompt phrase="Dieses Telefon darf keine externen Nummern wählen." filename="phone_not_auth.wav"/>
       <prompt phrase="Es tut mir leid." filename="sorry.wav"/>

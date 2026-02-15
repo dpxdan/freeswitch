@@ -3,7 +3,7 @@ MODNAME=mod_xml_rpc
 
 mod_LTLIBRARIES = mod_xml_rpc.la
 mod_xml_rpc_la_SOURCES  = mod_xml_rpc.c ws.c
-mod_xml_rpc_la_LIBADD   = $(switch_builddir)/libfreeswitch.la
+mod_xml_rpc_la_LIBADD   = $(switch_builddir)/libfluxpbx.la
 mod_xml_rpc_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 if SYSTEM_XMLRPCC

@@ -26,7 +26,7 @@
 			<!-- <param name="service-point-url" value="https://127.0.0.1:1443/osp"/> -->
 			<param name="service-point-url" value="http://127.0.0.1:5045/osp"/>
 
-			<!-- FreeSWITCH IP address for OSP -->
+			<!-- FluxPBX IP address for OSP -->
 			<param name="device-ip" value="127.0.0.1:5080"/>
 
 			<!-- SSL lifetime in seconds -->

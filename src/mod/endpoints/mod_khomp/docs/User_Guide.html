@@ -9,7 +9,7 @@
 </p>
 <ul><li> Configuration of the boards through the K3L;
 </li><li> Setting up the Endpoint;
-</li><li> Setting up the FreeSWITCH.
+</li><li> Setting up the FluxPBX.
 </li></ul>
 <p>These steps are described more fully below.
 <br />
@@ -22,7 +22,7 @@ If you need to set advanced parameters of the board and/or signaling, the progra
 <br />
 </p>
 <a name="Endpoint_Configuration" id="Endpoint_Configuration"></a><h2> <span class="mw-headline"> Endpoint Configuration </span></h2>
-<p>The system's default configuration normally meet most user's needs. However, the configuration of the Endpoint Khomp can be modified through the configuration file '<b>/usr/local/freeswitch/conf/autoload_configs/khomp.conf.xml'</b>.
+<p>The system's default configuration normally meet most user's needs. However, the configuration of the Endpoint Khomp can be modified through the configuration file '<b>/usr/local/fluxpbx/conf/autoload_configs/khomp.conf.xml'</b>.
 </p><p>The list of options is as follows:
 </p>
 <a name=".3Cchannels.3E" id=".3Cchannels.3E"></a><h4> <span class="mw-headline"> &lt;channels&gt; </span></h4>
@@ -65,7 +65,7 @@ If you need to set advanced parameters of the board and/or signaling, the progra
 </li><li><b>r2-strict-Behaviour</b>: Enable ("yes") or disables ("no") the behavior of signaling R2/MFC as the standard sets. The default is "no", and can be changed to "yes" if needed to receive / send data precise signaling protocol (condition B, for example) (local option);
 </li><li><b>suppression-delay</b> (former <b>suppressiondelay</b>): Activate ("yes") or disables ("no") the delay necessary to suppress DTMF. If disabled ("no"), also disables suppression of DTMF (local option);
 </li><li><b>trace</b>: Set debugging options. Should not be used in production unless absolutely necessary;
-</li><li><b>user-transfer-digits</b>: Defines a sequence of DTMF digits to initiate the transfer between FreeSWITCH&reg; and another PBX (using user signaling, like QSig or FXO FLASH);
+</li><li><b>user-transfer-digits</b>: Defines a sequence of DTMF digits to initiate the transfer between FluxPBX&reg; and another PBX (using user signaling, like QSig or FXO FLASH);
 </li></ul>
 <p><br />
 </p>
@@ -139,8 +139,8 @@ For details, please refer to the configuration file for examples.
 </p><p>For more information visit the configuration file '<b>khomp.conf.xml'</b>.
 <br />
 </p>
-<a name="FreeSWITCH_Configuration" id="FreeSWITCH_Configuration"></a><h2> <span class="mw-headline"> FreeSWITCH Configuration </span></h2>
-<p>When connections are received on the boards and devices Khomp, they are forwarded by the <i>Endpoint</i> to specific contexts within the dialplan of FreeSWITCH&reg;. These settings can be changed via the configuration file <b>khomp.conf.xml</b>, available on the FreeSWITCH configuration directory (by default, "<b>/usr/local/freeswitch/conf/autoload_configs</b>").
+<a name="FluxPBX_Configuration" id="FluxPBX_Configuration"></a><h2> <span class="mw-headline"> FluxPBX Configuration </span></h2>
+<p>When connections are received on the boards and devices Khomp, they are forwarded by the <i>Endpoint</i> to specific contexts within the dialplan of FluxPBX&reg;. These settings can be changed via the configuration file <b>khomp.conf.xml</b>, available on the FluxPBX configuration directory (by default, "<b>/usr/local/fluxpbx/conf/autoload_configs</b>").
 </p><p>For details about the specific contexts, see section <a href="#Endpoint_Configuration" title="">Endpoint configuration</a>.
 </p><p>Below are details of how to configure the settings for incoming calls
 <br />
@@ -226,7 +226,7 @@ that come from the link 1 (second link) of the board 0.
 </li><li> The incoming calls on the link <b>1</b> of the board <b>0</b> for the number <b>1111</b> will be redirected to the first link of the first board (b0L0) calling number <b>2345</b>.
 </li></ol>
 <a name="Contexts_of_FXS.2FFXO.2FGSM_channels" id="Contexts_of_FXS.2FFXO.2FGSM_channels"></a><h3> <span class="mw-headline"> Contexts of FXS/FXO/GSM channels </span></h3>
-<p>Just as in the context of E1 cards, inbound links are forwarded to the Endpoint FreeSwitch. 
+<p>Just as in the context of E1 cards, inbound links are forwarded to the Endpoint FluxPbx. 
 </p><p>The context is pre-defined as follows, according to the file <b>khomp.conf.xml</b>:
 </p>
 <pre>&lt;param name="context-gsm" value="khomp-DD-CC"/&gt;&nbsp;;placas GSM
@@ -244,7 +244,7 @@ that come from the link 1 (second link) of the board 0.
 <br />
 </p>
 <a name="Contexts_for_SMS_messages_.28GSM_only.29" id="Contexts_for_SMS_messages_.28GSM_only.29"></a><h3> <span class="mw-headline"> Contexts for SMS messages (GSM only) </span></h3>
-<p>SMS messages are received by the Khomp <i>Endpoint</i> and forwarded to FreeSWITCH as a normal connection but no audio, which has some variables set with information received in the message - for more information on these variables, see the documentation of the variables of the <i>Endpoint</i>. This context can also be modified in the same way as the above contexts.
+<p>SMS messages are received by the Khomp <i>Endpoint</i> and forwarded to FluxPBX as a normal connection but no audio, which has some variables set with information received in the message - for more information on these variables, see the documentation of the variables of the <i>Endpoint</i>. This context can also be modified in the same way as the above contexts.
 </p><p>The default value for this option follows (<b>khomp.conf.xml</b>):
 </p>
 <pre>&lt;param name="context-gsm-sms" value="khomp-sms-DD-CC"/&gt; 
@@ -274,7 +274,7 @@ that come from the link 1 (second link) of the board 0.
 <br />
 </p>
 <a name="Using_the_bridge_application" id="Using_the_bridge_application"></a><h3> <span class="mw-headline"> Using the <i>bridge</i> application </span></h3>
-<p>The <b>bridge</b> application is responsible for generating calls from the FreeSWITCH from a dialplan. This application can be used to generate calls from different Endpoints technologies, following a specific format to define destination, dialing options and define the communication <i>Endpoint</i> to be used.
+<p>The <b>bridge</b> application is responsible for generating calls from the FluxPBX from a dialplan. This application can be used to generate calls from different Endpoints technologies, following a specific format to define destination, dialing options and define the communication <i>Endpoint</i> to be used.
 </p>
 <a name="Fields_relating_to_the_Khomp_Endpoint" id="Fields_relating_to_the_Khomp_Endpoint"></a><h4> <span class="mw-headline"> Fields relating to the Khomp <i>Endpoint</i> </span></h4>
 <p>When used for <b>Khomp</b> channels, the <i>bridge</i> <i>string</i> can have two, three or four fields separated by slash (/). Some example strings:
@@ -346,7 +346,7 @@ that come from the link 1 (second link) of the board 0.
 <ul><li><b>WARNING: The use of fair and/or cyclic is recommended <u>only</u> for analog (KFXO), branches (KFXS) and cellular interface (KGSM) boards</b>. E1 connections should allocate channels in one way (ascending/descending) from one side and the opposite on the other to avoid problems of double seizure (which may occur in R2/MFC signaling). Fair/cyclic allocation also costs more in memory and processor footprint, which tends to be a higher cost in E1 due to the higher number of channels (30 in each link).<br /><br /> For these reasons, fair/cyclic allocations should only be used on signalizations where it can represent any real difference, like equalizing the charge costs of the lines, the total usage, or the number of connections received by each branch.
 </li></ul>
 <a name="Available_options" id="Available_options"></a><h4> <span class="mw-headline"> Available options </span></h4>
-<ul><li><b>orig</b>: Sets the originator number, <b>without changing the variable ${CALLERID(num)}</b>. That is, the option <b>orig</b> serves <b>only</b> to pass a number of different source of${origination_caller_id_number}. If FreeSWITCH has already set the variable ${origination_caller_id_number}, which is the default behavior, Endpoint automatically uses this value as a reference to the number of origin, without having to pass any additional options.<br /><br />On the boards <b>KGSM</b>, is set to <b>restricted</b>, omits the number of origin. Example:<br />
+<ul><li><b>orig</b>: Sets the originator number, <b>without changing the variable ${CALLERID(num)}</b>. That is, the option <b>orig</b> serves <b>only</b> to pass a number of different source of${origination_caller_id_number}. If FluxPBX has already set the variable ${origination_caller_id_number}, which is the default behavior, Endpoint automatically uses this value as a reference to the number of origin, without having to pass any additional options.<br /><br />On the boards <b>KGSM</b>, is set to <b>restricted</b>, omits the number of origin. Example:<br />
 </li></ul>
 <pre>
  &lt;action application=&quot;bridge&quot; data=&quot;Khomp/b0/99887766/orig=restricted&quot;/&gt;
@@ -372,9 +372,9 @@ that come from the link 1 (second link) of the board 0.
 <ul><li><b>KDropCollectCall</b>: When set before ringing or answer an incoming call, enables ("yes") or disables ("no", default) the drop of collect calls based on signaling received from the central public, double answer, audio tone recognition (can be defined globally);
 </li><li><b>KR2SendCondition</b>: When set to a numeric value, before the ringing an incoming call, adjusts the condition for this Endpoint to this value (available only on R2 signaling);
 </li><li><b>KR2GotCategory</b>: Adjusted by the Endpoint when an incoming call is received, with the category number of the caller (only available on R2 signaling);
-</li><li><b>KR2GotCondition *</b>: Adjusted by the Endpoint, available after returning from a call made by FreeSWITCH (<b>bridge</b> application). Has the condition of the remote end received when making the call (available only for R2 signaling);
-</li><li><b>KISDNGotCause *</b>: Adjusted by the Endpoint, available after returning from a call made by FreeSWITCH (<b>bridge</b> application). Has the ISDN "cause" code received when making the call (available only for ISDN signaling);
-</li><li><b>KCallAnswerInfo *</b>: Adjusted by the Endpoint, available after returning from a call made by FreeSWITCH (<b>bridge</b> application). Contains the service information identified to make the call (available only for digital signaling - E1 and GSM);
+</li><li><b>KR2GotCondition *</b>: Adjusted by the Endpoint, available after returning from a call made by FluxPBX (<b>bridge</b> application). Has the condition of the remote end received when making the call (available only for R2 signaling);
+</li><li><b>KISDNGotCause *</b>: Adjusted by the Endpoint, available after returning from a call made by FluxPBX (<b>bridge</b> application). Has the ISDN "cause" code received when making the call (available only for ISDN signaling);
+</li><li><b>KCallAnswerInfo *</b>: Adjusted by the Endpoint, available after returning from a call made by FluxPBX (<b>bridge</b> application). Contains the service information identified to make the call (available only for digital signaling - E1 and GSM);
 </li><li><b>KSmsDelivered</b>: Adjusted by the Endpoint when sending a SMS message with the application <b>KSendSMS</b>, saying whether the message was delivered successfully ("yes") or not ("no");
 </li><li><b>KSmsErrorCode</b>: Adjusted by the Endpoint when sending a SMS message with the application <b>KSendSMS</b>, containing the error code that happened when sending the message;
 </li><li><b>KSmsErrorName</b>: Adjusted by the Endpoint when sending a SMS message with the application <b>KSendSMS</b>, contains the name of the error or "None" if there has been no error;
@@ -427,7 +427,7 @@ that come from the link 1 (second link) of the board 0.
 <pre>&lt;X-PRE-PROCESS cmd="set" data="KDropCollectCall=yes"/&gt;
 </pre>
 <a name="KR2SendCondition" id="KR2SendCondition"></a><h4> <span class="mw-headline"> KR2SendCondition </span></h4>
-<p>When you receive a call, can be set before sending ringback by FreeSWITCH (ie, before the run FreeSWITCH applications <b>answer</b>, <b>bridge</b>). When used in signaling R2/MFC, this variable sets the condition for B to the numeric value desired.
+<p>When you receive a call, can be set before sending ringback by FluxPBX (ie, before the run FluxPBX applications <b>answer</b>, <b>bridge</b>). When used in signaling R2/MFC, this variable sets the condition for B to the numeric value desired.
 </p><p>Exemplo:
 <!-- NEED 6 --> 
 </p>
@@ -442,7 +442,7 @@ that come from the link 1 (second link) of the board 0.
 <pre>&lt;action application="log" data="DEBUG KR2GotCategory [${KR2GotCategory}]"/&gt;
 </pre>
 <a name="KR2GotCondition" id="KR2GotCondition"></a><h4> <span class="mw-headline"> KR2GotCondition </span></h4>
-<p>Variable adjusted by the Endpoint, and available after returning from a call made by FreeSWITCH. Has the condition of B received when making the call. Available only for signaling R2/MFC.
+<p>Variable adjusted by the Endpoint, and available after returning from a call made by FluxPBX. Has the condition of B received when making the call. Available only for signaling R2/MFC.
 </p><p>Example:
 <!-- NEED 3 --> 
 </p>
@@ -482,7 +482,7 @@ that come from the link 1 (second link) of the board 0.
 <br />
 </p>
 <a name="Console_commands" id="Console_commands"></a><h1> <span class="mw-headline"> Console commands </span></h1>
-<p>List of available commands in the console for the FreeSWITCH Endpoint of Khomp:
+<p>List of available commands in the console for the FluxPBX Endpoint of Khomp:
 </p><p><br />
 </p>
 <ul><li> <b>khomp channels disconnect </b>: Disconnect one or more channels. This command sends a message directly to the physical channel of the card in question, requesting a disconnection. Use with caution;
@@ -627,7 +627,7 @@ that come from the link 1 (second link) of the board 0.
 </p>
 <ul><li><b>actions</b>: It is<b>on</b> to enable DTMF suppression, and <b>off</b> to disable;
 </li></ul>
-<p>It is important to note that when disabled suppression of DTMF, DTMF tones are passed inband <i>and</i> will not be reported to FreeSWITCH. Thus FreeSWITCH does not recognize the DTMF tones, which may result in malfunction of applications such as IVR.
+<p>It is important to note that when disabled suppression of DTMF, DTMF tones are passed inband <i>and</i> will not be reported to FluxPBX. Thus FluxPBX does not recognize the DTMF tones, which may result in malfunction of applications such as IVR.
 </p><p>Example usage of this application:
 </p>
 <pre>&lt;action applicatin="KDTMFSuppression" value="off"/&gt;
@@ -693,7 +693,7 @@ that come from the link 1 (second link) of the board 0.
 <p><br />
 </p>
 <a name="Channel_.22Khomp_SMS.22" id="Channel_.22Khomp_SMS.22"></a><h3> <span class="mw-headline"> Channel "Khomp_SMS" </span></h3>
-<p>This communication channel is used to receive SMS and create incoming links in FreeSWITCH for each message received. This channel does not have any treatment or audio processing, and is called with five variables set:
+<p>This communication channel is used to receive SMS and create incoming links in FluxPBX for each message received. This channel does not have any treatment or audio processing, and is called with five variables set:
 </p>
 <ul><li><b>KSmsFrom</b>, containing the number of source who sent the message;
 </li><li><b>KSmsDate</b>, which sets the date/time of receipt of the message;
@@ -701,12 +701,12 @@ that come from the link 1 (second link) of the board 0.
 </li><li><b>KSmsMode</b>, containing the encoding used to transmit the message;
 </li><li><b>KSmsBody</b>, that is the message itself.
 </li></ul>
-<p>The FreeSWITCH dialplan processing can be used to store this message in a database, run any application, among others. However, the only action accepted by this channel is shutdown (Hangup), so this incoming call should be considered a special dialplan execution without audio streams or channel allocation.
+<p>The FluxPBX dialplan processing can be used to store this message in a database, run any application, among others. However, the only action accepted by this channel is shutdown (Hangup), so this incoming call should be considered a special dialplan execution without audio streams or channel allocation.
 <br />
 </p>
 <a name="Channel_.22Khomp_PR.22" id="Channel_.22Khomp_PR.22"></a><h3> <span class="mw-headline"> Channel "Khomp_PR" </span></h3>
-<p>This communication channel is used to receive calls on boards passive recording (<b>KPR family</b> and <b>KFXO-HI</b>), creating incoming links on FreeSWITCH for each incoming call. This channel allows only receiving audio captured the <i>link</i>by not allowing both the transmission of audio signalings as the control.
-</p><p>The FreeSWITCH dialplan processing can be used to record data on this link in a database, perform some special application and/or some recording application (such as <b>record</b>), among others. However, the only action accepted by this channel is shutdown (Hangup), so this should not be considered a common call.
+<p>This communication channel is used to receive calls on boards passive recording (<b>KPR family</b> and <b>KFXO-HI</b>), creating incoming links on FluxPBX for each incoming call. This channel allows only receiving audio captured the <i>link</i>by not allowing both the transmission of audio signalings as the control.
+</p><p>The FluxPBX dialplan processing can be used to record data on this link in a database, perform some special application and/or some recording application (such as <b>record</b>), among others. However, the only action accepted by this channel is shutdown (Hangup), so this should not be considered a common call.
 <br />
 </p>
 <a name="Codes_and_meanings" id="Codes_and_meanings"></a><h1> <span class="mw-headline"> Codes and meanings </span></h1>
@@ -760,8 +760,8 @@ that come from the link 1 (second link) of the board 0.
 </li></ul>
 <p><br />
 </p>
-<a name="FreeSWITCH_call_states" id="FreeSWITCH_call_states"></a><h2> <span class="mw-headline"> FreeSWITCH call states </span></h2>
-<p>Directly reflects the call state controlled by FreeSWITCH, which can be:
+<a name="FluxPBX_call_states" id="FluxPBX_call_states"></a><h2> <span class="mw-headline"> FluxPBX call states </span></h2>
+<p>Directly reflects the call state controlled by FluxPBX, which can be:
 </p><p><br />
 </p>
 <ul><li> <b>new</b>: Channel is newly created;
@@ -1022,7 +1022,7 @@ install: **  for knowing how to proceed with the installation.  **
 </pre>
 <p>This configurator, in turn, shows all possible options for card configuration. The parameters that are not configured automatically assume the default values, and are compatible with most systems. More details about this program can be obtained from the section number '2 '.
 </p>
-<ul><li> <b>ATTENTION</b>: To start FreeSWITCH&reg;, it is necessary that the Khomp board is configured and all modules are running (as shown above). <br /> <br /> If you want to run the system without the Khomp board, you need to configure FreeSWITCH for it does not load the module Khomp. To do this, open the <b>/usr/local/freeswitch/conf/autoload_configs/modules.conf.xml</b> and comment the line:<br />
+<ul><li> <b>ATTENTION</b>: To start FluxPBX&reg;, it is necessary that the Khomp board is configured and all modules are running (as shown above). <br /> <br /> If you want to run the system without the Khomp board, you need to configure FluxPBX for it does not load the module Khomp. To do this, open the <b>/usr/local/fluxpbx/conf/autoload_configs/modules.conf.xml</b> and comment the line:<br />
 </li></ul>
 <pre> 
 &lt;!-- &lt;load module=&quot;mod_khomp&quot; /&gt; --&gt;
@@ -1033,7 +1033,7 @@ install: **  for knowing how to proceed with the installation.  **
 </p>
 <pre># kserver start
 </pre>
-<p>After performing these procedures, the Endpoint is already operational, and FreeSWITCH can now be loaded.
+<p>After performing these procedures, the Endpoint is already operational, and FluxPBX can now be loaded.
 <br />
 </p>
 <a name="Setting_up_special_parameters_for_audio_or_signaling" id="Setting_up_special_parameters_for_audio_or_signaling"></a><h2> <span class="mw-headline"> Setting up special parameters for audio or signaling </span></h2>
@@ -1074,7 +1074,7 @@ install: **  for knowing how to proceed with the installation.  **
 
 /etc/khomp/                 -- Firmware files and settings;
 
-/usr/local/freeswitch/conf/ -- Settings for FreeSWITCH and Endpoint;
+/usr/local/fluxpbx/conf/ -- Settings for FluxPBX and Endpoint;
 
 /usr/doc/khomp/             -- Docs for the boards, Channel, and utilities;
 
@@ -1082,7 +1082,7 @@ install: **  for knowing how to proceed with the installation.  **
 
 /usr/lib/                   -- Shared libraries;
 
-/usr/local/freeswitch/mod/  -- Endpoint module;
+/usr/local/fluxpbx/mod/  -- Endpoint module;
  
 /var/log/khomp2.1/          -- Log directory for K3L and Endpoint;
 </pre>

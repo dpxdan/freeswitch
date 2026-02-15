@@ -1,5 +1,5 @@
 /*
- * H323 endpoint interface for Freeswitch Modular Media Switching Software Library /
+ * H323 endpoint interface for Fluxpbx Modular Media Switching Software Library /
  * Soft-Switch Application
  *
  * Version: MPL 1.1
@@ -23,10 +23,10 @@
  *
  *
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -359,7 +359,7 @@ PString GetH245CodecName(const H323Capability* cap)
 }
 
 FSProcess::FSProcess()
-	: PLibraryProcess("FreeSWITCH", "mod_h323", 1, 0, AlphaCode, 1)
+	: PLibraryProcess("FluxPBX", "mod_h323", 1, 0, AlphaCode, 1)
 	, m_h323endpoint(NULL){
 }
 
@@ -385,10 +385,10 @@ bool FSH323EndPoint::Initialise(switch_loadable_module_interface_t *iface)
 	PTrace::SetOptions(PTrace::TraceLevel);
 	PTrace::SetStream(new FSTrace);
 
-	m_freeswitch = (switch_endpoint_interface_t *) switch_loadable_module_create_interface(iface, SWITCH_ENDPOINT_INTERFACE);
-	m_freeswitch->interface_name = modulename;
-	m_freeswitch->io_routines = &h323fs_io_routines;
-	m_freeswitch->state_handler = &h323fs_event_handlers;
+	m_fluxpbx = (switch_endpoint_interface_t *) switch_loadable_module_create_interface(iface, SWITCH_ENDPOINT_INTERFACE);
+	m_fluxpbx->interface_name = modulename;
+	m_fluxpbx->io_routines = &h323fs_io_routines;
+	m_fluxpbx->state_handler = &h323fs_event_handlers;
 
 	PString codec = ((const char *)mod_h323_globals.codec_string);
 	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_DEBUG, "Config capability %s \n", (const char *)codec);
@@ -489,7 +489,7 @@ switch_status_t FSH323EndPoint::ReadConfig(int reload)
 	switch_xml_t xmlSettings = switch_xml_child(cfg, "settings");
 	m_pi = 8;
 	m_ai = 0;
-	m_endpointname = "FreeSwitch";
+	m_endpointname = "FluxPbx";
 	mod_h323_globals.ptime_override_value = -1;
 
 	if (xmlSettings) {

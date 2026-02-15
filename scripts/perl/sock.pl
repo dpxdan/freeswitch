@@ -1,8 +1,8 @@
 #!/usr/bin/perl
-use FreeSWITCH::Client;
+use FluxPBX::Client;
 use Data::Dumper;
 
-my $fs = init FreeSWITCH::Client {} or die "Error $@";
+my $fs = init FluxPBX::Client {} or die "Error $@";
 my $pid;
 
 for (;;) {

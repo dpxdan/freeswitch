@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2007, Damjan Jovanovic <d a m j a n d o t j o v a t g m a i l d o t c o m>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Damjan Jovanovic <d a m j a n d o t j o v a t g m a i l d o t c o m>
@@ -315,12 +315,12 @@ static switch_status_t create_java_vm(JavaVMOption *options, int optionCount, vm
 		res = pJNI_CreateJavaVM(&javaVM, (void*) &env, &initArgs);
 		if (res == JNI_OK) {
 			/* call FindClass here already so that the Java VM executes the static
-			initializer (@see org.freeswitch.Launcher) which loads the jni library
+			initializer (@see org.fluxpbx.Launcher) which loads the jni library
 			so we can use jni functions right away (for example in the startup method) */
 
-			launcherClass = (*env)->FindClass(env, "org/freeswitch/Launcher");
+			launcherClass = (*env)->FindClass(env, "org/fluxpbx/Launcher");
 			if ( launcherClass == NULL ) {
-				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Unable to find 'org.freeswitch.Launcher' class!\n");
+				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Unable to find 'org.fluxpbx.Launcher' class!\n");
 				(*env)->ExceptionDescribe(env);
 			}
 

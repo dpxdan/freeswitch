@@ -38,7 +38,7 @@ Description: Caller ID name lookup
 
 Module: applications/mod_cluechoo
 Description: Clue Choo
- This demo module renders a Clue Choo train on the FreeSWITCH console.
+ This demo module renders a Clue Choo train on the FluxPBX console.
 Build-Depends: libncurses5-dev
 
 Module: applications/mod_commands
@@ -191,7 +191,7 @@ Description: RADIUS AA
 
 Module: applications/mod_random
 Description: Entropy extraction
- This module extracts entropy from FreeSWITCH and feeds it into
+ This module extracts entropy from FluxPBX and feeds it into
  /dev/random.
 
 Module: applications/mod_redis
@@ -559,7 +559,7 @@ Description: mod_radius_cdr
 Module: event_handlers/mod_rayo
 Description: mod_rayo
  Adds mod_rayo.
-Depends: freeswitch-mod-ssml (= ${binary:Version})
+Depends: fluxpbx-mod-ssml (= ${binary:Version})
 
 Module: event_handlers/mod_smpp
 Description: mod_snmp

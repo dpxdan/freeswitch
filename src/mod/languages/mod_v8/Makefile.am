@@ -8,7 +8,7 @@ AM_CFLAGS    += -I. -I./include -I$(switch_srcdir)/src/mod/languages/mod_v8/incl
 AM_CPPFLAGS  += -I. -I./include -I$(switch_srcdir)/src/mod/languages/mod_v8/include $(V8FS_STATIC_CFLAGS) -std=c++11
 AM_LDFLAGS   += -avoid-version -module -no-undefined -shared
 
-AM_LIBADD     = $(switch_builddir)/libfreeswitch.la
+AM_LIBADD     = $(switch_builddir)/libfluxpbx.la
 AM_LDFLAGS   += $(V8FS_STATIC_LIBS)
 
 BUILT_SOURCES = $(V8LIB)

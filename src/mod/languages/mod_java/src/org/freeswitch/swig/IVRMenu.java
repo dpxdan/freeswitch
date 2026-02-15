@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.freeswitch.swig;
+package org.fluxpbx.swig;
 
 public class IVRMenu {
   private transient long swigCPtr;
@@ -29,22 +29,22 @@ public class IVRMenu {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        freeswitchJNI.delete_IVRMenu(swigCPtr);
+        fluxpbxJNI.delete_IVRMenu(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public IVRMenu(IVRMenu main, String name, String greeting_sound, String short_greeting_sound, String invalid_sound, String exit_sound, String transfer_sound, String confirm_macro, String confirm_key, String tts_engine, String tts_voice, int confirm_attempts, int inter_timeout, int digit_len, int timeout, int max_failures, int max_timeouts) {
-    this(freeswitchJNI.new_IVRMenu(IVRMenu.getCPtr(main), main, name, greeting_sound, short_greeting_sound, invalid_sound, exit_sound, transfer_sound, confirm_macro, confirm_key, tts_engine, tts_voice, confirm_attempts, inter_timeout, digit_len, timeout, max_failures, max_timeouts), true);
+    this(fluxpbxJNI.new_IVRMenu(IVRMenu.getCPtr(main), main, name, greeting_sound, short_greeting_sound, invalid_sound, exit_sound, transfer_sound, confirm_macro, confirm_key, tts_engine, tts_voice, confirm_attempts, inter_timeout, digit_len, timeout, max_failures, max_timeouts), true);
   }
 
   public void bindAction(String action, String arg, String bind) {
-    freeswitchJNI.IVRMenu_bindAction(swigCPtr, this, action, arg, bind);
+    fluxpbxJNI.IVRMenu_bindAction(swigCPtr, this, action, arg, bind);
   }
 
   public void execute(CoreSession session, String name) {
-    freeswitchJNI.IVRMenu_execute(swigCPtr, this, CoreSession.getCPtr(session), session, name);
+    fluxpbxJNI.IVRMenu_execute(swigCPtr, this, CoreSession.getCPtr(session), session, name);
   }
 
 }

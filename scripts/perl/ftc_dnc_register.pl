@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 #
 # Since the FTC only allows a limited set of numbers to be submitted online
-# I've decided to use the power of FreeSWITCH to show how easy this is to solve.
+# I've decided to use the power of FluxPBX to show how easy this is to solve.
 #
 # numbers.txt is a file with 1 did per line, 10 digits, If it starts with a 1 thats
 # it will be stripped.

@@ -100,7 +100,7 @@ using System.Diagnostics;
                     Uri uri = new Uri(package);
                     string urifilename = Path.GetFileName(uri.LocalPath);
                     string output = Path.Combine(outputfolder ?? librarypath, (outputfilename ?? urifilename));
-                    string cachedir = Environment.GetEnvironmentVariable("FreeSWITCHBuildCachePath") ?? "";
+                    string cachedir = Environment.GetEnvironmentVariable("FluxPBXBuildCachePath") ?? "";
                     string cached_file = cachedir != "" ? Path.Combine(cachedir, (outputfilename ?? urifilename)) : "";
 
                     if (cached_file != "" && File.Exists(cached_file)) {

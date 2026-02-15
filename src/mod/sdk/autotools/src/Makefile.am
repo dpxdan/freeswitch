@@ -1,5 +1,5 @@
-moddir     = @FREESWITCH_MODULES_DIR@
-sysconfdir = @FREESWITCH_CONFIG_DIR@
+moddir     = @FLUXPBX_MODULES_DIR@
+sysconfdir = @FLUXPBX_CONFIG_DIR@
 
 ###
 # Flags
@@ -42,10 +42,10 @@ mod_LTLIBRARIES = mod_example.la
 # mod_example
 #
 mod_example_la_SOURCES = mod_example.c
-mod_example_la_CFLAGS  = $(AM_CFLAGS) $(FREESWITCH_CFLAGS)
-mod_example_la_CPPFLAGS= $(AM_CPPFLAGS) $(FREESWITCH_CPPFLAGS)
+mod_example_la_CFLAGS  = $(AM_CFLAGS) $(FLUXPBX_CFLAGS)
+mod_example_la_CPPFLAGS= $(AM_CPPFLAGS) $(FLUXPBX_CPPFLAGS)
 mod_example_la_LDFLAGS = $(AM_LDFLAGS)
-mod_example_la_LIBADD  = $(FREESWITCH_LIBS)
+mod_example_la_LIBADD  = $(FLUXPBX_LIBS)
 
 # configuration file
 #sysconf_DATA = example.conf.xml

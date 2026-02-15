@@ -676,7 +676,7 @@ struct Transfer<T, false>
 
             if (stream && strcasecmp(stream, "silence"))
             {
-                /* Freeswitch not get/put frames */
+                /* Fluxpbx not get/put frames */
                 //switch_channel_set_flag(channel, CF_HOLD);
                 switch_ivr_broadcast(switch_core_session_get_uuid(pvt->session()),stream, SMF_ECHO_ALEG | SMF_LOOP | SMF_PRIORITY);
             }

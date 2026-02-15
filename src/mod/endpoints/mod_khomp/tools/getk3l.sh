@@ -63,10 +63,10 @@ download()
     if [ "w`uname -m | grep x86_64`" == "w" ]
     then
         echo "Downloading i686 package"
-        wget -t15 -c --progress=bar:force -O $K3L_FILE.gz http://www.khomp.com.br/binaries/softpbx/freeswitch/k3l_2.1_client_i686.sh.gz
+        wget -t15 -c --progress=bar:force -O $K3L_FILE.gz http://www.khomp.com.br/binaries/softpbx/fluxpbx/k3l_2.1_client_i686.sh.gz
     else
         echo "Downloading x86_64 package"
-        wget -t15 -c --progress=bar:force -O $K3L_FILE.gz http://www.khomp.com.br/binaries/softpbx/freeswitch/k3l_2.1_client_x86-64.sh.gz
+        wget -t15 -c --progress=bar:force -O $K3L_FILE.gz http://www.khomp.com.br/binaries/softpbx/fluxpbx/k3l_2.1_client_x86-64.sh.gz
     fi
 }
 

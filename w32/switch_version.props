@@ -48,7 +48,7 @@ using Microsoft.Build.Framework;
             Int32.TryParse(commits, out commit_count);
 
             Log.LogMessage(MessageImportance.High,
-                  "Parsing FreeSWITCH version.");                    
+                  "Parsing FluxPBX version.");                    
 
             string ConfigureAC = File.ReadAllText(@"$(BaseDir)configure.ac");                
             string pattern = @"AC_SUBST\((SWITCH_VERSION_[A-Z_]+),.*\[(.*)\]\)";

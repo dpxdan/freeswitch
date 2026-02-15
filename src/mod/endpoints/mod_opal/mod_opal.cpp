@@ -1,4 +1,4 @@
-/* Opal endpoint interface for Freeswitch Modular Media Switching Software Library /
+/* Opal endpoint interface for Fluxpbx Modular Media Switching Software Library /
  * Soft-Switch Application
  *
  * Version: MPL 1.1
@@ -33,7 +33,7 @@
 #include <h323/gkclient.h>
 
 
-/* FreeSWITCH does not correctly handle an H.323 subtely, that is that a
+/* FluxPBX does not correctly handle an H.323 subtely, that is that a
    MAXIMUM audio frames per packet is negotiated, and there is no
    requirement for the remote to actually send that many. So, in say GSM, we
    negotiate up to 3 frames or 60ms of data and the remote actually sends one
@@ -274,10 +274,10 @@ bool FSManager::Initialise(switch_loadable_module_interface_t *iface)
 {
     ReadConfig(false);
 
-    m_FreeSwitch = (switch_endpoint_interface_t *) switch_loadable_module_create_interface(iface, SWITCH_ENDPOINT_INTERFACE);
-    m_FreeSwitch->interface_name = ModuleName;
-    m_FreeSwitch->io_routines = &opalfs_io_routines;
-    m_FreeSwitch->state_handler = &opalfs_event_handlers;
+    m_FluxPbx = (switch_endpoint_interface_t *) switch_loadable_module_create_interface(iface, SWITCH_ENDPOINT_INTERFACE);
+    m_FluxPbx->interface_name = ModuleName;
+    m_FluxPbx->io_routines = &opalfs_io_routines;
+    m_FluxPbx->state_handler = &opalfs_event_handlers;
 
     silenceDetectParams.m_mode = OpalSilenceDetector::NoSilenceDetection;
 

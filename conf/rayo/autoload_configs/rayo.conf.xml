@@ -97,7 +97,7 @@
 
 	<!-- XMPP server domain -->
 	<domain name="$${rayo_domain_name}" shared-secret="ClueCon">
-	<!-- use this instead if you want secure XMPP client to server connections.  Put .crt and .key file in freeswitch/certs -->
+	<!-- use this instead if you want secure XMPP client to server connections.  Put .crt and .key file in fluxpbx/certs -->
 	<!--domain name="$${rayo_domain_name}" shared-secret="ClueCon" cert="$${base_dir}/certs/$${rayo_domain_name}.crt" key="$${base_dir}/certs/$${rayo_domain_name}.key"-->
 
 		<!-- Listeners for new Rayo client connections -->

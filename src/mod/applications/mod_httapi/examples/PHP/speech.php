@@ -41,7 +41,7 @@ if ( $exiting ) {
 
 header('Content-Type: text/xml');
 $xml->startElement('document');
-$xml->writeAttribute('type', 'xml/freeswitch-httapi');
+$xml->writeAttribute('type', 'xml/fluxpbx-httapi');
 
 if ($result) {
   $xml->startElement('work');
@@ -72,8 +72,8 @@ if ($result) {
   $xml->writeAttribute('name', "result");
   $xml->writeAttribute('asr-engine', "pocketsphinx");
   $xml->writeAttribute('asr-grammar', "pizza_yesno");
-  $xml->writeAttribute('file', "http://sidious.freeswitch.org/sounds/ConfirmDelivery.wav");
-  $xml->writeAttribute('error-file', "http://sidious.freeswitch.org/sounds/invalid.wav");
+  $xml->writeAttribute('file', "http://sidious.fluxpbx.org/sounds/ConfirmDelivery.wav");
+  $xml->writeAttribute('error-file', "http://sidious.fluxpbx.org/sounds/invalid.wav");
   
   $xml->startElement("bind");
   $xml->writeAttribute('strip', "#");

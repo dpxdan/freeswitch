@@ -2,9 +2,9 @@
 use Frontier::Responder;
 use Data::Dumper;
 require ESL;
-#For use with FreeSWITCH Dialer.scpt in applescripts
+#For use with FluxPBX Dialer.scpt in applescripts
 #
-# Install FreeSWITCH Dialer.scpt into ~/Library/Address Book Plug-Ins/
+# Install FluxPBX Dialer.scpt into ~/Library/Address Book Plug-Ins/
 #
 
 

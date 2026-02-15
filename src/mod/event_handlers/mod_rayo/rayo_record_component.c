@@ -1,5 +1,5 @@
 /*
- * mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Grasshopper
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Grasshopper
  * Portions created by the Initial Developer are Copyright (C)
@@ -125,8 +125,8 @@ static void complete_record(struct rayo_component *component, const char *reason
 }
 
 /**
- * Handle RECORD_STOP event from FreeSWITCH.
- * @param event received from FreeSWITCH core.  It will be destroyed by the core after this function returns.
+ * Handle RECORD_STOP event from FluxPBX.
+ * @param event received from FluxPBX core.  It will be destroyed by the core after this function returns.
  */
 static void on_call_record_stop_event(switch_event_t *event)
 {
@@ -355,8 +355,8 @@ static iks *resume_record_component(struct rayo_actor *component, struct rayo_me
 }
 
 /**
- * Handle conference events from FreeSWITCH.
- * @param event received from FreeSWITCH core.  It will be destroyed by the core after this function returns.
+ * Handle conference events from FluxPBX.
+ * @param event received from FluxPBX core.  It will be destroyed by the core after this function returns.
  */
 static void on_mixer_record_event(switch_event_t *event)
 {

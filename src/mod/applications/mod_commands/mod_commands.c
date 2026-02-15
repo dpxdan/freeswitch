@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Michael Jerris <mike@jerris.com>
  * Johny Kadarisman <jkr888@gmail.com>
  * Paul Tinsley <jackhammer@gmail.com>
@@ -33,7 +33,7 @@
  * Massimo Cetra <devel@navynet.it>
  * Rupa Schomaker <rupa@rupa.com>
  * Joseph Sullivan <jossulli@amazon.com>
- * Raymond Chandler <intralanman@freeswitch.org>
+ * Raymond Chandler <intralanman@fluxpbx.org>
  * Seven Du <dujinfang@gmail.com>
  * Garmt Boekholt <garmt@cimico.com>
  *
@@ -664,7 +664,7 @@ SWITCH_STANDARD_API(version_function)
 	char *mydata = NULL, *argv[2];
 
 	if (zstr(cmd)) {
-		stream->write_function(stream, "FreeSWITCH Version %s (%s)\n", switch_version_full(), switch_version_revision_human());
+		stream->write_function(stream, "FluxPBX Version %s (%s)\n", switch_version_full(), switch_version_revision_human());
 		goto end;
 	}
 
@@ -676,7 +676,7 @@ SWITCH_STANDARD_API(version_function)
 	if (argc > 0 && switch_stristr("short", argv[0])) {
 		stream->write_function(stream, "%s.%s.%s\n", switch_version_major(),switch_version_minor(),switch_version_micro());
 	} else {
-		stream->write_function(stream, "FreeSWITCH Version %s (%s)\n", switch_version_full(), switch_version_full_human());
+		stream->write_function(stream, "FluxPBX Version %s (%s)\n", switch_version_full(), switch_version_full_human());
 	}
 
 	switch_safe_free(mydata);
@@ -2348,7 +2348,7 @@ SWITCH_STANDARD_API(status_function)
 
 	if (html) {
 		/* don't bother cli with heading and timestamp */
-		stream->write_function(stream, "%sFreeSWITCH Status%s", "<h1>", "</h1>\n");
+		stream->write_function(stream, "%sFluxPBX Status%s", "<h1>", "</h1>\n");
 		stream->write_function(stream, "%s%s", switch_event_get_header(stream->param_event,"Event-Date-Local"), nl);
 	}
 
@@ -2361,7 +2361,7 @@ SWITCH_STANDARD_API(status_function)
 						duration.sec, duration.sec == 1 ? "" : "s", duration.ms , duration.ms  == 1 ? "" : "s", duration.mms,
 						duration.mms == 1 ? "" : "s", nl);
 
-	stream->write_function(stream, "FreeSWITCH (Version %s) is %s%s", switch_version_full_human(),
+	stream->write_function(stream, "FluxPBX (Version %s) is %s%s", switch_version_full_human(),
 						   switch_core_ready() ? "ready" : "not ready", nl);
 
 	stream->write_function(stream, "%" SWITCH_SIZE_T_FMT " session(s) since startup%s", switch_core_session_id() - 1, nl);
@@ -5893,7 +5893,7 @@ SWITCH_STANDARD_API(show_function)
 		nl = holder.format->nl;
 		if (!as || strcasecmp(as,"xml")) {
 			/* don't bother cli with heading and timestamp */
-			stream->write_function(stream, "<h1>FreeSWITCH %s %s</h1>\n", command, holder.justcount?"(count)":"");
+			stream->write_function(stream, "<h1>FluxPBX %s %s</h1>\n", command, holder.justcount?"(count)":"");
 			stream->write_function(stream, "%s%s", switch_event_get_header(stream->param_event,"Event-Date-Local"), nl);
 		}
 		holder.stream->write_function(holder.stream, "<table cellpadding=1 cellspacing=4 border=1>\n");

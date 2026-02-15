@@ -12,7 +12,7 @@ mod_LTLIBRARIES = mod_esl.la
 mod_esl_la_SOURCES  = mod_esl.c $(ESL_SRCS)
 mod_esl_la_CFLAGS   = $(AM_CFLAGS)
 mod_esl_la_CPPFLAGS = -I$(ESL_DIR)/src/include
-mod_esl_la_LIBADD   = $(switch_builddir)/libfreeswitch.la #$(ESL_DIR)/libesl.a
+mod_esl_la_LIBADD   = $(switch_builddir)/libfluxpbx.la #$(ESL_DIR)/libesl.a
 mod_esl_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 #$(ESL_DIR)/libesl.a: $(ESL_DIR)/Makefile

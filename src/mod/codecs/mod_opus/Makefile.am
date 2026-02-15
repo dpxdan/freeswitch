@@ -6,7 +6,7 @@ if HAVE_OPUS
 mod_LTLIBRARIES = mod_opus.la
 mod_opus_la_SOURCES  = mod_opus.c opus_parse.c
 mod_opus_la_CFLAGS   = $(AM_CFLAGS) $(OPUS_CFLAGS)
-mod_opus_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(OPUS_LIBS)
+mod_opus_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(OPUS_LIBS)
 mod_opus_la_LDFLAGS  = -avoid-version -module -no-undefined -shared -lm -lz
 
 else

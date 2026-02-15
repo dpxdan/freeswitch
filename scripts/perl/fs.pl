@@ -1,13 +1,13 @@
 #!/usr/bin/perl
-use FreeSWITCH::Client;
+use FluxPBX::Client;
 use Data::Dumper;
 use Term::ReadLine;
 my $password = "ClueCon";
 
 
-my $fs = init FreeSWITCH::Client {-password => $password} or die "Error $@";
-my $term = new Term::ReadLine "FreeSWITCH CLI";
-my $prompt = "[mFreeSWITCH>";
+my $fs = init FluxPBX::Client {-password => $password} or die "Error $@";
+my $term = new Term::ReadLine "FluxPBX CLI";
+my $prompt = "[mFluxPBX>";
 my $OUT = $term->OUT .. \*STDOUT;
 my $pid;
 
@@ -18,7 +18,7 @@ $SIG{CHLD} = sub {$fs->disconnect(); die "done"};
 if ($log) {
   $pid = fork;
   if (!$pid) {
-    my $fs2 = init FreeSWITCH::Client {-password => $password} or die "Error $@";
+    my $fs2 = init FluxPBX::Client {-password => $password} or die "Error $@";
     
 
     $fs2->sendmsg({ 'command' => "log $log" });

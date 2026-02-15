@@ -1,0 +1,12 @@
+#!/bin/sh
+fspid=$(cat /usr/local/fluxpbx/run/fluxpbx.pid)
+gcore -o /usr/local/fluxpbx/log/fluxpbx.gcore $fspid && \
+	gdb /usr/local/fluxpbx/bin/fluxpbx \
+	-c /usr/local/fluxpbx/log/fluxpbx.gcore.$fspid \
+	--eval-command='set pagination off' \
+	--eval-command='bt' \
+	--eval-command='bt full' \
+	--eval-command='thread apply all bt' \
+	--eval-command='thread apply all bt full' \
+	--eval-command='quit'
+#rm /usr/local/fluxpbx/log/fluxpbx.gcore.$fspid

@@ -31,7 +31,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * The Initial Developers of the Original Code are
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Michael B. Murdock <mike@mmurdock.org>
  * Marc O. Chouinard <mochouinard@moctel.com>
  * Yehavi Bourvine <yehavi@savion.huji.ac.il>

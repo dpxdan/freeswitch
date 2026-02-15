@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  *
  *
  * switch_console.c -- Simple Console
@@ -1037,7 +1037,7 @@ static unsigned char console_f12key(EditLine * el, int ch)
 char *prompt(EditLine * e)
 {
 	if (*prompt_str == '\0') {
-		switch_snprintf(prompt_str, sizeof(prompt_str), "freeswitch@%s> ", switch_core_get_switchname());
+		switch_snprintf(prompt_str, sizeof(prompt_str), "fluxpbx@%s> ", switch_core_get_switchname());
 	}
 
 	return prompt_str;
@@ -1163,7 +1163,7 @@ SWITCH_DECLARE(void) switch_console_loop(void)
 		return;
 	}
 
-	hfile = switch_mprintf("%s%sfreeswitch.history", SWITCH_GLOBAL_dirs.log_dir, SWITCH_PATH_SEPARATOR);
+	hfile = switch_mprintf("%s%sfluxpbx.history", SWITCH_GLOBAL_dirs.log_dir, SWITCH_PATH_SEPARATOR);
 	assert(hfile != NULL);
 
 	history(myhistory, &ev, H_SETSIZE, 800);
@@ -1566,7 +1566,7 @@ SWITCH_DECLARE(void) switch_console_loop(void)
 	console_xml_config();
 
 #ifdef _MSC_VER
-	sprintf(cmd, "\nfreeswitch@%s> ", switch_core_get_switchname());
+	sprintf(cmd, "\nfluxpbx@%s> ", switch_core_get_switchname());
 	console_bufferInput(0, 0, cmd, PROMPT_OP);
 	memset(cmd, 0, sizeof(cmd));
 #endif
@@ -1587,7 +1587,7 @@ SWITCH_DECLARE(void) switch_console_loop(void)
 		}
 
 		if (activity) {
-			switch_log_printf(SWITCH_CHANNEL_LOG_CLEAN, SWITCH_LOG_CONSOLE, "\nfreeswitch@%s> ", switch_core_get_switchname());
+			switch_log_printf(SWITCH_CHANNEL_LOG_CLEAN, SWITCH_LOG_CONSOLE, "\nfluxpbx@%s> ", switch_core_get_switchname());
 		}
 #ifdef _MSC_VER
 		activity = 0;

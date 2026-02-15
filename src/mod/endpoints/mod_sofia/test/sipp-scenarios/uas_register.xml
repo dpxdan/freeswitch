@@ -13,7 +13,7 @@
       [last_Call-ID:]
       [last_CSeq:]
       Contact: <sip:[local_ip]:[local_port];transport=[transport]>
-      WWW-Authenticate: Digest realm="freeswitch.org", nonce="47ebe028cda119c35d4877b383027d28da013815"
+      WWW-Authenticate: Digest realm="fluxpbx.org", nonce="47ebe028cda119c35d4877b383027d28da013815"
       Content-Length: [len]
 
     ]]>

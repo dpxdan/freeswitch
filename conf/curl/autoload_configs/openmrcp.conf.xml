@@ -1,4 +1,4 @@
-<!-- http://wiki.freeswitch.org/wiki/Mod_openmrcp#Configuration -->
+<!-- http://wiki.fluxpbx.org/wiki/Mod_openmrcp#Configuration -->
 <configuration name="openmrcp.conf" description="mod_openmrcp configuration">
   <settings>
     <param name="asr_default_profile" value="openmrcp-v2"/>

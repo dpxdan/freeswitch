@@ -1,6 +1,6 @@
 using System;
-using FreeSWITCH;
-using FreeSWITCH.Native;
+using FluxPBX;
+using FluxPBX.Native;
 
 namespace winFailToBan.Internal
 {

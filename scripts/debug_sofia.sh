@@ -10,4 +10,4 @@ export TPORT_DUMP=tport_sip.log
 export SOA_DEBUG=9
 export IPTSEC_DEBUG=9
 export SU_DEBUG=9
-./freeswitch
+./fluxpbx

@@ -5,9 +5,9 @@
     <!-- <param name="kslog" value="true"/> -->
     <!-- seconds to wait before hanging up a disconnected channel -->
     <!-- <param name="detach-timeout-sec" value="120"/> -->
-    <!-- enable broadcasting all FreeSWITCH events in Verto -->
+    <!-- enable broadcasting all FluxPBX events in Verto -->
     <!-- <param name="enable-fs-events" value="false"/> -->
-    <!-- enable broadcasting FreeSWITCH presence events in Verto -->
+    <!-- enable broadcasting FluxPBX presence events in Verto -->
     <!-- <param name="enable-presence" value="true"/> -->
   </settings>
 

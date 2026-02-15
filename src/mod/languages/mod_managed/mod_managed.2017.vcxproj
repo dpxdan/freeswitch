@@ -317,8 +317,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="freeswitch_managed.cpp" />
-    <ClCompile Include="freeswitch_wrap.cxx">
+    <ClCompile Include="fluxpbx_managed.cpp" />
+    <ClCompile Include="fluxpbx_wrap.cxx">
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug_CLR|x64'">4505;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release_CLR|x64'">4505;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release_CLR|Win32'">4505;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -327,18 +327,18 @@
     <ClCompile Include="mod_managed.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="freeswitch_managed.h" />
+    <ClInclude Include="fluxpbx_managed.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="freeswitch.i" />
+    <None Include="fluxpbx.i" />
     <None Include="switch_platform.i" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2017.vcxproj">
+    <ProjectReference Include="..\..\..\..\w32\Library\FluxPbxCore.2017.vcxproj">
       <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="managed\FreeSWITCH.Managed.2017.csproj">
+    <ProjectReference Include="managed\FluxPBX.Managed.2017.csproj">
       <Project>{834e2b2f-5483-4b80-8fe3-fe48ff76e5c0}</Project>
     </ProjectReference>
   </ItemGroup>

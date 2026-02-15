@@ -6,7 +6,7 @@ mod_LTLIBRARIES = mod_enum.la
 mod_enum_la_SOURCES  = mod_enum.c
 mod_enum_la_CFLAGS   = $(AM_CFLAGS)
 mod_enum_la_CPPFLAGS = $(LDNS_CFLAGS) $(AM_CPPFLAGS)
-mod_enum_la_LIBADD   = $(LDNS_LIBS) $(switch_builddir)/libfreeswitch.la
+mod_enum_la_LIBADD   = $(LDNS_LIBS) $(switch_builddir)/libfluxpbx.la
 mod_enum_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 else
 install: error

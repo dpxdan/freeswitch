@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -33,25 +33,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FreeSWITCH
+namespace FluxPBX
 {
     public static class Log
     {
         public static void Write(LogLevel level, string message)
         {
-            Native.freeswitch.console_log(level.ToLogString(), message);
+            Native.fluxpbx.console_log(level.ToLogString(), message);
         }
         public static void Write(LogLevel level, string format, params object[] args)
         {
-            Native.freeswitch.console_log(level.ToLogString(), string.Format(format, args));
+            Native.fluxpbx.console_log(level.ToLogString(), string.Format(format, args));
         }
         public static void WriteLine(LogLevel level, string message)
         {
-            Native.freeswitch.console_log(level.ToLogString(), message + Environment.NewLine);
+            Native.fluxpbx.console_log(level.ToLogString(), message + Environment.NewLine);
         }
         public static void WriteLine(LogLevel level, string format, params object[] args)
         {
-            Native.freeswitch.console_log(level.ToLogString(), string.Format(format, args) + Environment.NewLine);
+            Native.fluxpbx.console_log(level.ToLogString(), string.Format(format, args) + Environment.NewLine);
         }
 
         static string ToLogString(this LogLevel level)

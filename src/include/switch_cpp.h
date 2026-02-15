@@ -29,7 +29,7 @@ extern "C" {
 	fhp = NULL;											\
 	cause = SWITCH_CAUSE_NONE
 
-//// C++ Interface: switch_to_cpp_mempool//// Description: This class allows for overloading the new operator to allocate from a switch_memory_pool_t//// Author: Yossi Neiman <freeswitch@cartissolutions.com>, (C) 2007//// Copyright: See COPYING file that comes with this distribution//
+//// C++ Interface: switch_to_cpp_mempool//// Description: This class allows for overloading the new operator to allocate from a switch_memory_pool_t//// Author: Yossi Neiman <fluxpbx@cartissolutions.com>, (C) 2007//// Copyright: See COPYING file that comes with this distribution//
 #if 0
 #ifndef SWITCHTOMEMPOOL
 #define SWITCHTOMEMPOOL
@@ -427,7 +427,7 @@ SWITCH_DECLARE(void) switch_msleep(unsigned ms);
 SWITCH_DECLARE(void) bridge(CoreSession & session_a, CoreSession & session_b);
 
 
-/** \brief the actual hangup hook called back by freeswitch core
+/** \brief the actual hangup hook called back by fluxpbx core
  *         which in turn gets the session and calls the appropriate
  *         instance method to complete the callback.
  */

@@ -52,7 +52,7 @@ if ($opts{versions}) {
     $opts{versions_array} = [map {{name => $_}} split(" ", $opts{versions})];
 }
 
-my $url = "https://freeswitch.org/jira/si/jira.issueviews:issue-xml/$opts{bug}/$opts{bug}.xml";
+my $url = "https://fluxpbx.org/jira/si/jira.issueviews:issue-xml/$opts{bug}/$opts{bug}.xml";
 my $cmd;
 my $prog = `which curl` || `which wget`;
 my $auto = 1;
@@ -72,7 +72,7 @@ if ($opts{auth}) {
 	print "\n";
     }
 
-    $jira = JIRA::REST->new('https://freeswitch.org/jira', $opts{user}, $opts{pass}) or die "login incorrect:";
+    $jira = JIRA::REST->new('https://fluxpbx.org/jira', $opts{user}, $opts{pass}) or die "login incorrect:";
     $issue = $jira->GET("/issue/FS-7985") or die "login incorrect:";
 
     my $issue = $jira->GET("/issue/" . $opts{bug});

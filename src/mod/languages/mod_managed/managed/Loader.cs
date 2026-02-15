@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -39,7 +39,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace FreeSWITCH {
+namespace FluxPBX {
     internal static class Loader {
 
         // Thunks
@@ -63,7 +63,7 @@ namespace FreeSWITCH {
         static string shadowDir;
         
         public static bool Load() {
-            managedDir = Path.Combine(Native.freeswitch.SWITCH_GLOBAL_dirs.mod_dir, "managed");
+            managedDir = Path.Combine(Native.fluxpbx.SWITCH_GLOBAL_dirs.mod_dir, "managed");
             shadowDir = Path.Combine(managedDir, "shadow");
             if (Directory.Exists(shadowDir)) {
                 try {
@@ -75,7 +75,7 @@ namespace FreeSWITCH {
                 Directory.CreateDirectory(shadowDir);
             }
 
-            Log.WriteLine(LogLevel.Debug, "FreeSWITCH.Managed loader is starting with directory '{0}'.", managedDir);
+            Log.WriteLine(LogLevel.Debug, "FluxPBX.Managed loader is starting with directory '{0}'.", managedDir);
             if (!Directory.Exists(managedDir)) {
                 Log.WriteLine(LogLevel.Error, "Managed directory not found: {0}", managedDir);
                 return false;
@@ -226,8 +226,8 @@ namespace FreeSWITCH {
             if (File.Exists(fileName + ".config")) {
                 setup.ConfigurationFile = fileName + ".config";
             }
-            setup.ApplicationBase = Native.freeswitch.SWITCH_GLOBAL_dirs.mod_dir;
-            setup.LoaderOptimization = LoaderOptimization.MultiDomainHost; // TODO: would MultiDomain work better since FreeSWITCH.Managed isn't gac'd?
+            setup.ApplicationBase = Native.fluxpbx.SWITCH_GLOBAL_dirs.mod_dir;
+            setup.LoaderOptimization = LoaderOptimization.MultiDomainHost; // TODO: would MultiDomain work better since FluxPBX.Managed isn't gac'd?
             setup.CachePath = shadowDir;
             setup.ShadowCopyFiles = "true";
 
@@ -432,7 +432,7 @@ namespace FreeSWITCH {
 
         public static bool Run(string command, IntPtr sessionHandle) {
             try {
-                Log.WriteLine(LogLevel.Debug, "FreeSWITCH.Managed: attempting to run application '{0}'.", command);
+                Log.WriteLine(LogLevel.Debug, "FluxPBX.Managed: attempting to run application '{0}'.", command);
                 System.Diagnostics.Debug.Assert(sessionHandle != IntPtr.Zero, "sessionHandle is null.");
                 var parsed = parseCommand(command);
                 if (parsed == null) return false;

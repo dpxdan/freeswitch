@@ -1,6 +1,6 @@
-package org.freeswitch.example;
+package org.fluxpbx.example;
 
-import org.freeswitch.StateHandler.OnHangupHandler;
+import org.fluxpbx.StateHandler.OnHangupHandler;
 
 public class OriginateStateHandler implements OnHangupHandler {
 

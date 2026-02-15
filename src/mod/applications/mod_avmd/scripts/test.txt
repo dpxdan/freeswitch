@@ -32,11 +32,11 @@ Obtained from output of top (running in multiple core mode, so max value of CPU 
 
 Running command
 ./avmd_originate_multiple.pl avmd1 piotr X
-then Freeswitch starts two legs for each call (AND I configured avmd to start on both of them).
-then Freeswitch's command "show calls" is showing 2*X calls, so if I run ./avmd_originate_multiple.pl avmd1 piotr 10 
+then Fluxpbx starts two legs for each call (AND I configured avmd to start on both of them).
+then Fluxpbx's command "show calls" is showing 2*X calls, so if I run ./avmd_originate_multiple.pl avmd1 piotr 10 
 then if I do "show calls" in cli it displays "20 total", as it counts "-a" and "-b" loopback legs.
 
-So for test extension "avmd2" where avmd_start app is executed Freeswitch starts two legs for each call and avmd is running on inbound.
+So for test extension "avmd2" where avmd_start app is executed Fluxpbx starts two legs for each call and avmd is running on inbound.
 
 This table uses X as calls (so if you did "show calls" in cli you would actually see twice as the number in top row).
 
@@ -47,7 +47,7 @@ avmd2		103	257	382 510	760(GUI lagging)
 Results are values shown as %CPU from "top" command (here that would be 63.3%):
 Obtained from output of top (running in multiple core mode, so max value of CPU for this case of 8-core CPU is 800%).
 
-top -p `pidof freeswitch`
+top -p `pidof fluxpbx`
 
 top - 02:26:45 up 13 days, 13:48,  1 user,  load average: 0.62, 0.39, 0.34
 Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
@@ -56,7 +56,7 @@ MiB Mem :  24034.2 total,   4879.0 free,  11671.8 used,   7483.4 buff/cache
 MiB Swap:  24502.0 total,  24502.0 free,      0.0 used.  11040.5 avail Mem 
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                                                                                         
- 8765 root      -2 -10 4370088 115872  20780 S  63.3   0.5   1:42.73 freeswitch  
+ 8765 root      -2 -10 4370088 115872  20780 S  63.3   0.5   1:42.73 fluxpbx  
 
 
 Test script (for up to date version see avmd_originate_multiple.pl)
@@ -151,7 +151,7 @@ sub call_once {
 
 CPU info
 =========
-peter@photon:/usr/local/freeswitch/conf/dialplan$ cat /proc/cpuinfo 
+peter@photon:/usr/local/fluxpbx/conf/dialplan$ cat /proc/cpuinfo 
 processor	: 0
 vendor_id	: GenuineIntel
 cpu family	: 6

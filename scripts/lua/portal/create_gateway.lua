@@ -4,7 +4,7 @@ username = argv[3];
 password = argv[4];
 register = argv[5];
 
-conf = "/usr/local/freeswitch/conf"
+conf = "/usr/local/fluxpbx/conf"
 dir  = conf .. "/sip_profiles/external/"
 file_name = dir .. "/" .. name .. ".xml"
 
@@ -19,5 +19,5 @@ conf_file:write('		<param name="register" value="' .. register .. '"/>\n')
 conf_file:write('	</gateway>\n')
 conf_file:write('<include>\n')
 
-api = freeswitch.API()
+api = fluxpbx.API()
 api:execute("sofia profile external rescan")

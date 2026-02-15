@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,23 +14,23 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
- * Ken Rice <krice@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
+ * Ken Rice <krice@fluxpbx.org>
  * Paul D. Tinsley <pdt at jackhammer.org>
  * Bret McDanel <trixter AT 0xdecafbad.com>
  * Eliot Gable <egable AT.AT broadvox.com>
  *
  *
- * sofia_glue.c -- SOFIA SIP Endpoint (code to tie sofia to freeswitch)
+ * sofia_glue.c -- SOFIA SIP Endpoint (code to tie sofia to fluxpbx)
  *
  */
 #include "mod_sofia.h"
@@ -88,7 +88,7 @@ void sofia_glue_attach_private(switch_core_session_t *session, sofia_profile_t *
 		tech_pvt->flags[x] = profile->flags[x];
 	}
 
-	tech_pvt->x_freeswitch_support_local = FREESWITCH_SUPPORT;
+	tech_pvt->x_fluxpbx_support_local = FLUXPBX_SUPPORT;
 
 	tech_pvt->profile = profile;
 
@@ -1699,7 +1699,7 @@ switch_status_t sofia_glue_do_invite(switch_core_session_t *session)
 				   TAG_IF(!zstr(date), SIPTAG_DATE_STR(date)),
 				   TAG_IF(!zstr(alert_info), SIPTAG_HEADER_STR(alert_info)),
 				   TAG_IF(!zstr(extra_headers), SIPTAG_HEADER_STR(extra_headers)),
-				   TAG_IF(sofia_test_pflag(tech_pvt->profile, PFLAG_PASS_CALLEE_ID), SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)),
+				   TAG_IF(sofia_test_pflag(tech_pvt->profile, PFLAG_PASS_CALLEE_ID), SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)),
 				   TAG_IF(!zstr(max_forwards), SIPTAG_MAX_FORWARDS_STR(max_forwards)),
 				   TAG_IF(!zstr(route_uri), NUTAG_PROXY(route_uri)),
 				   TAG_IF(!zstr(invite_route_uri), NUTAG_INITIAL_ROUTE_STR(invite_route_uri)),
@@ -1737,7 +1737,7 @@ switch_status_t sofia_glue_do_invite(switch_core_session_t *session)
 				   TAG_IF(!zstr(tech_pvt->privacy), SIPTAG_PRIVACY_STR(tech_pvt->privacy)),
 				   TAG_IF(!zstr(alert_info), SIPTAG_HEADER_STR(alert_info)),
 				   TAG_IF(!zstr(extra_headers), SIPTAG_HEADER_STR(extra_headers)),
-				   TAG_IF(sofia_test_pflag(tech_pvt->profile, PFLAG_PASS_CALLEE_ID), SIPTAG_HEADER_STR("X-FS-Support: " FREESWITCH_SUPPORT)),
+				   TAG_IF(sofia_test_pflag(tech_pvt->profile, PFLAG_PASS_CALLEE_ID), SIPTAG_HEADER_STR("X-FS-Support: " FLUXPBX_SUPPORT)),
 				   TAG_IF(!zstr(max_forwards), SIPTAG_MAX_FORWARDS_STR(max_forwards)),
 				   TAG_IF(!zstr(identity), SIPTAG_IDENTITY_STR(identity)),
 				   TAG_IF(!zstr(route_uri), NUTAG_PROXY(route_uri)),
@@ -1814,7 +1814,7 @@ void sofia_glue_do_xfer_invite(switch_core_session_t *session)
 
 
 /* map sip responses to QSIG cause codes ala RFC4497 section 8.4.4 */
-switch_call_cause_t sofia_glue_sip_cause_to_freeswitch(int status)
+switch_call_cause_t sofia_glue_sip_cause_to_fluxpbx(int status)
 {
 	switch (status) {
 	case 200:

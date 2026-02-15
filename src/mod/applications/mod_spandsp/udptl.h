@@ -1,5 +1,5 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2009, Steve Underwood <steveu@coppice.org>
  *
  * Version: MPL 1.1
@@ -22,8 +22,8 @@
  *
  */
 
-#if !defined(FREESWITCH_UDPTL_H)
-#define FREESWITCH_UDPTL_H
+#if !defined(FLUXPBX_UDPTL_H)
+#define FLUXPBX_UDPTL_H
 
 #define LOCAL_FAX_MAX_DATAGRAM      400
 #define LOCAL_FAX_MAX_FEC_PACKETS   5

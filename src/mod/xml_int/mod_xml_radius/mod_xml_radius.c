@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -684,7 +684,7 @@ switch_xml_t mod_xml_radius_auth_invite(switch_event_t *params) {
 	}
 
 	xml = switch_xml_new("document");
-	switch_xml_set_attr_d(xml, "type", "freeswitch/xml");
+	switch_xml_set_attr_d(xml, "type", "fluxpbx/xml");
 	dir = switch_xml_add_child_d(xml, "section", 0);
 	switch_xml_set_attr_d(dir, "name", "directory");
 	dom = switch_xml_add_child_d(dir, "domain", 0);
@@ -796,7 +796,7 @@ switch_xml_t mod_xml_radius_auth_reg(switch_event_t *params) {
 	}
 
 	xml = switch_xml_new("document");
-	switch_xml_set_attr_d(xml, "type", "freeswitch/xml");
+	switch_xml_set_attr_d(xml, "type", "fluxpbx/xml");
 	dir = switch_xml_add_child_d(xml, "section", 0);
 	switch_xml_set_attr_d(dir, "name", "directory");
 	dom = switch_xml_add_child_d(dir, "domain", 0);

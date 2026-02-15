@@ -55,7 +55,7 @@ module_param(skypopen_major, int, S_IRUGO);
 module_param(skypopen_minor, int, S_IRUGO);
 module_param(skypopen_nr_devs, int, S_IRUGO);
 
-MODULE_AUTHOR("Original: Alessandro Rubini, Jonathan Corbet. Modified by: Giovanni Maruzzelli for FreeSWITCH skypopen");
+MODULE_AUTHOR("Original: Alessandro Rubini, Jonathan Corbet. Modified by: Giovanni Maruzzelli for FluxPBX skypopen");
 MODULE_LICENSE("Dual BSD/GPL");
 
 static struct skypopen_dev *skypopen_devices;	/* allocated in skypopen_init_module */
@@ -454,7 +454,7 @@ int skypopen_init_module(void)
 	int result, i;
 	dev_t dev = 0;
 
-	printk("skypopen OSS driver loading (www.freeswitch.org)\n");
+	printk("skypopen OSS driver loading (www.fluxpbx.org)\n");
 
 	/*
 	 * Get a range of minor numbers to work with, asking for a dynamic

@@ -41,11 +41,11 @@ if ( $exiting ) {
 
 header('Content-Type: text/xml');
 $xml->startElement('document');
-$xml->writeAttribute('type', 'xml/freeswitch-httapi');
+$xml->writeAttribute('type', 'xml/fluxpbx-httapi');
 
 if ( $exten && $pin ) {
   $xml->startElement('work');
-  $xml->writeElement("playback", "http://sidious.freeswitch.org/sounds/ext_num.wav");
+  $xml->writeElement("playback", "http://sidious.fluxpbx.org/sounds/ext_num.wav");
 
   $xml->startElement("say");
   $xml->writeAttribute('language', "en");
@@ -73,8 +73,8 @@ if ( $exten && $pin ) {
   $xml->startElement('work');
   $xml->startElement('playback');
   $xml->writeAttribute('name', "pin");
-  $xml->writeAttribute('file', "http://sidious.freeswitch.org/sounds/pin.wav");
-  $xml->writeAttribute('error-file', "http://sidious.freeswitch.org/sounds/bad-pin.wav");
+  $xml->writeAttribute('file', "http://sidious.fluxpbx.org/sounds/pin.wav");
+  $xml->writeAttribute('error-file', "http://sidious.fluxpbx.org/sounds/bad-pin.wav");
   $xml->writeAttribute('input-timeout', "5000");
 
   $xml->startElement("bind");
@@ -89,9 +89,9 @@ if ( $exten && $pin ) {
 
   $xml->startElement('playback');
   $xml->writeAttribute('name', "exten");
-  $xml->writeAttribute('file', "http://sidious.freeswitch.org/sounds/exten.wav");
+  $xml->writeAttribute('file', "http://sidious.fluxpbx.org/sounds/exten.wav");
   $xml->writeAttribute('loops', "3");
-  $xml->writeAttribute('error-file', "http://sidious.freeswitch.org/sounds/invalid.wav");
+  $xml->writeAttribute('error-file', "http://sidious.fluxpbx.org/sounds/invalid.wav");
   $xml->writeAttribute('input-timeout', "5000");
 
   $xml->startElement("bind");

@@ -22,7 +22,7 @@ using namespace gsmlib;
 #define tech_pvt p
 extern int gsmopen_debug;
 extern char *gsmopen_console_active;
-#else /* FREESWITCH */
+#else /* FLUXPBX */
 #define gsmopen_sleep switch_sleep
 #define gsmopen_strncpy switch_copy_string
 extern switch_memory_pool_t *gsmopen_module_pool;

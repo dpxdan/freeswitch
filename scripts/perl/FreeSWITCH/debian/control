@@ -1,4 +1,4 @@
-Source: libfreeswitch-client-perl
+Source: libfluxpbx-client-perl
 Section: perl
 Priority: optional
 Build-Depends: debhelper (>= 5)
@@ -8,9 +8,9 @@ Build-Depends-Indep: perl (>= 5.8.0-7), libmodule-install-perl,
  libgetopt-argvfile-perl (>= 1.06), gnupg, libinline-perl, libtest-pod-perl
 Maintainer: Massimo Cetra <devel@navynet.it>
 
-Package: libfreeswitch-client-perl
+Package: libfluxpbx-client-perl
 Architecture: amd64
 Depends: ${perl:Depends}, ${misc:Depends}, libmodule-scandeps-perl (>=  0.51), libio-socket-ssl-perl (>= 0.97)
 Recommends: gnupg, libmodule-signature-perl, libpar-packer-perl
-Description: FreeSWITCH Client perl library
-    FreeSWITCH perl client library
+Description: FluxPBX Client perl library
+    FluxPBX perl client library

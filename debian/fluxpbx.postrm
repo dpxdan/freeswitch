@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+    if [ "$1" = "purge" ]; then
+      if getent passwd fluxpbx >/dev/null; then
+        userdel fluxpbx
+      fi
+      if getent group fluxpbx >/dev/null; then
+        groupdel fluxpbx
+      fi
+      for x in \
+        /var/lib/fluxpbx \
+        /var/log/fluxpbx \
+        /var/run/fluxpbx;
+      do
+        rm -rf $x
+      done
+    fi
+    ;;
+  *)
+    echo "postrm called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+#DEBHELPER#
+exit 0

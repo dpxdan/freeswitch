@@ -3,15 +3,15 @@
 ##
 ##  Hints:
 ##  - layouts can be loaded with configure's --enable-layout=ID option
-##  - when no --enable-layout option is given, the default layout is `FreeSWITCH'
+##  - when no --enable-layout option is given, the default layout is `FluxPBX'
 ##  - a trailing plus character (`+') on paths is replaced with a 
-##    `/<target>' suffix where <target> is currently hardcoded to 'freeswitch'.
+##    `/<target>' suffix where <target> is currently hardcoded to 'fluxpbx'.
 ##    (This may become a configurable parameter at some point.)
 ##
 
-#   Default FreeSWITCH path layout.
-<Layout FreeSWITCH>
-    prefix:         /usr/local/freeswitch
+#   Default FluxPBX path layout.
+<Layout FluxPBX>
+    prefix:         /usr/local/fluxpbx
     exec_prefix:    ${prefix}
     bindir:         ${exec_prefix}/bin
     sbindir:        ${exec_prefix}/bin
@@ -36,12 +36,12 @@
     sbindir:        ${exec_prefix}/sbin
     libdir:         ${exec_prefix}/lib
     libexecdir:     ${exec_prefix}/libexec
-    modulesdir:     ${libdir}/freeswitch/modules
+    modulesdir:     ${libdir}/fluxpbx/modules
     mandir:         ${prefix}/man
-    sysconfdir:     ${prefix}/etc/freeswitch
-    datadir:        ${prefix}/share/freeswitch
-    includedir:     ${prefix}/include/freeswitch
-    localstatedir:  ${prefix}/var/freeswitch
+    sysconfdir:     ${prefix}/etc/fluxpbx
+    datadir:        ${prefix}/share/fluxpbx
+    includedir:     ${prefix}/include/fluxpbx
+    localstatedir:  ${prefix}/var/fluxpbx
     runtimedir:     ${localstatedir}/run
     logfiledir:     ${localstatedir}/log
 </Layout>
@@ -53,14 +53,14 @@
     exec_prefix:    ${prefix}
     bindir:         ${exec_prefix}/bin
     sbindir:        ${exec_prefix}/sbin
-    libdir:         ${exec_prefix}/lib/freeswitch
+    libdir:         ${exec_prefix}/lib/fluxpbx
     libexecdir:     ${exec_prefix}/libexec
     modulesdir:     ${libdir}/modules
     mandir:         ${prefix}/man
-    sysconfdir:     /etc/freeswitch
-    datadir:        ${prefix}/share/freeswitch
-    includedir:     ${prefix}/include/freeswitch
-    localstatedir:  /var/lib/freeswitch
-    runtimedir:     /var/run/freeswitch
-    logfiledir:     /var/log/freeswitch
+    sysconfdir:     /etc/fluxpbx
+    datadir:        ${prefix}/share/fluxpbx
+    includedir:     ${prefix}/include/fluxpbx
+    localstatedir:  /var/lib/fluxpbx
+    runtimedir:     /var/run/fluxpbx
+    logfiledir:     /var/log/fluxpbx
 </Layout>

@@ -1,4 +1,4 @@
-from freeswitch import *
+from fluxpbx import *
 from xml.dom import minidom
 
 VOICE_ENGINE = "cepstral"
@@ -153,7 +153,7 @@ class SpeechObtainer:
         'headers': {'Speech-Type': 'detected-speech'}}
 
         This dictionary is constructed in run_dtmf_callback() in
-        freeswitch_python.cpp
+        fluxpbx_python.cpp
 
         """
 
@@ -175,7 +175,7 @@ class SpeechObtainer:
             # TODO: check the score
             body = event['body']
             if not body or len(body) == 0 or body == "(null)":
-                # freeswitch returned a completely empty result
+                # fluxpbx returned a completely empty result
                 self.failed = True
                 # do we want to return stop?  what should we return?
                 return "stop"

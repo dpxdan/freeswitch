@@ -8,7 +8,7 @@ G723_1_A=$(BUILDDIR)/.libs/libg723.a
 mod_LTLIBRARIES = mod_g723_1.la
 mod_g723_1_la_SOURCES  = mod_g723_1.c
 mod_g723_1_la_CFLAGS   = $(AM_CFLAGS)
-mod_g723_1_la_LIBADD   = $(switch_builddir)/libfreeswitch.la
+mod_g723_1_la_LIBADD   = $(switch_builddir)/libfluxpbx.la
 mod_g723_1_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 if HAVE_G723_1

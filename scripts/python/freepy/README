@@ -2,7 +2,7 @@
 DESCRIPTION
 ===========
 
-Socket library to interface w/ freeswitch mod_event_socket from Twisted python applications.  Used by WikiPBX for all non-http communication w/ Freeswitch.
+Socket library to interface w/ fluxpbx mod_event_socket from Twisted python applications.  Used by WikiPBX for all non-http communication w/ Fluxpbx.
 
 Install
 =======

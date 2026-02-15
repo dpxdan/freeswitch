@@ -1,5 +1,5 @@
 /*
- * mod_v8 for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_v8 for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Peter Olsson <peter@olssononline.se>
  *
  * Version: MPL 1.1
@@ -14,20 +14,20 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is ported from FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is ported from FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  * Peter Olsson <peter@olssononline.se>
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * William King <william.king@quentustech.com>
  * Andrey Volk <andywolk@gmail.com>
  *
- * mod_v8.cpp -- JavaScript FreeSWITCH module
+ * mod_v8.cpp -- JavaScript FluxPBX module
  *
  */
 
@@ -35,11 +35,11 @@
  * This module executes JavaScript using Google's V8 JavaScript engine.
  *
  * It extends the available JavaScript classes with the following FS related classes;
- * CoreDB		Adds features to access the core DB (SQLite) in FreeSWITCH. (on request only)
- * DBH			Database Handler. Makes use of connection pooling provided by FreeSWITCH. (on request only)
+ * CoreDB		Adds features to access the core DB (SQLite) in FluxPBX. (on request only)
+ * DBH			Database Handler. Makes use of connection pooling provided by FluxPBX. (on request only)
  * CURL			Adds some extra methods for CURL access. (on request only)
  * DTMF			Object that holds information about a DTMF event.
- * Event		Object that holds information about a FreeSWITCH event.
+ * Event		Object that holds information about a FluxPBX event.
  * EventHandler	Features for handling FS events.
  * File			Class to reflect the Spidermonkey built-in class "File". Not yet implemented! (on request only)
  * FileIO		Simple class for basic file IO.
@@ -56,10 +56,10 @@
  *
  * It also adds quite a few global functions, directly available for the user (see fsglobal.cpp for the implementation).
  *
- * Depedning on how the script was started from FreeSWITCH, some variables might be defined already;
+ * Depedning on how the script was started from FluxPBX, some variables might be defined already;
  * session   If the script is started from the dialplan, the variable 'session' holds the session for the current call.
  * request   If the script is started using 'jsapi' function, the variable 'request' is an instance of the Request class.
- * message   If the script is started as a chat application, the actual FreeSWITCH event will be available in the variable 'message'.
+ * message   If the script is started as a chat application, the actual FluxPBX event will be available in the variable 'message'.
  *
  * All classes are implemented in a pair of hpp/cpp files, named after the class. For instance; class "File" is implemented in fsfile.cpp.
  *
@@ -101,7 +101,7 @@ using namespace v8;
 
 SWITCH_BEGIN_EXTERN_C
 
-/* FreeSWITCH module load definitions */
+/* FluxPBX module load definitions */
 SWITCH_MODULE_LOAD_FUNCTION(mod_v8_load);
 SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_v8_shutdown);
 SWITCH_MODULE_DEFINITION_EX(mod_v8, mod_v8_load, mod_v8_shutdown, NULL, SMODF_GLOBAL_SYMBOLS);
@@ -407,7 +407,7 @@ static int env_init(JSMain *js)
 		js->AddJSExtenderFunction(fs_proc[i].func, fs_proc[i].name);
 	}
 
-	/* Init all basic classes made available from FreeSWITCH */
+	/* Init all basic classes made available from FluxPBX */
 	js->AddJSExtenderClass(FSSession::GetClassDefinition());
 	js->AddJSExtenderClass(FSFileIO::GetClassDefinition());
 	js->AddJSExtenderClass(FSEvent::GetClassDefinition());

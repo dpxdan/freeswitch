@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-# Copyright (C) 2005-2016, Anthony Minessale II <anthm@freeswitch.org>
+# FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+# Copyright (C) 2005-2016, Anthony Minessale II <anthm@fluxpbx.org>
 #
 # Version: MPL 1.1
 #
@@ -15,7 +15,7 @@
 # for the specific language governing rights and limitations under the
 # License.
 #
-# The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+# The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 #
 # The Initial Developer of the Original Code is
 # Michael Jerris <mike@jerris.com>
@@ -27,14 +27,14 @@
 #  Sergey Safarov <s.safarov@gmail.com>
 #
 
-BUILD_ROOT=/tmp/freeswitch
+BUILD_ROOT=/tmp/fluxpbx
 FILELIST=/tmp/filelist
 FILELIST_BINARY=/tmp/filelist_binary
 WITHOUT_PERL="true"
 WITHOUT_PYTHON="true"
 WITHOUT_JAVA="true"
-TMP_TAR=/tmp/freeswitch_min.tar.gz
-IMG_TAR=/tmp/freeswitch_img.tar.gz
+TMP_TAR=/tmp/fluxpbx_min.tar.gz
+IMG_TAR=/tmp/fluxpbx_img.tar.gz
 
 clean_build_root() {
     rm -Rf $BUILD_ROOT
@@ -45,7 +45,7 @@ clean_build_root() {
 
 fs_files_debian() {
     local PACKAGES
-    PACKAGES=$(dpkg-query -f '${binary:Package}\n' -W 'freeswitch*')
+    PACKAGES=$(dpkg-query -f '${binary:Package}\n' -W 'fluxpbx*')
     PACKAGES="libc6 $PACKAGES"
     for pkg in $PACKAGES
     do
@@ -81,7 +81,7 @@ filter_unnecessary_files() {
 # /lib/systemd/
 # /usr/share/doc/
 # /usr/share/lintian/
-# /usr/share/freeswitch/sounds/
+# /usr/share/fluxpbx/sounds/
 # all "*.flac" files
 
     sed -i \
@@ -89,7 +89,7 @@ filter_unnecessary_files() {
         -e '\|^/lib/systemd|d' \
         -e '\|^/usr/share/doc|d' \
         -e '\|^/usr/share/lintian|d' \
-        -e '\|^/usr/share/freeswitch/sounds/|d' \
+        -e '\|^/usr/share/fluxpbx/sounds/|d' \
         -e '\|^/.*\.flac$|d' \
         -e '\|^/.*/flac$|d' \
         $FILELIST
@@ -102,7 +102,7 @@ filter_unnecessary_files() {
         sed -i -e '\|^/usr/share/pyshared|d' -e '\|^/usr/share/python-support|d' $FILELIST
     fi
     if [ "$WITHOUT_JAVA"="true" ];then
-        sed -i -e '\|^/usr/share/freeswitch/scripts/freeswitch.jar|d' $FILELIST
+        sed -i -e '\|^/usr/share/fluxpbx/scripts/fluxpbx.jar|d' $FILELIST
     fi
 }
 
@@ -141,9 +141,9 @@ make_image_tar() {
     local CURDIR=`pwd`
     cd $BUILD_ROOT
     tar xzf $TMP_TAR
-    find usr/share/freeswitch/conf/* -maxdepth 0 -type d -not -name vanilla -exec rm -Rf {} \;
+    find usr/share/fluxpbx/conf/* -maxdepth 0 -type d -not -name vanilla -exec rm -Rf {} \;
     # Patching config file
-    patch -p 1 < $CURDIR/freeswitch-config.patch
+    patch -p 1 < $CURDIR/fluxpbx-config.patch
     busybox --install -s bin
     tar czf $IMG_TAR *
     cd $CURDIR

@@ -8,7 +8,7 @@ G729_A=$(G729_BUILDDIR)/.libs/libg729.a
 mod_LTLIBRARIES = mod_g729.la
 mod_g729_la_SOURCES  = mod_g729.c
 mod_g729_la_CFLAGS   = $(AM_CFLAGS)
-mod_g729_la_LIBADD   = $(switch_builddir)/libfreeswitch.la
+mod_g729_la_LIBADD   = $(switch_builddir)/libfluxpbx.la
 mod_g729_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 if HAVE_G729

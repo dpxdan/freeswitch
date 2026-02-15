@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,17 +14,17 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
- * Ken Rice <krice@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
+ * Ken Rice <krice@fluxpbx.org>
  * Paul D. Tinsley <pdt at jackhammer.org>
  * Bret McDanel <trixter AT 0xdecafbad.com>
  * Marcel Barbulescu <marcelbarbulescu@gmail.com>
@@ -130,7 +130,7 @@ typedef struct private_object private_object_t;
 //#define SOFIA_HAS_CRYPTO_VARIABLE "rtp_has_crypto"
 //#define SOFIA_HAS_VIDEO_CRYPTO_VARIABLE "sip_has_video_crypto"
 //#define SOFIA_CRYPTO_MANDATORY_VARIABLE "sip_crypto_mandatory"
-#define FREESWITCH_SUPPORT "update_display,send_info"
+#define FLUXPBX_SUPPORT "update_display,send_info"
 
 #include <switch_stun.h>
 #include <sofia-sip/nua.h>
@@ -855,8 +855,8 @@ struct private_object {
 	char *gateway_name;
 	char *record_route;
 	char *route_uri;
-	char *x_freeswitch_support_remote;
-	char *x_freeswitch_support_local;
+	char *x_fluxpbx_support_remote;
+	char *x_fluxpbx_support_local;
 	char *last_sent_callee_id_name;
 	char *last_sent_callee_id_number;
 	char *proxy_refer_uuid;
@@ -1084,7 +1084,7 @@ void sofia_reg_unregister(sofia_profile_t *profile);
 
 
 void sofia_glue_pass_sdp(private_object_t *tech_pvt, char *sdp);
-switch_call_cause_t sofia_glue_sip_cause_to_freeswitch(int status);
+switch_call_cause_t sofia_glue_sip_cause_to_fluxpbx(int status);
 void sofia_glue_do_xfer_invite(switch_core_session_t *session);
 uint8_t sofia_reg_handle_register_token(nua_t *nua, sofia_profile_t *profile, nua_handle_t *nh, sip_t const *sip,
 								  sofia_dispatch_event_t *de,

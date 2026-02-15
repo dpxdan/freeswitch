@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -34,7 +34,7 @@
 #include <osp/ospb64.h>
 #include <osp/osptrans.h>
 
-#define OSP_FREESWITCH		"freeswitch"	/* FreeSWITCH */
+#define OSP_FLUXPBX		"fluxpbx"	/* FluxPBX */
 
 /* OSP Buffer Size Constants */
 #define OSP_SIZE_NORSTR		512		/* OSP normal string buffer size */
@@ -96,10 +96,10 @@
 #define OSP_PROTOCOL_UNSUP	"unsupported"	/* Unsupported protocol */
 
 /* OSP Supported Signaling Protocols for Signaling Protocol Usage */
-#define OSP_MODULE_SIP		"mod_sofia"		/* FreeSWITCH SIP module name */
-#define OSP_MODULE_H323		"mod_h323"		/* FreeSWITCH H.323 module name */
-#define OSP_MODULE_IAX		"mod_iax"		/* FreeSWITCH IAX module name */
-#define OSP_MODULE_SKYPE	"mod_skypopen"	/* FreeSWITCH Skype module name */
+#define OSP_MODULE_SIP		"mod_sofia"		/* FluxPBX SIP module name */
+#define OSP_MODULE_H323		"mod_h323"		/* FluxPBX H.323 module name */
+#define OSP_MODULE_IAX		"mod_iax"		/* FluxPBX IAX module name */
+#define OSP_MODULE_SKYPE	"mod_skypopen"	/* FluxPBX Skype module name */
 
 /* OSP Variable Names */
 #define OSP_VAR_SRCDEV			"osp_source_device"			/* Source device IP, inbound (actual source device)*/
@@ -121,7 +121,7 @@
 #define OSP_VAR_LOOKUPSTATUS	"osp_lookup_status"			/* OSP lookup function status */
 #define OSP_VAR_NEXTSTATUS		"osp_next_status"			/* OSP next function status */
 
-/* OSP Using FreeSWITCH Variable Names */
+/* OSP Using FluxPBX Variable Names */
 #define OSP_FS_SIPLOCALIP		"sip_local_network_addr"			/* Inbound SIP local IP */
 #define OSP_FS_CALLID			"sip_call_id"						/* Inbound SIP Call-ID */
 #define OSP_FS_FROMDISPLAY		"sip_from_display"					/* Inbound SIP From display name */
@@ -147,7 +147,7 @@
 #define OSP_FS_RTPINOCTS		"rtp_audio_in_media_bytes"			/* Usage in octets (A-leg downstream or B-leg upstream) */
 #define OSP_FS_RTPINPKTS		"rtp_audio_in_media_packet_count"	/* Usage in packets (A-leg downstream or B-leg upstream)*/
 
-/* FreeSWITCH Endpoint Parameters */
+/* FluxPBX Endpoint Parameters */
 typedef struct osp_endpoint {
 	const char *module;		/* Endpoint module name */
 	const char *profile;	/* Endpoint profile name */
@@ -264,7 +264,7 @@ typedef struct osp_usage {
 	switch_time_t pdd;					/* Post dial delay, in us */
 	switch_time_t pstart;				/* Provider call start time */
 	switch_time_t ppdd;					/* Provider post dial delay, in us */
-	const char *localip;				/* FreeSWITCH local signal address */
+	const char *localip;				/* FluxPBX local signal address */
 	char srcmediaip[OSP_SIZE_NORSTR];	/* Source media IP */
 	char destmediaip[OSP_SIZE_NORSTR];	/* Source media IP */
 	const char *srccodec;				/* Source codec */
@@ -565,7 +565,7 @@ static switch_status_t osp_load_config(
 			if (!(profile->name = switch_core_strdup(osp_global.pool, name))) {
 				OSP_CRIT("%s", "Failed to duplicate profile name");
 				status = SWITCH_STATUS_MEMERR;
-				/* "profile" cannot free to pool in FreeSWITCH */
+				/* "profile" cannot free to pool in FluxPBX */
 				break;
 			}
 
@@ -691,7 +691,7 @@ static switch_status_t osp_load_config(
 			/* Check number of service points */
 			if (!profile->spnumber) {
 				OSP_WARN("Without service point URI in profile '%s'", profile->name);
-				/* "profile" cannot free to pool in FreeSWITCH */
+				/* "profile" cannot free to pool in FluxPBX */
 				continue;
 			}
 
@@ -2341,7 +2341,7 @@ static switch_status_t osp_report_usage(
 	OSP_TEST_START;
 
 	/* Set role info */
-	OSPPTransactionSetRoleInfo(results->transaction, OSPC_RSTATE_STOP, OSPC_RFORMAT_OSP, OSPC_RVENDOR_FREESWITCH);
+	OSPPTransactionSetRoleInfo(results->transaction, OSPC_RSTATE_STOP, OSPC_RFORMAT_OSP, OSPC_RVENDOR_FLUXPBX);
 
 	/* Set termination cause */
 	if (results->cause) {
@@ -2367,7 +2367,7 @@ static switch_status_t osp_report_usage(
 
 	/* Set CDR proxy */
 	if (osp_find_profile(results->profile, &profile) == SWITCH_STATUS_SUCCESS) {
-		OSPPTransactionSetCDRProxy(results->transaction, profile->deviceip, OSP_FREESWITCH, NULL);
+		OSPPTransactionSetCDRProxy(results->transaction, profile->deviceip, OSP_FLUXPBX, NULL);
 	}
 
 	/* Set codecs */

@@ -4,7 +4,7 @@
 #
 #  Copyright (C) 2006-2012, Anthony Minessale
 #
-#  Anthony Minessale <anthm@freeswitch.org>
+#  Anthony Minessale <anthm@fluxpbx.org>
 #
 #  This program is free software, distributed under the terms of
 #  Perl itself

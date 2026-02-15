@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Michael Jerris <mike@jerris.com>
  * Paul D. Tinsley <pdt at jackhammer.org>
  *
@@ -381,9 +381,9 @@ SWITCH_DECLARE(void) switch_core_pool_stats(switch_stream_handle_t *stream)
 	}
 #else
 	if (stream) {
-		stream->write_function(stream, "Unable to get core pool statictics. Please rebuild FreeSWITCH with --enable-pool-debug");
+		stream->write_function(stream, "Unable to get core pool statictics. Please rebuild FluxPBX with --enable-pool-debug");
 	} else {
-		printf("Unable to get core pool statictics. Please rebuild FreeSWITCH with --enable-pool-debug");
+		printf("Unable to get core pool statictics. Please rebuild FluxPBX with --enable-pool-debug");
 	}
 #endif
 }

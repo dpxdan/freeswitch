@@ -34,15 +34,15 @@ print $q->header(-type => "text/xml");
 
 my $writer = new XML::Writer(OUTPUT => STDOUT, DATA_MODE => 1);
 
-$writer->startTag('document', type => 'xml/freeswitch-httapi');
+$writer->startTag('document', type => 'xml/fluxpbx-httapi');
 
 $writer->startTag('work');
 $writer->emptyTag('pause', milliseconds => "1500");
-$writer->emptyTag('playback', file => "http://sidious.freeswitch.org/eg/ivr-say_name.wav");
+$writer->emptyTag('playback', file => "http://sidious.fluxpbx.org/eg/ivr-say_name.wav");
 $writer->startTag('record', 
 		  name => "recorded_file", 
 		  file => "recording.wav",
-		  'error-file' => "http://sidious.freeswitch.org/sounds/invalid.wav",
+		  'error-file' => "http://sidious.fluxpbx.org/sounds/invalid.wav",
 		  'input-timeout' => "5000",
 		  'beep-file', => "tone_stream://%(1000,0,460)");
 		   

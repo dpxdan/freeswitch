@@ -14,21 +14,21 @@
     <input pattern="(.*)">
       <match>
         <!-- string together several existing sound files to create one long greeting -->
-        <action function="play-file" data="ivr/ivr-welcome_to_freeswitch.wav"/>
+        <action function="play-file" data="ivr/ivr-welcome_to_fluxpbx.wav"/>
         <action function="play-file" data="ivr/ivr-this_ivr_will_let_you_test_features.wav"/>
         <action function="play-file" data="ivr/ivr-you_may_exit_by_hanging_up.wav"/>
         <!-- note that you can do more than just play files, e.g. have pauses and do TTS -->
 
-        <!-- Menu option 1: Call FreeSWITCH conference-->
+        <!-- Menu option 1: Call FluxPBX conference-->
         <action function="play-file" data="ivr/ivr-enter_ext_pound.wav"/>
         <action function="execute" data="sleep(1500)"/>
-        <action function="play-file" data="ivr/ivr-to_call_the_freeswitch_conference.wav"/>
+        <action function="play-file" data="ivr/ivr-to_call_the_fluxpbx_conference.wav"/>
         <action function="play-file" data="ivr/ivr-please.wav"/>
         <action function="play-file" data="voicemail/vm-press.wav"/>
         <action function="play-file" data="digits/1.wav"/>
 
-        <!-- Menu option 2: Do FreeSWITCH echo test -->
-        <action function="play-file" data="ivr/ivr-to_do_a_freeswitch_echo_test.wav"/>
+        <!-- Menu option 2: Do FluxPBX echo test -->
+        <action function="play-file" data="ivr/ivr-to_do_a_fluxpbx_echo_test.wav"/>
         <action function="play-file" data="ivr/ivr-please.wav"/>
         <action function="play-file" data="voicemail/vm-press.wav"/>
         <action function="play-file" data="digits/2.wav"/>
@@ -67,15 +67,15 @@
   <macro name="demo_ivr_main_menu_short" pause="250">
     <input pattern="(.*)">
       <match>
-        <!-- Menu option 1: Call FreeSWITCH conference-->
+        <!-- Menu option 1: Call FluxPBX conference-->
         <action function="execute" data="sleep(1000)"/>
-        <action function="play-file" data="ivr/ivr-to_call_the_freeswitch_conference.wav"/>
+        <action function="play-file" data="ivr/ivr-to_call_the_fluxpbx_conference.wav"/>
         <action function="play-file" data="ivr/ivr-please.wav"/>
         <action function="play-file" data="voicemail/vm-press.wav"/>
         <action function="play-file" data="digits/1.wav"/>
 
-        <!-- Menu option 2: Do FreeSWITCH echo test -->
-        <action function="play-file" data="ivr/ivr-to_do_a_freeswitch_echo_test.wav"/>
+        <!-- Menu option 2: Do FluxPBX echo test -->
+        <action function="play-file" data="ivr/ivr-to_do_a_fluxpbx_echo_test.wav"/>
         <action function="play-file" data="ivr/ivr-please.wav"/>
         <action function="play-file" data="voicemail/vm-press.wav"/>
         <action function="play-file" data="digits/2.wav"/>
@@ -112,7 +112,7 @@
   <macro name="demo_ivr_sub_menu">
     <input pattern="(.*)">
       <match>
-        <action function="play-file" data="ivr/ivr-welcome_to_freeswitch.wav"/>
+        <action function="play-file" data="ivr/ivr-welcome_to_fluxpbx.wav"/>
         <action function="play-file" data="ivr/ivr-sample_submenu.wav"/>
 
         <!-- Menu option *: Return to top menu -->

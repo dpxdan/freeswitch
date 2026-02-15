@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml version="1.0" encoding="utf-8"?>
-<!-- http://wiki.freeswitch.org/wiki/Mod_conference --> 
+<!-- http://wiki.fluxpbx.org/wiki/Mod_conference --> 
 <!-- None of these paths are real if you want any of these options you need to really set them up -->
 <configuration name="conference.conf" description="Audio Conference">
   <!-- Advertise certain presence on startup . -->
   <advertise>
-    <room name="6070@$${domain}" status="FreeSWITCH"/>
+    <room name="6070@$${domain}" status="FluxPBX"/>
   </advertise>
 
   <!-- These are the default keys that map when you do not specify a caller control group -->	

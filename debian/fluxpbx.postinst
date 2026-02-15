@@ -1,0 +1,52 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  configure)
+    if ! getent group fluxpbx >/dev/null; then
+      groupadd --system fluxpbx
+    fi
+    if ! getent passwd fluxpbx >/dev/null; then
+      useradd --system -g fluxpbx -Gaudio \
+        -d /var/lib/fluxpbx \
+        -s /bin/false \
+        -e '' \
+        -c 'FluxPBX' \
+        fluxpbx
+    fi
+    for x in \
+      /var/lib/fluxpbx \
+      /var/lib/fluxpbx/db \
+      /var/lib/fluxpbx/recordings \
+      /var/lib/fluxpbx/storage \
+      /var/log/fluxpbx \
+      /var/run/fluxpbx;
+    do
+      if ! test -d $x; then
+        mkdir -p $x
+        chown fluxpbx:fluxpbx $x
+        chmod o-rwx,g+u $x
+      fi
+      chown fluxpbx $x
+    done
+    if [ ! -d "/etc/fluxpbx" ]; then
+      mkdir -p /etc/fluxpbx/
+      if [ -e /usr/share/fluxpbx/conf/vanilla/fluxpbx.xml ]; then
+        cp -a /usr/share/fluxpbx/conf/vanilla/* /etc/fluxpbx/
+      fi
+    fi
+    if [ ! -d "/etc/fluxpbx/tls" ]; then
+      mkdir -p /etc/fluxpbx/tls/
+      chown fluxpbx:fluxpbx /etc/fluxpbx/tls
+    fi
+    ;;
+  abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+#DEBHELPER#
+exit 0

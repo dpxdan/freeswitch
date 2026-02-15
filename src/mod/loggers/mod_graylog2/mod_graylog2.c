@@ -1,5 +1,5 @@
 /*
- * mod_graylog2 for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_graylog2 for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2014-2015, Grasshopper
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_graylog2 for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_graylog2 for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Grasshopper
  * Portions created by the Initial Developer are Copyright (C)
@@ -323,7 +323,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_graylog2_load)
 	globals.gelf_format.timestamp_divisor = 1000000; // convert microseconds to seconds
 	globals.gelf_format.level.name = "level";
 	globals.gelf_format.ident.name = "_ident";
-	globals.gelf_format.ident.value = "freeswitch";
+	globals.gelf_format.ident.value = "fluxpbx";
 	globals.gelf_format.pid.name = "_pid";
 	globals.gelf_format.pid.value = switch_core_sprintf(pool, "%d", (int)getpid());
 	globals.gelf_format.uuid.name = "_uuid";

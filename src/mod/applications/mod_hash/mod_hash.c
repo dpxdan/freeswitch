@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Ken Rice <krice at suspicious dot org
  * Mathieu Rene <mathieu.rene@gmail.com>
  * Bret McDanel <trixter AT 0xdecafbad.com>
@@ -812,7 +812,7 @@ static void *SWITCH_THREAD_FUNC limit_remote_thread(switch_thread_t *thread, voi
 	while (remote->state > REMOTE_OFF) {
 		if (remote->state != REMOTE_UP) {
 			if  (esl_connect_timeout(&remote->handle, remote->host, (esl_port_t)remote->port, remote->username, remote->password, 5000) == ESL_SUCCESS) {
-				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_INFO, "Connected to remote FreeSWITCH (%s) at %s:%d\n",
+				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_INFO, "Connected to remote FluxPBX (%s) at %s:%d\n",
 					remote->name, remote->host, remote->port);
 
 				remote->state = REMOTE_UP;
@@ -824,7 +824,7 @@ static void *SWITCH_THREAD_FUNC limit_remote_thread(switch_thread_t *thread, voi
 			if (esl_send_recv_timed(&remote->handle, "api hash_dump limit", 5000) != ESL_SUCCESS) {
 				esl_disconnect(&remote->handle);
 				memset(&remote->handle, 0, sizeof(remote->handle));
-				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_WARNING, "Disconnected from remote FreeSWITCH (%s) at %s:%d\n",
+				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_WARNING, "Disconnected from remote FluxPBX (%s) at %s:%d\n",
 					remote->name, remote->host, remote->port);
 				memset(&remote->handle, 0, sizeof(remote->handle));
 				remote->state = REMOTE_DOWN;

@@ -7,7 +7,7 @@ mod_LTLIBRARIES = mod_mariadb.la
 mod_mariadb_la_SOURCES  = mariadb_dsn.cpp mod_mariadb.c
 mod_mariadb_la_CFLAGS   = $(AM_CFLAGS) $(MARIADB_CFLAGS)
 mod_mariadb_la_CXXFLAGS = -std=c++11 $(MARIADB_CFLAGS)
-mod_mariadb_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(MARIADB_LIBS)
+mod_mariadb_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(MARIADB_LIBS)
 mod_mariadb_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 else

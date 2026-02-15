@@ -1,25 +1,25 @@
-FreeSWITCH for Debian
+FluxPBX for Debian
 =====================
 
 Introduction
 ------------
 
-Because FreeSWITCH has so many modules it was necessary to create a
+Because FluxPBX has so many modules it was necessary to create a
 system to autogenerate the majority of the packaging.  This in done
 mostly in the file debian/bootstrap.sh.  This bootstrap needs to run
 before any other step of the packaging, though we do try to
 autogenerate it when possible.
 
-Getting the FreeSWITCH sources
+Getting the FluxPBX sources
 ------------------------------
 
 Everything that follows will assume that you're in the base directory
-of a FreeSWITCH git repository.  You can achieve this with:
+of a FluxPBX git repository.  You can achieve this with:
 
     aptitude update && aptitude install -y git
-    mkdir -p /usr/src/freeswitch
-    git clone https://github.com/signalwire/freeswitch.git /usr/src/freeswitch/src
-    cd /usr/src/freeswitch/src
+    mkdir -p /usr/src/fluxpbx
+    git clone https://github.com/signalwire/fluxpbx.git /usr/src/fluxpbx/src
+    cd /usr/src/fluxpbx/src
 
 Ensuring you have a clean build directory
 -----------------------------------------
@@ -167,19 +167,19 @@ To build for a stable branch, do this:
     dpkg-buildpackage -b -us -uc -Zxz -z9
     git reset --hard origin/master
 
-Building the freeswitch-sounds and freeswitch-music packages
+Building the fluxpbx-sounds and fluxpbx-music packages
 ------------------------------------------------------------
 
 The source packages for sounds and music on hold are maintained in a
 separate repository.  Each set of sounds has a separate version number
 and the processing of the sounds is quite different from what we're
-doing here, so trying to maintain a merged debian/ between FreeSWITCH
+doing here, so trying to maintain a merged debian/ between FluxPBX
 and the sounds and music would be a mess.
 
-To build the Debian packages for freeswitch-sounds-* and
-freeswitch-music-*:
+To build the Debian packages for fluxpbx-sounds-* and
+fluxpbx-music-*:
 
-    git clone https://github.com/traviscross/freeswitch-sounds.git
-    cd freeswitch-sounds && cat debian/README.source
+    git clone https://github.com/traviscross/fluxpbx-sounds.git
+    cd fluxpbx-sounds && cat debian/README.source
 
  -- Travis Cross <tc@traviscross.com>, Wed, 19 Mar 2014 19:07:23 +0000

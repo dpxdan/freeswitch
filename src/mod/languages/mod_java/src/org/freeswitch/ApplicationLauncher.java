@@ -1,14 +1,14 @@
-package org.freeswitch.example;
+package org.fluxpbx.example;
 
-import org.freeswitch.swig.freeswitch;
+import org.fluxpbx.swig.fluxpbx;
 
 public class ApplicationLauncher {
 
 	public static final void startup(String arg) {
 		try {
-			freeswitch.setOriginateStateHandler(OriginateStateHandler.getInstance());
+			fluxpbx.setOriginateStateHandler(OriginateStateHandler.getInstance());
 		} catch (Exception e) {
-			freeswitch.console_log("err", "Error registering originate state handler");
+			fluxpbx.console_log("err", "Error registering originate state handler");
 		}
 	}
 

@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Brian West <brian@freeswitch.org>
+ * Brian West <brian@fluxpbx.org>
  * Bret McDanel <trixter AT 0xdecafbad.com>
  * Justin Cassidy <xachenant@hotmail.com>
  *
@@ -330,7 +330,7 @@ static void process_cdr(cdr_data_t *data)
 		switch_curl_easy_setopt(curl_handle, CURLOPT_POST, 1);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_NOSIGNAL, 1);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDS, curl_json_text);
-		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-json/1.0");
+		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-json/1.0");
 		switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, httpCallBack);
 
 		if (globals.disable100continue) {

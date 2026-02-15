@@ -1,6 +1,6 @@
 /*
-* FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-* Copyright (C) 2005-2015, Anthony Minessale II <anthm@freeswitch.org>
+* FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+* Copyright (C) 2005-2015, Anthony Minessale II <anthm@fluxpbx.org>
 *
 * Version: MPL 1.1
 *
@@ -14,10 +14,10 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 *
 * The Initial Developer of the Original Code is
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * Portions created by the Initial Developer are Copyright (C)
 * the Initial Developer. All Rights Reserved.
 *
@@ -55,7 +55,7 @@ switch_status_t mod_smpp_message_encode_body(char *body, int length, unsigned ch
 	Variable length UTF-16 russian text:
 
 	char *message = "fffe21043a043004360438044204350420003f044004380432043504420420003c043e0435043c04430420003c0430043b0435043d044c043a043e043c044304200034044004430433044304";
-	char *mesg_txt = "This is a test SMS message from FreeSWITCH over SMPP";
+	char *mesg_txt = "This is a test SMS message from FluxPBX over SMPP";
 	*/
 
 switch_status_t mod_smpp_message_create(mod_smpp_gateway_t *gateway, switch_event_t *event, mod_smpp_message_t **message)

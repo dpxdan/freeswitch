@@ -1,7 +1,7 @@
 <configuration name="mod_radius_cdr.conf" description="RADIUS CDR Configuration">
 	<settings>
 		<!-- location of the radius dictionary file -->
-		<param name="dictionary" value="/usr/local/freeswitch/conf/radius/dictionary"/>
+		<param name="dictionary" value="/usr/local/fluxpbx/conf/radius/dictionary"/>
 		<!-- location of the radius sequence file -->
 		<param name="seqfile" value="/var/run/radius.seq"/>
 

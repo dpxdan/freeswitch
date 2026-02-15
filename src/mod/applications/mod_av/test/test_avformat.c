@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2018, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2018, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
  * Seven Du <seven@signalwire.com>
@@ -174,7 +174,7 @@ FST_CORE_BEGIN("conf")
 			int i = 0;
 
 			sprintf(path, "{no_video_decode=true}%s%s%s", SWITCH_GLOBAL_dirs.conf_dir, SWITCH_PATH_SEPARATOR, "../test_RGB.mp4");
-			// switch_set_string(path, "{no_video_decode=true}/usr/local/freeswitch/storage/bingbing.mp4");
+			// switch_set_string(path, "{no_video_decode=true}/usr/local/fluxpbx/storage/bingbing.mp4");
 			status = switch_core_file_open(&fh, path, 1, 8000, flags, fst_pool);
 			fst_requires(status == SWITCH_STATUS_SUCCESS);
 			fst_requires(switch_test_flag(&fh, SWITCH_FILE_OPEN));

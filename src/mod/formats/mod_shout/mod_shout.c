@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Rupa Schomaker <rupa@rupa.com>
  * John Wehle <john@feith.com>
  *
@@ -516,7 +516,7 @@ static void *SWITCH_THREAD_FUNC read_stream_thread(switch_thread_t *thread, void
 	switch_curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 10);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, stream_callback);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *) context);
-	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "FreeSWITCH(mod_shout)/1.0");
+	switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "FluxPBX(mod_shout)/1.0");
 	switch_curl_easy_setopt(curl_handle, CURLOPT_NOSIGNAL, 1);
 	switch_curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, 30);	/* eventually timeout connect */
 	switch_curl_easy_setopt(curl_handle, CURLOPT_LOW_SPEED_LIMIT, 100);	/* handle trickle connections */
@@ -886,9 +886,9 @@ static switch_status_t shout_file_open(switch_file_handle_t *handle, const char 
 			}
 
 #if (CHECK_SHOUT_MIN_VERSION(2, 4, 6))
-			if (shout_set_meta(context->shout, SHOUT_META_DESCRIPTION, "FreeSWITCH mod_shout Broadcasting Module") != SHOUTERR_SUCCESS) {
+			if (shout_set_meta(context->shout, SHOUT_META_DESCRIPTION, "FluxPBX mod_shout Broadcasting Module") != SHOUTERR_SUCCESS) {
 #else
-			if (shout_set_description(context->shout, "FreeSWITCH mod_shout Broadcasting Module") != SHOUTERR_SUCCESS) {
+			if (shout_set_description(context->shout, "FluxPBX mod_shout Broadcasting Module") != SHOUTERR_SUCCESS) {
 #endif
 				switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Error setting description: %s\n", shout_get_error(context->shout));
 				goto error;

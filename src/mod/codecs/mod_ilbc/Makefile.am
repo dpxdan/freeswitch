@@ -6,7 +6,7 @@ if HAVE_ILBC
 mod_LTLIBRARIES = mod_ilbc.la
 mod_ilbc_la_SOURCES  = mod_ilbc.c
 mod_ilbc_la_CFLAGS   = $(AM_CFLAGS) $(ILBC_CFLAGS)
-mod_ilbc_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(ILBC_LIBS)
+mod_ilbc_la_LIBADD   = $(switch_builddir)/libfluxpbx.la $(ILBC_LIBS)
 mod_ilbc_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
 
 else

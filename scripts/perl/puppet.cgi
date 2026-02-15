@@ -20,7 +20,7 @@ my $params = $q->Vars;
 print $q->header('text/xml');
 $writer->xmlDecl("UTF-8");
 
-$writer->startTag("document", "type" => "freeswitch/xml");
+$writer->startTag("document", "type" => "fluxpbx/xml");
 
 if($params->{'Hunt-Destination-Number'} eq 'puppet') {
     $writer->startTag("section",  "name" => "dialplan");

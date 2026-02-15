@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -34,7 +34,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace FreeSWITCH.Native
+namespace FluxPBX.Native
 {
     // switch_status_t ManagedSession::run_dtmf_callback(void *input, switch_input_type_t itype)
     // But, process_callback_result is used to turn a string into a switch_status_t
@@ -94,11 +94,11 @@ namespace FreeSWITCH.Native
         {
             try {
                 switch (inputType) {
-                    case FreeSWITCH.Native.switch_input_type_t.SWITCH_INPUT_TYPE_DTMF:
+                    case FluxPBX.Native.switch_input_type_t.SWITCH_INPUT_TYPE_DTMF:
                         using (var dtmf = new Native.switch_dtmf_t(input, false)) {
                             return dtmfCallback(dtmf);
                         }
-                    case FreeSWITCH.Native.switch_input_type_t.SWITCH_INPUT_TYPE_EVENT:
+                    case FluxPBX.Native.switch_input_type_t.SWITCH_INPUT_TYPE_EVENT:
                         using (var swevt = new Native.switch_event(input, false)) {
                             return eventCallback(swevt);
                         }
@@ -118,7 +118,7 @@ namespace FreeSWITCH.Native
         }
 
         string eventCallback(Native.switch_event swevt) {
-            using (var evt = new FreeSWITCH.Native.Event(swevt, 0)) {
+            using (var evt = new FluxPBX.Native.Event(swevt, 0)) {
                 var f = EventReceivedFunction;
                 return f == null ? "" 
                     : f(evt);
@@ -239,7 +239,7 @@ namespace FreeSWITCH.Native
         public switch_call_cause_t CallCause {
             get {
                 if (allocated == 0) throw new InvalidOperationException("Session has not been initialized.");
-                return freeswitch.switch_channel_get_cause(this.channel);
+                return fluxpbx.switch_channel_get_cause(this.channel);
             }
         }
     }

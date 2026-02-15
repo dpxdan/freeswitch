@@ -13,7 +13,7 @@ fi
 
 uname -a | grep -qi bsd && MAKE=gmake || MAKE=make
 
-#Locate our script, then go up one directory to be in FreeSWITCH root
+#Locate our script, then go up one directory to be in FluxPBX root
 cd `dirname $0`
 cd ..
 FS_DIR=`pwd`

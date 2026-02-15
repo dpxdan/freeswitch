@@ -88,7 +88,7 @@
       [last_To:]
       [last_Call-ID:]
       [last_CSeq:]
-      Proxy-Authenticate: Digest algorithm=MD5, realm="freeswitch.org", nonce="69d327e5"
+      Proxy-Authenticate: Digest algorithm=MD5, realm="fluxpbx.org", nonce="69d327e5"
       Content-Length: 0
 
     ]]>

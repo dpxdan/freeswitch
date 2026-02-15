@@ -1,5 +1,5 @@
 /*
- * mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2018, Grasshopper
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_rayo for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_rayo for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Grasshopper
  * Portions created by the Initial Developer are Copyright (C)
@@ -23,7 +23,7 @@
  * Contributor(s):
  * Chris Rienzo <chris.rienzo@grasshopper.com>
  *
- * mod_rayo.c -- Rayo server / node implementation.  Allows MxN clustering of FreeSWITCH and Rayo Clients (like Adhearsion)
+ * mod_rayo.c -- Rayo server / node implementation.  Allows MxN clustering of FluxPBX and Rayo Clients (like Adhearsion)
  *
  */
 #include <switch.h>
@@ -1110,7 +1110,7 @@ static struct rayo_call *rayo_call_locate(const char *call_uri, const char *file
 #define RAYO_CALL_LOCATE_BY_ID(call_uuid) rayo_call_locate_by_id(call_uuid, __FILE__, __LINE__)
 /**
  * Get access to Rayo call data.  Use to access call data outside channel thread.
- * @param call_uuid the FreeSWITCH call UUID
+ * @param call_uuid the FluxPBX call UUID
  * @return the call or NULL.
  */
 static struct rayo_call *rayo_call_locate_by_id(const char *call_uuid, const char *file, int line)
@@ -3442,8 +3442,8 @@ static void on_mixer_add_member_event(struct rayo_mixer *mixer, switch_event_t *
 }
 
 /**
- * Receives mixer events from FreeSWITCH core and routes them to the proper Rayo client(s).
- * @param event received from FreeSWITCH core.  It will be destroyed by the core after this function returns.
+ * Receives mixer events from FluxPBX core and routes them to the proper Rayo client(s).
+ * @param event received from FluxPBX core.  It will be destroyed by the core after this function returns.
  */
 static void route_mixer_event(switch_event_t *event)
 {
@@ -3762,8 +3762,8 @@ static void rayo_client_handle_event(struct rayo_client *rclient, switch_event_t
 }
 
 /**
- * Receives events from FreeSWITCH core and routes them to the proper Rayo client.
- * @param event received from FreeSWITCH core.  It will be destroyed by the core after this function returns.
+ * Receives events from FluxPBX core and routes them to the proper Rayo client.
+ * @param event received from FluxPBX core.  It will be destroyed by the core after this function returns.
  */
 static void route_call_event(switch_event_t *event)
 {
@@ -5176,7 +5176,7 @@ static switch_status_t list_input(const char *line, const char *cursor, switch_c
 }
 
 /**
- * Shutdown module on load failure or shutdown from FreeSWITCH core
+ * Shutdown module on load failure or shutdown from FluxPBX core
  */
 static switch_status_t do_shutdown(void)
 {

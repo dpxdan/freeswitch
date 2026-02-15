@@ -1,5 +1,5 @@
 ﻿/* 
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  * Copyright (C) 2008, Michael Giagnocavo <mgg@giagnocavo.net>
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application - mod_managed
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application - mod_managed
  *
  * The Initial Developer of the Original Code is
  * Michael Giagnocavo <mgg@giagnocavo.net>
@@ -40,7 +40,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 
 
-namespace FreeSWITCH {
+namespace FluxPBX {
 
     public enum ScriptContextType {
         None,
@@ -94,7 +94,7 @@ namespace FreeSWITCH {
         Assembly compileAssembly(string fileName) {
             var comp = new CompilerParameters();
             var mainRefs = new List<string> { 
-                Path.Combine(Native.freeswitch.SWITCH_GLOBAL_dirs.mod_dir, "FreeSWITCH.Managed.dll"),
+                Path.Combine(Native.fluxpbx.SWITCH_GLOBAL_dirs.mod_dir, "FluxPBX.Managed.dll"),
                 "System.dll", "System.Xml.dll", "System.Data.dll" 
             };
             var extraRefs = new List<string> {

@@ -42,11 +42,11 @@
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FreeSWITCH.Managed, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null">
-      <Name>FreeSWITCH.Managed</Name>
-      <AssemblyName>FreeSWITCH.Managed.dll</AssemblyName>
+    <Reference Include="FluxPBX.Managed, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null">
+      <Name>FluxPBX.Managed</Name>
+      <AssemblyName>FluxPBX.Managed.dll</AssemblyName>
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\FreeSWITCH.Managed.dll</HintPath>
+      <HintPath>..\..\FluxPBX.Managed.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.PowerPack, Version=1.9.6.16, Culture=neutral, PublicKeyToken=a19089b1c74d0809">

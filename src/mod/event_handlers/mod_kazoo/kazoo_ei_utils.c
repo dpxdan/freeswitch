@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2012, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2012, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Andrew Thompson <andrew@hijacked.us>
  * Rob Charlton <rob.charlton@savageminds.com>
  * Karl Anderson <karl@2600hz.com>
@@ -630,7 +630,7 @@ switch_hash_t *create_default_filter()
 	switch_core_hash_insert(filter, "Expires", "1");
 	switch_core_hash_insert(filter, "Ext-SIP-IP", "1");
 	switch_core_hash_insert(filter, "File", "1");
-	switch_core_hash_insert(filter, "FreeSWITCH-Hostname", "1");
+	switch_core_hash_insert(filter, "FluxPBX-Hostname", "1");
 	switch_core_hash_insert(filter, "from", "1");
 	switch_core_hash_insert(filter, "Hunt-Destination-Number", "1");
 	switch_core_hash_insert(filter, "ip", "1");

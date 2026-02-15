@@ -299,7 +299,7 @@ void Board::finalizeChannels()
 
             if(pvt_ptr->session())
             {
-                //TODO: Tratamento para desconectar do canal do FreeSwitch.
+                //TODO: Tratamento para desconectar do canal do FluxPbx.
                 pvt_ptr->cleanup();
             }
 
@@ -1048,10 +1048,10 @@ void Board::KhompPvt::doHangup()
     {
         switch_channel_t *channel = getFSChannel();
 
-        int cause_from_freeswitch = switch_channel_get_cause(channel);
-        if(cause_from_freeswitch != SWITCH_CAUSE_NONE)
+        int cause_from_fluxpbx = switch_channel_get_cause(channel);
+        if(cause_from_fluxpbx != SWITCH_CAUSE_NONE)
         {
-            DBG(FUNC, PVT_FMT(_target, "cause already set to %s from freeswitch") % switch_channel_cause2str((switch_call_cause_t)cause_from_freeswitch));
+            DBG(FUNC, PVT_FMT(_target, "cause already set to %s from fluxpbx") % switch_channel_cause2str((switch_call_cause_t)cause_from_fluxpbx));
         }
         else
         {
@@ -1797,7 +1797,7 @@ bool Board::KhompPvt::onAudioStatus(K3L_EVENT *e)
                 {
                     obtainRX(Opt::_options._suppression_delay());
 
-                    //Marcar para o Freeswitch que jah tem audio passando
+                    //Marcar para o Fluxpbx que jah tem audio passando
                     if (call()->_flags.check(Kflags::IS_OUTGOING))
                         switch_channel_mark_pre_answered(getFSChannel());
 
@@ -1812,7 +1812,7 @@ bool Board::KhompPvt::onAudioStatus(K3L_EVENT *e)
                 DBG(FUNC, PVT_FMT(_target, "Audio status progress"));
 
                 call()->_is_progress_sent = true;
-                //Sinaliza para o Freeswitch PROGRESS
+                //Sinaliza para o Fluxpbx PROGRESS
 
                 DBG(FUNC, PVT_FMT(_target, "Pre answer"));
 
@@ -1924,7 +1924,7 @@ bool Board::KhompPvt::setupConnection()
     if (!call()->_flags.check(Kflags::REALLY_CONNECTED))
         call()->_flags.set(Kflags::REALLY_CONNECTED);
 
-    /* Sinalizar para o Freeswitch o atendimento */
+    /* Sinalizar para o Fluxpbx o atendimento */
 
     DBG(FUNC, PVT_FMT(_target, "Call will be answered."));
 
@@ -2009,7 +2009,7 @@ bool Board::KhompPvt::onCallFail(K3L_EVENT *e)
 
         call()->_flags.set(Kflags::HAS_CALL_FAIL);
 
-       //TODO: Notificar o Freeswitch: call fail
+       //TODO: Notificar o Fluxpbx: call fail
 
         cleanup(CLN_SOFT);
    }

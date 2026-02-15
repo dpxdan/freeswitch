@@ -1,14 +1,14 @@
-freeswitch (1.2.7)
+fluxpbx (1.2.7)
 	change fs_encode to support raw files to wav or to other raw
 	check for vm caller id info later so if its transfered it gets the updated details
-freeswitch (1.2.6)
+fluxpbx (1.2.6)
 	core_sqldb: sql tuning by changing 2 Indices
-	freeswitch-core: database corruption handling
-	freeswitch-core: use system time as reference for FS uptime, instead of monotonic
-	freeswitch-core: hide sensitive dtmfs
-	freeswitch-core: record g729 calls to g729 wav files, playback g729 wav files
-	freeswitch-core: STUN: XOR_MAPPED_ADDRESS attribute not handled
-	freeswitch-core: option to record session when bridged only 
+	fluxpbx-core: database corruption handling
+	fluxpbx-core: use system time as reference for FS uptime, instead of monotonic
+	fluxpbx-core: hide sensitive dtmfs
+	fluxpbx-core: record g729 calls to g729 wav files, playback g729 wav files
+	fluxpbx-core: STUN: XOR_MAPPED_ADDRESS attribute not handled
+	fluxpbx-core: option to record session when bridged only 
 	mod_callcenter: simple periodic announcement
 	mod_callcenter: New members joining queue don't ring agents when max-wait-time-with-no-agent-time-reached is 0
 	mod_curl: add curl content-type option
@@ -20,20 +20,20 @@ freeswitch (1.2.6)
 	mod_local_stream: add an event (or filter) for mod_localstream PLAYBACK_START and PLAYBACK_STOP
 	mod_nibblebill: fix mod_nibblebill to use pgsql in core
 	mod_sofia: pass User-to-User header to variable-space
-	mod_sofia: option for freeswitch to trust users authed by proxy
+	mod_sofia: option for fluxpbx to trust users authed by proxy
 	mod_spandsp: Spandsp directory for making modem links
 	mod_voicemail: added voicemail call paging
 	build: building works on Visual Studio 2012
 	config: updating mod_cidlookup default configuration to use OpenCNAM as an example 
-freeswitch (1.2.5)
+fluxpbx (1.2.5)
 	mod_lua: Enable mod_lua to use native pgsql dbh support  (r:2cea7f0f)
 	mod_sofia: Add att_xfer_destination_number variable to indicate the original destination number of the attended transfer leg on REFER for semi-attended transfer scenarios.  (r:893cd7be)
 	sounds: Bump Callie sounds ver to 1.0.22  (r:41e00c78)
-freeswitch (1.2.4)
+fluxpbx (1.2.4)
 	core: Add Postgres core db support (r:0c1180d5)
 	mod_cdr_mongodb: update MongoDB driver to v0.6  (r:10093b44)
 	mod_dingaling: do lookup in dingaling when an address is specified as host:foo.bar.com like sofia does  (r:fbfe830a)
-freeswitch (1.2.3)
+fluxpbx (1.2.3)
 	core: add hold_events variable with start and stop times for each hold (r:9a193a9c)
 	core: update json lib in core and ESL and re-apply old patches (r:5a956890)
 	core: add skip_cdr_causes variable to list call hangup causes that should not trigger cdr processing (r:3cf238fc)
@@ -46,7 +46,7 @@ freeswitch (1.2.3)
 	libtpl: add tpl to tree (r:4985a41f)
 	mod_sofia: add transfer_to variable for call processing (r:1b2b4565)
 
-freeswitch (1.2.2)
+fluxpbx (1.2.2)
 	configuration: Add language config files for es-ES,es-MX,pt-BR,pt-PT (Thanks Francois Delawarde) (r:9cde99b4/FS-3003)
 	core: move recovery engine up into the core (r:66677c94)
 	core: add ignore_early_media=consume to ivr_originate (r:13dab11c)
@@ -62,13 +62,13 @@ freeswitch (1.2.2)
 	mod_sofia: add send-display-update profile param to disable the update method (r:8f0c726b)
 	mod_spidermonkey: add email function to js (r:37b36aea)
 
-freeswitch (1.2.1)
+fluxpbx (1.2.1)
 	libapr: Updating in tree apr for 1.4.6 (r:4029614e)
 	libwebsockets: Initial commit (r:6fa2fd36)
 	mod_sofia: add rtp endpoint contributed by sangoma (r:ef5c1256)
 	mod_spidermonkey: add javascript chatplan app (r:61839229)
 
-freeswitch (1.2.0)
+fluxpbx (1.2.0)
 	build: Automated builds for CI testing/Jenkins  (r:2aff535a)
 	build: add debian source package building script  (r:c164aae9)
 	build: add convenience script to set version in configure.in  (r:efc6f16c)
@@ -77,7 +77,7 @@ freeswitch (1.2.0)
 	config: Redo config files, example - mv conf/* -> conf/vanilla/*  (r:ee71daa1)
 	config: clean up switch.conf and add all the missing options needs more docs  (r:65fc2f8a)
 	config: add cdr_csv template for OpenCDRRate  (r:ca60afaa)
-	config: add conference_flags to config; mention 'audio-always' option - FreeSWITCH Jira
+	config: add conference_flags to config; mention 'audio-always' option - FluxPBX Jira
 	gsdir (r:7ae3f5b7/FS-302)
 	core: Add RECORD_STEREO_SWAP to reverse the record channels (r:d5042f2c/FS-3069)
 	core: api_on_startup (r:e164b76c)
@@ -94,12 +94,12 @@ freeswitch (1.2.0)
 	core: add enable-use-system-time param to switch.conf.xml (r:b1ae9746)
 	core: add execute_on_post_originate and api_on_post_originate to run on chosen newly originated channels vs execute_on_originate which runs on all candidates  (r:bf20f524)
 	core: have sql thread manually subscribe to each event it cares about instead of every event and filtering it  (r:6ea4c42c)
-	core: Add FreeSWITCH-Version string and Uptime-msec (uptime in *milliseconds*) to heartbeat events  (r:a8efae99)
+	core: Add FluxPBX-Version string and Uptime-msec (uptime in *milliseconds*) to heartbeat events  (r:a8efae99)
 	core: add core_uuid global variable to expose the runtime uuid  (r:1d5b5f21)
 	core: add core-uuid attr to xml cdr tag  (r:1dd4bd49)
 	libesl: shutdown socket before closing to avoid blocking  (r:c41a16d4)
 	libesl: add wait handler to forking code in ivrd  (r:6c406aa0)
-	libzrtp: FreeSWITCH is now the official home of ZRTP code
+	libzrtp: FluxPBX is now the official home of ZRTP code
 	fs_cli: set session loglevel as well in fs_cli when doing 'console loglevel info' also now implies '/log info' locally  (r:b80a3a34)
 	mod_commands: Add "file_exists" API (r:7eba3f2b/FS-3927)
 	mod_commands: add fsctl debug sql  (r:d655ceec)
@@ -119,7 +119,7 @@ freeswitch (1.2.0)
 	mod_erlang_event: accept binary in api and bgapi  (r:f55f15c8)
 	mod_event_socket: add uuid to event socket apps  (r:3708c962)
 	mod_fax: Deprecated and now removed from tree
-	mod_httapi:  mod_httapi.c -- HT-TAPI Hypertext Telephony API (Twillio FreeSWITCH style)  (r:bc8cbee1)
+	mod_httapi:  mod_httapi.c -- HT-TAPI Hypertext Telephony API (Twillio FluxPBX style)  (r:bc8cbee1)
 	mod_isac: add mod_iSAC (extracted from webRTC) 16hz @30ms,60ms 32khz @30ms  (r:a0473cda)
 	mod_loopback: allow mod loopback bowout to reach out across stacked loopback bridges and remove all of them  (r:ad7149bf)
 	mod_posix_timer: New timer module mod_posix_timer (r:9d7e9e67/FS-3731)
@@ -158,7 +158,7 @@ freeswitch (1.2.0)
 	mod_voicemail: Improved feedback to user when chaning vm passwords.  (r:7b54701d)
 	mod_xml_scgi: add mod_xml_scgi (like xml_curl minus the web server direct to an application backend that supports the SCGI protocol)  (r:d7cf0bbe)
 
-freeswitch (1.0.7)
+fluxpbx (1.0.7)
 
 	build: Add mod_silk to windows build
 	build: fix mod_json_cdr build in windows (MODEVENT-63)
@@ -389,12 +389,12 @@ freeswitch (1.0.7)
 	core: Fix issue that was preventing the sqlite handles from being recycled properly (r:11451c10/FS-3106)
 	core: clear timestamp when generating a fake empty frame to fix edge-case sending the same timestamp over and over (r:08496cd7)
 	core: wait for state change to avoid race (r:f33e9c6e/FS-2966)
-	core: Fix freeswitch.session in Lua, etc. (r:0ba25358/FS-3119)
+	core: Fix fluxpbx.session in Lua, etc. (r:0ba25358/FS-3119)
 	core: try to reduce contention by not creating handles with the global mutex locked (r:b3a2fa1c)
 	core: add limits to simo open sql handles (r:61cdf0da)
 	core: Fix db locks affecting mod_callcenter (r:8da371c7/FS-3127)
 	core: improve flow of dtmf through a bridge when timer is disabled (r:59da356d)
-	core: Fix Freeswitch crash on Debian ARM (r:a80fae92/FS-3126)
+	core: Fix Fluxpbx crash on Debian ARM (r:a80fae92/FS-3126)
 	core: switch_xml: reloadxml will(should) never lock again.  It will load the XML structure into a new XML structure, and just replace the currently available ROOT XML.  It then the job of the last user of the switch_xml structure to free it. (r:471bd6df)
 	core: switch_xml: Remove commented out mmap.  With the changes in the past 2 year, mmap can't really be put back in it current state. (r:34bd0e5e)
 	core: Fix jitterbuffer with SRTP enabled (r:069f5f7d/FS-3075)
@@ -422,11 +422,11 @@ freeswitch (1.0.7)
 	core: fix default tipping point it was too low (r:e4eade33)
 	core: enable optimal defaults on linux kernels that can support newer features. (r:0b51aca3)
 	core: Lower NAT port mapping disabled log msg from WARNING to INFO (r:973a850d)
-	core: Change the structure of the phrases/language system. Previously it was fxml->phrases->macros->language->macro.  Changed it so fxml->languages->language->phrases->macros->macro You can have sub macros <macros name="voicemail"><macro ...> and allow you to call it login@voicemail. Change the sound-path to sound-prefix to make it constistant with the rest of freeswitch. Also allow to set a sound-prefix to a macros, so you can override it for a specific file set. You can set say-modules="en" or whatever in the <language section to define that say module to use. (r:4137b360)
+	core: Change the structure of the phrases/language system. Previously it was fxml->phrases->macros->language->macro.  Changed it so fxml->languages->language->phrases->macros->macro You can have sub macros <macros name="voicemail"><macro ...> and allow you to call it login@voicemail. Change the sound-path to sound-prefix to make it constistant with the rest of fluxpbx. Also allow to set a sound-prefix to a macros, so you can override it for a specific file set. You can set say-modules="en" or whatever in the <language section to define that say module to use. (r:4137b360)
 	core: Fix edge case segfault on fifo member answer call (r:bf107c6f/FS-3269)
 	core: Fix intercept application (r:f8835a81/FS-3271)
 	core: add bridged timestamp and hangup_complete_with_xml=true to add xml_cdr to the body of hangup_complete events (r:bd471fc6)
-	core: Modify freeswitch to use a configurable switchname instead of a hostname (r:00b53a91/FS-3277)
+	core: Modify fluxpbx to use a configurable switchname instead of a hostname (r:00b53a91/FS-3277)
 	core: add option to disable srtp with --disable-srtp (r:a6b336e4)
 	core: record_session: Will auto create recursive destination folder if it doesn't already exist (Doesn't create folder when used with local cache feature) (r:c4b78a49)
 	core: add largest_jb_size (r:1772fcb0)
@@ -558,7 +558,7 @@ freeswitch (1.0.7)
 	libesl: fix segfault (r:30813ca5/FS-3130)
 	libesl: Don't destroy last_event pointer until it's being set to a new pointer - fixes rare segfault (r:e8474d60/ESL-57)
 	libesl: Add 'make perlmod-install' to ESL (please test) (r:06c42179)
-	libesl: build python esl bindings and ship them in freeswitch-python-package (r:44bfcf1d/FS-3128)
+	libesl: build python esl bindings and ship them in fluxpbx-python-package (r:44bfcf1d/FS-3128)
 	libesl: use poll instead of select in ESL client lib because select is not your friend.... (r:ae595cd5)
 	libesl: Add digit_timeout to ESL::IVR's playAndGetDigits method (r:f564d383)
 	libesl: add array manipulation to the wraper code (r:ffa0a071)
@@ -574,7 +574,7 @@ freeswitch (1.0.7)
 	libjs: non-portable comment syntax in .s files 
 	libldns: select on FD > 1024 get this patch to ldns ppl (r:710fc7a7/FS-3110)
 	libopenzap: Add CLI tracing
-	libs: Merged OpenZAP and FreeTDM into the FreeSWITCH tree.
+	libs: Merged OpenZAP and FreeTDM into the FluxPBX tree.
 	libs: Add support for TLS on Windows using openssl (r:1abe3b93/MODSOFIA-92)
 	libs: fix bsd shell incompatibility (r:e2b85e94/FS-287)
 	libsndfile: Update libsndfile and edit mod_sndfile.c to support ogg and flac (r:02a604f7/FS-1197)
@@ -599,7 +599,7 @@ freeswitch (1.0.7)
 	libspandsp: Added missing error codes when an ECM FAX is abandoned with the T30_ERR message (r:ec57dc7a)
 	libspandsp: Fixed a vulnerability in T.4 and T.6 processing which is similar to http://bugzilla.maptools.org/show_bug.cgi?id=2297 in libtiff. A really screwed up 2D T.4 image, or a maliciously constructed T.4 2D or T.6 image should potential run off the end of an image decoder buffer. (r:c6f67322)
 	libspandsp: Changed T.38 terminal handling, so errors from the user's packet transmit routine properly filter up the chain, cause termination of the FAX session, and are reported to the caller. (r:c890fbfa)
-	libspandsp: Numerous little changes to spandsp that haven't been pushed to Freeswitch for a while. The only big changes are a majorly rewritten V.42 and V.42bis which are now basically functional. (r:d30e82e2)
+	libspandsp: Numerous little changes to spandsp that haven't been pushed to Fluxpbx for a while. The only big changes are a majorly rewritten V.42 and V.42bis which are now basically functional. (r:d30e82e2)
 	libspandsp: Another round of tweaks for spandsp. There should be no functional changes, although quite a few things have changed in the test suite (r:4a7bbf4e)
 	libstfu: add param to jb to try to recapture latency (disabled by default) (r:d59d41d7)
 	libsqlite: fix issue on mailing list mod_crd_sqlite entry limit and sqlite segfaults on triggers (r:1badec17)
@@ -616,7 +616,7 @@ freeswitch (1.0.7)
 	mod_blacklist: Resource leak fixes, config checks and add help output for api interface (r:41abb3e6)
 	mod_blacklist: add ability to dump a list back to it's text file (r:1d5f5ec7)
 	mod_blacklist: fix broken dump/save (r:abc5d7cd/FS-3617)
-	mod_callcenter: Initial commit of the mod_callcenter application. This module is in it early state of developpement.  You can see documentation on the wiki at : <a href="http://wiki.freeswitch.org/wiki/Mod_callcenter">http://wiki.freeswitch.org/wiki/Mod_callcenter</a> For support/comments, please use <a href="https://freeswitch.org/jira">https://freeswitch.org/jira</a> and select the MOD CALLCENTER module. (r:ba09b96d)
+	mod_callcenter: Initial commit of the mod_callcenter application. This module is in it early state of developpement.  You can see documentation on the wiki at : <a href="http://wiki.fluxpbx.org/wiki/Mod_callcenter">http://wiki.fluxpbx.org/wiki/Mod_callcenter</a> For support/comments, please use <a href="https://fluxpbx.org/jira">https://fluxpbx.org/jira</a> and select the MOD CALLCENTER module. (r:ba09b96d)
 	mod_callcenter: Add ability to unload/reload/load a queue setting (You still need to reloadxml before). Note that joining a queue will check for it in the config and load it on the fly... I've used the same system as in mod_voicemail.  Not sure if we should allow this, but just comment it out of the config before unload and it wont be available anymore (r:3eafca60)
 	mod_callcenter: Try to fix the ring-all, also add cli auto complete done in previous commit (r:1666783c)
 	mod_callcenter: Add missing odbc db support (Not tested, please someone test this) (r:42436e27)
@@ -789,7 +789,7 @@ freeswitch (1.0.7)
 	mod_enum: fix race condition between ldns configure creating ldns/util.h and mod_enum (r:87884c5c)
 	mod_enum: fix ms resolution with new query-timeout-ms, query-timeout still works as expected (r:88f4828c/FS-3282)
 	mod_enum: fix ldns_lookup not respecting query-timeout (r:1d490df9/FS-3282)
-	mod_erlang_event: Make XML fetch reply ACKs distinguishable, update freeswitch.erl (r:9d44ed04)
+	mod_erlang_event: Make XML fetch reply ACKs distinguishable, update fluxpbx.erl (r:9d44ed04)
 	mod_erlang_event: Add 3 new commands; session_event, session_noevents, session_nixevent (r:698fa045)
 	mod_erlang_event: generate long node names the same as erlang does (r:9ad509c2)
 	mod_erlang_event: Improve some logging to include UUIDs (r:c0d51b83)
@@ -923,11 +923,11 @@ freeswitch (1.0.7)
 	mod_loopback: refactor mod_loopback timeout handling (r:43442e4f)
 	mod_loopback: Fix loopback_bowout_on_execute failure when doing txfax calls (r:895b505f/FS-3494)
 	mod_lua: Add switch_core_sqldb functionality from inside Lua script (r:26f2e095/FS-1384)
-	mod_lua: Made 2nd arg to freeswitch.Dbh:query (cb func) optional (r:87db11af)
+	mod_lua: Made 2nd arg to fluxpbx.Dbh:query (cb func) optional (r:87db11af)
 	mod_lua: Added SAF_ROUTING_EXEC flag to lua app, so it can be run inline (r:7d5ca1c0)
 	mod_lua: spelling error in -ERR return code encounterd -> encountered (r:86e7cdc5/FS-2949)
 	mod_lua: Make dbh:connected accessible from Lua - thanks Grmt (r:09e6fd3f)
-	mod_lua: Added optional core: prefix to first arg passed to freeswitch.Dbh for giving direct access to sqlite db (r:a0181479)
+	mod_lua: Added optional core: prefix to first arg passed to fluxpbx.Dbh for giving direct access to sqlite db (r:a0181479)
 	mod_lua: expose switch_simple_email as "email" method (r:89c5f3bf/FS-3023)
 	mod_lua: Fix setInputCallback crash (r:c49c1fde/FS-3161)
 	mod_managed: Added wrapper for switch_event_bind for .net (r:a5f07a80/MODLANG-165)
@@ -967,8 +967,8 @@ freeswitch (1.0.7)
 	mod_portaudio: mod_portaudio: fix incorrect use of pa input buffer that could lead to garbage audio (r:f2cf68bf)
 	mod_protovm: Removed by author; replaced by mod_voicemail_ivr
 	mod_python: add chat app to python (r:08917021)
-	mod_radius_cdr: Add 'Freeswitch-Direction' av pair (r:a5170df0)
-	mod_radius_cdr: Add 'Freeswitch-Other-Leg-Id' av pair (r:18d29b46)
+	mod_radius_cdr: Add 'Fluxpbx-Direction' av pair (r:a5170df0)
+	mod_radius_cdr: Add 'Fluxpbx-Other-Leg-Id' av pair (r:18d29b46)
 	mod_radius_cdr: log errors with the call's uuid (r:fee49b16)
 	mod_rtmp: RTMP as easy as A.B.C. Avant-Garde Solutions Inc. -- Barracuda Networks Inc. -- (r:0933a343)
 	mod_rtmp: Remove duplicate output from rtmp status profile xxx API command (r:2e016541)
@@ -1047,7 +1047,7 @@ freeswitch (1.0.7)
 	mod_skypopen: refining oss driver, removing audio sync during call (was each 20 secs), audio sync at the tcp interfacing with the skype client (reading more than 20ms worth) (r:891015e6)
 	mod_skypopen: fixed a demented bug (incrementing a variable zeroed in the same loop) maybe responsible for moh sputtering under load on virtual machines (r:43eeeb82)
 	mod_skypopen: avoid accumulating delay on VMs, better debug logging (r:1b4c78bf)
-	mod_sms: add new chatplan concept and mod_sms.  Apps for chat messages: copy new base freeswitch.xml and chatplan dir if you are upgrading on existing config base (r:7333d46d)
+	mod_sms: add new chatplan concept and mod_sms.  Apps for chat messages: copy new base fluxpbx.xml and chatplan dir if you are upgrading on existing config base (r:7333d46d)
 	mod_sms: fix "format literal and no arguments" warning (r:a0e91001)
 	mod_sms: allow chatplan apps to have null args (r:4feb26d3)
 	mod_sms: only ignore events if you matched something on a cp (r:a14b20af)
@@ -1173,7 +1173,7 @@ freeswitch (1.0.7)
 	mod_sofia: add send-presence-on-register (true|false|first-only) param to sofia and api command sofia global debug [presence|sla|none]
 	mod_sofia: disable media timeout when encountering a recvonly stream (r:029d68ce)
 	mod_sofia: fix sofia flush_inbound_reg to work when @domain is given (r:68bf642c)
-	mod_sofia: fix session timer failure when freeswitch is generating the sdp and there are enough dynamic codecs enabled to conflict with the 2833 pt (4 by default) (r:018a3800)
+	mod_sofia: fix session timer failure when fluxpbx is generating the sdp and there are enough dynamic codecs enabled to conflict with the 2833 pt (4 by default) (r:018a3800)
 	mod_sofia: Places ;fs_path= within the contact string <...> when using NDLB-connectile-dysfunction-2.0, instead of just appending to the end of the contact string. (r:afc02747/FS-2989)
 	mod_sofia: Fix handling SUBSCRIBE to &quot;park+&quot; fifo, the NOTIFY data was not being generated from mod_fifo data. (r:3dd9d5c0/FS-3007)
 	mod_sofia: fsctl pause improvements (r:008e527c/FS-3012)
@@ -1387,20 +1387,20 @@ freeswitch (1.0.7)
 	tools: Change logger.pl host flag to -H from -h (conflicted w/ -h for help); add -H/--host to usage (r:73ca862c)
 	tools: Add sound_test.lua utility script (lets you listen to all the sound files in a particular rate/type combo (r:1a71dbf2)
 	
-freeswitch (1.0.6)
+fluxpbx (1.0.6)
 
 	all: migrate to git
 	core: add ... and shutdown as a fail-safe when no modules are loaded
 	core: fix high mem usage during shutdown
 	
-freeswitch (1.0.5)
+fluxpbx (1.0.5)
 
 	all: run indent on the whole tree and update copyright dates in prep for 1.0.5 (r:16579)
 	applications: add inline dp to multiple apps (MODAPP-337/r:14922)
 	build: Fix build to account for FreeBSD sed issues (FSBUILD-184/r:14479)
 	build: build unimrcp after sofia (r:14507)
 	build: Fix mod_ldap not building on Linux (FSBUILD-189/r:14725)
-	build: add --with-rundir configure param and -run freeswitch runtime param to adjust the location of the pid file (FSBUILD-188/r:14768)
+	build: add --with-rundir configure param and -run fluxpbx runtime param to adjust the location of the pid file (FSBUILD-188/r:14768)
 	build: fix compile on Ubuntu 8.10 (FSCORE-443/r:14928)
 	build: add mod_cidlookup (r:14930)
 	build: fix libtiff build (r:15034)
@@ -1419,7 +1419,7 @@ freeswitch (1.0.5)
 	build: fix automated libsrtp build (r:15523)
 	build: fix --srcdir for modules.conf (r:15526)
 	build: fix --srcdir for sounds_version.txt and swigall
-	build: fix uclibc cross compile issues (stolen from http://astlinux.svn.sourceforge.net/viewvc/astlinux/trunk/package/freeswitch/freeswitch-sqlite-make.patch?revision=2455) (r:15531)
+	build: fix uclibc cross compile issues (stolen from http://astlinux.svn.sourceforge.net/viewvc/astlinux/trunk/package/fluxpbx/fluxpbx-sqlite-make.patch?revision=2455) (r:15531)
 	build: add new broadvoice to windows solution and cleanup template (r:15562)
 	build: Add initial build support to windows (MODUNIMRCP-6/r:15610)
 	build: srcdir fixes for modmake.rules (FSBUILD-211/r:15644)
@@ -1434,14 +1434,14 @@ freeswitch (1.0.5)
 	build: try to not insert -std=c99 into cflags passed to libs that are not ansi compliant (r:15739)
 	build: add -Wdeclaration-after-statement for supported compilers (r:15762)
 	build: add changes for sounds download to allow independent version specific selection (r:15777)
-	build: move sounds out to their own packages as they do not change revisions with freeswitch (r:15809)
+	build: move sounds out to their own packages as they do not change revisions with fluxpbx (r:15809)
 	build: fix setting of BASE passed to module makefiles when doing --srcdir builds (FSBUILD-211/r:15814)
 	build: Numerous --srcdir fixes (FSBUILD-211/r:15849)
 	build: compile by default on osx 10.6 and add --enable-64 support (with previous patch) for osx 10.6 (r:15862)
 	build: add --enable-64 support for os x 10.4 and 10.5 (r:15874)
 	build: add missing modules to modules.conf (FSBUILD-214/r:15879)
 	build: fix mod_managed build on gcc 4.4 (r:15897)
-	build: Disable rpath checking in freeswitch.spec (FSBUILD-217/r:16037)
+	build: Disable rpath checking in fluxpbx.spec (FSBUILD-217/r:16037)
 	build: Remove libuuid from tree (r:16072)
 	build: Avoid building static version of modules (e.g. mod_enum.a) by adding the "-shared" libtool option. (r:16225)
 	build: Fix pidfile path in debian init script (FSBUILD-264/r:17040)
@@ -1619,7 +1619,7 @@ freeswitch (1.0.5)
 	core: fix failed_xml_cdr prefix is not respected (FSCORE-529/r:16401)
 	core: allow alias expansion from fs_cli (r:16416)
 	core: allow double escape in parser for \ (r:16440)
-	core: Add a -version flag to freeswitch binary (FSCORE-534/r:16482)
+	core: Add a -version flag to fluxpbx binary (FSCORE-534/r:16482)
 	core: Delay windows service startup so other command line options are processed (r:16558)
 	core: ZRTP Video works with ZFone (but you have to set your endpoint to use 99 for the payload for video or 125 in mod_h26x.c for H264 becuase the payloads MUST match or it can't figure it out (r:16563)
 	core: add new api funcs to xml (r:16605)
@@ -2099,15 +2099,15 @@ freeswitch (1.0.5)
 	mod_xml_rpc: Fix auth issue (XMLINT-54/r:14580)
 	mod_xml_rpc: Fix crash in xml_rpc web interface (XML-23/r:16941)
 	phrases: Add Recursive phrases support (FSCORE-458/r:15101) 
-	scripts: Fix Freeswitch gentls_cert script so the remove option works (FSBUILD-216/r:15965)
+	scripts: Fix Fluxpbx gentls_cert script so the remove option works (FSBUILD-216/r:15965)
 	support: add fscore_pb script for dumping core info directly to pastebin (r:14904)
 	switch_utils: add a host lookup func (r:14653)
 	mod_zeroconf: Move to unsupported (r:15429)
 	
 
-freeswitch (1.0.4)
+fluxpbx (1.0.4)
 
-	add: TextMate bundle for FreeSWITCH - thanks mrene (r:12559-12560)
+	add: TextMate bundle for FluxPBX - thanks mrene (r:12559-12560)
 	add: ZRTP Support please download your SDK from http://www.zfone.com and use build/buildzrtp.sh to build the lib. (r:13406)
 	add: gdb helpers to .gdbinit
 	all: numerous code cleanups, removal of unused variables
@@ -2239,7 +2239,7 @@ freeswitch (1.0.4)
 	core: add generic config parser - thanks mrene (r:12432)
 	core: add sessions since start up to heartbeat event (r:12472)
 	core: increase buffer size for regex api (MODAPP-228/r:12480)
-	core: fix FreeSWITCH start failure - "Error: stacksize 240 is too large" (FSCORE-323/r:12509)
+	core: fix FluxPBX start failure - "Error: stacksize 240 is too large" (FSCORE-323/r:12509)
 	core: unloading endpoint module now removes from endpoint list (MODENDP-196/r:12535)
 	core: fix deadlock in fsctl hupall (r:12544)
 	core: add origination_pricavy var to originate api (r:12546)
@@ -2357,7 +2357,7 @@ freeswitch (1.0.4)
 	core: Fix record_sample_rate when using stereo (FSCORE-403/r:14283)
 	core: hit the xml registry to look up path information for the say app (r:14310)
 	core: timeout calls stuck in CS_NEW after 1 minute (r:14313)
-	core: use FREESWITCH_OPTS env var to hold a string of desired command line switches (r:14352)
+	core: use FLUXPBX_OPTS env var to hold a string of desired command line switches (r:14352)
 	core: Handle UPNP from pfsense sending malformed header (FSCORE-405/r:14373)
 	core: add switch_sockaddr_equal (LBAPR-3/r:14397)
 	core: fix missing UNPROTECT_INTERFACE (r:14398)
@@ -2509,7 +2509,7 @@ freeswitch (1.0.4)
 	mod_erlang_event: Reply appropriately to net_adm:ping() (r:13066)
 	mod_erlang_event: snprintf needs a format string too, and write has the warn_unused_result attribute set, so store the return value somewhere (r:13090)
 	mod_erlang_event: fix erlang autoconf macro to deal with edge cases (MODEVENT-45/r:13288)
-	mod_erlang_event: fix FreeSWITCH crashing when sending traffic (FSCORE-379/r:13746)
+	mod_erlang_event: fix FluxPBX crashing when sending traffic (FSCORE-379/r:13746)
 	mod_event_socket: disallow unloading mod_event_socket from event socket (r:12326,12334)
 	mod_event_socket: fix api_exec crash on OSX (MODEVENT-40,r:12349)
 	mod_event_socket: move connect command to always work on outbound socket not just the first time (r:12723)
@@ -2628,7 +2628,7 @@ freeswitch (1.0.4)
 	mod_skypiax: added directory 'alsa', contains customized snd-dummy ALSA driver (r:14335)
 	mod_skypiax: added directory 'kernel', contains .config file for compilation of kernel 2.6.24.7 (64bit) tickless and 100HZ. (r:14336)
 	mod_skypiax: added directory 'configs/multiple-instance-same-skype-username', contains configuration file and script to launch Skype clients with multiple instances of the same skype user (r:14337)
-	mod_skypiax: added configs/windows-service directory, contains batch files needed to start skype instances as service, and then start FreeSWITCH (r:14359)
+	mod_skypiax: added configs/windows-service directory, contains batch files needed to start skype instances as service, and then start FluxPBX (r:14359)
 	mod_skypiax: patch from Muhammad Shahzad for adding and removing interfaces on the fly (r:14367)
 	mod_skypiax: manage the 'BUSY' call status message (r:14371)
 	mod_skypiax: manage the 'WAITING_REDIAL_COMMAND' call status message (r:14372)
@@ -2667,7 +2667,7 @@ freeswitch (1.0.4)
 	mod_sofia: add set r_sdp_codec_string to list of codecs offered in inbound call dsp (MODENDP-206/r:12946)
 	mod_sofia: add sip_call_info variable (SFSIP-138/r:12977)
 	mod_sofia: move rtp stats up to where they will be more useful (r:13017)
-	mod_sofia: fix FreeSWITCH/SIPX transfer issue (SFSIP-86/r:13032)
+	mod_sofia: fix FluxPBX/SIPX transfer issue (SFSIP-86/r:13032)
 	mod_sofia: ndlb_sendrecv_in_session var NDLB-sendrecv-in-session profile option to reverse the effects of MODENDP-148 (r:13084)
 	mod_sofia: add sip info to event_socket gateway (r:13088)
 	mod_sofia: switch_add_event_header needs a format specifier, or >=gcc-4.3 will be very unhappy (r:13089)
@@ -2785,7 +2785,7 @@ freeswitch (1.0.4)
 	switch_cpp: fix leak (FSCORE-394/r:14097)
 
 
-freeswitch (1.0.3)
+fluxpbx (1.0.3)
 
 	build: add targets cd-sounds[-install] and cd-moh[-install] for 48k sounds (r:11151)
 	build: autoconf detect odbc library (FSBUILD-8)
@@ -2822,7 +2822,7 @@ freeswitch (1.0.3)
 	core: add volume as possible return value from input callback on embedded languages (r:12114)
 	core: add resampler to seech handles (r:12141)
 	core: add api.getTime to embedded languages (r:12149)
-	freeswitch: allow you to specify -htdocs dir at runtime. (r:11614)
+	fluxpbx: allow you to specify -htdocs dir at runtime. (r:11614)
 	fs_cli: add "debug" command to change the esl debug level at runtime (r:11057)
 	iksemel: update to 1.3 (r:11645)
 	libesl: fix disconnect failure (r:11078,11083)
@@ -2854,7 +2854,7 @@ freeswitch (1.0.3)
 	mod_erlang_event: Allow certain tuple elements to be binaries or strings, to reduce conversion requirements on the erlang side (r:11496)
 	mod_erlang_event: Support sending a message to a registered process to request a pid (when spawning won't cut it) (r:11499)
 	mod_erlang_event: Ensure events received while a pid session is being created aren't discarded but are queued instead (r:11500)
-	mod_erlang_event: Add freeswitch.erl - An erlang module to make talking to mod_erlang_event more painless (r:11525)
+	mod_erlang_event: Add fluxpbx.erl - An erlang module to make talking to mod_erlang_event more painless (r:11525)
 	mod_erlang_event: use rpc:call instead of spawn and to make the registered process argument to handlecall optional (r:11542)
 	mod_event_socket: add ability to use a comma sep list of events on event-sink create-listener (r:11056)
 	mod_event_socket: add debug logging to event-sink (r:11060)
@@ -2917,16 +2917,16 @@ freeswitch (1.0.3)
 	sqlite: fix random assert on windows (FSCORE-292)
 
 
-freeswitch (1.0.2)
+fluxpbx (1.0.2)
 
 	all: don't add module interfaces before returning from error conditions in module load functions (MDXMLINT-36)
 	all: fixed multiple memory leaks
 	all: improved module unloading/reloading support
 	build: add support for --switchconfdir (FSBUILD-84)
 	build: fixed netbsd build
-	build: make freeswitch stop graceflly with /etc/init.d/freeswitch stop on debian add working dir to start-stop-dir so freeswitch dumps core in workdir
+	build: make fluxpbx stop graceflly with /etc/init.d/fluxpbx stop on debian add working dir to start-stop-dir so fluxpbx dumps core in workdir
 	build: multiple packaging fixes
-	build: user freeswitch not added to audio group on deb install (FSBUILD-95)
+	build: user fluxpbx not added to audio group on deb install (FSBUILD-95)
 	Configuration: many updates to default configuration
 	core: Add ability to choose uuid from originate string, originate_uuid var (use at your own risk) 
 	core: add bridge_generate_comfort_noise option for bridge to generate comfort noise to the A leg when there is no audio on the B leg
@@ -3208,7 +3208,7 @@ freeswitch (1.0.2)
 	mod_xml_rpc: fix segfault on originate via http
 	sofia-sip: updated to 1.12.10 (plus a few patches)
 
-freeswitch (1.0.1)
+fluxpbx (1.0.1)
 
 	FIX: prevent intercept race condition that can also be solved with continue_on_fail=originator_cancel
 	FIX: NULL dereference detected by klockwork (www.klockwork.com)
@@ -3272,7 +3272,7 @@ freeswitch (1.0.1)
 	FIX: better handling of sips: uris
 	FIX: don't seg when using more than SWITCH_MAX_CODECS and bump SWITCH_MAX_CODECS to 50 (we have more than 30 in tree) (MODFORM-10)
 	ADD: mod_yaml
-	FIX: segfault on freeswitch startup if installed directories are removed
+	FIX: segfault on fluxpbx startup if installed directories are removed
 	FIX: segfault when intercept with inbound_late_negotiation=true set
 	FIX: dont flood logs with eavesdrop messages (MODAPP-101)
 	FIX: don't destroy a codec that has not been created (MODAPP-101)
@@ -3335,7 +3335,7 @@ freeswitch (1.0.1)
 
 
 
-freeswitch (1.0.0)
+fluxpbx (1.0.0)
 
 	Enhanced sofia sip nat handling
 	Many fixes found by Klockwork (www.klocwork.com)
@@ -3363,7 +3363,7 @@ freeswitch (1.0.0)
 	Removed fsapi functions (session_record, broadcast, hold, media)
 	Many updates to sofia-sip library including over 100 fixes
 	
-freeswitch (1.0.rc6)
+fluxpbx (1.0.rc6)
 
 	Changed to not allow pass_2833 on transcoded calls (it never worked, now it will tell you)
 	Enhanced sofia sip nat handling
@@ -3380,7 +3380,7 @@ freeswitch (1.0.rc6)
 	Fixed att_xfer issue
 	Fix sip now includes the Allow-Events header in more places
 
-freeswitch (1.0.rc5)
+fluxpbx (1.0.rc5)
 
 	Changed internal state names to avoid confusion
 	Fixed video negotiation
@@ -3413,7 +3413,7 @@ freeswitch (1.0.rc5)
 	Fixed solaris build of voipcodecs
 	Fixed sofia seg when call failure edge case
 
-freeswitch (1.0.rc4)
+fluxpbx (1.0.rc4)
 
 	Add tab completion in cli
 	Add "inline" dialplan
@@ -3458,7 +3458,7 @@ freeswitch (1.0.rc4)
 	Added mod_reference, reference endpoint module
 	Enhanced build so you can now make commented out modules using "make mod_name"
 	
-freeswitch (1.0.rc3)
+fluxpbx (1.0.rc3)
 
         Enhance xml menu system
         Fixes upstream from sofia-sip library
@@ -3467,14 +3467,14 @@ freeswitch (1.0.rc3)
         Fix multiple bugs in the cpp wrapper used in mod_java and mod_python
         Fix hung sip channel issue using respond app or on re-invite with bypass media after 1xx or 2xx responses
 
-freeswitch (1.0.rc2)
+fluxpbx (1.0.rc2)
 
 	Fixed speex protocol negotiation issues (8k vs 16k)
 	Fixed mod_iax race conditions
 	Fixed ptime negotiation issues when re-packetizing
 	Added ip based acl lists
 
-freeswitch (1.0.rc1)
+fluxpbx (1.0.rc1)
 
 
 	

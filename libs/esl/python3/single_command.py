@@ -13,9 +13,9 @@ def main(argv):
 		parser.add_option("-a", "--auth", dest="auth", default="ClueCon",
 								help="ESL password")
 		parser.add_option("-s", "--server", dest="server", default="127.0.0.1",
-								help="FreeSWITCH server IP address")
+								help="FluxPBX server IP address")
 		parser.add_option("-p", "--port", dest="port", default="8021",
-								help="FreeSWITCH server event socket port")
+								help="FluxPBX server event socket port")
 		parser.add_option("-c", "--command", dest="command",
 								help="command to run, surround mutli word commands in \"\'s")
 

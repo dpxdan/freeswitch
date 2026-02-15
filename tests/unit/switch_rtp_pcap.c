@@ -1,6 +1,6 @@
 /*
-* FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-* Copyright (C) 2005-2021, Anthony Minessale II <anthm@freeswitch.org>
+* FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+* Copyright (C) 2005-2021, Anthony Minessale II <anthm@fluxpbx.org>
 *
 * Version: MPL 1.1
 *
@@ -14,10 +14,10 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+* The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 *
 * The Initial Developer of the Original Code is
-* Anthony Minessale II <anthm@freeswitch.org>
+* Anthony Minessale II <anthm@fluxpbx.org>
 * Portions created by the Initial Developer are Copyright (C)
 * the Initial Developer. All Rights Reserved.
 *
@@ -190,7 +190,7 @@ static switch_status_t rtp_test_start_call(switch_core_session_t **psession)
 
 	r_sdp = switch_core_session_sprintf(session,
 	"v=0\n"
-	"o=FreeSWITCH 1632033305 1632033306 IN IP4 %s\n"
+	"o=FluxPBX 1632033305 1632033306 IN IP4 %s\n"
 	"s=-\n"
 	"c=IN IP4 %s\n"
 	"t=0 0\n"

@@ -1,13 +1,13 @@
-FreeSWITCH Open Settlement Protocol (OSP) module
+FluxPBX Open Settlement Protocol (OSP) module
 
 1 Introduction
-FreeSWITCH OSP module provides OSP based call authentication, authorization, routing lookup and call detail record (CDR) collection services using standard FreeSWITCH application interface and state handlers.
+FluxPBX OSP module provides OSP based call authentication, authorization, routing lookup and call detail record (CDR) collection services using standard FluxPBX application interface and state handlers.
 
 2 Configuration Parameters
 The OSP module can be configured by OSP module global parameters and OSP provider profile parameters in osp.conf.xml.
 
 2.1 Global Parameters
-FreeSWITCH OSP module global configuration parameters can be set using the following format:
+FluxPBX OSP module global configuration parameters can be set using the following format:
 
 <settings>
   <param name="*NAME*" value="*VALUE*"/>
@@ -24,7 +24,7 @@ Global parameter names and values can be:
  - default-protocol: The VoIP protocol for destinations with unknown/undefined protocol. The default is "sip".
 
 2.2 OSP Provider Parameters
-FreeSWITCH OSP module OSP provider configuration parameters can be set using the following format:
+FluxPBX OSP module OSP provider configuration parameters can be set using the following format:
 
 <profiles>
   <profile name="default">
@@ -35,7 +35,7 @@ FreeSWITCH OSP module OSP provider configuration parameters can be set using the
 OSP provider parameter names ane values cab be:
  - profile: OSP provider profile name.
  - service-point-url: OSP service point URL. This parameter must be defined. Up to 8 URLs are allowed.
- - device-ip: FreeSWITCH IP for OSP module. This parameter must be defined.
+ - device-ip: FluxPBX IP for OSP module. This parameter must be defined.
  - ssl-lifetime: SSL lifetime. The default is 300 in seconds.
  - http-max-connections: HTTP max connections. The default is 20.
  - http-persistence: HTTP persistence. The default is 60 in seconds.
@@ -54,8 +54,8 @@ The OSP applications are called in dial plan like this:
 *PROFILE* is an OSP service provider profile name configured in osp.conf.xml. If data attribute is not provided or its value is empty, profile name "default" is used.
 
 3.1 OSPLookup Application
-osplookup application does OSP authorization request and gets first supported destination for inbound calls. It exports a set of channel variables for FreeSWITCH dial plan logic.
-osplookup application accepts two sets of channel variables that are used to pass additional inbound call information and outbound control parameters to OSP module. It also exports a set of channel variables for outbound channels and FreeSWITCH dial plan logic.
+osplookup application does OSP authorization request and gets first supported destination for inbound calls. It exports a set of channel variables for FluxPBX dial plan logic.
+osplookup application accepts two sets of channel variables that are used to pass additional inbound call information and outbound control parameters to OSP module. It also exports a set of channel variables for outbound channels and FluxPBX dial plan logic.
 
 3.1.1 Inbound Call Information
  - osp_source_device: Actual source device IP address channel variable. It is only for FreeSWITH OSP module running in indirect mode.
@@ -74,15 +74,15 @@ osplookup application accepts two sets of channel variables that are used to pas
  - osp_profile_name: Used OSP provider profile name. It will be used by ospnext application and OSP module state handlers.
  - osp_transaction_handle: OSP transaction handle. It will be used by ospnext application and OSP module state handlers.
  - osp_transaction_id: OSP transaction ID. It will be used by ospnext application and OSP module state handlers for log purpose.
- - osp_lookup_status: osplookup application status. It will be used by FreeSWITCH dial plan logic. 0 for no error.
+ - osp_lookup_status: osplookup application status. It will be used by FluxPBX dial plan logic. 0 for no error.
  - osp_route_total: Total number of destinations from OSP servers. It will be used by ospnext application and OSP module state handlers.
  - osp_route_count: Destination index starting from 1. It will be used by ospnext application and OSP module state handlers.
  - osp_auto_route: Bridge route string. It will be used by bridge application.
  - osp_termiation_cause: Destination termination cause. It will be used by ospnext application and OSP module state handlers.
 
 3.2 OSPNext Application
-ospnext application gets next supported destination for inbound calls. It exports a set of channel variables for FreeSWITCH dial plan logic.
-ospnext application accepts a set of channel variables exported by osplookup application to pass OSP call transaction information to OSP module. It also exports a set of channel variables for outbound channels and FreeSWITCH dial plan logic.
+ospnext application gets next supported destination for inbound calls. It exports a set of channel variables for FluxPBX dial plan logic.
+ospnext application accepts a set of channel variables exported by osplookup application to pass OSP call transaction information to OSP module. It also exports a set of channel variables for outbound channels and FluxPBX dial plan logic.
 
 3.2.1 Transaction Parameters
  - osp_profile_name: Used OSP provider profile name.
@@ -93,7 +93,7 @@ ospnext application accepts a set of channel variables exported by osplookup app
  - osp_termiation_cause: Destination termination cause.
 
 3.2.2 Exported Parameters
- - osp_next_status: ospnext application status. It will be used by FreeSWITCH dial plan logic. 0 for no error.
+ - osp_next_status: ospnext application status. It will be used by FluxPBX dial plan logic. 0 for no error.
  - osp_route_count: Destination index starting from 1. It will be used by ospnext application and OSP module state handlers.
  - osp_termiation_cause: Destination termination cause. It will be used by ospnext application and OSP module state handlers.
  - osp_auto_route: Bridge route string. It will be used by bridge application.
@@ -141,7 +141,7 @@ OSP module state handler accepts a set of channel variables exported by osplooku
       <!-- <param name="service-point-url" value="https://127.0.0.1:1443/osp"/> -->
       <param name="service-point-url" value="http://127.0.0.1:5045/osp"/>
 
-      <!-- FreeSWITCH IP address for OSP -->
+      <!-- FluxPBX IP address for OSP -->
       <param name="device-ip" value="127.0.0.1:5080"/>
 
       <!-- SSL lifetime in seconds -->

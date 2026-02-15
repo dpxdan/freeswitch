@@ -1,4 +1,4 @@
-<!-- http://wiki.freeswitch.org/wiki/Sofia_Configuration_Files -->
+<!-- http://wiki.fluxpbx.org/wiki/Sofia_Configuration_Files -->
 <profile name="external">
   <!-- This profile is only for outbound registrations to providers -->
   <gateways>

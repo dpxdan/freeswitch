@@ -20,7 +20,7 @@ print $q->header(-type => "text/xml");
 
 my $writer = new XML::Writer(OUTPUT => STDOUT, DATA_MODE => 1);
 
-$writer->startTag('document', type => 'xml/freeswitch-httapi');
+$writer->startTag('document', type => 'xml/fluxpbx-httapi');
 
 $writer->startTag('work');
 $writer->emptyTag('pause', milliseconds => "500");

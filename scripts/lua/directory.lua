@@ -1,6 +1,6 @@
 --[[
-FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
-Copyright (C) 2005/2006, Anthony Minessale II <anthm@freeswitch.org>
+FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+Copyright (C) 2005/2006, Anthony Minessale II <anthm@fluxpbx.org>
 
 Version: MPL 1.1
 
@@ -14,16 +14,16 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the
 License.
 
-The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
 
 The Initial Developer of the Original Code is
-Anthony Minessale II <anthm@freeswitch.org>
+Anthony Minessale II <anthm@fluxpbx.org>
    Portions created by the Initial Developer are Copyright (C)
 the Initial Developer. All Rights Reserved.
 
 Contributor(s):
 
-Brian West <brian@freeswitch.org>
+Brian West <brian@fluxpbx.org>
 
    Example for Speech Enabled LUA Applications.
 ]]
@@ -100,7 +100,7 @@ function getResults(s)
    local stack = {}
    local top = {}
 
-   -- freeswitch.consoleLog("crit", "\n" .. dump(xml) .. "\n");
+   -- fluxpbx.consoleLog("crit", "\n" .. dump(xml) .. "\n");
    table.insert(stack, top)
    top = {grammar=xml[2].xarg.grammar, score=xml[2].xarg.confidence, text=xml[2][1][1][1]}
    table.insert(stack, top)
@@ -109,18 +109,18 @@ end
 
 -- This is the input callback used by dtmf or any other events on this session such as ASR.
 function onInput(s, type, obj)
-   freeswitch.consoleLog("info", "Callback with type " .. type .. "\n");
+   fluxpbx.consoleLog("info", "Callback with type " .. type .. "\n");
    if (type == "dtmf") then
-      freeswitch.consoleLog("info", "DTMF Digit: " .. obj.digit .. "\n");
+      fluxpbx.consoleLog("info", "DTMF Digit: " .. obj.digit .. "\n");
    else if (type == "event") then
 	 local event = obj:getHeader("Speech-Type");
 	 if (event == "begin-speaking") then
-	    freeswitch.consoleLog("info", "\n" .. obj:serialize() .. "\n");
+	    fluxpbx.consoleLog("info", "\n" .. obj:serialize() .. "\n");
 	    -- Return break on begin-speaking events to stop playback of the fire or tts.
 	    return "break";
 	 end
 	 if (event == "detected-speech") then
-	    freeswitch.consoleLog("info", "\n" .. obj:serialize() .. "\n");
+	    fluxpbx.consoleLog("info", "\n" .. obj:serialize() .. "\n");
 	    if (obj:getBody()) then
 	       -- Pause speech detection (this is on auto but pausing it just in case)
 	       session:execute("detect_speech", "pause");

@@ -3,10 +3,10 @@
   <settings>
     <param name="listen-ip" value="0.0.0.0" />
     <param name="listen-port" value="8031" />
-    <!--<param name="cookie-file" value="/etc/freeswitch/autoload_configs/.erlang.cookie" />-->
+    <!--<param name="cookie-file" value="/etc/fluxpbx/autoload_configs/.erlang.cookie" />-->
     <param name="cookie" value="change_me" />
     <param name="shortname" value="false" />
-    <param name="nodename" value="freeswitch" />
+    <param name="nodename" value="fluxpbx" />
     <param name="send-msg-batch-size" value="10" />
     <param name="receive-timeout" value="1" />
     <!--<param name="receive-msg-preallocate" value="0" />-->
@@ -66,7 +66,7 @@
     <header name="Expires" />
     <header name="Ext-SIP-IP" />
     <header name="File" />
-    <header name="FreeSWITCH-Hostname" />
+    <header name="FluxPBX-Hostname" />
     <header name="from" />
     <header name="Hunt-Destination-Number" />
     <header name="ip" />

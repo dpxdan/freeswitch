@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,16 +14,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Michael Jerris <mike@jerris.com>
  * Paul D. Tinsley <pdt at jackhammer.org>
  * Marcel Barbulescu <marcelbarbulescu@gmail.com>
@@ -109,7 +109,7 @@ static void send_heartbeat(void)
 								duration.sec, duration.sec == 1 ? "" : "s",
 								duration.ms, duration.ms == 1 ? "" : "s", duration.mms, duration.mms == 1 ? "" : "s");
 
-		switch_event_add_header(event, SWITCH_STACK_BOTTOM, "FreeSWITCH-Version", "%s", switch_version_full());
+		switch_event_add_header(event, SWITCH_STACK_BOTTOM, "FluxPBX-Version", "%s", switch_version_full());
 		switch_event_add_header(event, SWITCH_STACK_BOTTOM, "Uptime-msec", "%"SWITCH_TIME_T_FMT, switch_core_uptime() / 1000);
 		switch_event_add_header(event, SWITCH_STACK_BOTTOM, "Session-Count", "%u", switch_core_session_count());
 		switch_event_add_header(event, SWITCH_STACK_BOTTOM, "Max-Sessions", "%u", switch_core_session_limit(0));
@@ -370,7 +370,7 @@ SWITCH_DECLARE(char *) switch_core_get_domain(switch_bool_t dup)
 
 	switch_thread_rwlock_rdlock(runtime.global_var_rwlock);
 	if (!(var = switch_core_get_variable("domain"))) {
-		var = "freeswitch.local";
+		var = "fluxpbx.local";
 	}
 	if (dup) {
 		domain = strdup(var);
@@ -875,7 +875,7 @@ SWITCH_DECLARE(void) switch_core_set_globals(void)
 	}
 
 	if (!SWITCH_GLOBAL_filenames.conf_name && (SWITCH_GLOBAL_filenames.conf_name = (char *) malloc(BUFSIZE))) {
-		switch_snprintf(SWITCH_GLOBAL_filenames.conf_name, BUFSIZE, "%s", "freeswitch.xml");
+		switch_snprintf(SWITCH_GLOBAL_filenames.conf_name, BUFSIZE, "%s", "fluxpbx.xml");
 	}
 
 	/* Do this last because it being empty is part of the above logic */
@@ -1191,7 +1191,7 @@ SWITCH_DECLARE(void) switch_core_runtime_loop(int bg)
 #endif
 	if (bg) {
 #ifdef WIN32
-		switch_snprintf(path, sizeof(path), "Global\\Freeswitch.%d", getpid());
+		switch_snprintf(path, sizeof(path), "Global\\Fluxpbx.%d", getpid());
 		shutdown_event = CreateEvent(NULL, FALSE, FALSE, path);
 		if (shutdown_event) {
 			WaitForSingleObject(shutdown_event, INFINITE);
@@ -1327,7 +1327,7 @@ SWITCH_DECLARE(void) switch_core_setrlimits(void)
 	   Setting the stack size on FreeBSD results in an instant crash.
 
 	   If anyone knows how to fix this,
-	   feel free to submit a patch to https://github.com/signalwire/freeswitch
+	   feel free to submit a patch to https://github.com/signalwire/fluxpbx
 	 */
 
 #ifndef __FreeBSD__
@@ -2417,8 +2417,8 @@ SWITCH_DECLARE(const char *) switch_core_banner(void)
 			"\n"
 
 			"|   Anthony Minessale II, Michael Jerris, Brian West, Others  |\n"
-			"|   FreeSWITCH (http://www.freeswitch.org)                    |\n"
-			"|   Paypal Donations Appreciated: paypal@freeswitch.org       |\n"
+			"|   FluxPBX (http://www.freeswitch.org)                    |\n"
+			"|   Paypal Donations Appreciated: paypal@fluxpbx.org       |\n"
 			"|   Brought to you by ClueCon http://www.cluecon.com/         |\n"
 			".=============================================================.\n"
 			"\n");
@@ -2501,7 +2501,7 @@ SWITCH_DECLARE(switch_status_t) switch_core_init_and_modload(switch_core_flag_t 
 
 
 	switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_INFO,
-					  "\nFreeSWITCH Version %s (%s)\n\nFreeSWITCH Started\nMax Sessions [%u]\nSession Rate [%d]\nSQL [%s]\n",
+					  "\nFluxPBX Version %s (%s)\n\nFluxPBX Started\nMax Sessions [%u]\nSession Rate [%d]\nSQL [%s]\n",
 					  switch_version_full(), switch_version_revision_human(),
 					  switch_core_session_limit(0),
 					  switch_core_sessions_per_second(0), switch_test_flag((&runtime), SCF_USE_SQL) ? "Enabled" : "Disabled");
@@ -2560,8 +2560,8 @@ static void win_shutdown(void)
 
 	HANDLE shutdown_event;
 	char path[512];
-	/* for windows we need the event to signal for shutting down a background FreeSWITCH */
-	snprintf(path, sizeof(path), "Global\\Freeswitch.%d", getpid());
+	/* for windows we need the event to signal for shutting down a background FluxPBX */
+	snprintf(path, sizeof(path), "Global\\Fluxpbx.%d", getpid());
 
 	/* open the event so we can signal it */
 	shutdown_event = OpenEvent(EVENT_MODIFY_STATE, FALSE, path);

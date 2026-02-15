@@ -6,24 +6,24 @@ PERL_LIBS   =`perl -MConfig -e 'print $$Config{libs}'`
 
 perldir=$(prefix)/perl
 mod_LTLIBRARIES = mod_perl.la
-perl_LTLIBRARIES = freeswitch.la
-mod_perl_la_SOURCES  = mod_perl.c freeswitch_perl.cpp mod_perl_wrap.cpp perlxsi.c
+perl_LTLIBRARIES = fluxpbx.la
+mod_perl_la_SOURCES  = mod_perl.c fluxpbx_perl.cpp mod_perl_wrap.cpp perlxsi.c
 mod_perl_la_CFLAGS   = $(SWITCH_AM_CFLAGS)
 mod_perl_la_CXXFLAGS = $(SWITCH_AM_CXXFLAGS)
 mod_perl_la_CPPFLAGS = -w -DMULTIPLICITY `$(PERL) -MExtUtils::Embed -e ccopts` -DEMBED_PERL -I$(switch_srcdir)/libs/libteletone/src/ 
-mod_perl_la_LIBADD   = $(switch_builddir)/libfreeswitch.la
+mod_perl_la_LIBADD   = $(switch_builddir)/libfluxpbx.la
 mod_perl_la_LDFLAGS  = -avoid-version -module -no-undefined -shared `$(PERL) -MExtUtils::Embed -e ldopts` `$(PERL) -MConfig -e 'print $$Config{libs}'`
 
-freeswitch_la_SOURCES = freeswitch_perl.cpp mod_perl_wrap.cpp perlxsi.c
-freeswitch_la_LDFLAGS = -avoid-version -module -no-undefined -shared $(LDFLAGS)
-freeswitch_la_CPPFLAGS = $(SWITCH_AM_CPPFLAGS) -w -DMULTIPLICITY `$(PERL) -MExtUtils::Embed -e ccopts` -DEMBED_PERL -I$(switch_srcdir)/libs/libteletone/src/ 
+fluxpbx_la_SOURCES = fluxpbx_perl.cpp mod_perl_wrap.cpp perlxsi.c
+fluxpbx_la_LDFLAGS = -avoid-version -module -no-undefined -shared $(LDFLAGS)
+fluxpbx_la_CPPFLAGS = $(SWITCH_AM_CPPFLAGS) -w -DMULTIPLICITY `$(PERL) -MExtUtils::Embed -e ccopts` -DEMBED_PERL -I$(switch_srcdir)/libs/libteletone/src/ 
 reswig:	swigclean mod_perl_wrap.cpp
 
 swigclean: clean
-	rm -f mod_perl_wrap.* freeswitch.so freeswitch.pm
+	rm -f mod_perl_wrap.* fluxpbx.so fluxpbx.pm
 
 mod_perl_wrap.cpp:
-	swig3.0 -static -shadow -perl5 -c++ -DMULTIPLICITY -I../../../../src/include -o mod_perl_wrap.cpp freeswitch.i
+	swig3.0 -static -shadow -perl5 -c++ -DMULTIPLICITY -I../../../../src/include -o mod_perl_wrap.cpp fluxpbx.i
 	echo "#include \"mod_perl_extra.c\"" >> mod_perl_wrap.cpp
 	patch -s -p0 -i hack.diff
 
@@ -37,5 +37,5 @@ orig: mod_perl_wrap.cpp
 
 install-data-local:
 	mkdir -p $(DESTDIR)$(perldir)
-	$(INSTALL) freeswitch.pm $(DESTDIR)$(perldir)
-	if [ ! -f $(DESTDIR)$(perldir)/freeswitch.pm ] ; then $(INSTALL) freeswitch.pm $(DESTDIR)$(perldir) ; fi
+	$(INSTALL) fluxpbx.pm $(DESTDIR)$(perldir)
+	if [ ! -f $(DESTDIR)$(perldir)/fluxpbx.pm ] ; then $(INSTALL) fluxpbx.pm $(DESTDIR)$(perldir) ; fi

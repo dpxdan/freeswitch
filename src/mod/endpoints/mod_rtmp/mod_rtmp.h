@@ -1,5 +1,5 @@
 /*
- * mod_rtmp for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_rtmp for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2011, Barracuda Networks Inc.
  *
  * Version: MPL 1.1
@@ -14,7 +14,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mod_rtmp for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is mod_rtmp for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is Barracuda Networks Inc.
  * Portions created by the Initial Developer are Copyright (C)

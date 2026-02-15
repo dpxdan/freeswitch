@@ -4,7 +4,7 @@
     <!--<param name="kslog" value="on"/>-->
     <!--<param name="blade-bootstrap" value="blade://switchblade:2100"/>-->
     <!--<param name="adoption-service" value="https://adopt.signalwire.com/adoption"/>-->
-    <!--<param name="stun-server" value="stun.freeswitch.org"/>-->
+    <!--<param name="stun-server" value="stun.fluxpbx.org"/>-->
     <!--<param name="caller-id-in-from" value="true"/>-->
     <!--<authentication></authentication>-->
     

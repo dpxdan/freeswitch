@@ -1,5 +1,5 @@
 /*
- * mod_v8 for FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * mod_v8 for FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  * Copyright (C) 2013-2014, Peter Olsson <peter@olssononline.se>
  *
  * Version: MPL 1.1
@@ -14,19 +14,19 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is ported from FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is ported from FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  * Peter Olsson <peter@olssononline.se>
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Andrey Volk <andywolk@gmail.com>
  *
- * mod_v8.h -- JavaScript FreeSWITCH module header file
+ * mod_v8.h -- JavaScript FluxPBX module header file
  *
  */
 

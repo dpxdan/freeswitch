@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2020, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2020, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -81,7 +81,7 @@ char *strndup(const char *s, size_t n)
 /* 253 max domain size + '/' + NUL byte */
 #define DOMAIN_BUF_SIZE 255
 
-/* Defines module interface to FreeSWITCH */
+/* Defines module interface to FluxPBX */
 SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_http_cache_shutdown);
 SWITCH_MODULE_LOAD_FUNCTION(mod_http_cache_load);
 SWITCH_MODULE_DEFINITION(mod_http_cache, mod_http_cache_load, mod_http_cache_shutdown, NULL);
@@ -407,7 +407,7 @@ static switch_status_t http_put(url_cache_t *cache, http_profile_t *profile, swi
 		switch_curl_easy_setopt(curl_handle, CURLOPT_INFILESIZE_LARGE,(curl_off_t) content_length);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 10);
-		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-http-cache/1.0");
+		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-http-cache/1.0");
 		if (cache->connect_timeout > 0) {
 			switch_curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, cache->connect_timeout);
 		}
@@ -1143,7 +1143,7 @@ static switch_status_t http_get(url_cache_t *cache, http_profile_t *profile, cac
 		switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *) &get_data);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_HEADERFUNCTION, get_header_callback);
 		switch_curl_easy_setopt(curl_handle, CURLOPT_WRITEHEADER, (void *) url);
-		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "freeswitch-http-cache/1.0");
+		switch_curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "fluxpbx-http-cache/1.0");
 		if (cache->connect_timeout > 0) {
 			switch_curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, cache->connect_timeout);
 		}
@@ -1962,7 +1962,7 @@ static char *https_supported_formats[] = { "https", NULL };
 static char *http_cache_supported_formats[] = { "http_cache", NULL };
 
 /**
- * Called when FreeSWITCH loads the module
+ * Called when FluxPBX loads the module
  */
 SWITCH_MODULE_LOAD_FUNCTION(mod_http_cache_load)
 {
@@ -2054,7 +2054,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_http_cache_load)
 }
 
 /**
- * Called when FreeSWITCH stops the module
+ * Called when FluxPBX stops the module
  */
 SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_http_cache_shutdown)
 {

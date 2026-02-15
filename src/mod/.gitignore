@@ -54,11 +54,11 @@
 /formats/mod_tone_stream/Makefile
 /languages/mod_java/Makefile
 /languages/mod_java/classes/
-/languages/mod_java/freeswitch.jar
+/languages/mod_java/fluxpbx.jar
 /languages/mod_lua/Makefile
 /languages/mod_lua/Makefile.in
 /languages/mod_lua/mod_lua.log
-/languages/mod_managed/freeswitch_wrap.cpp
+/languages/mod_managed/fluxpbx_wrap.cpp
 /languages/mod_python/Makefile
 /loggers/mod_console/Makefile
 /loggers/mod_logfile/Makefile

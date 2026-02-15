@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2014, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2014, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  * Portions created by Seventh Signal Ltd. & Co. KG and its employees are Copyright (C)
@@ -96,7 +96,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_snmp_load)
 	management_interface->relative_oid = "1000";
 	management_interface->management_function = snmp_manage;
 
-	/* Register callback function so we get Net-SNMP logging handled by FreeSWITCH */
+	/* Register callback function so we get Net-SNMP logging handled by FluxPBX */
 	snmp_register_callback(SNMP_CALLBACK_LIBRARY, SNMP_CALLBACK_LOGGING, snmp_callback_log, NULL);
 	snmp_enable_calllog();
 

@@ -154,7 +154,7 @@ create_orig () {
       hrev="$(get_nightly_revision_human)"
     fi
     local treeish="$1" dver="$(mk_dver "$uver")"
-    local orig="../freeswitch_$dver~$(lsb_release -sc).orig.tar.xz"
+    local orig="../fluxpbx_$dver~$(lsb_release -sc).orig.tar.xz"
     [ -n "$treeish" ] || treeish="HEAD"
     check_repo_clean
     git reset --hard "$treeish"
@@ -175,7 +175,7 @@ create_orig () {
     git archive -v \
       --worktree-attributes \
       --format=tar \
-      --prefix=freeswitch-$uver/ \
+      --prefix=fluxpbx-$uver/ \
       HEAD \
       | xz -c -${zl}v > $orig
     mv .gitattributes.orig .gitattributes
@@ -310,7 +310,7 @@ build_debs () {
       use_custom_sources=false
     fi
     if [[ "$custom_source_file" == "/tmp/fs.sources.list" && ! -e "/tmp/fs.sources.list" ]]; then
-      echo "deb [trusted=yes] http://files.freeswitch.org/repo/deb/freeswitch-1.8/ stretch main" >> "/tmp/fs.sources.list"
+      echo "deb [trusted=yes] http://files.freeswitch.org/repo/deb/fluxpbx-1.8/ stretch main" >> "/tmp/fs.sources.list"
     fi
     if [[ "$custom_keyring" == "/tmp/fs.gpg" && ! -r "/tmp/fs.gpg" ]]; then
       cat << EOF > "/tmp/fs.tmp.gpg"

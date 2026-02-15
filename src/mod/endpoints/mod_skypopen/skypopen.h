@@ -1,6 +1,6 @@
 /*
- * FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
- * Copyright (C) 2005-2011, Anthony Minessale II <anthm@freeswitch.org>
+ * FluxPBX Modular Media Switching Software Library / Soft-Switch Application
+ * Copyright (C) 2005-2011, Anthony Minessale II <anthm@fluxpbx.org>
  *
  * Version: MPL 1.1
  *
@@ -14,10 +14,10 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is FreeSWITCH Modular Media Switching Software Library / Soft-Switch Application
+ * The Original Code is FluxPBX Modular Media Switching Software Library / Soft-Switch Application
  *
  * The Initial Developer of the Original Code is
- * Anthony Minessale II <anthm@freeswitch.org>
+ * Anthony Minessale II <anthm@fluxpbx.org>
  * Portions created by the Initial Developer are Copyright (C)
  * the Initial Developer. All Rights Reserved.
  *
@@ -184,20 +184,20 @@ struct SkypopenHandles {
 	ucontext_t ioerror_context;
 #endif
 
-	// CLOUDTREE (Thomas Hazel) - is there a capable freeswitch list?
+	// CLOUDTREE (Thomas Hazel) - is there a capable fluxpbx list?
 	switch_bool_t managed;
 	void *prev;
 	void *next;
 };
 
-// CLOUDTREE (Thomas Hazel) - is there a capable freeswitch list?
+// CLOUDTREE (Thomas Hazel) - is there a capable fluxpbx list?
 struct SkypopenList {
 	int entries;
 	void *head;
 	void *tail;
 };
 
-// CLOUDTREE (Thomas Hazel) - is there a capable freeswitch list?
+// CLOUDTREE (Thomas Hazel) - is there a capable fluxpbx list?
 struct SkypopenHandles *skypopen_list_add(struct SkypopenList *list, struct SkypopenHandles *x);
 struct SkypopenHandles *skypopen_list_find(struct SkypopenList *list, struct SkypopenHandles *x);
 struct SkypopenHandles *skypopen_list_remove_by_value(struct SkypopenList *list, Display * display);
